@@ -1,2 +1,2 @@
-#Senior Project CECS 491
+# Senior Project CECS 491
 Welcome
