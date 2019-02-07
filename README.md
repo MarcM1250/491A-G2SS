@@ -2,6 +2,15 @@
 
 This is a web app running on node.js that facilitates the transfer of KML files between unclassified and classified sources.
 
+## Currently in Progress
+- [ ] Requirement Specification Documentation
+  - [ ] Executive Summary
+  - [x] Stakeholder Model
+  - [ ] Goal Model
+  - [x] System Vision
+  - [ ] Usage Model: Use Cases
+  - [ ] Detailed Requirements
+
 ## Dependencies
 
 * [Angular](https://angular.io/)
