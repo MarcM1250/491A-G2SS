@@ -4,11 +4,11 @@ This is a web app running on node.js that facilitates the transfer of KML files 
 
 ## Currently in Progress
 - [ ] [Requirement Specification Documentation](https://github.com/MarcM1250/491A-G2SS/blob/master/KMLGuardRequirementSpecification.pdf)
-  - [ ] Executive Summary
+  - [x] Executive Summary
   - [x] Stakeholder Model
-  - [ ] Goal Model
+  - [x] Goal Model
   - [x] System Vision
-  - [ ] Usage Model: Use Cases
+  - [x] Usage Model: Use Cases
   - [ ] Detailed Requirements
 
 ## Dependencies
