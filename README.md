@@ -3,13 +3,13 @@
 This is a web app running on node.js that facilitates the transfer of KML files between unclassified and classified sources.
 
 ## Currently in Progress
-- [ ] [Requirement Specification Documentation](https://github.com/MarcM1250/491A-G2SS/blob/master/KMLGuardRequirementSpecification.pdf)
+- [x] Requirement Specification Documentation
   - [x] Executive Summary
   - [x] Stakeholder Model
   - [x] Goal Model
   - [x] System Vision
   - [x] Usage Model: Use Cases
-  - [ ] Detailed Requirements
+  - [x] Detailed Requirements
 
 ## Dependencies
 
