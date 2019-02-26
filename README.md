@@ -3,15 +3,15 @@
 This is a web app running on node.js that facilitates the transfer of KML files between unclassified and classified sources.
 
 ## Currently in Progress
-- [] Design Specification Documentation
-    - [] Abstract
-    - [] Architecture Overview
-    - [] Entity-Relationship Diagram and Description
-    - [] Activity Diagram and Description
-    - [] Message Sequence Chart and Description
-    - [] State Diagram and Description
-    - [] Class Diagram(s) and Description
-    - [] Mock-ups of horizontal and vertical prototype
+- [ ] Design Specification Documentation
+    - [ ] Abstract
+    - [ ] Architecture Overview
+    - [ ] Entity-Relationship Diagram and Description
+    - [ ] Activity Diagram and Description
+    - [ ] Message Sequence Chart and Description
+    - [ ] State Diagram and Description
+    - [ ] Class Diagram(s) and Description
+    - [ ] Mock-ups of horizontal and vertical prototype
 
 ## Completed
 - [x] Requirement Specification Documentation
