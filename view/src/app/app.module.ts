@@ -10,6 +10,10 @@ import { MainComponent } from './components/main/main.component';
 // Manually added this Angular import.
 import { RouterModule, Routes } from '@angular/router';
 
+// Manually added this Angular import which is used in app.component.html
+import { MatToolbarModule } from '@angular/material';
+
+
   /** 
    * Manually added
    * Added the routing configuration as an array of Routes.
@@ -41,7 +45,11 @@ import { RouterModule, Routes } from '@angular/router';
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    
+    // Manually added
+    MatToolbarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

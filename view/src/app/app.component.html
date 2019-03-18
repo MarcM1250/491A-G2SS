@@ -1,5 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  
+  <!--start of manually added code.
+    Conent from the connected component should be part of the output, depending on the app route requeested. 
+    Component content should be inserted in the <router-outlet> element. 
+    MatToolbar is a component from the Angular Material library.
+    To use this element, need to import in app.module.ts and also add MatToolbarModule to the imports array.-->
+  <mat-toolbar color = "primary">
+    <span>KML Guard</span>
+  </mat-toolbar>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  <!-- end of manually added code. -->
+
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -17,4 +31,7 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
+
+
+
 
