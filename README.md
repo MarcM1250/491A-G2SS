@@ -3,7 +3,7 @@
 This is a web app running on node.js that facilitates the transfer of KML files between unclassified and classified sources.
 
 ## Currently in Progress
-Application prototype.
+Application prototype and test specification.
 
 ## Completed
 - [x] Requirement Specification Documentation
