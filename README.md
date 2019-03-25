@@ -37,17 +37,17 @@ To Run
 ## Request & Response Examples
 
 ### API Resources
-
+#### User
   - [GET /users]
   - [POST /users/signup]
   - [POST /users/login]
   - [Delete /users/[username]]
-
+#### Upload
   - [GET /uploads]
   - [GET /uploads/[uploadId]]
   - [POST /users/login]
   - [Delete /uploads/[uploadId]]
-
+#### Download
   - [GET /downloads]
   - [GET /downloads/[username]]
   - [POST /downloads]
