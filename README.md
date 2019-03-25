@@ -48,6 +48,10 @@ Example Output:
         }
     ]
 }
+To Run
+------
+
+    npm start
 
 User Signup:
 POST localhost:3000/users/signup
