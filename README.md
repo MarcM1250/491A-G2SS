@@ -53,9 +53,6 @@ To Run
 
     npm start
 
-Test It Out
------------
-
 ## Request & Response Examples
 
 ### API Resources
