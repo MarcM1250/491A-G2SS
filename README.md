@@ -46,10 +46,12 @@ To Run
 ### GET /users
 
 Example: http://localhost:3000/users
+
 Request Headers:
     {
         Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwidXNlcklkIjoiNWM5OTNjYjNiMTJmN2QwZmEwMzk2YjI3IiwiaWF0IjoxNTUzNTQ2NDI4LCJleHAiOjE1NTM1ODI0Mjh9.bRMUlazB21ZJTy5Z-JGwiBrzrm2yiRHMvJbxUq6vhK8 
     }
+
 Response Body:
 
     {
@@ -66,11 +68,13 @@ Response Body:
 ### POST /users/signup
 
 Example: localhost:3000/users/signup
+
 Request Body:
     {
 	    "username":"user2",
 	    "password":"pass"
     }
+
 Response Body:
     {
         "message": "User created"
@@ -79,11 +83,13 @@ Response Body:
 ### POST /user/login
 
 Example: localhost:3000/users/login
+
 Request Body:
     {
 	    "username":"user2",
 	    "password":"pass"
     }
+
 Request Body:
     {
         "message": "Authentication successful",
@@ -93,6 +99,7 @@ Request Body:
 ### DELETE user/[username]:
 
 Example localhost:3000/users/ping
+
 Response Body:
     {
         "message": "User deleted"
