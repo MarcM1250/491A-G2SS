@@ -60,13 +60,16 @@ To Run
   - [GET /users]
   - [POST /users/signup]
   - [POST /users/login]
-  - [Delete /users/[id]]
+  - [Delete /users/[username]]
 
 ### GET /users
 
 Example: http://localhost:3000/users
-
-Response body:
+Request header:
+    {
+        Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwidXNlcklkIjoiNWM5OTNjYjNiMTJmN2QwZmEwMzk2YjI3IiwiaWF0IjoxNTUzNTQ2NDI4LCJleHAiOjE1NTM1ODI0Mjh9.bRMUlazB21ZJTy5Z-JGwiBrzrm2yiRHMvJbxUq6vhK8 
+    }
+Response Body:
 
     {
     "users": [
@@ -79,37 +82,38 @@ Response body:
     ]
     }
 
-User Signup:
-POST localhost:3000/users/signup
-Example Input:
-{
-	"username":"user2",
-	"password":"pass"
-}
-Example Output:
-{
-    "message": "User created"
-}
+### POST /users/signup
 
-User Login:
-POST localhost:3000/users/login
-Example Input:
-{
-	"username":"user2",
-	"password":"pass"
-}
-Example Output:
-{
-    "message": "Authentication successful",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwidXNlcklkIjoiNWM5OTNkOGEwZjRjM2ExNzI4ZmY5OTNjIiwiaWF0IjoxNTUzNTQ2Njc4LCJleHAiOjE1NTM1ODI2Nzh9.2qI3aUUNxLzmIu1Z9hZkmRnXcfvMADUuyAbC-XYy4Lw"
-}
+Example: localhost:3000/users/signup
+Request Body:
+    {
+	    "username":"user2",
+	    "password":"pass"
+    }
+Response Body:
+    {
+        "message": "User created"
+    }
 
-Delete User:
-DELETE localhost:3000/users/:username
-Example Output:
-{
-    "message": "User deleted"
-}
+### POST /user/login
+Example: localhost:3000/users/login
+Request Body:
+    {
+	    "username":"user2",
+	    "password":"pass"
+    }
+Request Body:
+    {
+        "message": "Authentication successful",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwidXNlcklkIjoiNWM5OTNkOGEwZjRjM2ExNzI4ZmY5OTNjIiwiaWF0IjoxNTUzNTQ2Njc4LCJleHAiOjE1NTM1ODI2Nzh9.2qI3aUUNxLzmIu1Z9hZkmRnXcfvMADUuyAbC-XYy4Lw"
+    }   
+
+### DELETE user/[username]:
+Example localhost:3000/users/ping
+Response Body:
+    {
+        "message": "User deleted"
+    }
 
 Get Uploads:
 GET localhost:3000/uploads
