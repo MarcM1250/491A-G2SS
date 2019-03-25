@@ -112,7 +112,7 @@ Request Body:
 
 ### DELETE /user/[username]
 
-Example: http://localhost:3000/users/ping
+Example: http://localhost:3000/users/user3
 
 Response Body:
 
@@ -179,7 +179,7 @@ Response Body:
 
 ### DELETE /upload/[uploadId]
 
-Example: http://localhost:3000/uploads/:uploadId
+Example: http://localhost:3000/uploads/5c9941700f4c3a1728ff9940
 
 Request Headers:
 
@@ -218,9 +218,9 @@ Response Body:
         ]
     }
 
-### GET /downloads:
+### GET /downloads
 
-Example: http://localhost:3000/downloads/:username
+Example: http://localhost:3000/downloads/user3
 
 Response Body:
 
