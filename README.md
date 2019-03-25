@@ -218,12 +218,6 @@ Response Body:
         ]
     }
 
-### POST /downloads/[uploadId]
-
-Example: localhost:3000/downloads/:uploadId
-
-Response Body: A file download
-
 ### GET /downloads:
 
 Example: localhost:3000/downloads/:username
