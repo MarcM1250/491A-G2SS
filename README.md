@@ -29,25 +29,6 @@ Application prototype and test specification.
 * [node.js](https://nodejs.org/en/)
 * [MongoDB](https://www.mongodb.com/)
 
-Get Users:
-GET localhost:3000/users
-Example Output:
-{
-    "users": [
-        {
-            "_id": "5c993cb3b12f7d0fa0396b27",
-            "username": "user3",
-            "password": "$2b$10$3smCeGmDVWsLs/iIW0zs8ewDQpLKp.wTkNb7rPFC9J3SdYRObPsYy",
-            "__v": 0
-        },
-        {
-            "_id": "5c993d8a0f4c3a1728ff993c",
-            "username": "user1",
-            "password": "$2b$10$Pbc/Wxl5Hic6GQlHGvFj4.LFHcwcHEo27yhCVVyHjsciCih4Lb.mK",
-            "__v": 0
-        }
-    ]
-}
 To Run
 ------
 
@@ -65,7 +46,7 @@ To Run
 ### GET /users
 
 Example: http://localhost:3000/users
-Request header:
+Request Headers:
     {
         Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwidXNlcklkIjoiNWM5OTNjYjNiMTJmN2QwZmEwMzk2YjI3IiwiaWF0IjoxNTUzNTQ2NDI4LCJleHAiOjE1NTM1ODI0Mjh9.bRMUlazB21ZJTy5Z-JGwiBrzrm2yiRHMvJbxUq6vhK8 
     }
@@ -96,6 +77,7 @@ Response Body:
     }
 
 ### POST /user/login
+
 Example: localhost:3000/users/login
 Request Body:
     {
@@ -109,6 +91,7 @@ Request Body:
     }   
 
 ### DELETE user/[username]:
+
 Example localhost:3000/users/ping
 Response Body:
     {
