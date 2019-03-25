@@ -67,7 +67,8 @@ To Run
 Example: http://localhost:3000/users
 
 Response body:
-        {
+
+    {
     "users": [
         {
             "_id": "5c993d8a0f4c3a1728ff993c",
@@ -76,7 +77,7 @@ Response body:
             "__v": 0
         }
     ]
-}
+    }
 
 User Signup:
 POST localhost:3000/users/signup
