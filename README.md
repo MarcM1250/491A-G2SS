@@ -53,6 +53,34 @@ To Run
 
     npm start
 
+Test It Out
+-----------
+
+## Request & Response Examples
+
+### API Resources
+
+  - [GET /users]
+  - [POST /users/signup]
+  - [POST /users/login]
+  - [Delete /users/[id]]
+
+### GET /users
+
+Example: http://localhost:3000/users
+
+Response body:
+        {
+    "users": [
+        {
+            "_id": "5c993d8a0f4c3a1728ff993c",
+            "username": "user1",
+            "password": "$2b$10$Pbc/Wxl5Hic6GQlHGvFj4.LFHcwcHEo27yhCVVyHjsciCih4Lb.mK",
+            "__v": 0
+        }
+    ]
+}
+
 User Signup:
 POST localhost:3000/users/signup
 Example Input:
