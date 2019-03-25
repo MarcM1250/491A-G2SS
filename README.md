@@ -77,7 +77,7 @@ Response Body:
 
 ### POST /users/signup
 
-Example: localhost:3000/users/signup
+Example: http://localhost:3000/users/signup
 
 Request Body:
 
@@ -94,7 +94,7 @@ Response Body:
 
 ### POST /user/login
 
-Example: localhost:3000/users/login
+Example: http://localhost:3000/users/login
 
 Request Body:
 
@@ -112,7 +112,7 @@ Request Body:
 
 ### DELETE /user/[username]
 
-Example: localhost:3000/users/ping
+Example: http://localhost:3000/users/ping
 
 Response Body:
 
@@ -122,7 +122,7 @@ Response Body:
 
 ### GET /uploads
 
-Example: localhost:3000/uploads
+Example: http://localhost:3000/uploads
 
 Request Headers:
 
@@ -148,7 +148,7 @@ Response Body:
 
 ### POST /uploads
 
-Example: localhost:3000/uploads
+Example: http://localhost:3000/uploads
 
 Request Headers:
 
@@ -179,7 +179,7 @@ Response Body:
 
 ### DELETE /upload/[uploadId]
 
-Example: localhost:3000/uploads/:uploadId
+Example: http://localhost:3000/uploads/:uploadId
 
 Request Headers:
 
@@ -196,7 +196,7 @@ Response Body:
 
 ### GET /downloads
 
-Example: localhost:3000/downloads
+Example: http://localhost:3000/downloads
 
 Request Headers:
 
@@ -220,7 +220,7 @@ Response Body:
 
 ### GET /downloads:
 
-Example: localhost:3000/downloads/:username
+Example: http://localhost:3000/downloads/:username
 
 Response Body:
 
