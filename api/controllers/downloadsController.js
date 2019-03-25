@@ -24,6 +24,11 @@ exports.create_download = (req, res, next) => {
         .exec()
         .then(result => {
             if (result) {
+                if (result.delete_by !== undefined){
+                    res.status(404).json({
+                        message: "File already deleted"
+                    });
+                }else{
                 const download = new Download({
                     _id: new mongoose.Types.ObjectId(),
                     upload_id: result._id,
@@ -39,6 +44,7 @@ exports.create_download = (req, res, next) => {
                     });
                 req.fileData = result;
                 next();
+                }
             } else {
                 res.status(404).json({
                     message: "No valid entry found for provided ID"

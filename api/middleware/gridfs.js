@@ -7,25 +7,27 @@ var fs = require('fs');
 //     { useNewUrlParser: true }
 // )
 
-mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
-const conn = mongoose.connection;
-conn.once('open',function() {
-    console.log('Connection has been made');
-    // const bucket = new mongoose.mongo.GridFSBucket(conn.db, {
-    //     bucketName: 'uploads'
-    // });
-    //     bucket.openDownloadStream(mongoose.Types.ObjectId('5c991e90b8ef7c2334d4a28b')).
-    //       pipe(fs.createWriteStream('1553393409237Capture.PNG')).
-    //       on('error', function(error) {
-    //         assert.ifError(error);
-    //       }).
-    //       on('finish', function() {
-    //         console.log('done!');
-    //         process.exit(0);
-    //       });
-}).on('error', function(error) {
-    console.log('Connection error',error);
-});
+mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true });
+
+// mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
+// const conn = mongoose.connection;
+// conn.once('open',function() {
+//     console.log('Connection has been made');
+//     // const bucket = new mongoose.mongo.GridFSBucket(conn.db, {
+//     //     bucketName: 'uploads'
+//     // });
+//     //     bucket.openDownloadStream(mongoose.Types.ObjectId('5c991e90b8ef7c2334d4a28b')).
+//     //       pipe(fs.createWriteStream('1553393409237Capture.PNG')).
+//     //       on('error', function(error) {
+//     //         assert.ifError(error);
+//     //       }).
+//     //       on('finish', function() {
+//     //         console.log('done!');
+//     //         process.exit(0);
+//     //       });
+// }).on('error', function(error) {
+//     console.log('Connection error',error);
+// });
 
 // Upload locally
 /*
@@ -72,13 +74,13 @@ const upload = multer({
 exports.start_upload = upload;
 
 exports.download_file = (req, res, next) => {
-    // // create a new connection to handle each download request
-    // const conn = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',
-    //     { useNewUrlParser: true }
-    // )
+    // create a new connection to handle each download request
+    const conn = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',
+        { useNewUrlParser: true }
+    )
     
     // local connection
-    const conn = mongoose.createConnection('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
+    // const conn = mongoose.createConnection('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
 
     conn.once('open', function () {
         const bucket = new mongoose.mongo.GridFSBucket(conn.db, {
@@ -100,16 +102,16 @@ exports.download_file = (req, res, next) => {
 }
 
 exports.delete_file = (req, res, next) => {
-    // // create a new connection to handle each delete request
-    // const conn = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',
-    //     { useNewUrlParser: true }
-    // )
+    // create a new connection to handle each delete request
+    const conn = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',
+        { useNewUrlParser: true }
+    )
     
     // local connection
-    const conn = mongoose.createConnection('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
+    // const conn = mongoose.createConnection('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
 
     conn.once('open', function () {
-        const bucket = new mongoose.mongo.GridFSBucket(conn, {
+        const bucket = new mongoose.mongo.GridFSBucket(conn.db, {
             bucketName: 'uploads'
         });
         bucket.delete(req.fileData.files_id, function (error) {

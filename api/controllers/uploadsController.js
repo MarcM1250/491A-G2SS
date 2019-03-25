@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 exports.get_all = (req, res, next) => {
     Upload.find()
-        .select("subject upload_by description _id files_id") // data you want to fetch
+        //.select("subject upload_by description _id files_id") // data you want to fetch
         .exec()
         .then(docs => {
             res.status(200).json({
@@ -102,10 +102,11 @@ exports.delete_upload = (req, res, next) => {
         .exec()
         .then(result => {
             if (result) {
-                if (result.delete_by !== undefined)
+                if (result.delete_by !== undefined){
                     res.status(404).json({
                         message: "File already deleted"
                     });
+                }else{
                 result.updateOne({ $set: { delete_by: req.userData.username, delete_date: Date.now() } })
                     .exec()
                     .then(docs => {
@@ -118,6 +119,7 @@ exports.delete_upload = (req, res, next) => {
                             error: err
                         });
                     });
+                }
             } else {
                 res.status(404).json({
                     message: "No valid entry found for provided ID"
