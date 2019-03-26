@@ -75,7 +75,7 @@ Response Body:
     ]
     }
 
-### POST /accounts/signup
+### POST /accounts/create
 
 Example: http://localhost:3000/accounts/create
 
@@ -92,7 +92,7 @@ Response Body:
         "message": "User created"
     }
 
-### POST /user/login
+### POST /accounts/login
 
 Example: http://localhost:3000/accounts/login
 
@@ -110,7 +110,7 @@ Request Body:
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwidXNlcklkIjoiNWM5OTNkOGEwZjRjM2ExNzI4ZmY5OTNjIiwiaWF0IjoxNTUzNTQ2Njc4LCJleHAiOjE1NTM1ODI2Nzh9.2qI3aUUNxLzmIu1Z9hZkmRnXcfvMADUuyAbC-XYy4Lw"
     }   
 
-### DELETE /user/[username]
+### DELETE /accounts/[username]
 
 Example: http://localhost:3000/accounts/user3
 
