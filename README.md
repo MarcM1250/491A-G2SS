@@ -37,8 +37,9 @@ To Run
 ## Request & Response Examples
 
 ### API Resources
-#### User
+#### Account
   - [GET /accounts]
+  - [GET /accounts/[username]]
   - [POST /accounts/create]
   - [POST /accounts/login]
   - [Delete /accounts/[username]]
@@ -177,7 +178,7 @@ Response Body:
         }
     }
 
-### DELETE /upload/[uploadId]
+### DELETE /uploads/[uploadId]
 
 Example: http://localhost:3000/uploads/5c9941700f4c3a1728ff9940
 
