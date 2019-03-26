@@ -38,23 +38,23 @@ To Run
 
 ### API Resources
 #### User
-  - [GET /users]
-  - [POST /users/signup]
-  - [POST /users/login]
-  - [Delete /users/[username]]
+  - [GET /accounts]
+  - [POST /accounts/create]
+  - [POST /accounts/login]
+  - [Delete /accounts/[username]]
 #### Upload
   - [GET /uploads]
   - [GET /uploads/[uploadId]]
-  - [POST /users/login]
+  - [POST /accounts/login]
   - [Delete /uploads/[uploadId]]
 #### Download
   - [GET /downloads]
   - [GET /downloads/[username]]
   - [POST /downloads]
 
-### GET /users
+### GET /accounts
 
-Example: http://localhost:3000/users
+Example: http://localhost:3000/accounts
 
 Request Headers:
 
@@ -65,7 +65,7 @@ Request Headers:
 Response Body:
 
     {
-    "users": [
+    "accounts": [
         {
             "_id": "5c993d8a0f4c3a1728ff993c",
             "username": "user1",
@@ -75,9 +75,9 @@ Response Body:
     ]
     }
 
-### POST /users/signup
+### POST /accounts/signup
 
-Example: http://localhost:3000/users/signup
+Example: http://localhost:3000/accounts/create
 
 Request Body:
 
@@ -94,7 +94,7 @@ Response Body:
 
 ### POST /user/login
 
-Example: http://localhost:3000/users/login
+Example: http://localhost:3000/accounts/login
 
 Request Body:
 
@@ -112,7 +112,7 @@ Request Body:
 
 ### DELETE /user/[username]
 
-Example: http://localhost:3000/users/user3
+Example: http://localhost:3000/accounts/user3
 
 Response Body:
 
