@@ -2,15 +2,19 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const User = require('../models/userModel');
+const Account = require('../models/accountModel');
 
 exports.get_all = (req, res, next) => {
-    User.find()
-        //.select("") // data you want to fetch
+    Account.find()
         .exec()
         .then(docs => {
             res.status(200).json({
-                users: docs
+                accounts: docs.map(doc => {
+                    return {
+                        username: doc.username,
+                        password: doc.password
+                    }
+                })
             });
         })
         .catch(err => {
@@ -21,12 +25,38 @@ exports.get_all = (req, res, next) => {
         });
 };
 
-exports.signup = (req, res, next) => {
-    // Prevent duplicated account with same username
-    User.find({ username: req.body.username })
+exports.get_account = (req, res, next) => {
+    const username = req.params.username;
+    Account.findOne({username: username})
         .exec()
-        .then(user => {
-            if (user.length >= 1) {
+        .then(result => {
+            if (result) {
+                res.status(200).json({
+                    account: {
+                        username: result.username,
+                        password: result.password
+                    }
+                });
+            } else {
+                res.status(200).json({
+                    message: "No valid entry found for provided username"
+                });
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            });
+        });
+};
+
+exports.create_account = (req, res, next) => {
+    // Prevent duplicated account with same username
+    Account.find({ username: req.body.username })
+        .exec()
+        .then(account => {
+            if (account.length >= 1) {
                 return res.status(409).json({
                     message: 'Account exists'
                 });
@@ -37,17 +67,17 @@ exports.signup = (req, res, next) => {
                             error: err
                         });
                     } else {
-                        const user = new User({
+                        const account = new Account({
                             _id: new mongoose.Types.ObjectId(),
                             username: req.body.username,
                             password: hash
                         });
-                        user
+                        account
                             .save()
                             .then(result => {
                                 console.log(result);
                                 res.status(201).json({
-                                    message: 'User created'
+                                    message: 'Account created'
                                 });
                             })
                             .catch(err => {
@@ -63,15 +93,15 @@ exports.signup = (req, res, next) => {
 };
 
 exports.login = (req, res, next) => {
-    User.find({ username: req.body.username })
+    Account.find({ username: req.body.username })
         .exec()
-        .then(user => {
-            if (user.length < 1) {
+        .then(account => {
+            if (account.length < 1) {
                 return res.status(401).json({
                     message: 'Authentication failed'
                 });
             }
-            bcrypt.compare(req.body.password, user[0].password, (err, result) => {
+            bcrypt.compare(req.body.password, account[0].password, (err, result) => {
                 if (err) {
                     return res.status(401).json({
                         message: 'Authentication failed'
@@ -79,8 +109,8 @@ exports.login = (req, res, next) => {
                 }
                 if (result) {
                     const token = jwt.sign({
-                        username: user[0].username,
-                        userId: user[0]._id
+                        username: account[0].username,
+                        userId: account[0]._id
                     }, process.env.JWT_KEY,
                         {
                             expiresIn: "10h"
@@ -104,12 +134,12 @@ exports.login = (req, res, next) => {
         });
 };
 
-exports.delete = (req, res, next) => {
-    User.remove({ username: req.params.username })
+exports.delete_account = (req, res, next) => {
+    Account.remove({ username: req.params.username })
         .exec()
         .then(result => {
             res.status(200).json({
-                message: 'User deleted'
+                message: 'Account deleted'
             });
         })
         .catch(err => {
@@ -119,3 +149,4 @@ exports.delete = (req, res, next) => {
             });
         });
 };
+

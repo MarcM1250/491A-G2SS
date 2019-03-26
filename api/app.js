@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const uploadRoutes = require('./api/routes/uploadsRoutes');
-const userRoutes = require('./api/routes/usersRoutes');
+const accountRoutes = require('./api/routes/accountsRoutes');
 const downloadRoutes = require('./api/routes/downloadsRoutes');
 var fs = require('fs');
 
@@ -68,7 +68,7 @@ app.use((req, res, next) => {
 
 // Routes which should handle requests
 app.use('/uploads', uploadRoutes);
-app.use('/users', userRoutes);
+app.use('/accounts', accountRoutes);
 app.use('/downloads', downloadRoutes);
 
 // error handling

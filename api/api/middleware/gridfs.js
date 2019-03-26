@@ -7,6 +7,7 @@ var fs = require('fs');
 //     { useNewUrlParser: true }
 // )
 
+// default connection: pools used to create and retrieve models
 mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true });
 
 // mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
@@ -92,12 +93,15 @@ exports.download_file = (req, res, next) => {
                 res.status(500).json({
                     error: err
                 });
+                conn.close();
             })
             .on('finish', function () {
-                console.log('Download successful!');
+                console.log('Download successful');
+                conn.close();
             });
     }).on('error', function(error) {
         console.log('Connection error',error);
+        conn.close();
     });
 }
 
@@ -115,13 +119,21 @@ exports.delete_file = (req, res, next) => {
             bucketName: 'uploads'
         });
         bucket.delete(req.fileData.files_id, function (error) {
-            if (error)
+            if (error) {
+                console.log(error);
                 res.status(500).json({
                     error: error
                 });
+            }else{
             res.status(200).json({
-                message: 'Delete successfully'
+                message: 'Delete successful',
+                //upload: req.fileData
             });
+        }
+        conn.close();
         });
+    }).on('error', function(error) {
+        console.log('Connection error',error);
+        conn.close();
     });
-};
+}
