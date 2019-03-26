@@ -10,6 +10,9 @@ import { MainComponent } from './components/main/main.component';
 // Manually added this Angular import - for routing.
 import { RouterModule, Routes } from '@angular/router';
 
+// Manually added for making HTTP requests
+import { HttpClientModule } from '@angular/common/http';
+
 // // Manually added this Angular import which is used in app.component.html
 // import { MatToolbarModule } from '@angular/material';
 // MOVED THIS CODE TO MATERIAL.MODULE.TS
@@ -18,6 +21,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomMaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 
+// Manually added HTTP provider
+import { LoginService } from './services/login.service';
+
 /** 
  * Manually added
  * Added the routing configuration as an array of Routes.
@@ -25,7 +31,7 @@ import { FormsModule } from '@angular/forms';
  * Connects a URL extension (like 'login') to a component (LoginComponent).
  */
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent}, 
+  { path: 'login', component: LoginComponent },
   { path: 'main', component: MainComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' } // A redirect is configured from the default app route to the route displaying content from LoginComponent.
 ];
@@ -40,24 +46,26 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
 
-  /** 
-   * Manually added
-   * To activate the routing configuration for the Angular app.
-   */
-  RouterModule.forRoot(
-    appRoutes,
-    { enableTracing: true } // <-- debugging purposes only
-  ),
-    
-  // Manually added - used in app.component.html
-  //MatToolbarModule,
+    /** 
+     * Manually added
+     * To activate the routing configuration for the Angular app.
+     */
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
 
-  // For login page
-  CustomMaterialModule,
-  FormsModule
+    // Manually added - used in app.component.html
+    //MatToolbarModule,
 
+    // For login page
+    CustomMaterialModule,
+    FormsModule,
+
+    // For login service
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent],
 
 })
