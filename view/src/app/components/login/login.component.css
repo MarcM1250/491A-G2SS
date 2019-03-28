@@ -1,0 +1,14 @@
+.login-card {
+    width: 400px;
+    margin: 10% auto;
+}
+
+form {
+    display: table;
+    margin:auto;
+}
+
+mat-card-title{
+    width: 100%;
+   text-align:center;
+}
