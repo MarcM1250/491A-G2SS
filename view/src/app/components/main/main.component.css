@@ -1,9 +1,11 @@
+/* Structure */
 table {
   width: 100%;
 }
 
-th mat-sort-header-sorted{
-	color:black;
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
 }
 
 tr.example-detail-row {
@@ -36,14 +38,19 @@ tr.example-element-row:not(.example-expanded-row):active {
   height: 104px;
 }
 
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
 .example-element-description {
-  //padding: 16px;
-  text-align: left;
+  padding: 16px;
 }
 
 .example-element-description-attribution {
-	font-weight: bold;
-	opacity: 1;
+  font-weight: bold;
+  opacity: 1;
 }
 
 .description-title {
