@@ -20,11 +20,9 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-  ngOnInit() {
-    // this.loginService.getStuff();
-  }
+  ngOnInit() { }
 
-  // Login function used in login.component.html for the login button when clicked.
+  // Login function used when the Login button is clicked.
   login(): void {
     this.loginService.login({
       username: this.username,
