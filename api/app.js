@@ -54,9 +54,9 @@ app.use(bodyParser.json());
 
 // Handling CORS errors (only for browsers (security in browsers))
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*") //prevent other webpage from using your api
+    res.header("Access-Control-Allow-Origin", "*"); //prevent other webpage from using your api
     res.header("Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization "
     );
     if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT', 'POST', 'PATCH', 'DELETE');
@@ -86,6 +86,7 @@ app.use((error, req, res, next) => {
             message: error.message
         }
     });
+    console.log(error);
 });
 
 module.exports = app;

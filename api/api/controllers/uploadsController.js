@@ -6,9 +6,7 @@ exports.get_all = (req, res, next) => {
         .select("files_id subject description upload_date upload_by delete_date delete_by last_modified parser_errors") // data you want to fetch
         .exec()
         .then(docs => {
-            res.status(200).json({
-                uploads: docs
-            });
+            res.status(200).send(docs);
         })
         .catch(err => {
             console.log(err);
@@ -48,7 +46,6 @@ exports.create_upload = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
-
             res.status(500).json({
                 error: err
             })
