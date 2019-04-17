@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataSource } from '@angular/cdk/collections';
-import { Observable, of } from 'rxjs';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
@@ -11,9 +9,10 @@ import {Router} from '@angular/router';
   templateUrl: 'main.component.html',
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0', display: 'none'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      state('collapsed', style({ height: '0px', minHeight: '0'})),
+      state('expanded', style({ height: '*' })),
+      transition('expanded => collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      transition('collapsed => expanded', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
 })
@@ -34,8 +33,16 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.dataSource.sort = this.sort;
   }
+
   logout() : void{ //Logout button redirect
     window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+  }
+  upload() : void{ //Upload
+    
+  }
+
+  toTop() : void{ //Scrolls to the top of the page
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
   
 }
@@ -78,7 +85,125 @@ const ELEMENT_DATA: PeriodicElement[] = [
   filesize: `2000.55gb`,
   lastaccessed: 'October 5,1997 1:50pm',
   kmlvalid: 'nuh uh'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
+},
+{
+  Filename: 'avirus.kml',
+  UploadDate: 'March 5, 2019',
+  Uploader: 'goodfella',
+  description: `this a virus`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'ye'
 },  
+
 ];
 
 

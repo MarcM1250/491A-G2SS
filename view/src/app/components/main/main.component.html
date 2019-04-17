@@ -1,110 +1,197 @@
-<mat-toolbar color="primary">
+<!--Start of Toolbar-->
+<mat-toolbar color="primary" class="siteHeader">
   <mat-toolbar-row>
   <span>KML Guard</span>
       <span class="example-fill-remaining-space"></span>
       <span class="align-center"></span>
       <span class="example-spacer"></span>
-      <button mat-button>About</button>
-      <button mat-button>Contact</button>
+      <!--Buttons-->
+      <button mat-button>About 
+      </button>
+      <button mat-button>Contact
+      </button>
       <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
-	  </button>
+      </button>
+      <!--End of Buttons-->
+  <!--Start of Misc Options-->
   <mat-menu #menu="matMenu">
     <button mat-menu-item>
       <mat-icon>settings</mat-icon>
       <span>Settings</span>
     </button>
-	<button mat-menu-item (click)="logout()" color="primary">
+	  <button mat-menu-item (click)="logout()" color="primary">
       <mat-icon>trending_flat</mat-icon>
       <span>Log out</span>
     </button>
   </mat-menu>
+  <!--End of Misc Options-->
   </mat-toolbar-row>
-  </mat-toolbar>
-<!--END OF TOOLBAR CODE-->
+</mat-toolbar>
+<!--End of Toolbar--------------------------------------------------------->
 
-<!-- Filter Searchbar-->
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+<!-- Filter Searchbar------------------------------------------------------->
+<mat-form-field class="filter">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter files">
 </mat-form-field>
-<!-- End Filter-------->
+<!-- End Filter------------------------------------------------------------->
 
 
+
+
+<!--Start of File Table------------------------------------------------->
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-elevation-z8">
-  <!-- Name Column -->
+  <!--Filename Column-->
   <ng-container matColumnDef="Filename">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Filename </th>
     <td mat-cell *matCellDef="let element"> {{element.Filename}} </td>
+    <td mat-footer-cell *matFooterCellDef> 
+    </td>
   </ng-container>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="UploadDate">
+    <!--Upload Date Column-->
+  <ng-container matColumnDef="UploadDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Upload Date </th>
       <td mat-cell *matCellDef="let element"> {{element.UploadDate}} </td>
-    </ng-container>
+      <td mat-footer-cell *matFooterCellDef> 
+      </td>
+  </ng-container>
 
-  <!-- Weight Column -->
+  <!--Uploader Column-->
   <ng-container matColumnDef="Uploader">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Uploaded By </th>
     <td mat-cell *matCellDef="let element"> {{element.Uploader}} </td>
-  </ng-container>
-<!--------------------------------------------------------------------------->
+    <!--Sticky Footer Menu-->
+    <td mat-footer-cell *matFooterCellDef>
+    
+        <div class="dropdown">
+            <button mat-rasied-button class="footerButton"><i class="material-icons upload-icon">
+                    note_add
+                    </i> Upload</button>
+            <div class="dropdown-content upload">
+    
+                <form action="/action_page.php">
+                <legend><h1>Upload Form</h1></legend>
+                  
+                  <label for="fname">Filename</label>
+                  <input type="text" id="fname" name="filename" placeholder="Your filename..">
+              
+                  <label for="fdescription">File Description</label>    
+                 <textarea id="fdescription" name="fdesciption" placeholder="Write something.."></textarea>
+              
+                  Select image to upload:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                
+                  <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
 
-  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+
+    <!--Upload Button-->
+    <button mat-raised-button class="footerButton" [matMenuTriggerFor]="uploadMenu" (click)="upload()">
+        <mat-icon>cloud_upload</mat-icon>
+        Upload
+    </button>
+      <!--Upload Menu----------------------------------------------->
+      <mat-menu #uploadMenu="matMenu" xPosition="before" xSize="large">
+          
+
+          Filename: 
+          <mat-form-field class="filter" (click)="$event.stopPropagation()">
+              <input matInput placeholder="Filename">
+          </mat-form-field>
+          <div class="ClassWidth">
+            words
+          </div>
+
+          <!--End Filename bar-->
+          
+          <button mat-menu-item class="item2">Item 2</button>
+      </mat-menu>
+      <!--End of Upload Menu-->
+
+    <!--Back to Top Button-->
+    <button mat-raised-button class="footerButton" (click)="toTop()">
+        <mat-icon>arrow_upward</mat-icon>
+        Back to Top
+    </button>
+    <!--End Back to Top Button-->
+
+    </td>
+  </ng-container>
+<!-- End of Columns ----------------------------------------------------->
+
+<!-- Expanded Content Column ------------------------------------------>
   <ng-container matColumnDef="expandedDetail">
     <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
-      <div class="example-element-detail"
-           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"
-		   >
-		   
-        <div class="example-element-description">
-			<span class="example-element-description-attribution"> Description: </span>
-			{{element.description}}
-			
-			<div>
-				<span class="description-title"> File Size: </span>
-				<span>{{element.filesize}}</span>
-			</div>
-			
-			<div>
-				<span class="description-title"> Last Access Date: </span>
-				<span>{{element.lastaccessed}}</span>
-			</div>
-			
-			<div>
-				<span class="description-kml"> KML Validation: </span>
-				<span [ngClass]="{
-				'invalid' : element.kmlvalid == 'nuh uh',
-				'valid' : element.kmlvalid =='ye'
-				}"
-				>{{element.kmlvalid}}</span>
-			</div>
+      <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+       
+      <!--Description-->
+      <div class="example-element-description">
+        <span class="example-element-description-attribution"> Description: </span>
+        {{element.description}}
+        
+        <!--File Size-->
+        <div>
+          <span class="description-title"> File Size: </span>
+          <span>{{element.filesize}}</span>
         </div>
+        
+        <!--Last Access Date-->
+        <div>
+          <span class="description-title"> Last Access Date: </span>
+          <span>{{element.lastaccessed}}</span>
+        </div>
+        
+        <!--KML Validation-->
+        <div>
+          <span class="description-kml"> KML Validation: </span>
+          <!--Changes color of text based on validation-->
+          <span [ngClass]="{
+          'invalid' : element.kmlvalid == 'nuh uh',
+          'valid' : element.kmlvalid =='ye'
+          }"
+          >{{element.kmlvalid}}</span>
+        </div>
+      </div>
+
 		<span class="example-fill-remaining-space">
+    <!--Right side of expanded box-->
 		</span>
-		
-			<button mat-raised-button class="downloadButton" (click)="logout()" color:blue>
+
+      <!--Download Button-->
+			<button mat-raised-button class="downloadButton" (click)="logout()">
 			<mat-icon>add_box</mat-icon>
 			Download
 			</button>
-			
+      
+      <!--Delete Button-->
 			<button mat-raised-button class="deleteButton" (click)="logout()">
 			<mat-icon>delete</mat-icon>
 			Delete
 			</button>
-      </div> <!--End of Expanded Description box-->
+      </div> 
     </td>
   </ng-container>
+<!--End of Expanded Description box----------------------------------------->
 
-
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="tableHeader"></tr>
   <tr mat-row *matRowDef="let element; columns: displayedColumns;"
     class="example-element-row"
     [class.example-expanded-row]="expandedElement === element"
     (click)="expandedElement = expandedElement === element ? null : element">
+    
   </tr>
 
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-
+  <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky:true"></tr>
 </table>
+
+<!--End of Table--------------------------------------------------------------->
+
+<mat-toolbar class= "bottomBar">
+  <span> yo </span>
+</mat-toolbar>
+
+
