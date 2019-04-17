@@ -1,5 +1,5 @@
 .login-card {
-    width: 400px;
+    width: 250px;
     margin: 10% auto;
     text-align: center
 }
@@ -7,8 +7,4 @@
 form {
     display: table;
     margin: auto;
-}
-
-mat-card-title{
-    text-align: center;
 }
