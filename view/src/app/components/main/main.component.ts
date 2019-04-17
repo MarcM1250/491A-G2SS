@@ -35,7 +35,7 @@ export class MainComponent implements OnInit {
   }
 
   logout() : void{ //Logout button redirect
-    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+    this.router.navigateByUrl('/login');
   }
   upload() : void{ //Upload
     
