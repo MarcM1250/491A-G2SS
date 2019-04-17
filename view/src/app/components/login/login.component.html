@@ -4,16 +4,17 @@
   <mat-toolbar color="primary">
   <mat-toolbar-row>
   <span>KML Guard</span>
-      <span class="example-fill-remaining-space"></span>
+      <span class="login-fill-remaining-space"></span>
       <span class="align-center"></span>
-      <span class="example-spacer"></span>
-      <button mat-button>About</button>
+      <span class="login-spacer"></span>
+      <button mat-button onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';">About</button>
       <button mat-button>Contact</button>
       <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
+    <!-- <mat-icon>more_vert</mat-icon> --> <!--button for additional menu items-->
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <!--The following were example menu items for the additional menu items-->
+    <!-- <button mat-menu-item>
       <mat-icon>dialpad</mat-icon>
       <span>Redial</span>
     </button>
@@ -24,7 +25,7 @@
     <button mat-menu-item>
       <mat-icon>notifications_off</mat-icon>
       <span>Disable alerts</span>
-    </button>
+    </button> -->
   </mat-menu>
    </mat-toolbar-row>
    </mat-toolbar>
