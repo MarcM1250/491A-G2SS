@@ -40,7 +40,7 @@
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form class="login-form">
+      <form class="login-form" (keyup.enter)="login()">
         <table class="login-full-width" cellspacing="0">
           <tr>
             <td>
