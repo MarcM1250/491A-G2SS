@@ -5,13 +5,18 @@ This is a web app running on node.js that facilitates the transfer of KML files 
 ## Currently in Progress
 Application prototype and test specification.
 
-    To test login screen: Enter 'ng serve' command in 'view' directory.
+    To test: 
+        'view' directory: 
+            Enter 'ng serve' command in terminal.
+        'server' directory: 
+            In separate terminal, enter 'npm start'.
+            'npm i' may need to be ran before 'npm start' to install needed packages.
 
-    Login page test account credentials:
+    Login page test account credentials from database:
 
-      test username: 'admin'
+      test username: 'user'
 
-      test password: 'admin'
+      test password: 'pass'
 
 ## Completed
 - [x] Requirement Specification Documentation
