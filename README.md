@@ -8,7 +8,7 @@ Here is an overview of the documentation we provide which can be accessed below 
 * [Developer Guidelines](https://github.com/MarcM1250/491A-G2SS/wiki/Developer-Guidelines): For software developers interested in contributing to our project. 
 
 ## Currently in Progress
-Application prototype and test specification.
+Application prototype, test specification, user manual, and developer guidelines.
 
     To test: 
         'view' directory: 
