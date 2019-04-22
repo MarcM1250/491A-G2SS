@@ -2,6 +2,11 @@
 
 This is a web app running on node.js that facilitates the transfer of KML files between unclassified and classified sources.
 
+Here is an overview of the documentation we provide which can be accessed below or from our Wiki:
+* [User Manual](https://github.com/MarcM1250/491A-G2SS/wiki/User-Manual): For users of our system. 
+
+* [Developer Guidelines](https://github.com/MarcM1250/491A-G2SS/wiki/Developer-Guidelines): For software developers interested in contributing to our project. 
+
 ## Currently in Progress
 Application prototype and test specification.
 
@@ -17,24 +22,6 @@ Application prototype and test specification.
       test username: 'user'
 
       test password: 'pass'
-
-## Completed
-- [x] Requirement Specification Documentation
-  - [x] Executive Summary
-  - [x] Stakeholder Model
-  - [x] Goal Model
-  - [x] System Vision
-  - [x] Usage Model: Use Cases
-  - [x] Detailed Requirements
-- [x] Design Specification Documentation
-    - [x] Abstract
-    - [x] Architecture Overview
-    - [x] Entity-Relationship Diagram and Description
-    - [x] Activity Diagram and Description
-    - [x] Message Sequence Chart and Description
-    - [x] State Diagram and Description
-    - [x] Class Diagram(s) and Description
-    - [x] Mock-ups of horizontal and vertical prototype
 
 ## Dependencies
 
