@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 // Imports for Main Page (Sorting)
 import {MatSortModule} from '@angular/material/sort';
 import { MatToolbarModule, MatTableModule,} from '@angular/material';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 // Manually added HTTP provider
 import { LoginService } from './services/login.service';
@@ -49,8 +50,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-	MatSortModule,
+	  MatSortModule,
     MatTableModule,
+    MatCheckboxModule,
 
     /** 
      * Manually added
