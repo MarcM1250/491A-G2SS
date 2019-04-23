@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 import {MatSortModule} from '@angular/material/sort';
 import { MatToolbarModule, MatTableModule,} from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
 
 // Manually added HTTP provider
 import { LoginService } from './services/login.service';
@@ -50,9 +51,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-	  MatSortModule,
+	MatSortModule,
     MatTableModule,
-    MatCheckboxModule,
+  MatCheckboxModule,
+  MatSelectModule,
 
     /** 
      * Manually added
