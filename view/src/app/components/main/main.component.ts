@@ -2,6 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
+import {SelectionModel} from '@angular/cdk/collections';
+
+
+
+
+
+
 
 @Component({
   selector: 'main.component',
@@ -18,12 +25,33 @@ import {Router} from '@angular/router';
 })
 
 export class MainComponent implements OnInit {
-  dataSource = new MatTableDataSource (ELEMENT_DATA);
+  filterSelect = 0;
+  data = Object.assign(ELEMENT_DATA)
+  dataSource = new MatTableDataSource<PeriodicElement> (this.data);
   displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
   expandedElement: PeriodicElement | null;
+  /** Selecting a row from the table----------------------- */
+  selection = new SelectionModel<PeriodicElement>(true, []);
+
+  select(x: PeriodicElement): void {
+    this.selection.clear(); //Only allows one selected row (Deselects all rows)
+    this.selection.toggle(x);// then selects current row
+  }
+
+  removeSelectedRows(){
+    this.selection.selected.forEach(item => {
+      let index: number = this.data.findIndex(d => d === item);
+      console.log(this.data.findIndex(d => d === item));
+      this.data.splice(index,1)
+      this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
+    });
+    this.selection = new SelectionModel<PeriodicElement>(true, []);
+  }
+
+  /** End of Selection Methods --------------------------- */
 
   applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+      this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   constructor(private router: Router) { }
@@ -32,6 +60,28 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+  }
+
+  overwriteFilter(){
+    //Overwrites filterPredicate to only include certain columns
+    //Changed by filterMenu
+    if(this.filterSelect == 0){
+      this.dataSource.filterPredicate = function(data, filter: string): boolean {
+        return data.Filename.toLowerCase().includes(filter); //Only filters Filename
+      };
+    }
+    
+    if(this.filterSelect == 1){
+      this.dataSource.filterPredicate = function(data, filter: string): boolean {
+        return data.UploadDate.toLowerCase().includes(filter); //Only filters Filename
+      };
+    }
+
+    if(this.filterSelect == 2){
+      this.dataSource.filterPredicate = function(data, filter: string): boolean {
+        return data.Uploader.toLowerCase().includes(filter); //Only filters Filename
+      };
+    }
   }
 
   logout() : void{ //Logout button redirect
@@ -44,8 +94,33 @@ export class MainComponent implements OnInit {
   toTop() : void{ //Scrolls to the top of the page
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
-  
+
+      /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+  myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+  }
+    
+    // Close the dropdown if the user clicks outside of it
+  onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
 }
+
+
+
+
+
+
 
 export interface PeriodicElement {
   Filename: string;
@@ -55,156 +130,53 @@ export interface PeriodicElement {
   filesize: string;
   lastaccessed: string;
   kmlvalid: string;
-
+  position: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
 {
-  Filename: 'notavirus.jpg',
+  position: 1,
+  Filename: 'February Report',
   UploadDate: 'March 4, 2019',
-  Uploader: 'coolfella',
-  description: `yo whats up dood`,
-  filesize: `5.90gb`,
-  lastaccessed: 'never',
-  kmlvalid: 'nuh uh'
+  Uploader: 'Edward T.',
+  description: `Contains information collected in February`,
+  filesize: `5.03 MB`,
+  lastaccessed: 'March 15, 2019',
+  kmlvalid: 'Success'
 }, 
 {
-  Filename: 'avirus.kml',
+  position: 2,
+  Filename: 'March Progress',
   UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
+  Uploader: 'Michael S.',
+  description: ` `,
   filesize: `70.50gb`,
   lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
+  kmlvalid: 'Success'
 },
 {
+  position: 3,
   Filename: 'freeminecraftnoscam.exe',
-  UploadDate: 'March 6, 2019',
+  UploadDate: 'February 6, 2019',
   Uploader: 'notch',
   description: `no scam free minecraft`,
   filesize: `2000.55gb`,
   lastaccessed: 'October 5,1997 1:50pm',
-  kmlvalid: 'nuh uh'
+  kmlvalid: 'Failed'
 },
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},
-{
-  Filename: 'avirus.kml',
-  UploadDate: 'March 5, 2019',
-  Uploader: 'goodfella',
-  description: `this a virus`,
-  filesize: `70.50gb`,
-  lastaccessed: 'March 5,2019 10:50am',
-  kmlvalid: 'ye'
-},  
-
 ];
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
