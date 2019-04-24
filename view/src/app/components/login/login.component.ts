@@ -5,6 +5,8 @@ import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { Subscription } from 'rxjs';
+
+import { LoginResponse } from '../../models';
 // End manually added code
 
 @Component({
@@ -24,20 +26,18 @@ export class LoginComponent implements OnInit {
 
   // Login function used when the Login button is clicked.
   login(): void {
-    this.loginService.login({
-      username: this.username,
-      password: this.password,
-    }).subscribe(
-      (data: any) => {
-        const message = data.message;
-        if (message === 'Authentication successful') {
-          console.log(message);
-          this.router.navigate(["main"]);
+    this.loginService.login(this.username, this.password).subscribe(
+      (data: LoginResponse) => {
+        console.log(localStorage);
+        if (data.token) {
+          localStorage.setItem('currentUser', data.token);
+          this.router.navigate(['main']);
         } else {
-          alert(message);
+          alert(data.message);
         }
       },
       (_) => {
+        console.log(localStorage);
         alert('Invalid credentials');
       },
     );
