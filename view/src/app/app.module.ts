@@ -24,11 +24,13 @@ import { FormsModule } from '@angular/forms';
 // Imports for Main Page (Sorting)
 import { MatSortModule } from '@angular/material/sort';
 import { MatToolbarModule, MatTableModule, } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 // Manually added HTTP provider
 import { LoginService } from './services/login.service';
 
-/**
+/** 
  * Manually added
  * Added the routing configuration as an array of Routes.
  * Uses the factory method RouterModule.forRoot to hand over our routing config.
@@ -37,9 +39,8 @@ import { LoginService } from './services/login.service';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'main', component: MainComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' } // A redirect is configured from the default app route to the route displaying content from LoginComponent.
 ];
-// A redirect is configured from the default app route to the route displaying content from LoginComponent.
 
 @NgModule({
   declarations: [
@@ -52,8 +53,10 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatSortModule,
     MatTableModule,
+    MatCheckboxModule,
+    MatSelectModule,
 
-    /**
+    /** 
      * Manually added
      * To activate the routing configuration for the Angular app.
      */
@@ -63,7 +66,7 @@ const appRoutes: Routes = [
     ),
 
     // Manually added - used in app.component.html
-    // MatToolbarModule,
+    //MatToolbarModule,
 
     // For login page
     CustomMaterialModule,
