@@ -46,11 +46,11 @@
         <p>You selected: {{filterSelect}}</p>
         -->
   </div>
-  <div class = "filter">
-      <mat-form-field>
+
+      <mat-form-field class = "filterBar">
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter files">
       </mat-form-field>
-  </div>
+
 </div>
 <!--End of Filter Searchbar------------------------------------------------>
 
@@ -97,7 +97,7 @@
                   <textarea id="fdescription" name="fdesciption" placeholder="Write something.."></textarea>
                     Select image to upload:
                   <input type="file" name="fileToUpload" id="fileToUpload">
-                  <input type="submit" value="Submit" (click)="logout()">
+                  <input type="submit" value="Submit" (click)="upload()">
                 </form>
                 <!--End of Form------------------------------------------>
             </div>

@@ -87,6 +87,7 @@ export class MainComponent implements OnInit {
   logout() : void{ //Logout button redirect
     window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
   }
+
   upload() : void{ //Upload
     
   }
@@ -130,13 +131,11 @@ export interface PeriodicElement {
   filesize: string;
   lastaccessed: string;
   kmlvalid: string;
-  position: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
 {
-  position: 1,
-  Filename: 'February Report',
+  Filename: 'February_Report',
   UploadDate: 'March 4, 2019',
   Uploader: 'Edward T.',
   description: `Contains information collected in February`,
@@ -145,17 +144,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
   kmlvalid: 'Success'
 }, 
 {
-  position: 2,
-  Filename: 'March Progress',
+  Filename: 'March_Progress',
   UploadDate: 'March 5, 2019',
   Uploader: 'Michael S.',
-  description: ` `,
+  description: `Here's what we did so far`,
   filesize: `70.50gb`,
   lastaccessed: 'March 5,2019 10:50am',
   kmlvalid: 'Success'
 },
 {
-  position: 3,
   Filename: 'freeminecraftnoscam.exe',
   UploadDate: 'February 6, 2019',
   Uploader: 'notch',
@@ -163,6 +160,87 @@ const ELEMENT_DATA: PeriodicElement[] = [
   filesize: `2000.55gb`,
   lastaccessed: 'October 5,1997 1:50pm',
   kmlvalid: 'Failed'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
+},
+{
+  Filename: 'Real_File',
+  UploadDate: 'April 1, 2019',
+  Uploader: 'Jeff',
+  description: `Hi`,
+  filesize: `70.50gb`,
+  lastaccessed: 'March 5,2019 10:50am',
+  kmlvalid: 'Success'
 },
 ];
 

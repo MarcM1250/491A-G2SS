@@ -1,15 +1,6 @@
-/* Structure */
 table {
   width: 100%;
 }
-
-.siteHeader{
-
-}
-.bottomBar{
-  
-}
-
 
 .mat-form-field {
   font-size: 14px;
@@ -121,33 +112,37 @@ tr.mat-footer-row {
 }
 
 
-textarea {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  height:200px;
-}
 .ClassWidth{
   width: 700px;
 }
 
-.filter{
-  width: 580px;
+
+
+
+
+
+/* Filter Style*/
+.filterContainer{
+  display: flex;
+  align-items: center;
+  margin: 1.5rem;
+}
+
+.filterBar{
+  min-width: 18rem;
   float: left;
+  flex-grow: 1;
   overflow: hidden;
 }
 
 .filterMenu{
-float: left;
+  width: 100px;
 }
+/* End Filter Style */
 
 
-
-
-
-
-
-
-
-/*Upload Form Style*/
+ 
+/* Upload Form Style */
 
 input[type=text], select, textarea{
   width: 100%;
@@ -192,7 +187,7 @@ textarea {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   height:200px;
 }
-
+/* End of Upload Form style */
 
 
 
@@ -242,3 +237,4 @@ textarea {
 .show {
   display: block;
 }
+/* End of Upload Button style */
