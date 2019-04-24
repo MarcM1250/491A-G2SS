@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 exports.get_all = (req, res, next) => {
     Upload.find()
-        .select("files_id subject description upload_date upload_by delete_date delete_by last_modified parser_errors") // data you want to fetch
+        .select("files_id subject description upload_date upload_by delete_date delete_by last_modified filename file_size parser_errors") // data you want to fetch
         .exec()
         .then(docs => {
             res.status(200).send(docs);
@@ -23,9 +23,9 @@ exports.create_upload = (req, res, next) => {
         subject: req.body.subject,
         description: req.body.description,
         upload_date: Date.now(),
-        upload_by: req.userData.username
-        //file: req.file.path,
-        //file_size: req.file.size
+        upload_by: req.userData.username,
+        filename: req.file.filename,
+        file_size: req.file.file_size
     });
     upload
         .save()
@@ -39,8 +39,8 @@ exports.create_upload = (req, res, next) => {
                     description: result.description,
                     upload_date: result.upload_date,
                     upload_by: result.upload_by,
-                    //file: result.file,
-                    //file_size: result.file_size,
+                    filename: result.filename,
+                    file_size: result.file_size,
                 }
             });
         })
