@@ -10,6 +10,10 @@ import {SelectionModel} from '@angular/cdk/collections';
 
 
 
+import { UploadsService } from '../../services/uploads.service';
+import { Upload } from '../../models/Upload';
+
+
 @Component({
   selector: 'main.component',
   styleUrls: ['main.component.css'],
@@ -25,9 +29,12 @@ import {SelectionModel} from '@angular/cdk/collections';
 })
 
 export class MainComponent implements OnInit {
+
   filterSelect = 0;
   data = Object.assign(ELEMENT_DATA)
-  dataSource = new MatTableDataSource<PeriodicElement> (this.data);
+  uploads:Upload[];
+  dataSource = new MatTableDataSource (this.uploads);
+
   displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
   expandedElement: PeriodicElement | null;
   /** Selecting a row from the table----------------------- */
@@ -50,16 +57,25 @@ export class MainComponent implements OnInit {
 
   /** End of Selection Methods --------------------------- */
 
+  subject:string;
+  description:string;
+  file:File;
+
   applyFilter(filterValue: string) {
       this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private uploadsService: UploadsService ) { }
 
   @ViewChild(MatSort) sort: MatSort; 
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+     // get uploads from server
+     this.uploadsService.getUploads().subscribe(uploads => {
+      this.uploads = uploads.filter(x => x.delete_date === undefined);
+      this.dataSource = new MatTableDataSource (this.uploads);
+    }); // subcribe similar to promises .then cb: asynchronous
   }
 
   overwriteFilter(){
@@ -85,11 +101,29 @@ export class MainComponent implements OnInit {
   }
 
   logout() : void{ //Logout button redirect
-    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+    this.router.navigateByUrl('/login');
   }
 
-  upload() : void{ //Upload
-    
+
+  fileEvent($event){
+    this.file = $event.target.files[0];
+  }
+
+  submitUpload(): void{ //Upload
+    var upload:FormData = new FormData();
+    upload.append('subject', this.subject);
+    upload.append('description', this.description);
+    upload.append('file', this.file);
+    this.uploadsService.postUpload(upload).subscribe(upload => {
+      this.uploads.push(upload); // push upload to array
+    })
+  }
+
+  deleteUpload(upload:Upload){
+    // delete from UI
+    this.uploads = this.uploads.filter( x => x._id !== upload._id);
+    // delete from server
+    this.uploadsService.deleteUpload(upload).subscribe();
   }
 
   toTop() : void{ //Scrolls to the top of the page
@@ -133,7 +167,7 @@ export interface PeriodicElement {
   kmlvalid: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA = [
 {
   Filename: 'February_Report',
   UploadDate: 'March 4, 2019',
