@@ -1,13 +1,17 @@
+/**
+ * This middleware uses multer to parse uploaded file and 
+ * GridFSStorage to upload a file to the MongoDB.
+ * Additionally there are functions to download and 
+ * delete files in the DB using MongoGridFSBucket.
+ * 
+ */
 const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const mongoose = require('mongoose');
-var fs = require('fs');
 
-// const connection = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',
-//     { useNewUrlParser: true }
-// )
-
-// default connection: pools used to create and retrieve models
+/** 
+ * Default connection: pools used to create and retrieve models 
+*/
 mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true });
 
 mongoose.connection.once('open',function() {
@@ -15,38 +19,6 @@ mongoose.connection.once('open',function() {
 }).on('error', function(error) {
     console.log('DB Connection error',error);
 });
-
-// mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
-// const conn = mongoose.connection;
-// conn.once('open',function() {
-//     console.log('Connection has been made');
-//     // const bucket = new mongoose.mongo.GridFSBucket(conn.db, {
-//     //     bucketName: 'uploads'
-//     // });
-//     //     bucket.openDownloadStream(mongoose.Types.ObjectId('5c991e90b8ef7c2334d4a28b')).
-//     //       pipe(fs.createWriteStream('1553393409237Capture.PNG')).
-//     //       on('error', function(error) {
-//     //         assert.ifError(error);
-//     //       }).
-//     //       on('finish', function() {
-//     //         console.log('done!');
-//     //         process.exit(0);
-//     //       });
-// }).on('error', function(error) {
-//     console.log('Connection error',error);
-// });
-
-// Upload locally
-/*
-const storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, './uploads/'); //call back
-    },
-    filename: function(req, file, cb) {
-        cb(null, Date.now() + file.originalname);
-    }
-});
-*/
 
 /** Setting up storage using multer-gridfs-storage */
 const storage = GridFsStorage({

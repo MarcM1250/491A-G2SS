@@ -6,7 +6,6 @@ import {Router} from '@angular/router';
 import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 
-
 @Component({
   selector: 'main.component',
   styleUrls: ['main.component.css'],
@@ -69,9 +68,21 @@ export class MainComponent implements OnInit {
 
   deleteUpload(upload:Upload){
     // delete from UI
-    this.uploads = this.uploads.filter( x => x._id !== upload._id);
+    this.dataSource.filterPredicate = (data: Upload, filterValue: String) => data._id !== filterValue;
+    this.dataSource.filter = upload._id;
     // delete from server
     this.uploadsService.deleteUpload(upload).subscribe();
+  }
+
+  downloadFile(upload:Upload){
+    this.uploadsService.postDownload(upload).subscribe(data => {
+      //const blob = new Blob([data], { type: 'image/png' });
+      const downloadURL = window.URL.createObjectURL(data);
+      var link = document.createElement('a');
+      link.href = downloadURL;
+      link.download = ''+upload.filename;
+      link.click();
+    });
   }
 
   toTop() : void{ //Scrolls to the top of the page
