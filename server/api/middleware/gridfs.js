@@ -9,10 +9,16 @@ const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const mongoose = require('mongoose');
 
+/**
+ * Local Database
+ * Default connection: pools used to create and retrieve models 
+ */
+//const conn = mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
+
 /** 
  * Default connection: pools used to create and retrieve models 
-*/
-mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true });
+ */
+mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/G2SS_v1?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true });
 
 mongoose.connection.once('open',function() {
     console.log('Connection to DB has been made');
@@ -20,13 +26,18 @@ mongoose.connection.once('open',function() {
     console.log('DB Connection error',error);
 });
 
-/** Setting up storage using multer-gridfs-storage */
+/** 
+ * Setting up storage using multer-gridfs-storage
+ * GridFsStorage method takes in a db or url and a file cb 
+ * Additional metadata can be added to the metadata field
+ * BucketName changes fs.files to uploads.files default bucketName is "fs"
+ */
 const storage = GridFsStorage({
     db: mongoose.connection,
     file: (req, file) => {
         return {
-            filename: Date.now() + file.originalname,
-            bucketName: 'uploads',
+            filename: file.originalname,
+            bucketName: 'uploads', // default = 'fs'
             metadata: {
                 originalname: file.originalname,
             }
@@ -34,14 +45,24 @@ const storage = GridFsStorage({
     },
 });
 
+/**
+ * File can be filtered here!
+ * @param {*} req 
+ * @param {*} file 
+ * @param {*} cb 
+ */
 const fileFilter = (req, file, cb) => {
     //reject a file
-    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    if (file.mimetype === 'application/vnd.google-earth.kml+xml' || file.mimetype === 'image/png') {
         cb(null, true);
     } else {
         cb(new Error("Invalid file format"), false);
     }
 }
+
+/**
+ * Create an upload with the storage 
+ */
 const upload = multer({
     storage: storage,
     limits: {
@@ -54,7 +75,7 @@ exports.start_upload = upload;
 
 exports.download_file = (req, res, next) => {
     // create a new connection to handle each download request
-    const conn = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',
+    const conn = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/G2SS_v1?retryWrites=true',
         { useNewUrlParser: true }
     )
     
@@ -85,7 +106,7 @@ exports.download_file = (req, res, next) => {
 
 exports.delete_file = (req, res, next) => {
     // create a new connection to handle each delete request
-    const conn = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/test?retryWrites=true',
+    const conn = mongoose.createConnection('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/G2SS_v1?retryWrites=true',
         { useNewUrlParser: true }
     )
     
