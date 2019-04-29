@@ -5,8 +5,7 @@ import { Upload } from '../models/Upload';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJ1c2VySWQiOiI1YzlhNzk3MGNmOTk5YTI4YTRjNDg4NWMiLCJpYXQiOjE1NTY0NzQxMDgsImV4cCI6MTU1NjUxMDEwOH0.yH285dx78EbOMX64M1nv5_BiZpomO71wRZ9UlW9eY-A'
-    
+    'Authorization': 'Bearer ' + localStorage.getItem('token')
   })
 }
 @Injectable({

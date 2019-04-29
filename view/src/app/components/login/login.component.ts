@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
         const message = data.message;
         if (message === 'Authentication successful') {
           console.log(message);
+          localStorage.setItem('token', data.token);
           this.router.navigate(["main"]);
         } else {
           alert(message);

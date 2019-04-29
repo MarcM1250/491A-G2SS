@@ -58,8 +58,8 @@
 
   <!--Filename Column-->
   <ng-container matColumnDef="Filename">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Filename </th>
-    <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
     <td mat-footer-cell *matFooterCellDef> 
     </td>
   </ng-container>
@@ -92,8 +92,8 @@
                 <form action="/action_page.php" (ngSubmit)="submitUpload()">
                 <legend><h1>Upload Form</h1></legend>
                   
-                  <label for="fname">Filename</label>
-                  <input type="text" id="fname" name="filename" [(ngModel)] = "subject" placeholder="Your filename..">
+                  <label for="fname">Title</label>
+                  <input type="text" id="fname" name="title" [(ngModel)] = "title" placeholder="Your title..">
               
                   <label for="fdescription">File Description</label>    
                  <textarea id="fdescription" name="fdesciption" [(ngModel)] = "description" placeholder="Write something.."></textarea>
@@ -159,7 +159,7 @@
     <!--Right side of expanded box------------>
 		</span>
       <!--Download Button-->
-			<button mat-raised-button class="downloadButton" (click)="logout()">
+			<button mat-raised-button class="downloadButton" (click)="downloadFile(element)">
 			<mat-icon>add_box</mat-icon>
 			Download
 			</button>
