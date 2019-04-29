@@ -50,7 +50,7 @@ export class MainComponent implements OnInit {
       let index: number = this.data.findIndex(d => d === item);
       console.log(this.data.findIndex(d => d === item));
       this.data.splice(index,1)
-      this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
+      //this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
     });
     this.selection = new SelectionModel<PeriodicElement>(true, []);
   }
@@ -83,19 +83,21 @@ export class MainComponent implements OnInit {
     //Changed by filterMenu
     if(this.filterSelect == 0){
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.Filename.toLowerCase().includes(filter); //Only filters Filename
+        return data.filename.toLowerCase().includes(filter); //Only filters Filename
       };
     }
     
+    /*
     if(this.filterSelect == 1){
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.UploadDate.toLowerCase().includes(filter); //Only filters Filename
+        return data.upload_date.toLowerCase().includes(filter); //Only filters Filename
       };
     }
+    */
 
     if(this.filterSelect == 2){
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.Uploader.toLowerCase().includes(filter); //Only filters Filename
+        return data.upload_by.toLowerCase().includes(filter); //Only filters Filename
       };
     }
   }
