@@ -1,11 +1,10 @@
-
 // Start of default Angular imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
-import { MainComponent } from './components/main/main.component';
+import { MainComponent, DeleteConfirmation } from './components/main/main.component';
 // End of Default Angular imports
 
 // Manually added this Angular import - for routing.
@@ -22,11 +21,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomMaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 
-// Imports for Main Page (Sorting)
+// Imports for Main Page
 import {MatSortModule} from '@angular/material/sort';
 import { MatToolbarModule, MatTableModule,} from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 
 // Manually added HTTP provider
 import { LoginService } from './services/login.service';
@@ -47,15 +47,20 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    DeleteConfirmation,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-	MatSortModule,
+
+    //Main Page
+	  MatSortModule,
     MatTableModule,
-  MatCheckboxModule,
-  MatSelectModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatToolbarModule,
+    MatDialogModule,
 
     /** 
      * Manually added
@@ -76,9 +81,11 @@ const appRoutes: Routes = [
     // For login service
     HttpClientModule,
   ],
+  // For Delete Confirmation on Main Page
+  entryComponents: [DeleteConfirmation],
+
   providers: [LoginService],
   bootstrap: [AppComponent],
 
 })
 export class AppModule { }
-
