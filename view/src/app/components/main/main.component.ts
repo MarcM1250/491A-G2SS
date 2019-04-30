@@ -1,17 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
 import {SelectionModel} from '@angular/cdk/collections';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 
 
 
 
-
-
-import { UploadsService } from '../../services/uploads.service';
-import { Upload } from '../../models/Upload';
 
 
 @Component({
@@ -29,23 +26,23 @@ import { Upload } from '../../models/Upload';
 })
 
 export class MainComponent implements OnInit {
-
+  deleteConfirm: number;
   filterSelect = 0;
   data = Object.assign(ELEMENT_DATA)
-  uploads:Upload[];
-  dataSource = new MatTableDataSource (this.uploads);
-
+  dataSource = new MatTableDataSource<PeriodicElement> (this.data);
   displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
   expandedElement: PeriodicElement | null;
   /** Selecting a row from the table----------------------- */
   selection = new SelectionModel<PeriodicElement>(true, []);
+
 
   select(x: PeriodicElement): void {
     this.selection.clear(); //Only allows one selected row (Deselects all rows)
     this.selection.toggle(x);// then selects current row
   }
 
-  removeSelectedRows(){
+  removeSelectedRows(deleteConfirm: number){
+  if(deleteConfirm == 1){
     this.selection.selected.forEach(item => {
       let index: number = this.data.findIndex(d => d === item);
       console.log(this.data.findIndex(d => d === item));
@@ -53,29 +50,28 @@ export class MainComponent implements OnInit {
       this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
     });
     this.selection = new SelectionModel<PeriodicElement>(true, []);
+    deleteConfirm = 0;
+  }
+  }
+
+  clickMethod(name: string) {
+    if(confirm("Are you sure to delete "+name)) {
+      console.log("Implement delete functionality here");
+    }
   }
 
   /** End of Selection Methods --------------------------- */
-
-  subject:string;
-  description:string;
-  file:File;
 
   applyFilter(filterValue: string) {
       this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private router: Router, private uploadsService: UploadsService ) { }
+  constructor(private router: Router ,public dialog: MatDialog) { }
 
   @ViewChild(MatSort) sort: MatSort; 
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
-     // get uploads from server
-     this.uploadsService.getUploads().subscribe(uploads => {
-      this.uploads = uploads.filter(x => x.delete_date === undefined);
-      this.dataSource = new MatTableDataSource (this.uploads);
-    }); // subcribe similar to promises .then cb: asynchronous
   }
 
   overwriteFilter(){
@@ -101,29 +97,11 @@ export class MainComponent implements OnInit {
   }
 
   logout() : void{ //Logout button redirect
-    this.router.navigateByUrl('/login');
+    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
   }
 
-
-  fileEvent($event){
-    this.file = $event.target.files[0];
-  }
-
-  submitUpload(): void{ //Upload
-    var upload:FormData = new FormData();
-    upload.append('subject', this.subject);
-    upload.append('description', this.description);
-    upload.append('file', this.file);
-    this.uploadsService.postUpload(upload).subscribe(upload => {
-      this.uploads.push(upload); // push upload to array
-    })
-  }
-
-  deleteUpload(upload:Upload){
-    // delete from UI
-    this.uploads = this.uploads.filter( x => x._id !== upload._id);
-    // delete from server
-    this.uploadsService.deleteUpload(upload).subscribe();
+  upload() : void{ //Upload
+    
   }
 
   toTop() : void{ //Scrolls to the top of the page
@@ -135,7 +113,6 @@ export class MainComponent implements OnInit {
   myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
   }
-    
     // Close the dropdown if the user clicks outside of it
   onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
@@ -148,6 +125,19 @@ export class MainComponent implements OnInit {
         }
       }
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DeleteConfirmation,{
+      width: '500px',
+      data: {deleteConfirm: this.deleteConfirm}
+    });
+    
+  dialogRef.afterClosed().subscribe
+  (result => {
+    console.log('The dialog was closed');
+    this.removeSelectedRows(result);
+  }); 
   }
 }
 
@@ -167,7 +157,7 @@ export interface PeriodicElement {
   kmlvalid: string;
 }
 
-const ELEMENT_DATA = [
+const ELEMENT_DATA: PeriodicElement[] = [
 {
   Filename: 'February_Report',
   UploadDate: 'March 4, 2019',
@@ -282,20 +272,21 @@ const ELEMENT_DATA = [
 
 
 
+/** For Delete Confirmation Dialog Box */
+@Component({
+  selector: 'delete-confirmation',
+  templateUrl: 'delete-confirmation.html',
+
+})
 
 
+export class DeleteConfirmation {
 
-
-
-
-
-
-
-
-
-
-
-
-/**  Copyright 2017 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
+  constructor(
+    public dialogRef: MatDialogRef<DeleteConfirmation>){
+    }
+    
+  onNoClick(): void{
+    this.dialogRef.close();
+  }
+}
