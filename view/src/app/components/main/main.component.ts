@@ -4,12 +4,6 @@ import { MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 
-
-
-
-
-
-
 import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 
@@ -41,8 +35,8 @@ export class MainComponent implements OnInit {
   selection = new SelectionModel<PeriodicElement>(true, []);
 
   select(x: PeriodicElement): void {
-    this.selection.clear(); //Only allows one selected row (Deselects all rows)
-    this.selection.toggle(x);// then selects current row
+    this.selection.clear(); // Only allows one selected row (Deselects all rows)
+    this.selection.toggle(x); // then selects current row
   }
 
   removeSelectedRows() {
@@ -50,7 +44,7 @@ export class MainComponent implements OnInit {
       let index: number = this.data.findIndex(d => d === item);
       console.log(this.data.findIndex(d => d === item));
       this.data.splice(index, 1)
-      //this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
+      // this.dataSource = new MatTableDataSource<PeriodicElement>(this.data);
     });
     this.selection = new SelectionModel<PeriodicElement>(true, []);
   }
@@ -75,12 +69,12 @@ export class MainComponent implements OnInit {
     this.uploadsService.getUploads().subscribe(uploads => {
       this.uploads = uploads.filter(x => x.delete_date === undefined);
       this.dataSource = new MatTableDataSource(this.uploads);
-    }); // subcribe similar to promises .then cb: asynchronous
+    }); // subscribe similar to promises .then cb: asynchronous
   }
 
   overwriteFilter() {
-    //Overwrites filterPredicate to only include certain columns
-    //Changed by filterMenu
+    // Overwrites filterPredicate to only include certain columns
+    // Changed by filterMenu
     if (this.filterSelect == 0) {
       this.dataSource.filterPredicate = function (data, filter: string): boolean {
         return data.filename.toLowerCase().includes(filter); //Only filters Filename
@@ -102,7 +96,7 @@ export class MainComponent implements OnInit {
     }
   }
 
-  logout(): void { //Logout button redirect
+  logout(): void { // Logout button redirect
     this.router.navigateByUrl('/login');
   }
 
@@ -111,7 +105,7 @@ export class MainComponent implements OnInit {
     this.file = $event.target.files[0];
   }
 
-  submitUpload(): void { //Upload
+  submitUpload(): void { // Upload
     var upload: FormData = new FormData();
     upload.append('title', this.title);
     upload.append('description', this.description);
@@ -131,7 +125,7 @@ export class MainComponent implements OnInit {
 
   downloadFile(upload: Upload) {
     this.uploadsService.postDownload(upload).subscribe(data => {
-      //const blob = new Blob([data], { type: 'image/png' });
+      // const blob = new Blob([data], { type: 'image/png' });
       const downloadURL = window.URL.createObjectURL(data);
       var link = document.createElement('a');
       link.href = downloadURL;
@@ -144,8 +138,8 @@ export class MainComponent implements OnInit {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
-  /* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+  // When the user clicks on the button, toggle between hiding and showing the
+  // dropdown content
   myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -291,24 +285,6 @@ const ELEMENT_DATA = [
     kmlvalid: 'Success'
   },
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**  Copyright 2017 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

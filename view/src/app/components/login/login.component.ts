@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 // Begin manually added code
-import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
-import { Subscription } from 'rxjs';
-
-import { LoginResponse } from '../../models';
+import { LoginResponse } from '../../models/Login';
 // End manually added code
 
 @Component({
@@ -28,7 +25,6 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.loginService.login(this.username, this.password).subscribe(
       (data: LoginResponse) => {
-        console.log(localStorage);
         if (data.token) {
           localStorage.setItem('token', data.token);
           this.router.navigate(['main']);
@@ -37,7 +33,6 @@ export class LoginComponent implements OnInit {
         }
       },
       (_) => {
-        console.log(localStorage);
         alert('Invalid credentials');
       },
     );

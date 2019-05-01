@@ -13,7 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Manually added for making HTTP requests
 import { HttpClientModule } from '@angular/common/http';
 
-// // Manually added this Angular import which is used in app.component.html
+// Manually added this Angular import which is used in app.component.html
 // import { MatToolbarModule } from '@angular/material';
 // MOVED THIS CODE TO MATERIAL.MODULE.TS
 
@@ -66,7 +66,7 @@ const appRoutes: Routes = [
     ),
 
     // Manually added - used in app.component.html
-    //MatToolbarModule,
+    // MatToolbarModule,
 
     // For login page
     CustomMaterialModule,

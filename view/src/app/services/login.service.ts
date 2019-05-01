@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-
-import { User, LoginResponse } from '../models'
 
 @Injectable()
 export class LoginService {
