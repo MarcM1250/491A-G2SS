@@ -59,7 +59,7 @@
   <!--Filename Column-->
   <ng-container matColumnDef="Filename">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
-    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    <td align="left" mat-cell *matCellDef="let element"> {{element.title}} </td>
     <td mat-footer-cell *matFooterCellDef>
     </td>
   </ng-container>
@@ -67,7 +67,7 @@
   <!--Upload Date Column-->
   <ng-container matColumnDef="UploadDate">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Upload Date </th>
-    <td mat-cell *matCellDef="let element"> {{element.upload_date}} </td>
+    <td  align="left" mat-cell *matCellDef="let element"> {{element.upload_date}} </td>
     <td mat-footer-cell *matFooterCellDef>
     </td>
   </ng-container>
@@ -75,7 +75,7 @@
   <!--Uploader Column-->
   <ng-container matColumnDef="Uploader">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Uploaded By </th>
-    <td mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
+    <td align="left" width="30%" mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
     <!--Sticky Footer Menu-->
 
     <td mat-footer-cell *matFooterCellDef>
@@ -89,7 +89,7 @@
 
           <!--Form--------------------------------------------------->
 
-          <form action="/action_page.php" (ngSubmit)="submitUpload()">
+          <form action="#" (ngSubmit)="submitUpload()">
             <legend>
               <h1>Upload Form</h1>
             </legend>
