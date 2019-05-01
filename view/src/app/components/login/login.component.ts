@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       (data: LoginResponse) => {
         console.log(localStorage);
         if (data.token) {
-          localStorage.setItem('currentUser', data.token);
+          localStorage.setItem('token', data.token);
           this.router.navigate(['main']);
         } else {
           alert(data.message);
