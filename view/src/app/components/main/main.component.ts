@@ -43,7 +43,7 @@ export class MainComponent implements OnInit {
   upload: Upload; // Holds selected file
   deleteCheck: number;
   filterSelect = 0;
-  data = Object.assign(ELEMENT_DATA);
+  data = { ...ELEMENT_DATA };
   uploads: Upload[];
   dataSource = new MatTableDataSource(this.uploads);
 
@@ -87,10 +87,10 @@ export class MainComponent implements OnInit {
     // Overwrites filterPredicate to only include certain columns
     // Changed by filterMenu
 
-    // Filter by title
+    // Filter by filename
     if (this.filterSelect === 0) {
       this.dataSource.filterPredicate = (data: Upload, filter: string): boolean => {
-        return data.title.toLowerCase().includes(filter); // Only filters Filename
+        return data.filename.toLowerCase().includes(filter); // Only filters Filename
       };
     }
 
