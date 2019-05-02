@@ -71,8 +71,9 @@ tr.example-element-row:not(.example-expanded-row):active {
 }
 
 .downloadButton{
+  max-width: 200px;
   min-width: 115px;
-  flex-grow: 1;
+  flex-grow: 0.1;
 
 	margin-right: 10px;
 	height: 35px;
@@ -82,8 +83,9 @@ tr.example-element-row:not(.example-expanded-row):active {
 	border-color: #F8F8FF;
 }
 .deleteButton{
-  min-width:115px;
-  flex-grow: 1;
+  max-width: 200px;
+  min-width: 115px;
+  flex-grow: 0.1;
 
 	color:#dc143c;
 	height: 35px;
