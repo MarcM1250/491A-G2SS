@@ -21,11 +21,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomMaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 
-// Imports for Main Page (Sorting)
-import { MatSortModule } from '@angular/material/sort';
-import { MatToolbarModule, MatTableModule, } from '@angular/material';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSelectModule } from '@angular/material/select';
+// Imports for Main Page
+import {MatSortModule} from '@angular/material/sort';
+import { MatToolbarModule, MatTableModule,} from '@angular/material';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule } from '@angular/material/dialog';
 
 // Manually added HTTP provider
 import { LoginService } from './services/login.service';
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    DeleteConfirmation,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,8 @@ const appRoutes: Routes = [
     MatTableModule,
     MatCheckboxModule,
     MatSelectModule,
+    MatToolbarModule,
+    MatDialogModule,
 
     /** 
      * Manually added
@@ -75,6 +79,9 @@ const appRoutes: Routes = [
     // For login service
     HttpClientModule,
   ],
+  // For Delete Confirmation on Main Page
+	entryComponents: [DeleteConfirmation],
+  
   providers: [LoginService],
   bootstrap: [AppComponent],
 
