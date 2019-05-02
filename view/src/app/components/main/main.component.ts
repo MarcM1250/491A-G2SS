@@ -86,16 +86,13 @@ export class MainComponent implements OnInit {
   overwriteFilter(){
     //Overwrites filterPredicate to only include certain columns
     //Changed by filterMenu
-
-    //Filter by title
     if(this.filterSelect == 0){
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.title.toLowerCase().includes(filter); //Only filters Filename
+        return data.filename.toLowerCase().includes(filter); //Only filters Filename
       };
     }
     
     /*
-    //Filter by upload date
     if(this.filterSelect == 1){
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
         return data.upload_date.toLowerCase().includes(filter); //Only filters Filename
@@ -103,7 +100,6 @@ export class MainComponent implements OnInit {
     }
     */
 
-    //Filter by uploader name
     if(this.filterSelect == 2){
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
         return data.upload_by.toLowerCase().includes(filter); //Only filters Filename
