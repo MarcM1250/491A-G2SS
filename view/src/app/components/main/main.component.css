@@ -62,42 +62,45 @@ tr.example-element-row:not(.example-expanded-row):active {
   opacity: 1;
 }
 
-.valid {
-  color: hsl(120, 60%, 70%);
+.valid{
+	color: hsl(120, 60%, 70%);
 }
 
-.invalid {
-  color: red
+.invalid{
+	color:red
 }
 
-.downloadButton {
-  margin-right: 10px;
-  height: 35px;
-  color: green;
-  border: 1px;
-  border-style: outset;
-  border-color: #F8F8FF;
-}
+.downloadButton{
+  min-width: 115px;
+  flex-grow: 1;
 
-.deleteButton {
-  color: #dc143c;
-  height: 35px;
-  border: 1px;
-  border-style: outset;
-  border-color: #F8F8FF;
+	margin-right: 10px;
+	height: 35px;
+	color:green;
+	border: 1px;
+	border-style: outset;
+	border-color: #F8F8FF;
 }
+.deleteButton{
+  min-width:115px;
+  flex-grow: 1;
 
-.footerButton {
+	color:#dc143c;
+	height: 35px;
+	border: 1px;
+	border-style: outset;
+	border-color: #F8F8FF;
+}
+.footerButton{
   float: right;
-  margin-right: 1px;
-  height: 35px;
-  border: 1px;
-  border-style: outset;
+	margin-right: 1px;
+	height: 35px;
+	border: 1px;
+	border-style: outset;
   border-color: #3498DB;
   background-color: #3498DB;
   color: white;
 }
-
 .example-fill-remaining-space {
   flex: 1 1 auto;
 }
@@ -110,38 +113,44 @@ tr.mat-footer-row {
   border-top: 1px solid #e0e0e0;
 }
 
-.item2 {
+.item2{
   width: 100%;
 }
 
-.ClassWidth {
+
+.ClassWidth{
   width: 700px;
 }
 
-/* Filter Style*/
 
-.filterContainer {
+
+
+
+
+/* Filter Style*/
+.filterContainer{
   display: flex;
   align-items: center;
   margin: 1.5rem;
 }
 
-.filterBar {
+.filterBar{
   min-width: 18rem;
   float: left;
   flex-grow: 1;
   overflow: hidden;
 }
 
-.filterMenu {
+.filterMenu{
   width: 100px;
 }
-
 /* End Filter Style */
 
+
+ 
 /* Upload Form Style */
 
-input[type=text], select, textarea {
+input[type=text], select, textarea{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -150,6 +159,7 @@ input[type=text], select, textarea {
   border-radius: 4px;
   box-sizing: border-box;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
 }
 
 input[type=submit] {
@@ -167,28 +177,30 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+
 td[colspan="6"] div, td[colspan="5"] div {
   display: none;
   text-align: left;
   margin-left: 20px;
 }
 
-td[colspan="6"], td[colspan="5"] {
-  padding: 0;
-  border: 0;
+td[colspan="6"], td[colspan="5"]{
+  padding:0;
+  border:0;
 }
 
 textarea {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  height: 200px;
+  height:200px;
 }
-
 /* End of Upload Form style */
 
-/*Clickable Upload Button  */
 
-.show {
-  display: block;
+
+
+/*Clickable Upload Button  */
+.show{
+  display:block;
 }
 
 .dropbtn {
@@ -212,26 +224,23 @@ textarea {
   display: none;
   position: static;
   left: 30px;
-  right: 0;
+  right:0;
   background-color: #f9f9f9;
   min-width: 300px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content a{
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown a:hover {
-  background-color: #ddd;
-}
+.dropdown a:hover {background-color: #ddd;}
 
 .show {
   display: block;
 }
-
 /* End of Upload Button style */
