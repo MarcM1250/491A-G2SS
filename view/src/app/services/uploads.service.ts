@@ -5,14 +5,15 @@ import { Upload } from '../models/Upload';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Authorization': 'Bearer ' + localStorage.getItem('token')
+    Authorization: 'Bearer ' + localStorage.getItem('token')
   })
-}
+};
+
 @Injectable({
   providedIn: 'root'
 })
 export class UploadsService {
-  uploadUrl: string = 'http://localhost:3000/api/uploads';
+  uploadUrl = 'http://localhost:3000/api/uploads';
 
   // inject httpClient into constructor
   constructor(private http: HttpClient) { }
@@ -35,7 +36,7 @@ export class UploadsService {
     const newHttpOptions = {
       responseType: 'blob' as 'json',
       headers: httpOptions.headers
-    }
+    };
     return this.http.post<Upload>(url, null, newHttpOptions);
   }
 }

@@ -7,12 +7,11 @@ export class Upload {
   upload_by: string;
   files_id: string;
 
-  filename: String;
-  file_size: Number;
+  filename: string;
+  file_size: number;
 
   delete_date?: Date;
   delete_by?: string;
   last_modified?: Date;
   parser_error?: string;
-
 }

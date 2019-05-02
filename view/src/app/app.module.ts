@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
-import { MainComponent } from './components/main/main.component';
+import { MainComponent, DeleteConfirmation } from './components/main/main.component';
 // End of Default Angular imports
 
 // Manually added this Angular import - for routing.
@@ -22,16 +22,16 @@ import { CustomMaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 
 // Imports for Main Page
-import {MatSortModule} from '@angular/material/sort';
-import { MatToolbarModule, MatTableModule,} from '@angular/material';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDialogModule } from '@angular/material/dialog';
+import { MatSortModule } from '@angular/material/sort';
+import { MatToolbarModule, MatTableModule, } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // Manually added HTTP provider
 import { LoginService } from './services/login.service';
 
-/** 
+/**
  * Manually added
  * Added the routing configuration as an array of Routes.
  * Uses the factory method RouterModule.forRoot to hand over our routing config.
@@ -60,7 +60,7 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatDialogModule,
 
-    /** 
+    /**
      * Manually added
      * To activate the routing configuration for the Angular app.
      */
@@ -80,8 +80,8 @@ const appRoutes: Routes = [
     HttpClientModule,
   ],
   // For Delete Confirmation on Main Page
-	entryComponents: [DeleteConfirmation],
-  
+  entryComponents: [DeleteConfirmation],
+
   providers: [LoginService],
   bootstrap: [AppComponent],
 
