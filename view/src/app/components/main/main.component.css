@@ -6,6 +6,9 @@ table {
   font-size: 14px;
   width: 100%;
 }
+td {
+  text-align: left;
+}
 
 tr.example-detail-row {
   height: 0;
@@ -17,6 +20,10 @@ tr.example-element-row:not(.example-expanded-row):hover {
 
 tr.example-element-row:not(.example-expanded-row):active {
   background: #efefef;
+}
+
+.siteHeader{
+  background: #3850d8;
 }
 
 .example-element-row td {
@@ -44,22 +51,33 @@ tr.example-element-row:not(.example-expanded-row):active {
 }
 
 .example-element-description {
-  padding: 16px;
+  opacity: 0.8;
+  display: table;
+  font-size: 14px;
+  clear: both;
+  padding: 8px;
+  background-color: #FEFEFE;
 }
 
 .example-element-description-attribution {
-  font-weight: bold;
-  opacity: 1;
+  display: table-row;
+  height: 20px;
+  
 }
 
 .description-title {
+  padding-left: 25px;
+  text-align: left;
+  display: table-cell;
+  float: left;
   font-weight: bold;
-  opacity: 1;
+  width: 150px;
 }
 
-.description-kml {
-  font-weight: bold;
-  opacity: 1;
+.description-details {
+  display: table-cell;
+  float: left;
+  align-content: initial;
 }
 
 .valid{
@@ -99,8 +117,8 @@ tr.example-element-row:not(.example-expanded-row):active {
 	height: 35px;
 	border: 1px;
 	border-style: outset;
-  border-color: #3498DB;
-  background-color: #3498DB;
+  border-color: #3850d8;
+  background-color: #3850d8;
   color: white;
 }
 .example-fill-remaining-space {
@@ -206,7 +224,7 @@ textarea {
 }
 
 .dropbtn {
-  background-color: #3498DB;
+  background-color: #3850d8;
   color: white;
   font-size: 16px;
   border: none;
@@ -214,7 +232,7 @@ textarea {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+  background-color: #4e67f8;
 }
 
 .dropdown {
@@ -246,3 +264,11 @@ textarea {
   display: block;
 }
 /* End of Upload Button style */
+
+
+.rTable { display: table; }
+.rTableRow { display: table-row; }
+.rTableHeading { display: table-header-group; }
+.rTableBody { display: table-row-group; }
+.rTableFoot { display: table-footer-group; }
+.rTableCell, .rTableHead { display: table-cell; }

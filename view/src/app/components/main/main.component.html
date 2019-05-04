@@ -61,7 +61,7 @@
   <!--Filename Column-->
   <ng-container matColumnDef="Filename">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
-    <td align="left" mat-cell *matCellDef="let element"> {{element.title}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
     <td mat-footer-cell *matFooterCellDef>
     </td>
   </ng-container>
@@ -69,7 +69,7 @@
   <!--Upload Date Column-->
   <ng-container matColumnDef="UploadDate">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Upload Date </th>
-    <td align="left" mat-cell *matCellDef="let element"> {{element.upload_date}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.upload_date}} </td>
     <td mat-footer-cell *matFooterCellDef>
     </td>
   </ng-container>
@@ -77,7 +77,7 @@
   <!--Uploader Column-->
   <ng-container matColumnDef="Uploader">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Uploaded By </th>
-    <td align="left" mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
     <!--Sticky Footer Menu-->
     <td mat-footer-cell *matFooterCellDef>
       <div class="dropdown">
@@ -130,38 +130,45 @@
     <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
       <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
 
-        <!--Description-->
+       
         <div class="example-element-description">
-          <span class="example-element-description-attribution"> Description: </span>
-          {{element.description}}
-
+          
+ 
           <!--FileName-->
-          <div>
-            <span class="description-title"> Filename: </span>
-            <span>{{element.filename}}</span>
-          </div>
+          <div class="example-element-description-attribution">
+              <div class="description-title"> Filename: </div>
+              <div class="description-details">{{element.filename}}</div>
+          </div> 
+        
+
+          <!--Description-->
+          <div class="example-element-description-attribution">
+            <div class="description-title"> Description: </div>
+            <div class="description-details">{{element.description}}</div>
+          </div> 
 
           <!--File Size-->
-          <div>
-            <span class="description-title"> File Size: </span>
-            <span>{{element.file_size}}</span>
-          </div>
+          <div class="example-element-description-attribution">
+              <div class="description-title"> File Size:  </div>
+              <div class="description-details">{{element.file_size}}</div>
+          </div> 
 
           <!--Last Access Date-->
-          <div>
-            <span class="description-title"> Last Access Date: </span>
-            <span>{{element.lastaccessed}}</span>
-          </div>
+          <div class="example-element-description-attribution">
+              <div class="description-title"> Last Access Date:  </div>
+              <div class="description-details">{{element.lastaccessed}}</div>
+          </div> 
 
           <!--KML Validation-->
-          <div>
-            <span class="description-kml"> KML Validation: </span>
-            <!--Changes color of text based on validation-->
-            <span [ngClass]="{
-          'invalid' : element.kmlvalid == 'Failed',
-          'valid' : element.kmlvalid =='Success'
-          }">{{element.kmlvalid}}</span>
-          </div>
+          <div class="example-element-description-attribution">
+              <div class="description-title"> KML Validation:  </div>
+              <div class="description-details">            <span [ngClass]="{
+                'invalid' : element.kmlvalid == 'Failed',
+                'valid' : element.kmlvalid =='Success'
+                }">{{element.kmlvalid}}</span></div>
+          </div> 
+
+
         </div>
 
         <span class="example-fill-remaining-space">

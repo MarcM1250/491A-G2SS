@@ -6,11 +6,6 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { MatPaginator } from '@angular/material';
 
-
-
-
-
-
 import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 
@@ -34,30 +29,15 @@ export class MainComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
 
-
-
-
   // ----------
-
 
   upload: Upload; // Holds selected file
   deleteCheck: number;
   filterSelect = 0;
-  data = { ...ELEMENT_DATA };
   uploads: Upload[];
   dataSource = new MatTableDataSource(this.uploads);
 
   displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
-  expandedElement: PeriodicElement | null;
-
-  /** Selecting a row from the table----------------------- */
-  selection = new SelectionModel<PeriodicElement>(true, []);
-
-  select(x: PeriodicElement): void {
-    this.selection.clear(); // Only allows one selected row (Deselects all rows)
-    this.selection.toggle(x); // then selects current row
-  }
-  /** End of Selection Methods --------------------------- */
 
   title: string;
   description: string;
@@ -205,135 +185,6 @@ toggle between hiding and showing the dropdown content */
 }
 
 
-
-
-
-
-// ------- Old Test Values ------------------------------------
-export interface PeriodicElement {
-  Filename: string;
-  UploadDate: string;
-  Uploader: string;
-  description: string;
-  filesize: string;
-  lastaccessed: string;
-  kmlvalid: string;
-}
-
-const ELEMENT_DATA = [
-  {
-    Filename: 'February_Report',
-    UploadDate: 'March 4, 2019',
-    Uploader: 'Edward T.',
-    description: `Contains information collected in February`,
-    filesize: `5.03 MB`,
-    lastaccessed: 'March 15, 2019',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'March_Progress',
-    UploadDate: 'March 5, 2019',
-    Uploader: 'Michael S.',
-    description: `Here's what we did so far`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'freeminecraftnoscam.exe',
-    UploadDate: 'February 6, 2019',
-    Uploader: 'notch',
-    description: `no scam free minecraft`,
-    filesize: `2000.55gb`,
-    lastaccessed: 'October 5,1997 1:50pm',
-    kmlvalid: 'Failed'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-];
-
-
-
-
 /** For Delete Confirmation Dialog Box */
 @Component({
   selector: 'delete-confirmation',
@@ -351,17 +202,6 @@ export class DeleteConfirmation {
     this.dialogRef.close();
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
