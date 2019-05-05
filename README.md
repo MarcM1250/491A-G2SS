@@ -25,6 +25,7 @@ Application prototype, test specification, user manual, and developer guidelines
 
 ## Dependencies
 
-* [Angular](https://angular.io/)
-* [node.js](https://nodejs.org/en/)
 * [MongoDB](https://www.mongodb.com/)
+* [Express](https://expressjs.com/)
+* [Angular](https://angular.io/)
+* [Node.js](https://nodejs.org/en/)
