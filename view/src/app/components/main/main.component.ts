@@ -70,7 +70,7 @@ export class MainComponent implements OnInit {
     // Filter by filename
     if (this.filterSelect === 0) {
       this.dataSource.filterPredicate = (data: Upload, filter: string): boolean => {
-        return data.filename.toLowerCase().includes(filter); // Only filters Filename
+        return this.data.filename.toLowerCase().includes(filter); // Only filters Filename
       };
     }
 
