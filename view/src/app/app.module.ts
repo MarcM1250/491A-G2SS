@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
-import { MainComponent, DeleteConfirmation } from './components/main/main.component';
+import { MainComponent } from './components/main/main.component';
+import { DeleteConfirmation } from './components/main/delete-confirmation.component';
 // End of Default Angular imports
 
 // Manually added this Angular import - for routing.
@@ -40,7 +41,7 @@ import { LoginService } from './services/login.service';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'main', component: MainComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' } // A redirect is configured from the default app route to the route displaying content from LoginComponent.
+  { path: '', redirectTo: '/login', pathMatch: 'full' } // Display Login first when navigating to root
 ];
 
 @NgModule({
