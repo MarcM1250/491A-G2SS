@@ -7,6 +7,7 @@ export class Upload {
   upload_by: string;
   files_id: string;
 
+  title: string;
   filename: string;
   file_size: number;
 
