@@ -36,9 +36,9 @@
       <mat-label>Filter by...</mat-label>
       <mat-select [(value)]="filterSelect">
         <mat-option value=0 (click)="overwriteFilter()">Title</mat-option>
-
         <mat-option value=1 (click)="overwriteFilter()">Upload Date</mat-option>
         <mat-option value=2 (click)="overwriteFilter()">Uploader</mat-option>
+
       </mat-select>
     </mat-form-field>
 
@@ -129,43 +129,43 @@
     <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
       <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
 
-       
+
         <div class="example-element-description">
-          
- 
+
+
           <!--FileName-->
           <div class="example-element-description-attribution">
-              <div class="description-title"> Filename: </div>
-              <div class="description-details">{{element.filename}}</div>
-          </div> 
-        
+            <div class="description-title"> Filename: </div>
+            <div class="description-details">{{element.filename}}</div>
+          </div>
+
 
           <!--Description-->
           <div class="example-element-description-attribution">
             <div class="description-title"> Description: </div>
             <div class="description-details">{{element.description}}</div>
-          </div> 
+          </div>
 
           <!--File Size-->
           <div class="example-element-description-attribution">
-              <div class="description-title"> File Size:  </div>
-              <div class="description-details">{{element.file_size}}</div>
-          </div> 
+            <div class="description-title"> File Size: </div>
+            <div class="description-details">{{element.file_size}}</div>
+          </div>
 
           <!--Last Access Date-->
           <div class="example-element-description-attribution">
-              <div class="description-title"> Last Access Date:  </div>
-              <div class="description-details">{{element.lastaccessed}}</div>
-          </div> 
+            <div class="description-title"> Last Access Date: </div>
+            <div class="description-details">{{element.lastaccessed}}</div>
+          </div>
 
           <!--KML Validation-->
           <div class="example-element-description-attribution">
-              <div class="description-title"> KML Validation:  </div>
-              <div class="description-details">            <span [ngClass]="{
+            <div class="description-title"> KML Validation: </div>
+            <div class="description-details"> <span [ngClass]="{
                 'invalid' : element.kmlvalid == 'Failed',
                 'valid' : element.kmlvalid =='Success'
                 }">{{element.kmlvalid}}</span></div>
-          </div> 
+          </div>
 
 
         </div>

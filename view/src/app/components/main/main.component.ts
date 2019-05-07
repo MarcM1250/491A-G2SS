@@ -53,7 +53,6 @@ export class MainComponent implements OnInit {
   description: string;
   file: File;
 
-  
   @ViewChild(MatSort) sort: MatSort;
 
   select(x: PeriodicElement): void {
@@ -93,6 +92,7 @@ export class MainComponent implements OnInit {
 
 
     //Filter by upload date
+    //Year, Month, Day separately
     if(this.filterSelect == 1){
       this.pipe = new DatePipe('en');
       const defaultPredicate=this.dataSource.filterPredicate;
@@ -107,7 +107,7 @@ export class MainComponent implements OnInit {
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
         return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
       };
-    }
+  }
   }
 
   logout(): void { // Logout button redirect
@@ -145,12 +145,14 @@ export class MainComponent implements OnInit {
 
   downloadFile(upload: Upload) {
     this.uploadsService.postDownload(upload).subscribe(data => {
-      // const blob = new Blob([data], { type: 'image/png' });
-      const downloadURL = window.URL.createObjectURL(data);
-      const link = document.createElement('a');
+      const downloadURL = URL.createObjectURL(data);
+      let link = document.createElement('a');
       link.href = downloadURL;
-      link.download = '' + upload.filename;
+      link.target = '_blank';
+      link.download = upload.filename;
+      document.body.appendChild(link);
       link.click();
+      document.body.removeChild(link);
     });
   }
 
@@ -175,8 +177,7 @@ export class MainComponent implements OnInit {
   onclick = event => {
     if (!event.target.matches('.dropbtn')) {
       const dropdowns = document.getElementsByClassName('dropdown-content');
-      let i;
-      for (i = 0; i < dropdowns.length; i++) {
+      for (let i = 0; i < dropdowns.length; i++) {
         const openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {
           openDropdown.classList.remove('show');
