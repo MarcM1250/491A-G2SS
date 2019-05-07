@@ -52,8 +52,11 @@ const storage = GridFsStorage({
  * @param {*} cb 
  */
 const fileFilter = (req, file, cb) => {
-    //reject a file
-    if (file.mimetype === 'application/vnd.google-earth.kml+xml' || file.mimetype === 'image/png') {
+    // 
+    console.log("=> File.mimetype : " + file.mimetype + "\n");
+
+    //reject a file, only accepts KML
+    if (file.mimetype === 'application/vnd.google-earth.kml+xml') {
         cb(null, true);
     } else {
         cb(new Error("Invalid file format"), false);
