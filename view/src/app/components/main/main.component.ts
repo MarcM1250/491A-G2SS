@@ -128,7 +128,7 @@ export class MainComponent implements OnInit {
 
   submitFunction(): void {
     // Hides form + Reloads page IF file is valid
-    alert(this.file.type);
+    // alert(this.file.type);
     // alert(document.getElementById("fname"), document.getElementById("fdescription"));
     if (this.file.type === 'application/vnd.google-earth.kml+xml') {
       document.getElementById('myDropdown').classList.toggle('show');
