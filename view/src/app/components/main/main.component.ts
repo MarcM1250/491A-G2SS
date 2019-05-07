@@ -33,7 +33,7 @@ export class MainComponent implements OnInit {
 
   upload: Upload; // Holds selected file
   deleteCheck: number;
-  filterSelect = 0;
+  filterSelect = 'title';
   // data = Object.assign(ELEMENT_DATA);
   uploads: Upload[];
   dataSource = new MatTableDataSource(this.uploads);
@@ -75,29 +75,11 @@ export class MainComponent implements OnInit {
   overwriteFilter() {
     // Overwrites filterPredicate to only include certain columns
     // Changed by filterMenu
-
-    // Filter by title
-    if (this.filterSelect == 0) {
-      this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.title.toLowerCase().includes(filter); // Only filters Filename
-      };
+    this.dataSource.filterPredicate = (data, filter: string): boolean => {
+      return data[this.filterSelect].toLowerCase().includes(filter);
     }
-
-    /*
-    //Filter by upload date
-    if(this.filterSelect == 1){
-      this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.upload_date.toLowerCase().includes(filter); //Only filters Filename
-      };
-    }
-    */
-
-    // Filter by uploader name
-    if (this.filterSelect == 2) {
-      this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
-      };
-    }
+    // Chris: Right now only filters data.title and data.upload_by
+    // If any more filters need to be added, they need to have the name of the cooresponding property of data
   }
 
   logout(): void { // Logout button redirect
@@ -135,12 +117,14 @@ export class MainComponent implements OnInit {
 
   downloadFile(upload: Upload) {
     this.uploadsService.postDownload(upload).subscribe(data => {
-      // const blob = new Blob([data], { type: 'image/png' });
-      const downloadURL = window.URL.createObjectURL(data);
-      const link = document.createElement('a');
+      const downloadURL = URL.createObjectURL(data);
+      let link = document.createElement('a');
       link.href = downloadURL;
-      link.download = '' + upload.filename;
+      link.target = '_blank';
+      link.download = upload.filename;
+      document.body.appendChild(link);
       link.click();
+      document.body.removeChild(link);
     });
   }
 
@@ -165,8 +149,7 @@ export class MainComponent implements OnInit {
   onclick = event => {
     if (!event.target.matches('.dropbtn')) {
       const dropdowns = document.getElementsByClassName('dropdown-content');
-      let i;
-      for (i = 0; i < dropdowns.length; i++) {
+      for (let i = 0; i < dropdowns.length; i++) {
         const openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {
           openDropdown.classList.remove('show');
