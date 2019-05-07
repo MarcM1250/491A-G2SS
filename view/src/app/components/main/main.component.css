@@ -179,8 +179,8 @@ input[type=text], select, textarea{
   border-radius: 4px;
   box-sizing: border-box;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-
 }
+
 
 input[type=submit] {
   width: 100%;
@@ -241,12 +241,14 @@ textarea {
 }
 
 .dropdown-content {
+  padding: 8px;
   display: none;
   position: static;
   left: 30px;
   right:0;
   background-color: #f9f9f9;
   min-width: 300px;
+  max-width: 400px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
