@@ -2,14 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
-import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog } from '@angular/material';
 import { MatPaginator } from '@angular/material';
 
 import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 import { DeleteConfirmation } from './delete-confirmation.component';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'main.component',
@@ -34,31 +32,18 @@ export class MainComponent implements OnInit {
 
   upload: Upload; // Holds selected file
   deleteCheck: number;
-  filterSelect = 0;
+  filterSelect = 'title';
   // data = Object.assign(ELEMENT_DATA);
   uploads: Upload[];
   dataSource = new MatTableDataSource(this.uploads);
 
-  // For use in filtering file dates
-  pipe: DatePipe;
-
   displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
-  expandedElement: PeriodicElement | null;
-
-  /** Selecting a row from the table----------------------- */
-  selection = new SelectionModel<PeriodicElement>(true, []);
-  /** End of Selection Methods --------------------------- */
 
   title: string;
   description: string;
   file: File;
 
   @ViewChild(MatSort) sort: MatSort;
-
-  select(x: PeriodicElement): void {
-    this.selection.clear(); // Only allows one selected row (Deselects all rows)
-    this.selection.toggle(x); // then selects current row
-  }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -76,38 +61,14 @@ export class MainComponent implements OnInit {
     }); // subcribe similar to promises .then cb: asynchronous
   }
 
-
-
   overwriteFilter() {
-
     // Overwrites filterPredicate to only include certain columns
     // Changed by filterMenu
-
-    // Filter by title
-    if (this.filterSelect == 0) {
-      this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.title.toLowerCase().includes(filter); // Only filters Filename
-      };
+    this.dataSource.filterPredicate = (data, filter: string): boolean => {
+      return data[this.filterSelect].toLowerCase().includes(filter);
     }
-
-
-    //Filter by upload date
-    //Year, Month, Day separately
-    if(this.filterSelect == 1){
-      this.pipe = new DatePipe('en');
-      const defaultPredicate=this.dataSource.filterPredicate;
-      this.dataSource.filterPredicate = (data, filter) =>{
-        const formatted=this.pipe.transform(data.upload_date,'MM/dd/yyyy');
-        return formatted.indexOf(filter) >= 0 || defaultPredicate(data,filter) ;
-      }
-    }
-
-    // Filter by uploader name
-    if (this.filterSelect == 2) {
-      this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
-      };
-  }
+    // Chris: Right now only filters data.title and data.upload_by
+    // If any more filters need to be added, they need to have the name of the cooresponding property of data
   }
 
   logout(): void { // Logout button redirect
@@ -167,8 +128,11 @@ export class MainComponent implements OnInit {
 
   submitFunction(): void {
     // Hides form + Reloads page IF file is valid
-    if (this.file.type === 'image/png') {
+    alert(this.file.type);
+    // alert(document.getElementById("fname"), document.getElementById("fdescription"));
+    if (this.file.type === 'application/vnd.google-earth.kml+xml') {
       document.getElementById('myDropdown').classList.toggle('show');
+      
       location.reload();
     }
   }
@@ -204,129 +168,3 @@ export class MainComponent implements OnInit {
     });
   }
 }
-
-// ------- Old Test Values ------------------------------------
-export interface PeriodicElement {
-  Filename: string;
-  UploadDate: string;
-  Uploader: string;
-  description: string;
-  filesize: string;
-  lastaccessed: string;
-  kmlvalid: string;
-}
-
-const ELEMENT_DATA = [
-  {
-    Filename: 'February_Report',
-    UploadDate: 'March 4, 2019',
-    Uploader: 'Edward T.',
-    description: `Contains information collected in February`,
-    filesize: `5.03 MB`,
-    lastaccessed: 'March 15, 2019',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'March_Progress',
-    UploadDate: 'March 5, 2019',
-    Uploader: 'Michael S.',
-    description: `Here's what we did so far`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'freeminecraftnoscam.exe',
-    UploadDate: 'February 6, 2019',
-    Uploader: 'notch',
-    description: `no scam free minecraft`,
-    filesize: `2000.55gb`,
-    lastaccessed: 'October 5,1997 1:50pm',
-    kmlvalid: 'Failed'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-];
-
-/**  Copyright 2017 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */

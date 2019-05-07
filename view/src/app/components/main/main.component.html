@@ -35,10 +35,10 @@
     <mat-form-field>
       <mat-label>Filter by...</mat-label>
       <mat-select [(value)]="filterSelect">
-        <mat-option value=0 (click)="overwriteFilter()">Title</mat-option>
-        <mat-option value=1 (click)="overwriteFilter()">Upload Date</mat-option>
-        <mat-option value=2 (click)="overwriteFilter()">Uploader</mat-option>
-
+        <!--Chris: the value property signifies the data property (no ifs/switches!)-->
+        <mat-option value="title" (click)="overwriteFilter()">Title</mat-option>
+        <!--<mat-option value="upload_date" (click)="overwriteFilter()">Upload Date</mat-option>-->
+        <mat-option value="upload_by" (click)="overwriteFilter()">Uploader</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -76,7 +76,7 @@
   <!--Uploader Column-->
   <ng-container matColumnDef="Uploader">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Uploaded By </th>
-    <td mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
+    <td width=30% mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
     <!--Sticky Footer Menu-->
     <td mat-footer-cell *matFooterCellDef>
       <div class="dropdown">
@@ -88,21 +88,19 @@
 
 
           <!--Form--------------------------------------------------->
-
-          <form action="/action_page.php" (ngSubmit)="submitUpload()">
-            <legend>
-              <h1>Upload Form</h1>
-            </legend>
+          <form (ngSubmit)="submitUpload()">
+          <!---<form (ngSubmit)="submitUpload()"> -->
+              <h2>Upload Form</h2>
 
             <label for="fname">Title</label>
             <input type="text" id="fname" name="title" [(ngModel)]="title" placeholder="Your title..">
 
             <label for="fdescription">File Description</label>
-            <textarea id="fdescription" name="fdesciption" [(ngModel)]="description"
+            <textarea id="fdescription" name="fdescription" [(ngModel)]="description"
               placeholder="Write something.."></textarea>
 
             Select image to upload:
-            <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='image/png'>
+            <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='*.kml'>
 
             <input type="submit" value="Submit" (click)="submitFunction()">
 
