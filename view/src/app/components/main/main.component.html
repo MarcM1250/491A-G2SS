@@ -36,9 +36,8 @@
       <mat-label>Filter by...</mat-label>
       <mat-select [(value)]="filterSelect">
         <mat-option value=0 (click)="overwriteFilter()">Title</mat-option>
-        <!--
-            <mat-option value=1 (click)="overwriteFilter()">Upload Date</mat-option>
-            -->
+
+        <mat-option value=1 (click)="overwriteFilter()">Upload Date</mat-option>
         <mat-option value=2 (click)="overwriteFilter()">Uploader</mat-option>
       </mat-select>
     </mat-form-field>

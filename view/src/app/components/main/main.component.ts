@@ -9,6 +9,7 @@ import { MatPaginator } from '@angular/material';
 import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 import { DeleteConfirmation } from './delete-confirmation.component';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'main.component',
@@ -38,6 +39,9 @@ export class MainComponent implements OnInit {
   uploads: Upload[];
   dataSource = new MatTableDataSource(this.uploads);
 
+  // For use in filtering file dates
+  pipe: DatePipe;
+
   displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
   expandedElement: PeriodicElement | null;
 
@@ -49,6 +53,7 @@ export class MainComponent implements OnInit {
   description: string;
   file: File;
 
+  
   @ViewChild(MatSort) sort: MatSort;
 
   select(x: PeriodicElement): void {
@@ -72,7 +77,10 @@ export class MainComponent implements OnInit {
     }); // subcribe similar to promises .then cb: asynchronous
   }
 
+
+
   overwriteFilter() {
+
     // Overwrites filterPredicate to only include certain columns
     // Changed by filterMenu
 
@@ -83,14 +91,16 @@ export class MainComponent implements OnInit {
       };
     }
 
-    /*
+
     //Filter by upload date
     if(this.filterSelect == 1){
-      this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.upload_date.toLowerCase().includes(filter); //Only filters Filename
-      };
+      this.pipe = new DatePipe('en');
+      const defaultPredicate=this.dataSource.filterPredicate;
+      this.dataSource.filterPredicate = (data, filter) =>{
+        const formatted=this.pipe.transform(data.upload_date,'MM/dd/yyyy');
+        return formatted.indexOf(filter) >= 0 || defaultPredicate(data,filter) ;
+      }
     }
-    */
 
     // Filter by uploader name
     if (this.filterSelect == 2) {
