@@ -15,6 +15,7 @@ Here is an overview of the documentation we provide which can be accessed below 
         'server' directory: 
             In separate terminal, enter 'npm start'.
             'npm i' may need to be ran before 'npm start' to install needed packages.
+        Once view is fully compiled and server is running, navigate to localhost:4200 from your browser.
 
     Login page test account credentials from database:
 
