@@ -1,14 +1,13 @@
 # CECS 491 Spring-Fall 2019 Senior Project
 
-This is a web app running on node.js that facilitates the transfer of KML files between unclassified and classified sources.
+KML Guard is a web app and API for the retrieval, verification, transferral, and storage of .kml markup files between classified and non-classified systems.
 
 Here is an overview of the documentation we provide which can be accessed below or from our Wiki:
 * [User Manual](https://github.com/MarcM1250/491A-G2SS/wiki/User-Manual): For users of our system. 
 
 * [Developer Guidelines](https://github.com/MarcM1250/491A-G2SS/wiki/Developer-Guidelines): For software developers interested in contributing to our project. 
 
-## Currently in Progress
-Application prototype, test specification, user manual, and developer guidelines.
+## To test our prototype
 
     To test: 
         'view' directory: 
