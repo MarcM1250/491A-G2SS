@@ -1,6 +1,6 @@
 # CECS 491 Spring-Fall 2019 Senior Project
 
-KML Guard is a web app and API that supports the retrieval, verification, transferral, and storage of .kml markup files between classified and non-classified systems.
+KML Guard is a web app and API that supports the retrieval, verification, transferral, and storage of .kml markup files amongst classified and non-classified systems.
 
 Here is an overview of the documentation we provide which can be accessed below or from our Wiki:
 * [User Manual](https://github.com/MarcM1250/491A-G2SS/wiki/User-Manual): For users of our system. 
