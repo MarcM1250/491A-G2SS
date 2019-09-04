@@ -10,7 +10,6 @@ import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 import { DeleteConfirmation } from './delete-confirmation.component';
 import { DatePipe } from '@angular/common';
-import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'main.component',
@@ -28,7 +27,7 @@ import { LoginService } from 'src/app/services/login.service';
 
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router, private loginService: LoginService, private uploadsService: UploadsService, public dialog: MatDialog) { }
+  constructor(private router: Router, private uploadsService: UploadsService, public dialog: MatDialog) { }
   // Paginator
   @ViewChild(MatPaginator) paginator: MatPaginator;
   // ----------
@@ -84,7 +83,7 @@ export class MainComponent implements OnInit {
     // Overwrites filterPredicate to only include certain columns
     // Changed by filterMenu
 
-    // Filter by title
+    // Filter by title | Option 1
     if (this.filterSelect == 0) {
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
         return data.title.toLowerCase().includes(filter); // Only filters Filename
@@ -92,29 +91,39 @@ export class MainComponent implements OnInit {
     }
 
 
-    //Filter by upload date
+    //Filter by upload date | Option 2
     //Year, Month, Day separately
     if(this.filterSelect == 1){
+      /*
       this.pipe = new DatePipe('en');
       const defaultPredicate=this.dataSource.filterPredicate;
       this.dataSource.filterPredicate = (data, filter) =>{
         const formatted=this.pipe.transform(data.upload_date,'MM/dd/yyyy');
         return formatted.indexOf(filter) >= 0 || defaultPredicate(data,filter) ;
       }
+      */
+
+      /*
+      this.dataSource.filterPredicate = function(data, filter: string): boolean {
+        const formatted=this.pipe.transform(data.upload_date,'MM/dd/yyyy');
+        return formatted.toLowerCase().includes(filter); // Only filters Uploader Name
+      };
+      */
+
     }
 
-    // Filter by uploader name
+    // Filter by uploader name | Option 3
     if (this.filterSelect == 2) {
       this.dataSource.filterPredicate = function(data, filter: string): boolean {
-        return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
+        return data.upload_by.toLowerCase().includes(filter); // Only filters Uploader Name
       };
   }
   }
 
-  logout(): void { // Logout button redirect
-    this.loginService.logout();
-
+  logout(): void { // Logout button redirect 
+    this.router.navigateByUrl('/login');
   }
+
 
   fileEvent($event) {
     this.file = $event.target.files[0];
@@ -126,7 +135,7 @@ export class MainComponent implements OnInit {
     upload.append('description', this.description);
     upload.append('file', this.file);
     this.uploadsService.postUpload(upload).subscribe(data => {
-      this.uploads.push(data); // push upload to array
+      this.uploads.push(data); // Push upload to array
     });
   }
 
@@ -162,22 +171,19 @@ export class MainComponent implements OnInit {
   }
 
   // When the user clicks on the button, toggle between hiding and showing the dropdown content
-  //myFunction(): void {
-  //  document.getElementById('myDropdown').classList.toggle('show');
-  //}
-  on() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  
-  off() {
-    document.getElementById("overlay").style.display = "none";
+  myFunction(): void {
+    document.getElementById('myDropdown').classList.toggle('show');
   }
 
   submitFunction(): void {
+    alert(this.file.type);
     // Hides form + Reloads page IF file is valid
-    if (this.file.type === 'image/png' || this.file.type === 'application/octet-stream') {
+    if (this.file.type === "image/png") {
       document.getElementById('myDropdown').classList.toggle('show');
       location.reload();
+    }
+    else{
+      
     }
   }
 
@@ -209,15 +215,23 @@ export class MainComponent implements OnInit {
       // Set deleteCheck to result value
       this.deleteCheck = result;
       this.deleteUpload(this.upload);
+      // Result = 1 if user clicks Yes
+
+      // Reloads page if user confirms deletion of file
+      if(result === 1){ 
+        var delayInMilliseconds = 1000; 
+        setTimeout(function() { 
+          location.reload() 
+        }, delayInMilliseconds);
+        
+      }
+      
+      
     });
-
-
   }
-
-  
 }
 
-// ------- Old Test Values ------------------------------------
+// ------- Old Test Values ------------------------------------ //
 export interface PeriodicElement {
   Filename: string;
   UploadDate: string;
@@ -227,3 +241,19 @@ export interface PeriodicElement {
   lastaccessed: string;
   kmlvalid: string;
 }
+
+const ELEMENT_DATA = [
+  {
+    Filename: 'February_Report',
+    UploadDate: 'March 4, 2019',
+    Uploader: 'Edward T.',
+    description: `Contains information collected in February`,
+    filesize: `5.03 MB`,
+    lastaccessed: 'March 15, 2019',
+    kmlvalid: 'Success'
+  },
+];
+
+/**  Copyright 2017 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license */
