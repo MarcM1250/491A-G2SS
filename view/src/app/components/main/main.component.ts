@@ -12,6 +12,8 @@ import { DeleteConfirmation } from './delete-confirmation.component';
 import { DatePipe } from '@angular/common';
 import { LoginService } from 'src/app/services/login.service';
 
+//import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
+
 @Component({
   selector: 'main.component',
   styleUrls: ['main.component.css'],
@@ -44,10 +46,10 @@ export class MainComponent implements OnInit {
   pipe: DatePipe;
 
   displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
-  expandedElement: PeriodicElement | null;
+  expandedElement: Upload | null;
 
   /** Selecting a row from the table----------------------- */
-  selection = new SelectionModel<PeriodicElement>(true, []);
+  selection = new SelectionModel<Upload>(true, []);
   /** End of Selection Methods --------------------------- */
 
   title: string;
@@ -56,7 +58,7 @@ export class MainComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  select(x: PeriodicElement): void {
+  select(x: Upload): void {
     this.selection.clear(); // Only allows one selected row (Deselects all rows)
     this.selection.toggle(x); // then selects current row
   }
@@ -215,15 +217,4 @@ export class MainComponent implements OnInit {
   }
 
   
-}
-
-// ------- Old Test Values ------------------------------------
-export interface PeriodicElement {
-  Filename: string;
-  UploadDate: string;
-  Uploader: string;
-  description: string;
-  filesize: string;
-  lastaccessed: string;
-  kmlvalid: string;
 }
