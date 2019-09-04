@@ -10,6 +10,7 @@ import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 import { DeleteConfirmation } from './delete-confirmation.component';
 import { DatePipe } from '@angular/common';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'main.component',
@@ -27,7 +28,7 @@ import { DatePipe } from '@angular/common';
 
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router, private uploadsService: UploadsService, public dialog: MatDialog) { }
+  constructor(private router: Router, private loginService: LoginService, private uploadsService: UploadsService, public dialog: MatDialog) { }
   // Paginator
   @ViewChild(MatPaginator) paginator: MatPaginator;
   // ----------
@@ -111,9 +112,9 @@ export class MainComponent implements OnInit {
   }
 
   logout(): void { // Logout button redirect
-    this.router.navigateByUrl('/login');
-  }
+    this.loginService.logout();
 
+  }
 
   fileEvent($event) {
     this.file = $event.target.files[0];
@@ -161,8 +162,15 @@ export class MainComponent implements OnInit {
   }
 
   // When the user clicks on the button, toggle between hiding and showing the dropdown content
-  myFunction(): void {
-    document.getElementById('myDropdown').classList.toggle('show');
+  //myFunction(): void {
+  //  document.getElementById('myDropdown').classList.toggle('show');
+  //}
+  on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  off() {
+    document.getElementById("overlay").style.display = "none";
   }
 
   submitFunction(): void {
@@ -202,7 +210,11 @@ export class MainComponent implements OnInit {
       this.deleteCheck = result;
       this.deleteUpload(this.upload);
     });
+
+
   }
+
+  
 }
 
 // ------- Old Test Values ------------------------------------
@@ -215,118 +227,3 @@ export interface PeriodicElement {
   lastaccessed: string;
   kmlvalid: string;
 }
-
-const ELEMENT_DATA = [
-  {
-    Filename: 'February_Report',
-    UploadDate: 'March 4, 2019',
-    Uploader: 'Edward T.',
-    description: `Contains information collected in February`,
-    filesize: `5.03 MB`,
-    lastaccessed: 'March 15, 2019',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'March_Progress',
-    UploadDate: 'March 5, 2019',
-    Uploader: 'Michael S.',
-    description: `Here's what we did so far`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'freeminecraftnoscam.exe',
-    UploadDate: 'February 6, 2019',
-    Uploader: 'notch',
-    description: `no scam free minecraft`,
-    filesize: `2000.55gb`,
-    lastaccessed: 'October 5,1997 1:50pm',
-    kmlvalid: 'Failed'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-  {
-    Filename: 'Real_File',
-    UploadDate: 'April 1, 2019',
-    Uploader: 'Jeff',
-    description: `Hi`,
-    filesize: `70.50gb`,
-    lastaccessed: 'March 5,2019 10:50am',
-    kmlvalid: 'Success'
-  },
-];
-
-/**  Copyright 2017 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */

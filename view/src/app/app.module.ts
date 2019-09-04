@@ -14,6 +14,8 @@ import { RouterModule, Routes } from '@angular/router';
 // Manually added for making HTTP requests
 import { HttpClientModule } from '@angular/common/http';
 
+import { GuardService } from './guard/guard.service';
+
 // Manually added this Angular import which is used in app.component.html
 // import { MatToolbarModule } from '@angular/material';
 // MOVED THIS CODE TO MATERIAL.MODULE.TS
@@ -40,8 +42,13 @@ import { LoginService } from './services/login.service';
  */
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: MainComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' } // Display Login first when navigating to root
+  { path: 'main', component: MainComponent, canActivate: [GuardService]},
+  //{ path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
+  { path: '**', redirectTo : '/login' }
+
+
+
+  
 ];
 
 @NgModule({
@@ -67,7 +74,7 @@ const appRoutes: Routes = [
      */
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      //{ enableTracing: true } // <-- debugging purposes only
     ),
 
     // Manually added - used in app.component.html

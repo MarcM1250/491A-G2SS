@@ -38,7 +38,7 @@
    <mat-card class="login-card">
      <mat-card-title style="text-align: center;">Login</mat-card-title>
      <mat-card-content>
-      <form class="login-form" (keyup.enter)="login()">
+      <form class="login-form">
         <table class="login-full-width" cellspacing="0">
           <tr>
             <td>
@@ -56,7 +56,7 @@
       <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="login()" color="primary">Login</button> <!--login() in login.component.ts-->
+      <button mat-raised-button (click)="onSubmit()" color="primary">Login</button> <!--login() in login.component.ts-->
     </mat-card-actions>
   </mat-card>
   <!--END OF LOGIN FORM CODE-->
