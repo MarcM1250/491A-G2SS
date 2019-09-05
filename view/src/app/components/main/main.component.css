@@ -276,7 +276,7 @@ textarea {
 
 #overlay {
   position: fixed;
-  display: flex;
+  display: none;
   max-width:700px;
   min-width: 400px;
 
