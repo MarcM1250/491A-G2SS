@@ -32,7 +32,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 
 // Manually added HTTP provider
-import { LoginService } from './services/login.service';
+import { AuthenticationService } from './services/authentication.service';
 
 /**
  * Manually added
@@ -45,10 +45,6 @@ const appRoutes: Routes = [
   { path: 'main', component: MainComponent, canActivate: [GuardService]},
   //{ path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
   { path: '**', redirectTo : '/login' }
-
-
-
-  
 ];
 
 @NgModule({
@@ -90,7 +86,7 @@ const appRoutes: Routes = [
   // For Delete Confirmation on Main Page
   entryComponents: [DeleteConfirmation],
 
-  providers: [LoginService],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent],
 
 })

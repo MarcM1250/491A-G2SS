@@ -10,7 +10,7 @@ import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 import { DeleteConfirmation } from './delete-confirmation.component';
 import { DatePipe } from '@angular/common';
-import { LoginService } from 'src/app/services/login.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 //import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
 //
@@ -31,7 +31,7 @@ import { LoginService } from 'src/app/services/login.service';
 
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router, private loginService: LoginService, private uploadsService: UploadsService, public dialog: MatDialog) { }
+  constructor(private router: Router, private loginService: AuthenticationService, private uploadsService: UploadsService, public dialog: MatDialog) { }
   // Paginator
   @ViewChild(MatPaginator) paginator: MatPaginator;
   // ----------
@@ -69,6 +69,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+
     setTimeout(() => this.dataSource.paginator = this.paginator);
 
     this.dataSource.sort = this.sort;

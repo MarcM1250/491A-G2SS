@@ -3,7 +3,7 @@ import {  CanActivate,
           ActivatedRouteSnapshot, 
           RouterStateSnapshot, 
           Router, Route } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +11,12 @@ import { LoginService } from '../services/login.service';
 export class GuardService implements CanActivate {
 
   constructor(
-    private _loginservice: LoginService, 
+    private authenticationService: AuthenticationService, 
     private _router: Router 
   ) {}
 
   canActivate (next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this._loginservice.currentToken)
+    if (this.authenticationService.isTokenAuthenticaded())
       return true;
 
     this._router.navigate(['/login']);
