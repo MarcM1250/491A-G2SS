@@ -169,7 +169,7 @@ export class MainComponent implements OnInit {
   //  document.getElementById('myDropdown').classList.toggle('show');
   //}
   on() {
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.display = "flex";
   }
   
   off() {
@@ -179,7 +179,8 @@ export class MainComponent implements OnInit {
   submitFunction(): void {
     // Hides form + Reloads page IF file is valid
     if (this.file.type === 'image/png' || this.file.type === 'application/octet-stream') {
-      document.getElementById('myDropdown').classList.toggle('show');
+      //document.getElementById('myDropdown').classList.toggle('show');
+      this.off();
       location.reload();
     }
   }
@@ -212,6 +213,16 @@ export class MainComponent implements OnInit {
       // Set deleteCheck to result value
       this.deleteCheck = result;
       this.deleteUpload(this.upload);
+
+      // Result = 1 if user clicks yes
+      // Reloads page if user confirms deletion of file
+      if(result === 1){ 
+        var delayInMilliseconds = 700; 
+        setTimeout(function() { 
+          location.reload() 
+        }, delayInMilliseconds);
+        
+      }  
     });
 
 

@@ -68,7 +68,7 @@
   <!--Upload Date Column-->
   <ng-container matColumnDef="UploadDate">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Upload Date </th>
-    <td mat-cell *matCellDef="let element"> {{element.upload_date | date }} </td>
+    <td mat-cell *matCellDef="let element"> {{element.upload_date | date: 'medium' }} </td>
     <td mat-footer-cell *matFooterCellDef>
     </td>
   </ng-container>
@@ -78,14 +78,16 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Uploaded By </th>
     <td mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
     <!--Sticky Footer Menu-->
-    <td mat-footer-cell *matFooterCellDef>
-      <div class="dropdown">
+    <td mat-footer-cell *matFooterCellDef class="footerMenu">
+      
+      
+ 
         <button mat-raised-button (click)="on()" class="dropbtn">
           <mat-icon>cloud_upload</mat-icon>
           Upload
         </button>
 
-      </div>
+
       <!--Back to Top Button------------------>
 
       <button mat-raised-button class="footerButton" (click)="toTop()">
@@ -179,8 +181,6 @@
 
 
 <div id="overlay">
-
-
   <!--Form--------------------------------------------------->
 
   <form action="/action_page.php" (ngSubmit)="submitUpload()">
@@ -195,11 +195,13 @@
     <textarea id="fdescription" name="fdesciption" [(ngModel)]="description"
       placeholder="Write something.."></textarea>
 
-    Select image to upload:
+    Select a file to upload:
     <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='image/png, application/octet-stream'>
     <input type="button" (click)="off()" value="Cancel"><input type="submit" value="Submit" (click)="submitFunction()">
 
   </form>
   <!--End of Form------------------------------------------>
+
+
 </div>
 <!--End of Table--------------------------------------------------------------->

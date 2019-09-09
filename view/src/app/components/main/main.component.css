@@ -113,7 +113,7 @@ tr.example-element-row:not(.example-expanded-row):active {
 }
 .footerButton{
   float: right;
-	margin-right: 1px;
+	margin-right: 0px;
 	height: 35px;
 	border: 1px;
 	border-style: outset;
@@ -277,11 +277,18 @@ textarea {
 #overlay {
   position: fixed;
   display: none;
-  width: 350px;
+  max-width:700px;
+  min-width: 400px;
+
   height: 500px;
-  right: 10px;
-  bottom: 80px;
+  right: 0px;
+  bottom: 48px;
   background-color: rgba(255,255,255,1);
-  z-index: 2;
+  z-index: 100;
   cursor: pointer;
+}
+
+.footerMenu{
+  display: flex;
+  left: 0px;
 }
