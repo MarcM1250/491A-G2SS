@@ -56,7 +56,13 @@
       <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="onSubmit()" color="primary">Login</button> <!--login() in login.component.ts-->
+      <button mat-raised-button (click)="onSubmit()" color="primary">Login</button> 
+      <!--login() in login.component.ts-->
     </mat-card-actions>
+          <div *ngIf="loading"> Authorizing ... </div>
+          <div *ngIf="message"> {{ message }} </div>
+
   </mat-card>
   <!--END OF LOGIN FORM CODE-->
+
+  

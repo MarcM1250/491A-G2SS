@@ -11,10 +11,10 @@ exports.check_user = (req, res, next) => {
         // Decode the token to get the user's data if the token if valid
         const decoded = jwt.verify(token, process.env.JWT_KEY);
         req.userData = decoded; // saved userData to be used later
-        //console.log(req.userData); 
+        console.log("User : \"", req.userData, "\""); 
         next();
     } catch (error) {
-        console.log("here");
+        console.log("Error: ", error);
         return res.status(401).json({
             message: 'Authentication failed'
         });

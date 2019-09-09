@@ -2,40 +2,57 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Upload } from '../models/Upload';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: 'Bearer ' + localStorage.getItem('token')
-  })
-};
+import { AuthenticationService, API_URL } from './authentication.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UploadsService {
-  uploadUrl = 'http://localhost:3000/api/uploads';
 
-  // inject httpClient into constructor
-  constructor(private http: HttpClient) { }
+  httpOptions = { headers: this.createHeaders() }
 
-  getUploads(): Observable<Upload[]> {
-    return this.http.get<Upload[]>(this.uploadUrl, httpOptions);
+  uploadUrl = API_URL + '/uploads';
+
+  // inject httpClient & authentication service into constructor
+  constructor(private http: HttpClient, private authenticationService: AuthenticationService ) { 
+
   }
 
+  createHeaders(): HttpHeaders {
+
+    let httpOptions;
+
+    this.authenticationService.readToken()
+      .subscribe( tokenRetrieved => {
+        httpOptions = new HttpHeaders({
+          'Authorization': 'Bearer ' + tokenRetrieved
+        })
+      });
+
+    return httpOptions;
+  }
+
+  getUploads(): Observable<Upload[]> {
+    //httpOptions.headers = httpOptions.headers.set( 'Authorization', 'Bearer ' + this.authenticationService.getCurrentToken());
+    return this.http.get<Upload[]>(this.uploadUrl, this.httpOptions);
+  }
+      
   deleteUpload(upload: Upload): Observable<Upload> {
     const url = `${this.uploadUrl}/${upload._id}`;
-    return this.http.delete<Upload>(url, httpOptions);
+    return this.http.delete<Upload>(url, this.httpOptions);
   }
 
   postUpload(upload: FormData): Observable<Upload> {
-    return this.http.post<Upload>(this.uploadUrl, upload, httpOptions);
+    return this.http.post<Upload>(this.uploadUrl, upload, this.httpOptions);
   }
 
   postDownload(upload: Upload): Observable<Upload> {
-    const url = `${'http://localhost:3000/api/downloads'}/${upload._id}`;
+    const url = `${'API_URL/downloads'}/${upload._id}`;
     const newHttpOptions = {
       responseType: 'blob' as 'json',
-      headers: httpOptions.headers
+      headers: this.httpOptions.headers
     };
     return this.http.post<Upload>(url, null, newHttpOptions);
   }

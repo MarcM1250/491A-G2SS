@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 // Begin manually added code
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login.service';
+import { AuthenticationService } from '../../services/authentication.service';
 //import { LoginResponse } from '../../models/Login';
 // End manually added code
 
@@ -12,9 +12,11 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  private message: string;
+  private loading: boolean = false;
 
-  constructor(private router: Router, private loginService: LoginService) { 
-    if (this.loginService.currentToken) { 
+  constructor(private router: Router, private authenticationService: AuthenticationService ) { 
+    if (this.authenticationService.isTokenAuthenticaded()) { 
       console.log("Yay");
       this.router.navigate(['/main']);
   }
@@ -22,22 +24,32 @@ export class LoginComponent implements OnInit {
 }
 
   // For login
-  username: string;
-  password: string;
+  username: string; password: string;
 
-  ngOnInit() { }
+  ngOnInit() { 
+    //this.loginService.logout();
+  }
 
   // Login function used when the Login button is clicked.
   onSubmit(): void {
-    this.loginService.login(this.username, this.password)
+
+    this.loading = true;
+
+    this.authenticationService.login(this.username, this.password)
         .subscribe(
             data => {
+              this.message = 'Success :)';
+              this.loading = false;
+              
               this.router.navigate(['/main']);              
+              //this.authenticationService.logout();
             },
-            err => {          
-              alert(err)
-            ;
-      }
-    ); 
+            err => { 
+              this.authenticationService.logout();   
+              this.loading = false;
+              this.message = "Authentication Failed :( "
+              console.error("Authentication Failed :( \n", err);
+            }
+        ); 
   }
 }
