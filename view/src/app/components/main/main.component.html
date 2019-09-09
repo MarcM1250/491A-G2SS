@@ -61,43 +61,21 @@
   <ng-container matColumnDef="Filename">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
     <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-    <td mat-footer-cell *matFooterCellDef>
-    </td>
+
   </ng-container>
 
   <!--Upload Date Column-->
   <ng-container matColumnDef="UploadDate">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Upload Date </th>
     <td mat-cell *matCellDef="let element"> {{element.upload_date | date: 'medium' }} </td>
-    <td mat-footer-cell *matFooterCellDef>
-    </td>
+
   </ng-container>
 
   <!--Uploader Column-->
   <ng-container matColumnDef="Uploader">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Uploaded By </th>
     <td mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
-    <!--Sticky Footer Menu-->
-    <td mat-footer-cell *matFooterCellDef class="footerMenu">
-      
-      
- 
-        <button mat-raised-button (click)="on()" class="dropbtn">
-          <mat-icon>cloud_upload</mat-icon>
-          Upload
-        </button>
-
-
-      <!--Back to Top Button------------------>
-
-      <button mat-raised-button class="footerButton" (click)="toTop()">
-        <mat-icon>arrow_upward</mat-icon>
-        Back to Top
-      </button>
-
-      <!--End of Back to Top Button-->
-
-    </td>
+  
     <!--End of Footer Menu------------------------------------------------------->
   </ng-container>
   <!-- End of Columns ----------------------------------------------------->
@@ -173,7 +151,7 @@
     (click)="expandedElement = expandedElement === element ? null : element" (click)="select(element)"></tr>
 
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-  <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky:true"></tr>
+
 </table>
 
 
@@ -201,7 +179,33 @@
 
   </form>
   <!--End of Form------------------------------------------>
+</div>
+<!--End of Table--------------------------------------------------------------->
+
+
+
+
+
+
+
+<div id="footer1">
+
+  <!--Fill Blank Space-->
+  <span class="example-fill-remaining-space"></span>
+
+  <!--Back to Top Button------------------>
+  <button mat-raised-button class="footerButton" (click)="toTop()">
+      <mat-icon>arrow_upward</mat-icon>
+      Back to Top
+    </button>
+  <!--Upload Button-->
+  <button mat-raised-button (click)="on()" class="dropbtn">
+    <mat-icon>cloud_upload</mat-icon>
+    Upload
+  </button>
+
+
+
 
 
 </div>
-<!--End of Table--------------------------------------------------------------->
