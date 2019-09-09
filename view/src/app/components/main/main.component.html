@@ -78,14 +78,16 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Uploaded By </th>
     <td mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
     <!--Sticky Footer Menu-->
-    <td mat-footer-cell *matFooterCellDef>
-      <div class="dropdown">
+    <td mat-footer-cell *matFooterCellDef class="footerMenu">
+      
+      
+ 
         <button mat-raised-button (click)="on()" class="dropbtn">
           <mat-icon>cloud_upload</mat-icon>
           Upload
         </button>
 
-      </div>
+
       <!--Back to Top Button------------------>
 
       <button mat-raised-button class="footerButton" (click)="toTop()">
