@@ -41,12 +41,14 @@ export class MainComponent implements OnInit {
   filterSelect = 0;
   // data = Object.assign(ELEMENT_DATA);
   uploads: Upload[];
-  dataSource = new MatTableDataSource(this.uploads);
+  //dataSource = new MatTableDataSource(this.uploads);
+
+  dataSource: MatTableDataSource<Upload>;
 
   // For use in filtering file dates
   pipe: DatePipe;
 
-  displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
+  displayedColumns: string[] = ['title', 'upload_date', 'upload_by'];
   expandedElement: Upload | null;
 
   /** Selecting a row from the table----------------------- */
@@ -69,19 +71,25 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    setTimeout(() => this.dataSource.paginator = this.paginator);
-
-    this.dataSource.sort = this.sort;
-    // get uploads from server
-    this.uploadsService.getUploads().subscribe(uploads => {
-      this.uploads = uploads.filter(x => x.delete_date === undefined);
-      this.dataSource = new MatTableDataSource(this.uploads);
-      this.dataSource.paginator = this.paginator;
-    }); // subcribe similar to promises .then cb: asynchronous
+    this.retrieveData();
   }
 
+  /**
+   * @description: Retrieves data using a subscription
+   * to the uploadsService.getUploads function :)
+   * @param: none
+  */
 
+  retrieveData() {
+        // get uploads from server
+        this.uploadsService.getUploads().subscribe(uploads => {
+      
+          this.uploads = uploads.filter(x => x.delete_date === undefined);
+          this.dataSource = new MatTableDataSource(this.uploads);
+          this.dataSource.sort = this.sort;
+    
+        }); // subcribe similar to promises .then cb: asynchronous
+  }
 
   overwriteFilter() {
 
@@ -117,7 +125,6 @@ export class MainComponent implements OnInit {
 
   logout(): void { // Logout button redirect
     this.loginService.logout();
-
   }
 
   fileEvent($event) {
@@ -166,7 +173,7 @@ export class MainComponent implements OnInit {
   }
 
   // When the user clicks on the button, toggle between hiding and showing the dropdown content
-  //myFunction(): void {
+  // myFunction(): void {
   //  document.getElementById('myDropdown').classList.toggle('show');
   //}
   on() {
