@@ -16,7 +16,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 //
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'app-main-component',
   styleUrls: ['main.component.css'],
   templateUrl: 'main.component.html',
   animations: [
