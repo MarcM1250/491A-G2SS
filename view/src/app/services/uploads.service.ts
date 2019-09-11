@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Upload } from '../models/Upload';
 import { AuthenticationService, API_URL } from './authentication.service';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

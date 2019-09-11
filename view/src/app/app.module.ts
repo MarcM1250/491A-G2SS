@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { DeleteConfirmationComponent } from './components/main/delete-confirmation.component';
+import { UserManagementComponent } from './components/user-management/user-management.component';
 // End of Default Angular imports
 
 // Manually added this Angular import - for routing.
@@ -43,6 +44,7 @@ import { AuthenticationService } from './services/authentication.service';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'main', component: MainComponent, canActivate: [GuardService] },
+  { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService] },
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
   { path: '**', redirectTo: '/login' }
 ];
@@ -53,6 +55,7 @@ const appRoutes: Routes = [
     LoginComponent,
     MainComponent,
     DeleteConfirmationComponent,
+    UserManagementComponent,
   ],
   imports: [
     BrowserModule,

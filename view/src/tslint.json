@@ -12,6 +12,8 @@
       "element",
       "app",
       "kebab-case"
-    ]
+    ],
+    "no-string-literal": false,
+    "prefer-for-of": false
   }
 }

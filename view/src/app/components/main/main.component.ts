@@ -132,6 +132,10 @@ export class MainComponent implements OnInit {
     this.file = $event.target.files[0];
   }
 
+  goToUserPanel() {
+    this.router.navigate(['/user-management']);
+  }
+
   submitUpload(): void { // Upload
     console.log('FileType: ', this.file.type);
 
@@ -225,13 +229,10 @@ export class MainComponent implements OnInit {
     document.getElementById('overlay').style.display = 'none';
   }
 
-
-
   // Close the dropdown if the user clicks outside of it
   onclick = event => {
     if (!event.target.matches('.dropbtn')) {
       const dropdowns = document.getElementsByClassName('dropdown-content');
-      // tslint:disable-next-line: prefer-for-of
       for (let i = 0; i < dropdowns.length; i++) {
         const openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {

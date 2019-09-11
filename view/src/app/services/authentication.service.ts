@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 import { map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
-export const API_URL = "http://localhost:3000/api";
+export const API_URL = 'http://localhost:3000/api';
 
 @Injectable()
 
@@ -26,33 +26,28 @@ export class AuthenticationService {
   }
 
   isTokenAuthenticaded(): boolean {
-    //return this.getCurrentToken() != null && !this.isTokenExpired();
+    // return this.getCurrentToken() != null && !this.isTokenExpired();
     return this.getCurrentToken() != null;
   }
 
 
   /**
    * this returns the token for the user
-   * @param username
-   * @param password
    */
-
   login(username: string, password: string) {
-    return this.http.post(API_URL+"/accounts/login", { username, password })
+    return this.http.post(API_URL + '/accounts/login', { username, password })
       .pipe(map(response => {
         if (response && response['token']) {
-            localStorage.setItem('token', response['token']);
+          localStorage.setItem('token', response['token']);
         }
-    }))
+      }));
 
   }
 
   /**
    * this delete token form localStorage
    * and redirects browser to login page
-   * @param none
    */
-
   logout(): void {
     this.removeLocalToken();
     this.router.navigate(['/login']);
