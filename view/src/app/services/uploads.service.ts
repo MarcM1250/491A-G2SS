@@ -10,32 +10,34 @@ import { AuthenticationService, API_URL } from './authentication.service';
 
 export class UploadsService {
 
-  httpOptions = { headers: this.createHeaders() };
+  httpOptions = { headers: this.createHeaders() }
 
   uploadUrl = API_URL + '/uploads';
 
   // inject httpClient & authentication service into constructor
-  constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
+  constructor(private http: HttpClient, private authenticationService: AuthenticationService ) { 
+
+  }
 
   createHeaders(): HttpHeaders {
 
     let httpOptions;
 
     this.authenticationService.readToken()
-      .subscribe(tokenRetrieved => {
+      .subscribe( tokenRetrieved => {
         httpOptions = new HttpHeaders({
-          Authorization: 'Bearer ' + tokenRetrieved
-        });
+          'Authorization': 'Bearer ' + tokenRetrieved
+        })
       });
 
     return httpOptions;
   }
 
   getUploads(): Observable<Upload[]> {
-    // httpOptions.headers = httpOptions.headers.set( 'Authorization', 'Bearer ' + this.authenticationService.getCurrentToken());
+    //httpOptions.headers = httpOptions.headers.set( 'Authorization', 'Bearer ' + this.authenticationService.getCurrentToken());
     return this.http.get<Upload[]>(this.uploadUrl, this.httpOptions);
   }
-
+      
   deleteUpload(upload: Upload): Observable<any> {
     const url = `${this.uploadUrl}/${upload._id}`;
     return this.http.delete(url, this.httpOptions);
