@@ -55,8 +55,11 @@ const fileFilter = (req, file, cb) => {
     // 
     console.log("=> File.mimetype : " + file.mimetype + "\n");
 
-    //reject a file, only accepts KML (+ png for testing for now)
-    if (file.mimetype === 'application/octet-stream' || file.mimetype === 'image/png') {
+    //reject a file, only accepts KML
+    // ********************************************************************
+    // TODO cb => isFileValid(): boolean
+    // ********************************************************************
+    if (file.mimetype === 'application/vnd.google-earth.kml+xml') {
         cb(null, true);
     } else {
         cb(new Error("Invalid file format"), false);

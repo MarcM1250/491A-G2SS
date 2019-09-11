@@ -173,6 +173,7 @@ input[type=text], select, textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  resize: none;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
@@ -287,8 +288,8 @@ textarea {
 #overlay {
   position: fixed;
   display: none;
-  max-width: 700px;
-  min-width: 400px;
+  max-width: 30%;
+  min-width: 200px;
   height: 500px;
   right: 0px;
   bottom: 48px;

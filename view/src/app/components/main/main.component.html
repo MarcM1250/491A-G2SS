@@ -55,7 +55,8 @@
 <!--End of Filter Searchbar------------------------------------------------>
 
 <!--Start of File Table---------------------------------------------------->
-<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortActive="upload_date"
+  matSortDirection="desc" class="mat-elevation-z8">
 
   <!--Filename Column-->
   <ng-container matColumnDef="title">
@@ -80,7 +81,7 @@
     <!--Sticky Footer Menu-->
     <td mat-footer-cell *matFooterCellDef class="footerMenu">
 
-      <button mat-raised-button (click)="on()" class="dropbtn">
+      <button mat-raised-button (click)="showUploadForm()" class="dropbtn">
         <mat-icon>cloud_upload</mat-icon>
         Upload
       </button>
@@ -177,7 +178,7 @@
 <div id="overlay">
   <!--Form--------------------------------------------------->
 
-  <form action="/action_page.php" (ngSubmit)="submitUpload()">
+  <form (ngSubmit)="submitUpload()">
     <legend>
       <h1>Upload Form</h1>
     </legend>
@@ -189,9 +190,14 @@
     <textarea id="fdescription" name="fdesciption" [(ngModel)]="description" placeholder="Write something.."></textarea>
 
     Select a file to upload:
-    <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload"
+    <<<<<<< HEAD <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload"
       accept='image/png, application/octet-stream'>
-    <input type="button" (click)="off()" value="Cancel"><input type="submit" value="Submit" (click)="submitFunction()">
+      <input type="button" (click)="off()" value="Cancel"><input type="submit" value="Submit"
+        (click)="submitFunction()">
+      =======
+      <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='.kml'>
+      <input type="button" value="Cancel" (click)="hideUploadForm()"><input type="submit" value="Submit">
+      >>>>>>> bf36fde5da602f3ab7cbb0593401025cc969eb13
 
   </form>
   <!--End of Form------------------------------------------>
