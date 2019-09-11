@@ -12,11 +12,11 @@ import { DeleteConfirmationComponent } from './delete-confirmation.component';
 import { DatePipe } from '@angular/common';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
-//import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
+// import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
 //
 
 @Component({
-  selector: 'main.component',
+  selector: 'app-main-page',
   styleUrls: ['main.component.css'],
   templateUrl: 'main.component.html',
   animations: [
@@ -31,7 +31,12 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router, private loginService: AuthenticationService, private uploadsService: UploadsService, public dialog: MatDialog) { }
+  constructor(
+    private router: Router,
+    private loginService: AuthenticationService,
+    private uploadsService: UploadsService,
+    public dialog: MatDialog) { }
+
   // Paginator
   @ViewChild(MatPaginator) paginator: MatPaginator;
   // ----------
@@ -89,27 +94,27 @@ export class MainComponent implements OnInit {
     // Changed by filterMenu
 
     // Filter by title
-    if (this.filterSelect == 0) {
-      this.dataSource.filterPredicate = function (data, filter: string): boolean {
+    if (this.filterSelect === 0) {
+      this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data.title.toLowerCase().includes(filter); // Only filters Filename
       };
     }
 
 
-    //Filter by upload date
-    //Year, Month, Day separately
-    if (this.filterSelect == 1) {
+    // Filter by upload date
+    // Year, Month, Day separately
+    if (this.filterSelect === 1) {
       this.pipe = new DatePipe('en');
       const defaultPredicate = this.dataSource.filterPredicate;
       this.dataSource.filterPredicate = (data, filter) => {
         const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
         return formatted.indexOf(filter) >= 0 || defaultPredicate(data, filter);
-      }
+      };
     }
 
     // Filter by uploader name
-    if (this.filterSelect == 2) {
-      this.dataSource.filterPredicate = function (data, filter: string): boolean {
+    if (this.filterSelect === 2) {
+      this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
       };
     }
@@ -155,7 +160,7 @@ export class MainComponent implements OnInit {
   downloadFile(upload: Upload) {
     this.uploadsService.postDownload(upload).subscribe(data => {
       const downloadURL = URL.createObjectURL(data);
-      let link = document.createElement('a');
+      const link = document.createElement('a');
       link.href = downloadURL;
       link.target = '_blank';
       link.download = upload.filename;
@@ -170,15 +175,15 @@ export class MainComponent implements OnInit {
   }
 
   // When the user clicks on the button, toggle between hiding and showing the dropdown content
-  //myFunction(): void {
-  //  document.getElementById('myDropdown').classList.toggle('show');
-  //}
+  // myFunction(): void {
+  //   document.getElementById('myDropdown').classList.toggle('show');
+  // }
   showUploadForm() {
-    document.getElementById("overlay").style.display = "flex";
+    document.getElementById('overlay').style.display = 'flex';
   }
 
   hideUploadForm() {
-    document.getElementById("overlay").style.display = "none";
+    document.getElementById('overlay').style.display = 'none';
   }
 
   submitFunction(): void {
@@ -225,9 +230,5 @@ export class MainComponent implements OnInit {
         setTimeout(() => { location.reload(); }, delayInMilliseconds);
       }
     });
-
-
   }
-
-
 }
