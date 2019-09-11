@@ -55,25 +55,24 @@
 <!--End of Filter Searchbar------------------------------------------------>
 
 <!--Start of File Table---------------------------------------------------->
-<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortActive="upload_date"
-  matSortDirection="desc" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-elevation-z8">
 
   <!--Filename Column-->
-  <ng-container matColumnDef="title">
+  <ng-container matColumnDef="Filename">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
     <td mat-cell *matCellDef="let element"> {{element.title}} </td>
 
   </ng-container>
 
   <!--Upload Date Column-->
-  <ng-container matColumnDef="upload_date">
+  <ng-container matColumnDef="UploadDate">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Upload Date </th>
     <td mat-cell *matCellDef="let element"> {{element.upload_date | date: 'medium' }} </td>
 
   </ng-container>
 
   <!--Uploader Column-->
-  <ng-container matColumnDef="upload_by">
+  <ng-container matColumnDef="Uploader">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Uploaded By </th>
     <td mat-cell *matCellDef="let element"> {{element.upload_by}} </td>
   
@@ -155,6 +154,10 @@
 
 </table>
 
+<div id="blank">
+
+
+</div>
 
 
 
@@ -162,7 +165,7 @@
 <div id="overlay">
   <!--Form--------------------------------------------------->
 
-  <form (ngSubmit)="submitUpload()">
+  <form action="/action_page.php" (ngSubmit)="submitUpload()">
     <legend>
       <h1>Upload Form</h1>
     </legend>
@@ -171,11 +174,18 @@
     <input type="text" id="fname" name="title" [(ngModel)]="title" placeholder="Your title..">
 
     <label for="fdescription">File Description</label>
-    <textarea id="fdescription" name="fdesciption" [(ngModel)]="description" placeholder="Write something.."></textarea>
+    <textarea id="fdescription" name="fdesciption" [(ngModel)]="description"
+      placeholder="Write something.."></textarea>
 
     Select a file to upload:
     <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='.kml'>
-    <input type="button" value="Cancel" (click)="hideUploadForm()"><input type="submit" value="Submit">
+
+    <div id = "uploadOptions">
+      <input type="submit" value="Submit" (click)="submitFunction()">
+      <span class="example-fill-remaining-space"></span>
+      <input type="submit" value="Cancel" (click)="hideUploadForm()">
+    </div>
+
   </form>
   <!--End of Form------------------------------------------>
 </div>
@@ -198,7 +208,7 @@
       Back to Top
     </button>
   <!--Upload Button-->
-  <button mat-raised-button (click)="on()" class="dropbtn">
+  <button mat-raised-button (click)="showUploadForm()" class="dropbtn">
     <mat-icon>cloud_upload</mat-icon>
     Upload
   </button>
