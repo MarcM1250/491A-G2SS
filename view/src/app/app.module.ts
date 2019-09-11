@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
-import { DeleteConfirmation } from './components/main/delete-confirmation.component';
+import { DeleteConfirmationComponent } from './components/main/delete-confirmation.component';
 // End of Default Angular imports
 
 // Manually added this Angular import - for routing.
@@ -42,9 +42,9 @@ import { AuthenticationService } from './services/authentication.service';
  */
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: MainComponent, canActivate: [GuardService]},
-  //{ path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
-  { path: '**', redirectTo : '/login' }
+  { path: 'main', component: MainComponent, canActivate: [GuardService] },
+  // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
@@ -52,7 +52,7 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     MainComponent,
-    DeleteConfirmation,
+    DeleteConfirmationComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +70,7 @@ const appRoutes: Routes = [
      */
     RouterModule.forRoot(
       appRoutes,
-      //{ enableTracing: true } // <-- debugging purposes only
+      // { enableTracing: true } // <-- debugging purposes only
     ),
 
     // Manually added - used in app.component.html
@@ -84,7 +84,7 @@ const appRoutes: Routes = [
     HttpClientModule,
   ],
   // For Delete Confirmation on Main Page
-  entryComponents: [DeleteConfirmation],
+  entryComponents: [DeleteConfirmationComponent],
 
   providers: [AuthenticationService],
   bootstrap: [AppComponent],

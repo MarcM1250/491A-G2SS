@@ -8,15 +8,14 @@ import { MatPaginator } from '@angular/material';
 
 import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
-import { DeleteConfirmation } from './delete-confirmation.component';
+import { DeleteConfirmationComponent } from './delete-confirmation.component';
 import { DatePipe } from '@angular/common';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
-//import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
-//
+// import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
 
 @Component({
-  selector: 'main.component',
+  selector: 'app-main-component',
   styleUrls: ['main.component.css'],
   templateUrl: 'main.component.html',
   animations: [
@@ -31,7 +30,12 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router, private loginService: AuthenticationService, private uploadsService: UploadsService, public dialog: MatDialog) { }
+  constructor(
+    private router: Router,
+    private loginService: AuthenticationService,
+    private uploadsService: UploadsService,
+    public dialog: MatDialog) { }
+
   // Paginator
   @ViewChild(MatPaginator) paginator: MatPaginator;
   // ----------
@@ -41,7 +45,7 @@ export class MainComponent implements OnInit {
   filterSelect = 0;
   // data = Object.assign(ELEMENT_DATA);
   uploads: Upload[];
-  //dataSource = new MatTableDataSource(this.uploads);
+  // dataSource = new MatTableDataSource(this.uploads);
 
   dataSource: MatTableDataSource<Upload>;
 
@@ -78,49 +82,47 @@ export class MainComponent implements OnInit {
    * @description: Retrieves data using a subscription
    * to the uploadsService.getUploads function :)
    * @param: none
-  */
-
+   */
   retrieveData() {
-        // get uploads from server
-        this.uploadsService.getUploads().subscribe(uploads => {
-      
-          this.uploads = uploads.filter(x => x.delete_date === undefined);
-          this.dataSource = new MatTableDataSource(this.uploads);
-          this.dataSource.sort = this.sort;
-    
-        }); // subcribe similar to promises .then cb: asynchronous
+    // get uploads from server
+    this.uploadsService.getUploads().subscribe(uploads => {
+
+      this.uploads = uploads.filter(x => x.delete_date === undefined);
+      this.dataSource = new MatTableDataSource(this.uploads);
+      this.dataSource.sort = this.sort;
+
+    }); // subcribe similar to promises .then cb: asynchronous
   }
 
   overwriteFilter() {
-
     // Overwrites filterPredicate to only include certain columns
     // Changed by filterMenu
 
     // Filter by title
-    if (this.filterSelect == 0) {
-      this.dataSource.filterPredicate = function(data, filter: string): boolean {
+    if (this.filterSelect === 0) {
+      this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data.title.toLowerCase().includes(filter); // Only filters Filename
       };
     }
 
 
-    //Filter by upload date
-    //Year, Month, Day separately
-    if(this.filterSelect == 1){
+    // Filter by upload date
+    // Year, Month, Day separately
+    if (this.filterSelect === 1) {
       this.pipe = new DatePipe('en');
-      const defaultPredicate=this.dataSource.filterPredicate;
-      this.dataSource.filterPredicate = (data, filter) =>{
-        const formatted=this.pipe.transform(data.upload_date,'MM/dd/yyyy');
-        return formatted.indexOf(filter) >= 0 || defaultPredicate(data,filter) ;
-      }
+      const defaultPredicate = this.dataSource.filterPredicate;
+      this.dataSource.filterPredicate = (data, filter) => {
+        const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
+        return formatted.indexOf(filter) >= 0 || defaultPredicate(data, filter);
+      };
     }
 
     // Filter by uploader name
-    if (this.filterSelect == 2) {
-      this.dataSource.filterPredicate = function(data, filter: string): boolean {
+    if (this.filterSelect === 2) {
+      this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
       };
-  }
+    }
   }
 
   logout(): void { // Logout button redirect
@@ -158,7 +160,7 @@ export class MainComponent implements OnInit {
   downloadFile(upload: Upload) {
     this.uploadsService.postDownload(upload).subscribe(data => {
       const downloadURL = URL.createObjectURL(data);
-      let link = document.createElement('a');
+      const link = document.createElement('a');
       link.href = downloadURL;
       link.target = '_blank';
       link.download = upload.filename;
@@ -174,20 +176,20 @@ export class MainComponent implements OnInit {
 
   // When the user clicks on the button, toggle between hiding and showing the dropdown content
   // myFunction(): void {
-  //  document.getElementById('myDropdown').classList.toggle('show');
-  //}
+  //   document.getElementById('myDropdown').classList.toggle('show');
+  // }
   on() {
-    document.getElementById("overlay").style.display = "flex";
+    document.getElementById('overlay').style.display = 'flex';
   }
-  
+
   off() {
-    document.getElementById("overlay").style.display = "none";
+    document.getElementById('overlay').style.display = 'none';
   }
 
   submitFunction(): void {
     // Hides form + Reloads page IF file is valid
     if (this.file.type === 'image/png' || this.file.type === 'application/octet-stream') {
-      //document.getElementById('myDropdown').classList.toggle('show');
+      // document.getElementById('myDropdown').classList.toggle('show');
       this.off();
       location.reload();
     }
@@ -197,6 +199,7 @@ export class MainComponent implements OnInit {
   onclick = event => {
     if (!event.target.matches('.dropbtn')) {
       const dropdowns = document.getElementsByClassName('dropdown-content');
+      // tslint:disable-next-line: prefer-for-of
       for (let i = 0; i < dropdowns.length; i++) {
         const openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {
@@ -210,7 +213,7 @@ export class MainComponent implements OnInit {
   openDialog(upload: Upload): void {
     // Stores file value for use in other functions
     this.upload = upload;
-    const dialogRef = this.dialog.open(DeleteConfirmation, {
+    const dialogRef = this.dialog.open(DeleteConfirmationComponent, {
       width: '500px',
     });
 
@@ -224,17 +227,10 @@ export class MainComponent implements OnInit {
 
       // Result = 1 if user clicks yes
       // Reloads page if user confirms deletion of file
-      if(result === 1){ 
-        var delayInMilliseconds = 700; 
-        setTimeout(function() { 
-          location.reload() 
-        }, delayInMilliseconds);
-        
-      }  
+      if (result === 1) {
+        const delayInMilliseconds = 700;
+        setTimeout(() => { location.reload(); }, delayInMilliseconds);
+      }
     });
-
-
   }
-
-  
 }
