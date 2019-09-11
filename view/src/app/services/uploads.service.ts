@@ -39,13 +39,13 @@ export class UploadsService {
     return this.http.get<Upload[]>(this.uploadUrl, this.httpOptions);
   }
       
-  deleteUpload(upload: Upload): Observable<Upload> {
+  deleteUpload(upload: Upload): Observable<any> {
     const url = `${this.uploadUrl}/${upload._id}`;
-    return this.http.delete<Upload>(url, this.httpOptions);
+    return this.http.delete(url, this.httpOptions);
   }
 
-  postUpload(upload: FormData): Observable<Upload> {
-    return this.http.post<Upload>(this.uploadUrl, upload, this.httpOptions);
+  postUpload(upload: FormData): Observable<any> {
+    return this.http.post(this.uploadUrl, upload, this.httpOptions);
   }
 
   postDownload(upload: Upload): Observable<Upload> {

@@ -52,7 +52,7 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     MainComponent,
-    DeleteConfirmation,
+    DeleteConfirmation
   ],
   imports: [
     BrowserModule,
