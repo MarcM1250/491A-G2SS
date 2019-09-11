@@ -190,15 +190,8 @@
     <textarea id="fdescription" name="fdesciption" [(ngModel)]="description" placeholder="Write something.."></textarea>
 
     Select a file to upload:
-    <<<<<<< HEAD <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload"
-      accept='image/png, application/octet-stream'>
-      <input type="button" (click)="off()" value="Cancel"><input type="submit" value="Submit"
-        (click)="submitFunction()">
-      =======
-      <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='.kml'>
-      <input type="button" value="Cancel" (click)="hideUploadForm()"><input type="submit" value="Submit">
-      >>>>>>> bf36fde5da602f3ab7cbb0593401025cc969eb13
-
+    <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='.kml'>
+    <input type="button" value="Cancel" (click)="hideUploadForm()"><input type="submit" value="Submit">
   </form>
   <!--End of Form------------------------------------------>
 
