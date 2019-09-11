@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import {  CanActivate, 
-          ActivatedRouteSnapshot, 
-          RouterStateSnapshot, 
-          Router, Route } from '@angular/router';
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  Router,
+} from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Injectable({
@@ -11,15 +13,16 @@ import { AuthenticationService } from '../services/authentication.service';
 export class GuardService implements CanActivate {
 
   constructor(
-    private authenticationService: AuthenticationService, 
-    private _router: Router 
-  ) {}
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) { }
 
-  canActivate (next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this.authenticationService.isTokenAuthenticaded())
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    if (this.authenticationService.isTokenAuthenticaded()) {
       return true;
+    }
 
-    this._router.navigate(['/login']);
+    this.router.navigate(['/login']);
     return false;
   }
 }

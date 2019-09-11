@@ -11,41 +11,39 @@ import { map } from 'rxjs/operators';
 
 export class UploadsService {
 
-  httpOptions = { headers: this.createHeaders() }
+  httpOptions = { headers: this.createHeaders() };
 
   uploadUrl = API_URL + '/uploads';
 
   // inject httpClient & authentication service into constructor
-  constructor(private http: HttpClient, private authenticationService: AuthenticationService ) { 
-
-  }
+  constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
 
   createHeaders(): HttpHeaders {
 
     let httpOptions;
 
     this.authenticationService.readToken()
-      .subscribe( tokenRetrieved => {
+      .subscribe(tokenRetrieved => {
         httpOptions = new HttpHeaders({
-          'Authorization': 'Bearer ' + tokenRetrieved
-        })
+          Authorization: 'Bearer ' + tokenRetrieved
+        });
       });
 
     return httpOptions;
   }
 
   getUploads(): Observable<Upload[]> {
-    //httpOptions.headers = httpOptions.headers.set( 'Authorization', 'Bearer ' + this.authenticationService.getCurrentToken());
+    // httpOptions.headers = httpOptions.headers.set( 'Authorization', 'Bearer ' + this.authenticationService.getCurrentToken());
     return this.http.get<Upload[]>(this.uploadUrl, this.httpOptions);
   }
-      
-  deleteUpload(upload: Upload): Observable<Upload> {
+
+  deleteUpload(upload: Upload): Observable<any> {
     const url = `${this.uploadUrl}/${upload._id}`;
-    return this.http.delete<Upload>(url, this.httpOptions);
+    return this.http.delete(url, this.httpOptions);
   }
 
-  postUpload(upload: FormData): Observable<Upload> {
-    return this.http.post<Upload>(this.uploadUrl, upload, this.httpOptions);
+  postUpload(upload: FormData): Observable<any> {
+    return this.http.post(this.uploadUrl, upload, this.httpOptions);
   }
 
   postDownload(upload: Upload): Observable<Upload> {

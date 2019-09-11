@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // Begin manually added code
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
-//import { LoginResponse } from '../../models/Login';
+// import { LoginResponse } from '../../models/Login';
 // End manually added code
 
 @Component({
@@ -13,43 +13,38 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
   private message: string;
-  private loading: boolean = false;
+  private loading = false;
 
-  constructor(private router: Router, private authenticationService: AuthenticationService ) { 
-    if (this.authenticationService.isTokenAuthenticaded()) { 
-      console.log("Yay");
+  constructor(private router: Router, private authenticationService: AuthenticationService) {
+    if (this.authenticationService.isTokenAuthenticaded()) {
+      console.log('Yay');
       this.router.navigate(['/main']);
-  }
+    }
 
-}
+  }
 
   // For login
   username: string; password: string;
 
-  ngOnInit() { 
-    //this.loginService.logout();
-  }
+  ngOnInit() { }
 
   // Login function used when the Login button is clicked.
   onSubmit(): void {
-
     this.loading = true;
 
     this.authenticationService.login(this.username, this.password)
-        .subscribe(
-            data => {
-              this.message = 'Success :)';
-              this.loading = false;
-              
-              this.router.navigate(['/main']);              
-              //this.authenticationService.logout();
-            },
-            err => { 
-              this.authenticationService.logout();   
-              this.loading = false;
-              this.message = "Authentication Failed :( "
-              console.error("Authentication Failed :( \n", err);
-            }
-        ); 
+      .subscribe(() => {
+        this.message = 'Success :)';
+        this.loading = false;
+
+        this.router.navigate(['/main']);
+      },
+        err => {
+          this.authenticationService.logout();
+          this.loading = false;
+          this.message = 'Authentication Failed :(';
+          console.error('Authentication Failed :(\n', err);
+        }
+      );
   }
 }

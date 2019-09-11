@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 import { map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
-export const API_URL = "https://localhost:3000/api";
+export const API_URL = "http://localhost:3000/api";
 
 @Injectable()
 

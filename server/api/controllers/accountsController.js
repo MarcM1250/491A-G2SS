@@ -139,7 +139,7 @@ exports.login = (req, res, next) => {
                         userId: account[0]._id
                     }, process.env.JWT_KEY, // sign the token with a password (will be used to decode the token)
                         {
-                            expiresIn: "1h"
+                            expiresIn: "2h"
                         });
                     // return the JWT Token
                     return res.status(200).json({
