@@ -184,11 +184,24 @@ input[type=submit] {
   cursor: pointer;
 }
 
-
 input[type=submit]:hover {
   background-color: #45a049;
 }
 
+input[type=button] {
+  width: 45%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
 
 td[colspan="6"] div, td[colspan="5"] div {
   display: none;
