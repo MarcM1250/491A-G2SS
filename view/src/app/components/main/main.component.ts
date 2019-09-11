@@ -245,26 +245,15 @@ export class MainComponent implements OnInit {
     // Stores file value for use in other functions
     this.upload = upload;
     const dialogRef = this.dialog.open(DeleteConfirmationComponent, {
-      width: '500px',
+      width: '400px',
     });
 
     // On closing Delete Dialog Box
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-
       // Set deleteCheck to result value
       this.deleteCheck = result;
       this.deleteUpload(this.upload);
-
-      // Result = 1 if user clicks yes
-      // Reloads page if user confirms deletion of file
-      if(result === 1){ 
-        var delayInMilliseconds = 700; 
-        setTimeout(function() { 
-          location.reload() 
-        }, delayInMilliseconds);
-        
-      }  
     });
 
 
