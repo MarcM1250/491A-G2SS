@@ -8,7 +8,7 @@ import { MatPaginator } from '@angular/material';
 
 import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
-import { DeleteConfirmation } from './delete-confirmation.component';
+import { DeleteConfirmationComponent } from './delete-confirmation.component';
 import { DatePipe } from '@angular/common';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
@@ -31,7 +31,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router, private loginService: AuthenticationService, private uploadsService: UploadsService, public dialog: MatDialog) { }
+  constructor(private router: Router, private authenticationService: AuthenticationService, private uploadsService: UploadsService, public dialog: MatDialog) { }
   // Paginator
   @ViewChild(MatPaginator) paginator: MatPaginator;
   // ----------
@@ -41,12 +41,14 @@ export class MainComponent implements OnInit {
   filterSelect = 0;
   // data = Object.assign(ELEMENT_DATA);
   uploads: Upload[];
-  dataSource = new MatTableDataSource(this.uploads);
+  //dataSource = new MatTableDataSource(this.uploads);
+
+  dataSource: MatTableDataSource<Upload>;
 
   // For use in filtering file dates
   pipe: DatePipe;
 
-  displayedColumns: string[] = ['Filename', 'UploadDate', 'Uploader'];
+  displayedColumns: string[] = ['title', 'upload_date', 'upload_by'];
   expandedElement: Upload | null;
 
   /** Selecting a row from the table----------------------- */
@@ -69,18 +71,24 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    setTimeout(() => this.dataSource.paginator = this.paginator);
-
-    this.dataSource.sort = this.sort;
-    // get uploads from server
-    this.uploadsService.getUploads().subscribe(uploads => {
-      this.uploads = uploads.filter(x => x.delete_date === undefined);
-      this.dataSource = new MatTableDataSource(this.uploads);
-      this.dataSource.paginator = this.paginator;
-    }); // subcribe similar to promises .then cb: asynchronous
+    this.retrieveData();
   }
 
+  /**
+   * @description: Retrieves data using a subscription
+   * to the uploadsService.getUploads function :)
+   * @param: none
+  */
+
+  retrieveData() {
+    // get uploads from server
+    this.uploadsService.getUploads().subscribe(
+      uploads => {  
+        this.uploads = uploads.filter(x => x.delete_date === undefined);
+        this.dataSource = new MatTableDataSource(this.uploads);
+        this.dataSource.sort = this.sort;
+    }); // subcribe similar to promises .then cb: asynchronous
+  }
 
 
   overwriteFilter() {
@@ -116,8 +124,7 @@ export class MainComponent implements OnInit {
   }
 
   logout(): void { // Logout button redirect
-    this.loginService.logout();
-
+    this.authenticationService.logout();
   }
 
   fileEvent($event) {
@@ -125,23 +132,58 @@ export class MainComponent implements OnInit {
   }
 
   submitUpload(): void { // Upload
-    const upload: FormData = new FormData();
-    upload.append('title', this.title);
-    upload.append('description', this.description);
-    upload.append('file', this.file);
-    this.uploadsService.postUpload(upload).subscribe(data => {
-      this.uploads.push(data); // push upload to array
-    });
+    console.log("FileType: ", this.file.type);
+
+    if (this.isKMLfile()) {
+      
+      const upload: FormData = new FormData();
+      upload.append('title', this.title);
+      upload.append('description', this.description);
+      upload.append('file', this.file);
+
+      this.uploadsService.postUpload(upload)
+      .subscribe(
+        response => {
+          console.log("Yoo: ", <any>response.createdUpload);
+          this.uploads.push(response.createdUpload);
+        }, 
+        err => {
+           alert(err);
+        },
+        () => {
+          this.dataSource._updateChangeSubscription();          
+        }
+        );
+
+    } else {
+      alert("Not a KML file :(")
+    }
+    
+
+  }
+
+  isKMLfile(): boolean {
+      return this.file.type==='application/vnd.google-earth.kml+xml'
   }
 
   deleteUpload(upload: Upload) {
     // If user confirms Delete Confirmation box, proceed to delete
     if (this.deleteCheck === 1) {
       // delete from UI
-      this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
-      this.dataSource.filter = upload._id;
+
       // delete from server
-      this.uploadsService.deleteUpload(upload).subscribe();
+      this.uploadsService.deleteUpload(upload).subscribe(
+        (response) => { 
+          console.log("Response from deleting: ", response) },
+        err => { console.log(err);
+          if(err.status === 401) 
+            this.logout();       
+        },
+        () =>{
+          this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
+          this.dataSource.filter = upload._id;
+        }
+      );
 
       // Reset deleteCheck value
       this.deleteCheck = 0;
@@ -202,7 +244,7 @@ export class MainComponent implements OnInit {
   openDialog(upload: Upload): void {
     // Stores file value for use in other functions
     this.upload = upload;
-    const dialogRef = this.dialog.open(DeleteConfirmation, {
+    const dialogRef = this.dialog.open(DeleteConfirmationComponent, {
       width: '500px',
     });
 
