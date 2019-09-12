@@ -153,16 +153,17 @@ export class MainComponent implements OnInit {
       this.uploadsService.postUpload(upload)
         .subscribe(
           response => {
-            console.log('Yoo: ', response.createdUpload as any);
+            console.log("Server response", <any>response.createdUpload);
             this.uploads.push(response.createdUpload);
-          },
+          }, 
           err => {
-            alert(err);
+             alert(err);
           },
           () => {
-            this.dataSource._updateChangeSubscription();
+            this.dataSource._updateChangeSubscription();  
+            this.hideUploadForm();        
           }
-        );
+          );
 
     } else {
       alert('Not a KML file :(');
@@ -192,8 +193,10 @@ export class MainComponent implements OnInit {
           }
         },
         () => {
-          this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
-          this.dataSource.filter = upload._id;
+          this.uploads.splice (this.uploads.indexOf(upload), 1);
+          this.dataSource._updateChangeSubscription();  
+          // this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
+          // this.dataSource.filter = upload._id;
         }
       );
 
@@ -229,14 +232,6 @@ export class MainComponent implements OnInit {
 
   hideUploadForm() {
     document.getElementById('overlay').style.display = 'none';
-  }
-
-  submitFunction(): void {
-    // Hides form + Reloads page IF file is valid
-    if (this.file.type === 'image/png') {
-      this.hideUploadForm();
-      location.reload();
-    }
   }
 
   // Close the dropdown if the user clicks outside of it
