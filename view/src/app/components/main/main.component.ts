@@ -143,7 +143,7 @@ export class MainComponent implements OnInit {
   submitUpload(): void { // Upload
     console.log('FileType: ', this.file.type);
 
-    if (this.isKMLfile()) {
+    if (!this.isKMLfile()) {
 
       const upload: FormData = new FormData();
       upload.append('title', this.title);
