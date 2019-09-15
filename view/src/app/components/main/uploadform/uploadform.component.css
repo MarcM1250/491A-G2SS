@@ -1,0 +1,75 @@
+#overlay {
+    box-shadow: -8px -9px 10px #aaaaaa52;
+    display: flex;
+    position: fixed;
+    max-width: 30%;
+    min-width: 400px;
+    height: 500px;
+    right: 0px;
+    bottom: 48px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 100;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  /* Upload Form Style */
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  }
+  
+  input[type=submit] {
+    width: 45%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  input[type=button] {
+    width: 45%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  td[colspan="6"] div, td[colspan="5"] div {
+    display: none;
+    text-align: left;
+    margin-left: 20px;
+  }
+  
+  td[colspan="6"], td[colspan="5"] {
+    padding: 0;
+    border: 0;
+  }
+  
+  textarea {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    height: 200px;
+  }
+  
+  /* End of Upload Form style */

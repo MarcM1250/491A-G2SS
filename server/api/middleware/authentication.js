@@ -16,7 +16,7 @@ exports.check_user = (req, res, next) => {
     } catch (error) {
         console.log("Error: ", error);
         return res.status(401).json({
-            message: 'Authentication failed'
+            message: 'Authentication failed 04'
         });
     }
 };

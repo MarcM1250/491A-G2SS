@@ -40,7 +40,7 @@ exports.create_upload = (req, res, next) => {
         .save()
         .then(result => {
             res.status(201).json({
-                message: 'Created upload successfully',
+                message: '"Upload created successfully"',
                 createdUpload: {
                     _id: result._id,
                     files_id: result.files_id,

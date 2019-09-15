@@ -122,14 +122,14 @@ exports.login = (req, res, next) => {
             // Return authentication failed if username does not exist in the DB
             if (account.length < 1) {
                 return res.status(401).json({
-                    message: 'Authentication failed'
+                    message: 'Authentication failed 01'
                 });
             }
             // Use the compare method from bcrypt to verify the account passwords
             bcrypt.compare(req.body.password, account[0].password, (err, result) => {
                 if (err) {
                     return res.status(401).json({
-                        message: 'Authentication failed'
+                        message: 'Authentication failed 02'
                     });
                 }
                 // if password matched, create a JWT Token for the user
@@ -149,7 +149,7 @@ exports.login = (req, res, next) => {
 
                 }
                 res.status(401).json({
-                    message: 'Authentication failed'
+                    message: 'Authentication failed 03'
                 });
             });
         })

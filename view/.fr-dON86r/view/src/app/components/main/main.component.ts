@@ -11,7 +11,7 @@ import { Upload } from '../../models/Upload';
 import { DeleteConfirmationComponent } from './delete-confirmation.component';
 import { DatePipe } from '@angular/common';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-
+import { HttpClient } from "@angular/common/http";
 // import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
 //
 
@@ -32,11 +32,14 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class MainComponent implements OnInit {
 
   constructor(
-    private _router: Router,
-    private _authenticationservice: AuthenticationService,
-    private _uploadsService: UploadsService,
-    public dialog: MatDialog) { 
-    
+    private router: Router,
+    private loginService: AuthenticationService,
+    private uploadsService: UploadsService,
+    public dialog: MatDialog,
+    private httpVar: HttpClient) { 
+      this.title = '';
+      this.description = '';
+      
     }
     
   // Paginator
@@ -47,8 +50,7 @@ export class MainComponent implements OnInit {
   deleteCheck: number;
   filterSelect = 0;
   uploads: Upload[];
-  uploadForm: boolean = false;
-  
+
   dataSource: MatTableDataSource<Upload>;
 
   // For use in filtering file dates
@@ -60,6 +62,10 @@ export class MainComponent implements OnInit {
   /** Selecting a row from the table----------------------- */
   selection = new SelectionModel<Upload>(true, []);
   /** End of Selection Methods --------------------------- */
+
+  title: string;
+  description: string;
+  file: File;
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -84,16 +90,22 @@ export class MainComponent implements OnInit {
 
   retrieveData() {
     // get uploads from server
-    this._uploadsService.getUploads().subscribe(
-      response => {
-        this.uploads = response.filter(x => x.delete_date === undefined);
+    this.uploadsService.getUploads().subscribe(
+      uploads => {
+        this.uploads = uploads.filter(x => x.delete_date === undefined);
         this.dataSource = new MatTableDataSource(this.uploads);
         this.dataSource.sort = this.sort;
-      },
-      (err) => { console.log(err)},
-      () => { }); 
-    // subcribe similar to promises .then cb: asynchronous
-    
+      }); // subcribe similar to promises .then cb: asynchronous
+  }
+
+  loadFakeData() {
+    this.title = "[KML] " + Math.floor(Math.random() * 100) + "-Upload Test "+ Math.random().toString(36).replace('0.','');
+      this.httpVar.get("https://baconipsum.com/api/?type=meat-and-filler&paras=1").subscribe(
+          resp => {
+            this.description = <any>resp;
+            console.log(resp);
+          }
+      );
   }
 
   overwriteFilter() {
@@ -125,6 +137,54 @@ export class MainComponent implements OnInit {
         return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
       };
     }
+  }
+
+  logout(): void { // Logout button redirect
+    this.loginService.logout();
+  }
+
+  fileEvent($event) {
+    this.file = $event.target.files[0];
+  }
+
+  goToUserPanel() {
+    this.router.navigate(['/user-management']);
+  }
+
+  submitUpload(): void { // Upload
+    console.log('FileType: ', this.file.type);
+
+    if (this.isKMLfile()) {
+
+      const upload: FormData = new FormData();
+      upload.append('title', this.title);
+      upload.append('description', this.description);
+      upload.append('file', this.file);
+
+      this.uploadsService.postUpload(upload)
+        .subscribe(
+          response => {
+            console.log("Server response", <any>response.createdUpload);
+            this.uploads.push(response.createdUpload);
+          }, 
+          err => {
+            console.log("Upload failed: ", err.message);
+          },
+          () => {
+            this.dataSource._updateChangeSubscription();  
+            this.hideUploadForm();        
+          }
+          );
+
+    } else {
+      alert('Not a KML file :(');
+    }
+
+
+  }
+
+  isKMLfile(): boolean {
+    return this.file.type === 'application/vnd.google-earth.kml+xml';
   }
 
   deleteUpload(upload: Upload) {
@@ -178,10 +238,13 @@ export class MainComponent implements OnInit {
   //   document.getElementById('myDropdown').classList.toggle('show');
   // }
   showUploadForm() {
-    //document.getElementById('overlay').style.display = 'flex';
-    this.uploadForm = true;
+    this.loadFakeData();
+    document.getElementById('overlay').style.display = 'flex';
   }
 
+  hideUploadForm() {
+    document.getElementById('overlay').style.display = 'none';
+  }
 
   // Close the dropdown if the user clicks outside of it
   onclick = event => {

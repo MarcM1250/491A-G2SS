@@ -1,0 +1,70 @@
+<!--TOOLBAR which has the application name on the left side and buttons on the right.
+  We have imported the Material toolbar in the material.module.ts file. To have Material buttons,
+  we have imported MatToolbarModule which is imported in material.module.ts-->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>KML Guard</span>
+    <span class="login-fill-remaining-space"></span>
+    <span class="align-center"></span>
+    <span class="login-spacer"></span>
+    <!--About directs user to our GitHub wiki page.-->
+    <button mat-button onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';">About</button>
+    <button mat-button>Contact</button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <!-- <mat-icon>more_vert</mat-icon> -->
+      <!--button for additional menu items-->
+    </button>
+    <mat-menu #menu="matMenu">
+      <!--The following were example menu items for the additional menu items-->
+      <!-- <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voicemail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button> -->
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!--END OF TOOLBAR CODE-->
+
+<!--LOGIN FORM
+    Uses MatCardModule and MatInputModule imported in material.module.ts.
+    MatCardModule is Material's layout and MatInputModule provides Material input fields.-->
+<mat-card class="login-card">
+  <mat-card-title style="text-align: center;">Login</mat-card-title>
+  <mat-card-content>
+    <form class="login-form">
+      <table class="login-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="login-full-width">
+              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="login-full-width">
+              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="onSubmit()" color="primary">Login</button>
+    <!--login() in login.component.ts-->
+  </mat-card-actions>
+  <div *ngIf="loading"> Authorizing ...</div>
+  <div *ngIf="message"> {{ message }} </div>
+
+</mat-card>
+<!--END OF LOGIN FORM CODE-->

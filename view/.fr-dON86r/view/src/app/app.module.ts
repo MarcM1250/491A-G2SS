@@ -35,8 +35,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 // Manually added HTTP provider
 import { AuthenticationService } from './services/authentication.service';
-import { UploadformComponent } from './components/main/uploadform/uploadform.component';
-import { HeaderComponent } from './components/main/header/header.component';
 
 /**
  * Manually added
@@ -59,8 +57,6 @@ const appRoutes: Routes = [
     MainComponent,
     DeleteConfirmationComponent,
     UserManagementComponent,
-    UploadformComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,
