@@ -15,7 +15,11 @@
   
       Select a file to upload:
       <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='.kml'>
-  
+      
+      <!--File Size Limit Error Message-->
+      <p id="sizeError"> {{sizelimit}} </p>
+
+      <!--Upload Form Buttons-->
       <div id="uploadOptions">
         <input type="submit" value="Submit">
         <span class="example-fill-remaining-space"></span>
