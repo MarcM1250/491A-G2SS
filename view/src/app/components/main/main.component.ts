@@ -78,7 +78,7 @@ export class MainComponent implements OnInit {
 
   /**
    * @description: Retrieves data using a subscription
-   * to the uploadsService.getUploads function :)
+   * to the _uploadsService.getUploads function :)
    * @param: none
    */
 
@@ -133,7 +133,7 @@ export class MainComponent implements OnInit {
       // delete from UI
 
       // delete from server
-      this.uploadsService.deleteUpload(upload).subscribe(
+      this._uploadsService.deleteUpload(upload).subscribe(
         (response) => {
           console.log('Response from deleting: ', response);
         },
@@ -157,7 +157,7 @@ export class MainComponent implements OnInit {
   }
 
   downloadFile(upload: Upload) {
-    this.uploadsService.postDownload(upload).subscribe(data => {
+    this._uploadsService.postDownload(upload).subscribe(data => {
       const downloadURL = URL.createObjectURL(data);
       const link = document.createElement('a');
       link.href = downloadURL;
