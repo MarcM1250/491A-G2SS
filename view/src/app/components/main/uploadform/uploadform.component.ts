@@ -16,6 +16,7 @@ export class UploadformComponent implements OnInit {
   title: string;
   description: string;
   file: File;
+  sizelimit: string;
 
   @Input() dataSource: MatTableDataSource<Upload>;
   @Input() uploads: Upload[];
@@ -36,36 +37,52 @@ export class UploadformComponent implements OnInit {
 
   fileEvent($event) {
     this.file = $event.target.files[0];
+    //alert(this.file.size/1024 + ' KB');
   }
 
-  submitUpload(): void { // Upload
-    console.log('FileType: ', this.file.type);
+  submitUpload(): void { // Submit file for upload
+    //console.log('FileType: ', this.file.type);
+    
+    //Maximum File Size Limit
+    if(this.file.size/1024 > 30){ //File Size Limit: 512KB
+      this.sizelimit = "File size of 512KB exceeded, please choose another file";
+      let audio = new Audio();
+      audio.src = "../../assets/alarm.wav";
+      audio.load();
+      audio.play();
+    }
+    else{
+      this.sizelimit = "";
 
-    if (this.file && this.isKMLfile()) {
 
-      const upload: FormData = new FormData();
-      upload.append('title', this.title);
-      upload.append('description', this.description);
-      upload.append('file', this.file);
+      
+      if (this.file && this.isKMLfile()) {
+        alert('Not a KML file :(');
+      }
 
-      this.uploadsService.postUpload(upload)
-        .subscribe(
-          response => {
-            console.log("Server response => ", <any>response.message);
-            this.uploads.push(response.createdUpload);
-          }, 
-          err => {
-            console.log("Upload failed: ", err.message);
-          },
-          () => {
-            this.dataSource._updateChangeSubscription();  
-            this.hideUploadForm();        
-            
-          }
-          );
+      else {
+        const upload: FormData = new FormData();
+        upload.append('title', this.title);
+        upload.append('description', this.description);
+        upload.append('file', this.file);
 
-    } else {
-      alert('Not a KML file :(');
+        this.uploadsService.postUpload(upload)
+          .subscribe(
+            response => {
+              console.log("Server response => ", <any>response.message);
+              this.uploads.push(response.createdUpload);
+            }, 
+            err => {
+              console.log("Upload failed: ", err.message);
+            },
+            () => {
+              this.dataSource._updateChangeSubscription();  
+              this.hideUploadForm();        
+              
+            }
+            );
+
+      }
     }
   }
 
@@ -78,6 +95,7 @@ export class UploadformComponent implements OnInit {
     this.showFormChange.emit(this.showForm);
   }
 
+  // Auto inputs test data for Title and Description
   loadFakeData() {
     this.title = "[KML] " + Math.floor(Math.random() * 100) + "-Upload Test "+ Math.random().toString(36).replace('0.','');
       this.httpVar.get("https://baconipsum.com/api/?type=meat-and-filler&paras=1").subscribe(

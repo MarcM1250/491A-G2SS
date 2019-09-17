@@ -9,5 +9,5 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'view';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private _httpClient: HttpClient) { }
 }

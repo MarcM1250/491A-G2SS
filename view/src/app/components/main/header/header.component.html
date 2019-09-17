@@ -2,7 +2,7 @@
 <mat-toolbar color="primary" class="siteHeader">
     <mat-toolbar-row>
       <span>KML Guard</span>
-      <span class="example-fill-remaining-space"></span>
+      <span class="fill-remaining-space"></span>
       <span class="align-center"></span>
       <span class="example-spacer"></span>
       <!--Buttons-->
@@ -25,7 +25,7 @@
         </button>
         <!--
         TODO: Restict the visibility of this button using traits of logged-in user
-        *ngIf this._authenticationService.isAdmin()
+        <*ngIf this._authenticationService.isAdmin()
         -->
         <button mat-menu-item (click)="goToUserPanel()">
           <mat-icon>assessment</mat-icon>

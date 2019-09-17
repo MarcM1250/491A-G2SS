@@ -4,9 +4,10 @@
     position: fixed;
     max-width: 30%;
     min-width: 400px;
-    height: 500px;
+    min-height: 500px;
+    max-height: 550px;
     right: 0px;
-    bottom: 48px;
+    bottom: 50px;
     background-color: rgba(255, 255, 255, 1);
     z-index: 100;
     cursor: pointer;
@@ -24,6 +25,7 @@ input[type=text], select, textarea {
     border-radius: 4px;
     box-sizing: border-box;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    resize: vertical;
   }
   
   input[type=submit] {
@@ -71,5 +73,11 @@ input[type=text], select, textarea {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     height: 200px;
   }
+
+  #sizeError{
+    color: rgb(170, 1, 1);
+  }
   
   /* End of Upload Form style */
+
+
