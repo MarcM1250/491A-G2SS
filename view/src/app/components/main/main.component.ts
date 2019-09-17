@@ -45,7 +45,7 @@ export class MainComponent implements OnInit {
 
   upload: Upload; // Holds selected file
   deleteCheck: number;
-  filterSelect = 2;
+  filterSelect = "";
   uploads: Upload[];
   uploadForm: boolean = false;
   
@@ -97,34 +97,9 @@ export class MainComponent implements OnInit {
   }
 
   overwriteFilter() {
-
-    // Overwrites filterPredicate to only include certain columns
-    // Changed by filterMenu
-
-    // Filter by title
-    if (this.filterSelect == 0) {
-      this.dataSource.filterPredicate = (data, filter: string): boolean => {
-        return data.title.toLowerCase().includes(filter); // Only filters Filename
-      };
-    }
-
-    // Filter by upload date
-    // Year, Month, Day separately
-    if (this.filterSelect == 1) {
-      this.pipe = new DatePipe('en');
-      const defaultPredicate = this.dataSource.filterPredicate;
-      this.dataSource.filterPredicate = (data, filter) => {
-        const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
-        return formatted.indexOf(filter) >= 0 || defaultPredicate(data, filter);
-      };
-    }
-
-    // Filter by uploader name
-    if (this.filterSelect == 2) {
-      this.dataSource.filterPredicate = (data, filter: string): boolean => {
-        return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
-      };
-    }
+    this.dataSource.filterPredicate = (data, filter: string): boolean => {
+      return data[this.filterSelect].toLowerCase().includes(filter);
+    };
   }
 
   deleteUpload(upload: Upload) {
