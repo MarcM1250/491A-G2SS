@@ -127,14 +127,19 @@ exports.delete_file = (req, res, next) => {
         bucket.delete(req.fileData.files_id, function (error) {
             if (error) {
                 console.log(error);
+                if(!res.headersSent) {
                 res.status(500).json({
                     error: error
                 });
+            }
             }else{
+                console.log(res.headersSent);
+                if(!res.headersSent) {
             res.status(200).json({
                 message: 'Delete successful',
                 //upload: req.fileData
             });
+        }
         }
         conn.close();
         });
