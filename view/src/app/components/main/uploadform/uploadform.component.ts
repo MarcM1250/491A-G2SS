@@ -44,13 +44,23 @@ export class UploadformComponent implements OnInit {
     //console.log('FileType: ', this.file.type);
     
     //Maximum File Size Limit
-    if(this.file.size/1024 > 512){ //File Size Limit: 512KB
+    if(this.file.size/1024 > 30){ //File Size Limit: 512KB
       this.sizelimit = "File size of 512KB exceeded, please choose another file";
+      let audio = new Audio();
+      audio.src = "../../assets/alarm.wav";
+      audio.load();
+      audio.play();
     }
     else{
       this.sizelimit = "";
-      if (this.file && this.isKMLfile()) {
 
+
+      
+      if (this.file && this.isKMLfile()) {
+        alert('Not a KML file :(');
+      }
+
+      else {
         const upload: FormData = new FormData();
         upload.append('title', this.title);
         upload.append('description', this.description);
@@ -72,9 +82,6 @@ export class UploadformComponent implements OnInit {
             }
             );
 
-      }
-      else {
-        alert('Not a KML file :(');
       }
     }
   }

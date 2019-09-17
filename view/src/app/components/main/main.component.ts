@@ -45,7 +45,7 @@ export class MainComponent implements OnInit {
 
   upload: Upload; // Holds selected file
   deleteCheck: number;
-  filterSelect = 0;
+  filterSelect = 2;
   uploads: Upload[];
   uploadForm: boolean = false;
   
@@ -102,7 +102,7 @@ export class MainComponent implements OnInit {
     // Changed by filterMenu
 
     // Filter by title
-    if (this.filterSelect === 0) {
+    if (this.filterSelect == 0) {
       this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data.title.toLowerCase().includes(filter); // Only filters Filename
       };
@@ -110,7 +110,7 @@ export class MainComponent implements OnInit {
 
     // Filter by upload date
     // Year, Month, Day separately
-    if (this.filterSelect === 1) {
+    if (this.filterSelect == 1) {
       this.pipe = new DatePipe('en');
       const defaultPredicate = this.dataSource.filterPredicate;
       this.dataSource.filterPredicate = (data, filter) => {
@@ -120,7 +120,7 @@ export class MainComponent implements OnInit {
     }
 
     // Filter by uploader name
-    if (this.filterSelect === 2) {
+    if (this.filterSelect == 2) {
       this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data.upload_by.toLowerCase().includes(filter); // Only filters Filename
       };
@@ -173,12 +173,7 @@ export class MainComponent implements OnInit {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
-  // When the user clicks on the button, toggle between hiding and showing the dropdown content
-  // myFunction(): void {
-  //   document.getElementById('myDropdown').classList.toggle('show');
-  // }
   showUploadForm() {
-    //document.getElementById('overlay').style.display = 'flex';
     this.uploadForm = true;
   }
 
