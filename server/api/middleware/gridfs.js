@@ -59,7 +59,7 @@ const fileFilter = (req, file, cb) => {
     // ********************************************************************
     // TODO cb => isFileValid(): boolean
     // ********************************************************************
-    if (file.mimetype === 'application/vnd.google-earth.kml+xml') {
+    if (file.mimetype === 'application/octet-stream') {
     //if (file.mimetype === 'application/octet-stream') {
         cb(null, true);
     } else {
