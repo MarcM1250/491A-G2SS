@@ -25,6 +25,11 @@ exports.get_all = (req, res, next) => {
 exports.create_upload = (req, res, next) => {
     // create an upload object using the data parsed from the request body
     // and parsed metadata from the gridfs middleware
+    if(!req.file){
+        return res.status(400).json({
+            message: 'Path `file` is required.'
+        })
+    }
     const upload = new Upload({
         _id: new mongoose.Types.ObjectId(),
         files_id: req.file.id,
@@ -58,6 +63,8 @@ exports.create_upload = (req, res, next) => {
             res.status(500).json({
                 error: err
             })
+            req.fileData = upload;
+            next();
         });
 };
 

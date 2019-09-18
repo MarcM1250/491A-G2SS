@@ -87,8 +87,10 @@ export class MainComponent implements OnInit {
     this._uploadsService.getUploads().subscribe(
       response => {
         this.uploads = response.filter(x => x.delete_date === undefined);
+       
         this.dataSource = new MatTableDataSource(this.uploads);
         this.dataSource.sort = this.sort;
+        this.sort.disableClear = true;
       },
       (err) => { console.log(err)},
       () => { }); 
