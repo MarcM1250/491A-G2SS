@@ -32,6 +32,7 @@ import { MatToolbarModule, MatTableModule, } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 // Manually added HTTP provider
 import { AuthenticationService } from './services/authentication.service';
@@ -73,6 +74,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatToolbarModule,
     MatDialogModule,
+    MatPaginatorModule,
 
     /**
      * Manually added

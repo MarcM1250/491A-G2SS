@@ -87,13 +87,16 @@
 </table>
 
 
+
 <div id="blank">
+
 
 
 </div>
 
-<uploadform *ngIf="uploadForm" [dataSource]="dataSource" [uploads]="uploads" [showForm]="uploadForm" (showFormChange)="this.uploadForm=$event"></uploadform>
+<mat-paginator [pageSizeOptions]="[20, 50, 100]" showFirstLastButtons id="mPaginator"></mat-paginator>
 
+<uploadform *ngIf="uploadForm" [dataSource]="dataSource" [uploads]="uploads" [showForm]="uploadForm" (showFormChange)="this.uploadForm=$event"></uploadform>
 
 <!--End of Table--------------------------------------------------------------->
 
