@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document id="laaSECS">
+        <name>laaSECS</name>
+        <Snippet maxLines="0"></Snippet>
+        <Style id="PolyStyle00">
+            <LabelStyle>
+                <color>00000000</color>
+                <scale>0</scale>
+            </LabelStyle>
+            <LineStyle>
+                <color>ff7f5555</color>
+                <width>0.2</width>
+            </LineStyle>
+            <PolyStyle>
+                <color>ffc5d9fa</color>
+                <fill>0</fill>
+            </PolyStyle>
+        </Style>
+        <Style id="PolyStyle000">
+            <LabelStyle>
+                <color>00000000</color>
+                <scale>0</scale>
+            </LabelStyle>
+            <LineStyle>
+                <color>ff7f5555</color>
+                <width>0.2</width>
+            </LineStyle>
+            <PolyStyle>
+                <color>ffc5d9fa</color>
+                <fill>0</fill>
+            </PolyStyle>
+        </Style>
+        <StyleMap id="PolyStyle001">
+            <Pair>
+                <key>normal</key>
+                <styleUrl>#PolyStyle00</styleUrl>
+            </Pair>
+            <Pair>
+                <key>highlight</key>
+                <styleUrl>#PolyStyle000</styleUrl>
+            </Pair>
+        </StyleMap>
+        <Folder id="FeatureLayer0">
+            <name>laaSECS</name>
+            <Snippet maxLines="0"></Snippet>
+            <Placemark id="ID_00000">
+                <name>AL</name>
+                <Snippet maxLines="0"></Snippet>
+                <description>
+                    <![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>AL</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATE</td>
+
+<td>AL</td>
+
+</tr>
+
+<tr>
+
+<td>MER</td>
+
+<td>25</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TWP</td>
+
+<td>22</td>
+
+</tr>
+
+<tr>
+
+<td>TDIR</td>
+
+<td>N</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RNG</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>RDIR</td>
+
+<td>W</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SEC</td>
+
+<td>24</td>
+
+</tr>
+
+<tr>
+
+<td>MODDATE</td>
+
+<td>20050311</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DATUM</td>
+
+<td>NAD27</td>
+
+</tr>
+
+<tr>
+
+<td>SOURCE</td>
+
+<td>WhiteStar</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MTR</td>
+
+<td>25 22.0N  4.0W</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]>
+                </description>
+                <styleUrl>#PolyStyle001</styleUrl>
+                <MultiGeometry>
+                    <Polygon>
+                        <outerBoundaryIs>
+                            <LinearRing>
+                                <coordinates>
+                                -88.35570867858526,32.86011073571817,0 -88.35570870147141,32.86253443065814,0 -88.35597594524225,32.86011537400984,0 -88.35570867858526,32.86011073571817,0 
+                            </coordinates>
+                            </LinearRing>
+                        </outerBoundaryIs>
+                    </Polygon>
+                </MultiGeometry>
+            </Placemark>
+            <Placemark id="ID_00001">
+                <name>AL</name>
+                <Snippet maxLines="0"></Snippet>
+                <description>
+                    <![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>AL</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATE</td>
+
+<td>AL</td>
+
+</tr>
+
+<tr>
+
+<td>MER</td>
+
+<td>25</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TWP</td>
+
+<td>22</td>
+
+</tr>
+
+<tr>
+
+<td>TDIR</td>
+
+<td>N</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RNG</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>RDIR</td>
+
+<td>W</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SEC</td>
+
+<td>25</td>
+
+</tr>
+
+<tr>
+
+<td>MODDATE</td>
+
+<td>20050311</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DATUM</td>
+
+<td>NAD27</td>
+
+</tr>
+
+<tr>
+
+<td>SOURCE</td>
+
+<td>WhiteStar</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MTR</td>
+
+<td>25 22.0N  4.0W</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]>
+                </description>
+                <styleUrl>#PolyStyle001</styleUrl>
+                <MultiGeometry>
+                    <Polygon>
+                        <outerBoundaryIs>
+                            <LinearRing>
+                                <coordinates>
+                                -88.35597594524225,32.86011537400984,0 -88.3567389068841,32.85292852502473,0 -88.35768486975799,32.84508568993779,0 -88.35570853700197,32.84511675513796,0 -88.35570867858526,32.86011073571817,0 -88.35597594524225,32.86011537400984,0 
+                            </coordinates>
+                            </LinearRing>
+                        </outerBoundaryIs>
+                    </Polygon>
+                </MultiGeometry>
+            </Placemark>
+            <Placemark id="ID_00002">
+                <name>AL</name>
+                <Snippet maxLines="0"></Snippet>
+                <description>
+                    <![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>AL</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATE</td>
+
+<td>AL</td>
+
+</tr>
+
+<tr>
+
+<td>MER</td>
+
+<td>25</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TWP</td>
+
+<td>22</td>
+
+</tr>
+
+<tr>
+
+<td>TDIR</td>
+
+<td>N</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RNG</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>RDIR</td>
+
+<td>W</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SEC</td>
+
+<td>36</td>
+
+</tr>
+
+<tr>
+
+<td>MODDATE</td>
+
+<td>20050311</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DATUM</td>
+
+<td>NAD27</td>
+
+</tr>
+
+<tr>
+
+<td>SOURCE</td>
+
+<td>WhiteStar</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MTR</td>
+
+<td>25 22.0N  4.0W</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]>
+                </description>
+                <styleUrl>#PolyStyle001</styleUrl>
+                <MultiGeometry>
+                    <Polygon>
+                        <outerBoundaryIs>
+                            <LinearRing>
+                                <coordinates>
+                                -88.35768486975799,32.84508568993779,0 -88.35843183642189,32.83843382961495,0 -88.35914980106479,32.83165897171819,0 -88.35908878782671,32.83049899571662,0 -88.35570839957039,32.83056244880483,0 -88.35570853700197,32.84511675513796,0 -88.35768486975799,32.84508568993779,0 
+                            </coordinates>
+                            </LinearRing>
+                        </outerBoundaryIs>
+                    </Polygon>
+                </MultiGeometry>
+            </Placemark>
+        </Folder>
+    </Document>
+    
+</kml>
