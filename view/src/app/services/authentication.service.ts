@@ -34,7 +34,7 @@ export class AuthenticationService {
    * this returns the token for the user
    */
   login(username: string, password: string) {
-    return this.http.post(API_URL + '/accounts/login', { username, password })
+    return this.http.post(`${API_URL}/accounts/login`, { username, password })
       .pipe(map(response => {
         if (response && response['token']) {
           localStorage.setItem('token', response['token']);
@@ -47,7 +47,7 @@ export class AuthenticationService {
    * this delete token form localStorage
    * and redirects browser to login page
    */
-  
+
   logout(): void {
     this.removeLocalToken();
     this.router.navigate(['/login']);
