@@ -36,11 +36,12 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.username, this.password)
       .subscribe(
         resp => {
-        this.message = 'Success :)';
-        this.loading = false;
-        console.log("Response onSubmit: ", resp)
-        this.router.navigate(['/main']);
-      },
+          this.message = 'Success :)';
+          this.loading = false;
+          console.log('Response onSubmit: ', resp);
+          console.log('Local storage:', localStorage);
+          this.router.navigate(['/main']);
+        },
         err => {
           this.authenticationService.logout();
           this.loading = false;

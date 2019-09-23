@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/users.service';
-
 
 @Component({
   selector: 'app-user-management',
@@ -9,20 +7,11 @@ import { UserService } from 'src/app/services/users.service';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor(
-    private userService: UserService,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(next => {
-      console.log(next);
-    }, error => {
-      console.log(error);
-    }, () => { });
-  }
-
-  getUsers() {
 
   }
+
 
 }
