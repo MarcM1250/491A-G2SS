@@ -41,7 +41,6 @@ export class AuthenticationService {
         }
       }));
     const getIsAdmin = this.http.get(`${API_URL}/accounts/${username}`).pipe(map(res => {
-      console.log(res);
       localStorage.setItem('isAdmin', res['delete_permission']);
     }));
     return concat(getToken, getIsAdmin);

@@ -38,8 +38,6 @@ export class LoginComponent implements OnInit {
         resp => {
           this.message = 'Success :)';
           this.loading = false;
-          console.log('Response onSubmit: ', resp);
-          console.log('Local storage:', localStorage);
           this.router.navigate(['/main']);
         },
         err => {

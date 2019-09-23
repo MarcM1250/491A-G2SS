@@ -23,13 +23,18 @@
         <mat-icon>trending_flat</mat-icon>
         <span>Log out</span>
       </button>
-      <button mat-menu-item *ngIf="this._authenticationservice.isAdmin()" (click)="goToUserPanel()">
-        <mat-icon>assessment</mat-icon>
-        <span>Manage users</span>
-      </button>
-      <!--End of TODO-->
-
-
+      <div *ngIf="this.isUserManaging(); else elseBlock">
+        <button mat-menu-item (click)="goToMainPage()">
+          <mat-icon>assessment</mat-icon>
+          <span>Manage files</span>
+        </button>
+      </div>
+      <ng-template #elseBlock>
+        <button mat-menu-item *ngIf="this.authenticationService.isAdmin()" (click)="goToUserPanel()">
+          <mat-icon>assessment</mat-icon>
+          <span>Manage users</span>
+        </button>
+      </ng-template>
     </mat-menu>
     <!--End of Misc Options-->
   </mat-toolbar-row>
