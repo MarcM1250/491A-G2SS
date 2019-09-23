@@ -199,9 +199,8 @@ tr.mat-footer-row {
 #footer1 {
   display: flex;
   position: fixed;
-  box-shadow: -9px 0px 10px #aaaaaa;
   width: 100%;
-  height: 50px;
+  height: 40px;
   right: 0px;
   bottom: 0px;
   background-color: rgb(255, 255, 255);
@@ -209,9 +208,17 @@ tr.mat-footer-row {
 }
 
 #blank {
-  height: 50px;
+  height: 83px;
 }
 
 #uploadOptions {
   display: flex;
+}
+
+#mPaginator{
+  position: fixed;
+  bottom: 40px;
+  width: 100%;
+  height: 43px;
+  box-shadow: -9px 0px 10px #aaaaaa;
 }

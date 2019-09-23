@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger, keyframes } from '@angular/animations';
 import { MatSort, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
@@ -25,8 +25,9 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
       state('expanded', style({ height: '*' })),
       transition('expanded => collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
       transition('collapsed => expanded', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
+    ]), // End of detailExpand trigger
+
+  ], // End of animations
 })
 
 export class MainComponent implements OnInit {
@@ -39,9 +40,7 @@ export class MainComponent implements OnInit {
     
     }
     
-  // Paginator
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  // ----------
+
 
   upload: Upload; // Holds selected file
   deleteCheck: number;
@@ -72,9 +71,12 @@ export class MainComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   ngOnInit() {
     this.retrieveData();
   }
+
 
   /**
    * @description: Retrieves data using a subscription
@@ -90,6 +92,7 @@ export class MainComponent implements OnInit {
        
         this.dataSource = new MatTableDataSource(this.uploads);
         this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
         this.sort.disableClear = true;
       },
       (err) => { console.log(err)},

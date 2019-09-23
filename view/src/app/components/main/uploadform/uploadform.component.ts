@@ -3,20 +3,32 @@ import { UploadsService } from '../../../services/uploads.service';
 import { HttpClient } from "@angular/common/http";
 import { MatSort, MatTableDataSource } from '@angular/material';
 import { Upload } from '../../../models/Upload';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
   selector: 'uploadform',
   templateUrl: './uploadform.component.html',
-  styleUrls: ['./uploadform.component.css']
+  styleUrls: ['./uploadform.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({  })),
+      state('expanded', style({ height: '*' })),
+      transition('expanded => collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
+
+
 })
+
 
 export class UploadformComponent implements OnInit {
 
   title: string;
   description: string;
   file: File;
-  sizelimit: string;
+  fileValid = 0;
+  errorMsg: string;
 
   @Input() dataSource: MatTableDataSource<Upload>;
   @Input() uploads: Upload[];
@@ -37,30 +49,40 @@ export class UploadformComponent implements OnInit {
 
   fileEvent($event) {
     this.file = $event.target.files[0];
-    //alert(this.file.size/1024 + ' KB');
+    this.fileValid = 1;
   }
+  
 
   submitUpload(): void { // Submit file for upload
-    //console.log('FileType: ', this.file.type);
-    
-    //Maximum File Size Limit
-    if(this.file.size/1024 > 30){ //File Size Limit: 512KB
-      this.sizelimit = "File size of 512KB exceeded, please choose another file";
-      let audio = new Audio();
-      audio.src = "../../assets/alarm.wav";
-      audio.load();
-      audio.play();
+    // If Title is empty
+    if (this.title == ''){
+      this.errorMsg = "Title field is empty"
     }
-    else{
-      this.sizelimit = "";
 
+    // If Description is empty
+    else if (this.description == ''){
+      this.errorMsg = "Description field is empty";
+    }
+    // If File Input is empty
+    else if (this.fileValid == 0){
+      this.errorMsg = "No file selected"
+    }
 
-      
-      if (this.file && this.isKMLfile()) {
-        alert('Not a KML file :(');
+    //If a valid KML file
+    else if (this.isKMLfile()) { 
+      //Maximum File Size Limit 
+      if(this.file.size/1024 > 10000){ //File Size Limit: 10MB
+        this.errorMsg = "File size of 10MB exceeded, please choose another file";
+        let audio = new Audio();
+        audio.src = "../../assets/alarm.wav";
+        audio.load();
+        audio.play();
       }
 
-      else {
+      else{ // Everything valid, Submit File
+        this.errorMsg = ""; //No error
+        this.fileValid = 0;//Reset file validation
+
         const upload: FormData = new FormData();
         upload.append('title', this.title);
         upload.append('description', this.description);
@@ -81,16 +103,20 @@ export class UploadformComponent implements OnInit {
               
             }
             );
-
       }
+    }
+
+    else { //Not a KML file
+      this.errorMsg = "Invalid File Type";
     }
   }
 
   isKMLfile(): boolean {
-    return this.file.type === 'application/vnd.google-earth.kml+xml';
+    return this.file.name.substr(this.file.name.lastIndexOf('.')+1) == "kml";
   }
 
   hideUploadForm() {
+    
     this.showForm = false;
     this.showFormChange.emit(this.showForm);
   }

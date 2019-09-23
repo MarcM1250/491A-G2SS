@@ -8,7 +8,7 @@ const gridfs = require('../middleware/gridfs');
 // Get all uploads from the database
 router.get('/', UploadsController.get_all);
 // Upload a file to the database and create an upload
-router.post('/', Authentication.check_user, gridfs.start_upload.single('file'), UploadsController.create_upload);
+router.post('/', Authentication.check_user, gridfs.start_upload.single('file'), UploadsController.create_upload, gridfs.delete_file);
 // Get a single upload from the database
 router.get('/:uploadId', Authentication.check_user, UploadsController.get_upload);
 // Patch an upload (NEED MORE WORK!)

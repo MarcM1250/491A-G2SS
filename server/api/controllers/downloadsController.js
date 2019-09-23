@@ -42,7 +42,8 @@ exports.create_download = (req, res, next) => {
                         _id: new mongoose.Types.ObjectId(),
                         upload_id: result._id,
                         download_by: req.userData.username,
-                        download_date: Date.now()
+                        download_date: Date.now(),
+                        download_via: req.headers['user-agent']
                     });
                     // Save the download to the database
                     download.save()

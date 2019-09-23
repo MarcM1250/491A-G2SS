@@ -11,10 +11,6 @@
         <mat-option value="upload_by" (click)="overwriteFilter()">Uploader</mat-option>
       </mat-select>
     </mat-form-field>
-
-    <!-- For testing selection
-        <p>You selected: {{filterSelect}}</p>
-        -->
   </div>
 
   <mat-form-field class="filterBar">
@@ -91,13 +87,16 @@
 </table>
 
 
+
 <div id="blank">
+
 
 
 </div>
 
-<uploadform *ngIf="uploadForm" [dataSource]="dataSource" [uploads]="uploads" [showForm]="uploadForm" (showFormChange)="this.uploadForm=$event"></uploadform>
+<mat-paginator [pageSizeOptions]="[20, 50, 100]" showFirstLastButtons id="mPaginator"></mat-paginator>
 
+<uploadform *ngIf="uploadForm" [dataSource]="dataSource" [uploads]="uploads" [showForm]="uploadForm" (showFormChange)="this.uploadForm=$event"></uploadform>
 
 <!--End of Table--------------------------------------------------------------->
 

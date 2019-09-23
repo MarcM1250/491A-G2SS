@@ -7,12 +7,27 @@
     min-height: 500px;
     max-height: 550px;
     right: 0px;
-    bottom: 50px;
+    bottom: 83px;
     background-color: rgba(255, 255, 255, 1);
     z-index: 100;
     cursor: pointer;
     padding: 10px;
+    animation: slidein 0.5s;
   }
+
+  @keyframes slidein {
+    0% { transform: translate(500px, 0px); }
+    50% { transform: translate(0px, 0px); }
+    100% { transform: translate(0px, 0px); }
+  }
+  /*
+  @keyframes slideout{
+    0% { transform: translate(0px, 0px); }
+    50% { transform: translate(0px, 0px); }
+    100% { transform: translate(500px, 0px); }
+  }
+  */
+
 
   /* Upload Form Style */
 
@@ -74,7 +89,7 @@ input[type=text], select, textarea {
     height: 200px;
   }
 
-  #sizeError{
+  #errorMsg{
     color: rgb(170, 1, 1);
   }
   
