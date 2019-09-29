@@ -45,20 +45,31 @@ exports.create_download = (req, res, next) => {
                         download_date: Date.now(),
                         download_via: req.headers['user-agent']
                     });
+                    // set response header filename or else it would return response.minetype
+                    res.setHeader("Content-Disposition", "attachment; filename=" + result.filename);
                     // Save the download to the database
                     download.save()
+                    .then(result => {
+                        const bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
+                            bucketName: 'uploads'
+                        });
+                        bucket.openDownloadStream(result.upload_id)
+                            .pipe(res)
+                            .on('error', function (error) {
+                                return res.status(500).json({
+                                    error: error
+                                });
+                            })
+                            .on('finish', function () {
+                                console.log('Download successful');
+                            });
+                    })
                         .catch(err => {
                             console.log(err);
                             res.status(500).json({
                                 error: err
                             });
                         });
-                    /**
-                     * Save the upload_id and use Gridfs Middleware
-                     * to return a file download to the user
-                    */        
-                    req.fileData = result;
-                    next();
                 }
             } else {
                 res.status(404).json({

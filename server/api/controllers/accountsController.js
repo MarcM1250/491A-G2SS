@@ -139,7 +139,7 @@ exports.login = (req, res, next) => {
                         userId: account[0]._id
                     }, process.env.JWT_KEY, // sign the token with a password (will be used to decode the token)
                         {
-                            expiresIn: "2h"
+                            expiresIn: "10h"
                         });
                     // return the JWT Token
                     return res.status(200).json({
@@ -179,4 +179,3 @@ exports.delete_account = (req, res, next) => {
             });
         });
 };
-
