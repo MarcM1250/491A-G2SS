@@ -36,17 +36,18 @@ export class MainComponent implements OnInit {
     private _router: Router,
     private _authenticationservice: AuthenticationService,
     private _uploadsService: UploadsService,
-    public dialog: MatDialog) {
-  }
-
+    public dialog: MatDialog) { 
+    
+    }
+    
 
 
   upload: Upload; // Holds selected file
   deleteCheck: number;
-  filterSelect = '';
+  filterSelect = "";
   uploads: Upload[];
-  uploadForm = false;
-
+  uploadForm: boolean = false;
+  
   dataSource: MatTableDataSource<Upload>;
 
   // For use in filtering file dates
@@ -61,8 +62,6 @@ export class MainComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
   select(x: Upload): void {
     this.selection.clear(); // Only allows one selected row (Deselects all rows)
     this.selection.toggle(x); // then selects current row
@@ -71,6 +70,8 @@ export class MainComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
     this.retrieveData();
@@ -88,16 +89,16 @@ export class MainComponent implements OnInit {
     this._uploadsService.getUploads().subscribe(
       response => {
         this.uploads = response.filter(x => x.delete_date === undefined);
-
+       
         this.dataSource = new MatTableDataSource(this.uploads);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.sort.disableClear = true;
       },
-      (err) => { console.log(err); },
-      () => { });
+      (err) => { console.log(err)},
+      () => { }); 
     // subcribe similar to promises .then cb: asynchronous
-
+    
   }
 
   overwriteFilter() {
@@ -119,12 +120,12 @@ export class MainComponent implements OnInit {
         err => {
           console.log(err);
           if (err.status === 400) {
-            console.log('Bad Request');
+            console.log("Bad Request")
           }
         },
         () => {
-          this.uploads.splice(this.uploads.indexOf(upload), 1);
-          this.dataSource._updateChangeSubscription();
+          this.uploads.splice (this.uploads.indexOf(upload), 1);
+          this.dataSource._updateChangeSubscription();  
           // this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
           // this.dataSource.filter = upload._id;
         }

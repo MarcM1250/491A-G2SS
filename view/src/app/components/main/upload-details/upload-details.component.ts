@@ -7,11 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UploadDetailsComponent implements OnInit {
   @Input() element;
-
+  
   constructor() { }
 
   ngOnInit() {
+    if (this.element.file_size) {
+      this.element.file_size = this.element.file_size / 1024.0
+    }
   }
-
-
 }
