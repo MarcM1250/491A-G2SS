@@ -6,11 +6,11 @@ const uploadSchema = mongoose.Schema({
     description: { type: String, required: true },
     upload_date: {type: Date, required: true},
     upload_by: { type: String, ref: 'Account', required: true },
-    filename: {type: String},
-    file_size: {type: Number},
+    filename: {type: String, required: true},
+    file_size: {type: Number, required: true},
     delete_date: { type: Date },
     delete_by: { type: String, ref: 'Account' },
-    parser_errors: { type: JSON }
+    parser_errors: { type: JSON, required: true }
 });
 
 module.exports = mongoose.model('Upload', uploadSchema);
