@@ -29,6 +29,7 @@ export class UploadformComponent implements OnInit {
   file: File;
   fileValid = 0;
   errorMsg: string;
+  newStyle: string;
 
   @Input() dataSource: MatTableDataSource<Upload>;
   @Input() uploads: Upload[];
@@ -81,7 +82,7 @@ export class UploadformComponent implements OnInit {
 
       else{ // Everything valid, Submit File
         this.errorMsg = ""; //No error
-        this.fileValid = 0;//Reset file validation
+        //this.fileValid = 0;//Reset file validation
 
         const upload: FormData = new FormData();
         upload.append('title', this.title);
@@ -91,7 +92,7 @@ export class UploadformComponent implements OnInit {
         this.uploadsService.postUpload(upload)
           .subscribe(
             response => {
-              console.log("Server response => ", <any>response.message);
+              console.log("Server response => ", <any>response);
               this.uploads.push(response.createdUpload);
             }, 
             err => {
@@ -116,9 +117,11 @@ export class UploadformComponent implements OnInit {
   }
 
   hideUploadForm() {
-    
-    this.showForm = false;
-    this.showFormChange.emit(this.showForm);
+    this.newStyle = 'slideout 0.5s';
+    setTimeout(() => {
+      this.showForm = false;
+      this.showFormChange.emit(this.showForm);
+    }, 450);
   }
 
   // Auto inputs test data for Title and Description

@@ -1,37 +1,56 @@
 
 .element-description {
-  opacity: 0.8;
-  display: table;
-  font-size: 14px;
-  clear: both;
+  font-size: 13px;
   padding: 8px;
-  background-color: #FEFEFE;
+  background-color: rgb(245, 245, 245);
+  display: table;
 }
 
 .element-description-attribution {
   display: table-row;
-  height: 20px;
+  
 }
 
 .description-title {
-  padding-left: 25px;
-  text-align: left;
-  display: table-cell;
+  padding-left: 10px;
   float: left;
-  font-weight: bold;
-  width: 150px;
+  font-weight: 550;
+  width: 200px;
+  display: table-cell;
 }
 
 .description-details {
   display: table-cell;
-  float: left;
-  align-content: initial;
+  padding: 4px;
 }
 
 .valid {
-  color: hsl(120, 60%, 70%);
+  color: green;
 }
 
 .invalid {
   color: red
+}
+
+.downloadButton {
+  max-width: 200px;
+  min-width: 115px;
+  flex-grow: 0.1;
+  margin-right: 10px;
+  height: 35px;
+  color: green;
+  border: 1px;
+  border-style: outset;
+  border-color: #F8F8FF;
+}
+
+.deleteButton {
+  max-width: 200px;
+  min-width: 115px;
+  flex-grow: 0.1;
+  color: #dc143c;
+  height: 35px;
+  border: 1px;
+  border-style: outset;
+  border-color: #F8F8FF;
 }

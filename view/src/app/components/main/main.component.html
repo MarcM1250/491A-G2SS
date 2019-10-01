@@ -22,7 +22,10 @@
 <ng-template #loading ><div style="text-align: center">Loading…and rendering content</div></ng-template>
 
 <div *ngIf="dataSource else loading"></div>
+
+<!--
   
+-->
 <!--Start of File Table---------------------------------------------------->
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortActive="upload_date"
   matSortDirection="desc" class="mat-elevation-z8">
@@ -56,28 +59,16 @@
       <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
 
 
-        <upload-details [element]="element"></upload-details>
+        <upload-details [element]="element" [dataSource]="dataSource" [uploads]="uploads"></upload-details>
 
-        <span class="example-fill-remaining-space">
-          <!--Right side of expanded box------------>
-        </span>
-        <!--Download Button-->
-        <button mat-raised-button class="downloadButton" (click)="downloadFile(element)">
-          <mat-icon>add_box</mat-icon>
-          Download
-        </button>
 
-        <!--Delete Button-->
-        <button mat-raised-button class="deleteButton" (click)="openDialog(element)">
-          <mat-icon>delete</mat-icon>
-          Delete
-        </button>
       </div>
     </td>
   </ng-container>
   <!--End of Expanded Description box-------------------------------------------->
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="tableHeader"></tr>
+  
   <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
     [class.example-expanded-row]="expandedElement === element"
     (click)="expandedElement = expandedElement === element ? null : element" (click)="select(element)"></tr>
@@ -87,29 +78,21 @@
 </table>
 
 
-
-<div id="blank">
-
-
-
-</div>
-
-<mat-paginator [pageSizeOptions]="[20, 50, 100]" showFirstLastButtons id="mPaginator"></mat-paginator>
-
 <uploadform *ngIf="uploadForm" [dataSource]="dataSource" [uploads]="uploads" [showForm]="uploadForm" (showFormChange)="this.uploadForm=$event"></uploadform>
 
 <!--End of Table--------------------------------------------------------------->
 
-<div id="footer1">
-  <!--Fill Blank Space-->
-  <span class="example-fill-remaining-space"></span>
+<div id="footer">
+
   <!--Back to Top Button------------------>
-  <button mat-raised-button class="footerButton" (click)="toTop()">
+  <mat-paginator [pageSizeOptions]="[20, 50, 100]" showFirstLastButtons id="mPaginator"></mat-paginator>
+
+  <button mat-raised-button class="backtop-btn" (click)="toTop()">
     <mat-icon>arrow_upward</mat-icon>
     Back to Top
   </button>
   <!--Upload Button-->
-  <button mat-raised-button (click)="showUploadForm()" class="dropbtn">
+  <button mat-raised-button (click)="showUploadForm()" class="upload-btn">
     <mat-icon>cloud_upload</mat-icon>
     Upload
   </button>

@@ -1,42 +1,41 @@
 <!--Start of Toolbar-->
 <mat-toolbar color="primary" class="siteHeader">
-  <mat-toolbar-row>
-    <span>KML Guard</span>
-    <span class="fill-remaining-space"></span>
-    <span class="align-center"></span>
-    <span class="example-spacer"></span>
-    <!--Buttons-->
-    <!--About directs user to our GitHub wiki page.-->
-    <button mat-button onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';"> About </button>
-    <button mat-button>Contact</button>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <!--End of Buttons-->
-    <!--Start of Misc Options-->
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <mat-icon>settings</mat-icon>
-        <span>Settings</span>
+    <mat-toolbar-row>
+      <span>KML Guard</span>
+      <span class="fill-remaining-space"></span>
+      <span class="align-center"></span>
+      <span class="example-spacer"></span>
+      <!--Buttons-->
+      <!--About directs user to our GitHub wiki page.-->
+      <button mat-button onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';"> About </button>
+      <button mat-button>Contact</button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
       </button>
-      <button mat-menu-item (click)="logout()" color="primary">
-        <mat-icon>trending_flat</mat-icon>
-        <span>Log out</span>
-      </button>
-      <div *ngIf="this.isUserManaging(); else elseBlock">
-        <button mat-menu-item (click)="goToMainPage()">
-          <mat-icon>assessment</mat-icon>
-          <span>Manage files</span>
+      <!--End of Buttons-->
+      <!--Start of Misc Options-->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
         </button>
-      </div>
-      <ng-template #elseBlock>
-        <button mat-menu-item *ngIf="this.authenticationService.isAdmin()" (click)="goToUserPanel()">
+        <button mat-menu-item (click)="logout()" color="primary">
+          <mat-icon>trending_flat</mat-icon>
+          <span>Log out</span>
+        </button>
+        <!--
+        TODO: Restict the visibility of this button using traits of logged-in user
+        <*ngIf this._authenticationService.isAdmin()
+        -->
+        <button mat-menu-item (click)="goToUserPanel()">
           <mat-icon>assessment</mat-icon>
           <span>Manage users</span>
         </button>
-      </ng-template>
-    </mat-menu>
-    <!--End of Misc Options-->
-  </mat-toolbar-row>
-</mat-toolbar>
-<!--End of Toolbar--------------------------------------------------------->
+        <!--End of TODO-->
+  
+        
+      </mat-menu>
+      <!--End of Misc Options-->
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!--End of Toolbar--------------------------------------------------------->

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
-import { DeleteConfirmationComponent } from './components/main/delete-confirmation.component';
+import { DeleteConfirmationComponent } from './components/main/upload-details/delete-confirmation.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
 // End of Default Angular imports
 
@@ -32,7 +32,7 @@ import { MatToolbarModule, MatTableModule, } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 // Manually added HTTP provider
 import { AuthenticationService } from './services/authentication.service';
@@ -99,10 +99,10 @@ const appRoutes: Routes = [
   entryComponents: [DeleteConfirmationComponent],
 
   providers: [AuthenticationService,
-    { 
-      provide: HTTP_INTERCEPTORS, 
-      useClass: InOutInterceptor, 
-      multi: true 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InOutInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent],

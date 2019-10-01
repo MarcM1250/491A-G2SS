@@ -1,6 +1,6 @@
 const Upload = require('../models/uploadModel');
 const mongoose = require('mongoose');
-const parser = require('fast-xml-parser');
+const validator = require('./validator');
 const { Readable } = require('stream');
 
 /**
@@ -8,7 +8,7 @@ const { Readable } = require('stream');
  */
 exports.get_all = (req, res, next) => {
     Upload.find()
-        .select("_id title description upload_date upload_by delete_date delete_by filename file_size parser_errors") // data you want to fetch
+        .select("_id title description upload_date upload_by delete_date last_modified delete_by filename file_size parser_status") // data you want to fetch
         .exec()
         .then(docs => {
             res.status(200).send(docs);
@@ -34,76 +34,78 @@ exports.create_upload = (req, res, next) => {
     }
 
     // validate xml file using fast-xml-parser and store validation result in a json object
-    const result = parser.validate(req.file.buffer.toString('utf8'));
-     if (result !== true){
-         console.log(result.err);
-     } else{
-         console.log(parser.parse(req.file.buffer.toString('utf8')));
-         
-     }
-    // this id will be used for the upload_id and fs.files_id
-    const files_id = new mongoose.Types.ObjectId();
+    const xmlString = req.file.buffer.toString('utf8');
 
-    const upload = new Upload({
-        _id: files_id,
-        title: req.body.title,
-        description: req.body.description,
-        upload_date: Date.now(),
-        upload_by: req.userData.username,
-        filename: req.file.originalname,
-        file_size: req.file.size,
-        parser_errors: result
-    });
-    // save the upload to the database
-    upload
-        .save()
-        .then(result => {
-            // uploading file to database
-            const readableStream = new Readable();
-            readableStream.push(req.file.buffer);
-            readableStream.push(null);
+    validator.validateXML( xmlString, function (err, validationResults) {
 
-                const bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
-                    bucketName: 'uploads'
-                });
-                readableStream.
-                    pipe(bucket.openUploadStreamWithId(files_id, req.file.originalname)).
-                    on('error', function (error) {
-                        return res.status(500).json({
-                            error: error
-                        });
-                    }).
-                    on('finish', function (file) {
-                        console.log('Upload successful');
-                    });
-            res.status(201).json({
-                message: '"Upload created successfully"',
-                createdUpload: {
-                    _id: result._id,
-                    title: result.title,
-                    description: result.description,
-                    upload_date: result.upload_date,
-                    upload_by: result.upload_by,
-                    filename: result.filename,
-                    file_size: result.file_size,
-                    parser_errors: result.parser_errors
-                }
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            })
+        console.log("My RESULTS: ", validationResults)
+
+        // this id will be used for the upload_id and fs.files_id
+        const files_id = new mongoose.Types.ObjectId();
+
+        const upload = new Upload({
+            _id: files_id,
+            title: req.body.title,
+            description: req.body.description,
+            upload_date: Date.now(),
+            last_modified: Date.now(),
+            upload_by: req.userData.username,
+            filename: req.file.originalname,
+            file_size: req.file.size,
+            parser_status: validationResults
         });
+        // save the upload to the database
+        upload
+            .save()
+            .then(result => {
+                // uploading file to database
+                const readableStream = new Readable();
+                readableStream.push(req.file.buffer);
+                readableStream.push(null);
+
+                    const bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
+                        bucketName: 'uploads'
+                    });
+                    readableStream.
+                        pipe(bucket.openUploadStreamWithId(files_id, req.file.originalname)).
+                        on('error', function (error) {
+                            return res.status(500).json({
+                                error: error
+                            });
+                        }).
+                        on('finish', function (file) {
+                            console.log('Upload successful');
+                        });
+                res.status(201).json({
+                    message: '"Upload created successfully"',
+                    createdUpload: {
+                        _id: result._id,
+                        title: result.title,
+                        description: result.description,
+                        upload_date: result.upload_date,
+                        upload_by: result.upload_by,
+                        last_modified: result.last_modified,
+                        filename: result.filename,
+                        file_size: result.file_size,
+                        parser_status: result.parser_status
+                    }
+                });
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error: err
+                })
+            });
+    });
 };
 
 /**
  * GET A SINGLE UPLOAD FROM THE DATABASE
- */
+*/
 exports.get_upload = (req, res, next) => {
     Upload.findById(req.params.uploadId)
-    .select("_id title description upload_date upload_by delete_date delete_by filename file_size parser_errors") // data you want to fetch
+    .select("_id title description upload_date upload_by delete_date delete_by filename file_size parser_status") // data you want to fetch
     .exec()
         .then(doc => {
             if (doc) {
@@ -153,10 +155,10 @@ exports.patch_upload = (req, res, next) => {
  * AND UPDATE THE "DELETE_BY" AND "DELETE_DATE" OF THE UPLOAD
  */
 exports.delete_upload = (req, res, next) => {
-    const id = req.params.uploadId;
+
     // find the upload by upload_id
-    Upload.findById(id)
-        .select("_id title description upload_date upload_by delete_date delete_by filename file_size parser_errors") // data you want to fetch
+    Upload.findById(req.params.uploadId)
+        .select("_id") // data you want to fetch
         .exec()
         .then(result => {
             if (result) {
