@@ -1,19 +1,18 @@
-var fs = require('fs');
-var os = require('os');
-var path = require('path');
-var spawn = require('child_process').spawn;
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+const spawn = require('child_process').spawn;
 
-var CLASSPATH_SEPARATOR = os.platform() === 'win32' ? ';' : ':';
-var JAVA_HOME = process.env.JAVA_HOME;
+const CLASSPATH_SEPARATOR = os.platform() === 'win32' ? ';' : ':';
+const JAVA_HOME = process.env.JAVA_HOME;
 
-var BASE_DIR = path.resolve(__dirname + '/');
-var VALIDATOR = path.resolve( BASE_DIR + '/xmlvalidator.jar');
+const BASE_DIR = path.resolve( __dirname + '/');
+const XSD_SCHEMA = path.resolve( __dirname + '/schemas/ogckml23.xsd');
+const VALIDATOR = path.resolve( __dirname + '/xmlvalidator.jar');
 
-var JAVA = JAVA_HOME ? JAVA_HOME + '/bin/java' : 'java';
+const JAVA = JAVA_HOME ? JAVA_HOME + '/bin/java' : 'java';
 
 function withValidator(callback) {
-
-  console.log(VALIDATOR);
 
   if (fs.existsSync(VALIDATOR ))
     callback();
@@ -36,10 +35,10 @@ function Validator(options) {
  * Validate a xml file against the given schema
  *
  * @param {String|Buffer|ReadableStream|Object} xml
- * @param {String} schema path to schema
  * @param {Function} callback to be invoked with (err, result)
  */
-Validator.prototype.validateXML = function(xmlString, schema, callback) {
+
+Validator.prototype.validateXML = function(xmlString, callback) {
 
   var cwd = this.cwd,
       debug = this.debug;
@@ -70,7 +69,7 @@ Validator.prototype.validateXML = function(xmlString, schema, callback) {
       [ BASE_DIR, cwd ].join(CLASSPATH_SEPARATOR),
       'support.XMLValidator',
       '-stdin',
-      '-schema=' + schema
+      '-schema=' + XSD_SCHEMA
     ], { cwd: cwd });
 
     var result, code, messages = [];
@@ -137,12 +136,11 @@ Validator.prototype.validateXML = function(xmlString, schema, callback) {
 module.exports = Validator;
 
 /**
- * Validate xml based on the given schema.
+ * Validate xml based on the schema.
  *
  * @param {String|ReadableStream} xml
- * @param {String} schema
  * @param {Function} callback
  */
-module.exports.validateXML = function(xml, schema, callback) {
-  return new Validator().validateXML(xml, schema, callback);
+module.exports.validateXML = function(xml, callback) {
+  return new Validator().validateXML(xml, callback);
 };

@@ -36,9 +36,8 @@ exports.create_upload = (req, res, next) => {
     // validate xml file using fast-xml-parser and store validation result in a json object
     const xmlString = req.file.buffer.toString('utf8');
 
-    validator.validateXML( xmlString, 'api/controllers/schemas/ogckml23.xsd', function (err, validationResults) {
-        //console.log("xmlObject: ", xmlObject )
-        console.log("ERRORS: ", err )
+    validator.validateXML( xmlString, function (err, validationResults) {
+
         console.log("My RESULTS: ", validationResults)
 
         // this id will be used for the upload_id and fs.files_id
