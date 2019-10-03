@@ -9,13 +9,25 @@
         <mat-option value="title" (click)="overwriteFilter()">Title</mat-option>
         <mat-option value="filename" (click)="overwriteFilter()">Filename</mat-option>
         <mat-option value="upload_by" (click)="overwriteFilter()">Uploader</mat-option>
+        <mat-option value="date" (click)="overwriteFilter()"> Upload Date</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
-  <mat-form-field class="filterBar">
+  <mat-form-field id="filterBar">
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter files">
   </mat-form-field>
+  <div id="filterBar1">
+    <mat-form-field id="filterDate">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fMonth" placeholder="Filter MM">
+    </mat-form-field>
+    <mat-form-field id="filterDate">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fDay" placeholder="Filter DD ">
+    </mat-form-field>
+    <mat-form-field id="filterDate">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fYear" placeholder="Filter YYYY">
+    </mat-form-field>
+  </div>
 
 </div>
 <!--End of Filter Searchbar------------------------------------------------>
