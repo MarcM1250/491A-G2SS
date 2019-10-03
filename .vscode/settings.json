@@ -1,0 +1,7 @@
+{
+    "java.debug.settings.hotCodeReplace": "auto",
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.pythonPath": "/usr/bin/python"
+}

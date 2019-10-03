@@ -1,5 +1,6 @@
 table {
   width: 100%;
+  padding-bottom: 65px
 }
 
 .mat-form-field {
@@ -47,29 +48,6 @@ tr.example-element-row:not(.example-expanded-row):active {
   line-height: normal;
 }
 
-.downloadButton {
-  max-width: 200px;
-  min-width: 115px;
-  flex-grow: 0.1;
-  margin-right: 10px;
-  height: 35px;
-  color: green;
-  border: 1px;
-  border-style: outset;
-  border-color: #F8F8FF;
-}
-
-.deleteButton {
-  max-width: 200px;
-  min-width: 115px;
-  flex-grow: 0.1;
-  color: #dc143c;
-  height: 35px;
-  border: 1px;
-  border-style: outset;
-  border-color: #F8F8FF;
-}
-
 .example-fill-remaining-space {
   flex: 1 1 auto;
 }
@@ -92,7 +70,7 @@ tr.mat-footer-row {
 .filterContainer {
   display: flex;
   align-items: center;
-  margin: 1.5rem;
+  margin: 0.8rem;
 }
 
 #filterBar {
@@ -114,28 +92,11 @@ tr.mat-footer-row {
 
 
 .filterMenu {
-  width: 100px;
+  width: 120px;
 }
 
 /* End Filter Style */
 
-
-
-/*Clickable Upload Button  */
-
-.dropbtn {
-  background-color: #3850d8;
-  color: white;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  top: 2px;
-  height: 40px;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #4e67f8;
-}
 
 .dropdown {
   float: right;
@@ -194,32 +155,44 @@ tr.mat-footer-row {
   display: table-cell;
 }
 
-.footerButton {
-  right: 15px;
-  float: right;
-  top: 2px;
-  margin-right: 0px;
-  height: 40px;
-  border: 1px;
-  border-style: outset;
-  border-color: #3850d8;
+
+/* Footer style */
+.backtop-btn {
   background-color: #3850d8;
   color: white;
+  font-size: 14px;
+  border: none;
+  top: 7px;
+  position: absolute;
+  height: 35px;
+  right: 120px;
 }
 
-#footer1 {
+.upload-btn {
+  position: absolute;
+  background-color: #3850d8;
+  color: white;
+  font-size: 14px;
+  border: none;
+  top: 7px;
+  height: 35px;
+  right: 5px;
+}
+
+.upload-btn:hover, .backtop-btn:hover,  .upload-btn:focus, .backtop-btn:focus {
+  background-color: #0b24af;
+}
+
+#footer {
   display: flex;
   position: fixed;
   width: 100%;
-  height: 40px;
+  height: 55px;
   right: 0px;
   bottom: 0px;
   background-color: rgb(255, 255, 255);
   z-index: 100;
-}
-
-#blank {
-  height: 83px;
+  box-shadow: -9px 0px 10px #aaaaaa;
 }
 
 #uploadOptions {
@@ -228,7 +201,8 @@ tr.mat-footer-row {
 
 #mPaginator{
   position: fixed;
-  bottom: 40px;
+  bottom: 10px;
+  right: 250px;
   width: 100%;
   height: 43px;
   box-shadow: 0px 0px 10px #aaaaaa;
