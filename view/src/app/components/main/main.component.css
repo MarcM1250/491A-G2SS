@@ -73,12 +73,23 @@ tr.mat-footer-row {
   margin: 0.8rem;
 }
 
-.filterBar {
+#filterBar {
   min-width: 18rem;
   float: left;
   flex-grow: 1;
   overflow: hidden;
 }
+#filterBar1{
+  min-width: 18rem;
+  float: left;
+  flex-grow: 1;
+  overflow: hidden;
+  display:none;
+}
+#filterDate{
+  width:50%;
+}
+
 
 .filterMenu {
   width: 120px;
@@ -193,6 +204,6 @@ tr.mat-footer-row {
   bottom: 10px;
   right: 250px;
   width: 100%;
-  height: 45px;
-
+  height: 43px;
+  box-shadow: 0px 0px 10px #aaaaaa;
 }

@@ -45,6 +45,12 @@ export class MainComponent implements OnInit {
   // For use in filtering file dates
   pipe: DatePipe;
 
+  // Used for filtering by date
+  fDay: string;
+  fMonth: string;
+  fYear: string;
+  cDate: string;
+
   displayedColumns: string[] = ['title', 'upload_date', 'upload_by'];
   expandedElement: Upload | null;
 
@@ -59,9 +65,7 @@ export class MainComponent implements OnInit {
     this.selection.toggle(x); // then selects current row
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -93,10 +97,78 @@ export class MainComponent implements OnInit {
     
   }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  applyDate() {
+    this.cDate = this.fMonth + "/" +this.fDay+"/"+ this.fYear;
+    this.dataSource.filter = this.cDate.trim().toLowerCase();
+  }
+
   overwriteFilter() {
-    this.dataSource.filterPredicate = (data, filter: string): boolean => {
-      return data[this.filterSelect].toLowerCase().includes(filter);
-    };
+    this.dataSource.filter = "";
+    if(this.filterSelect == "date"){
+      document.getElementById("filterBar").style.display = "none";
+      document.getElementById("filterBar1").style.display = "flex";
+
+      this.pipe = new DatePipe('en');
+      const defaultPredicate=this.dataSource.filterPredicate;
+      this.dataSource.filterPredicate = (data, filter) =>{
+        const formatted=this.pipe.transform(data.upload_date,'MM/dd/yyyy');
+        return formatted.indexOf(filter) >= 0 || defaultPredicate(data,filter) ;
+      }
+
+    }
+    else{
+      document.getElementById("filterBar").style.display = "block";
+      document.getElementById("filterBar1").style.display = "none";
+      this.dataSource.filterPredicate = (data, filter: string): boolean => {
+        return data[this.filterSelect].toLowerCase().includes(filter);
+      };
+    }
+  }
+
+  deleteUpload(upload: Upload) {
+    // If user confirms Delete Confirmation box, proceed to delete
+    if (this.deleteCheck === 1) {
+      // delete from UI
+      
+      // delete from server
+      this._uploadsService.deleteUpload(upload).subscribe(
+        (response) => {
+          console.log('Response from deleting: ', response);
+        },
+        err => {
+          console.log(err);
+          if (err.status === 400) {
+            console.log("Bad Request")
+          }
+        },
+        () => {
+          this.uploads.splice (this.uploads.indexOf(upload), 1);
+          this.dataSource._updateChangeSubscription();  
+          // this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
+          // this.dataSource.filter = upload._id;
+        }
+      );
+
+      // Reset deleteCheck value
+      this.deleteCheck = 0;
+    }
+  }
+
+  downloadFile(upload: Upload) {
+    this._uploadsService.postDownload(upload).subscribe(data => {
+      const downloadURL = URL.createObjectURL(data);
+      const link = document.createElement('a');
+      link.href = downloadURL;
+      link.target = '_blank';
+      link.download = upload.filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
   }
 
 
@@ -105,6 +177,7 @@ export class MainComponent implements OnInit {
   }
 
   showUploadForm() {
+    alert(this.dataSource.filter);
     this.uploadForm = true;
   }
 
