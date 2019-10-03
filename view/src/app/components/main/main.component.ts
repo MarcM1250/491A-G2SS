@@ -31,15 +31,15 @@ export class MainComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _uploadsService: UploadsService) { 
-    
-    }
-    
+    private _uploadsService: UploadsService) {
+
+  }
+
   deleteCheck: number;
-  filterSelect = "";
+  filterSelect = '';
   uploads: Upload[];
-  uploadForm: boolean = false;
-  
+  uploadForm = false;
+
   dataSource: MatTableDataSource<Upload>;
 
   // For use in filtering file dates
@@ -59,15 +59,12 @@ export class MainComponent implements OnInit {
   /** End of Selection Methods --------------------------- */
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   select(x: Upload): void {
     this.selection.clear(); // Only allows one selected row (Deselects all rows)
     this.selection.toggle(x); // then selects current row
   }
-
-
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
     this.retrieveData();
@@ -85,16 +82,16 @@ export class MainComponent implements OnInit {
     this._uploadsService.getUploads().subscribe(
       response => {
         this.uploads = response.filter(x => x.delete_date === undefined);
-       
+
         this.dataSource = new MatTableDataSource(this.uploads);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         this.sort.disableClear = true;
       },
-      (err) => { console.log(err)},
-      () => { }); 
+      (err) => { console.log(err); },
+      () => { });
     // subcribe similar to promises .then cb: asynchronous
-    
+
   }
 
   applyFilter(filterValue: string) {
@@ -102,27 +99,26 @@ export class MainComponent implements OnInit {
   }
 
   applyDate() {
-    this.cDate = this.fMonth + "/" +this.fDay+"/"+ this.fYear;
+    this.cDate = `${this.fMonth}/${this.fDay}/${this.fYear}`;
     this.dataSource.filter = this.cDate.trim().toLowerCase();
   }
 
   overwriteFilter() {
-    this.dataSource.filter = "";
-    if(this.filterSelect == "date"){
-      document.getElementById("filterBar").style.display = "none";
-      document.getElementById("filterBar1").style.display = "flex";
+    this.dataSource.filter = '';
+    if (this.filterSelect === 'date') {
+      document.getElementById('filterBar').style.display = 'none';
+      document.getElementById('filterBar1').style.display = 'flex';
 
       this.pipe = new DatePipe('en');
-      const defaultPredicate=this.dataSource.filterPredicate;
-      this.dataSource.filterPredicate = (data, filter) =>{
-        const formatted=this.pipe.transform(data.upload_date,'MM/dd/yyyy');
-        return formatted.indexOf(filter) >= 0 || defaultPredicate(data,filter) ;
-      }
+      const defaultPredicate = this.dataSource.filterPredicate;
+      this.dataSource.filterPredicate = (data, filter) => {
+        const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
+        return formatted.indexOf(filter) >= 0 || defaultPredicate(data, filter);
+      };
 
-    }
-    else{
-      document.getElementById("filterBar").style.display = "block";
-      document.getElementById("filterBar1").style.display = "none";
+    } else {
+      document.getElementById('filterBar').style.display = 'block';
+      document.getElementById('filterBar1').style.display = 'none';
       this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data[this.filterSelect].toLowerCase().includes(filter);
       };
@@ -133,7 +129,7 @@ export class MainComponent implements OnInit {
     // If user confirms Delete Confirmation box, proceed to delete
     if (this.deleteCheck === 1) {
       // delete from UI
-      
+
       // delete from server
       this._uploadsService.deleteUpload(upload).subscribe(
         (response) => {
@@ -142,12 +138,12 @@ export class MainComponent implements OnInit {
         err => {
           console.log(err);
           if (err.status === 400) {
-            console.log("Bad Request")
+            console.log('Bad Request');
           }
         },
         () => {
-          this.uploads.splice (this.uploads.indexOf(upload), 1);
-          this.dataSource._updateChangeSubscription();  
+          this.uploads.splice(this.uploads.indexOf(upload), 1);
+          this.dataSource._updateChangeSubscription();
           // this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
           // this.dataSource.filter = upload._id;
         }

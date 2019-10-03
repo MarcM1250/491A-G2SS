@@ -6,7 +6,7 @@ import { DeleteConfirmationComponent } from './delete-confirmation.component';
 import { MatDialog } from '@angular/material';
 
 @Component({
-  selector: 'upload-details',
+  selector: 'app-upload-details',
   templateUrl: './upload-details.component.html',
   styleUrls: ['./upload-details.component.css']
 })
