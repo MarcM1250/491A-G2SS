@@ -156,53 +156,32 @@ tr.mat-footer-row {
 
 /* Footer style */
 
-.backtop-btn {
-  background-color: #3850d8;
-  color: white;
-  font-size: 14px;
-  border: none;
-  top: 7px;
+.btn-container {
+  display: flex;
   position: absolute;
-  height: 35px;
-  right: 120px;
+  right: 0;
 }
 
-.upload-btn {
-  position: absolute;
-  background-color: #3850d8;
-  color: white;
+.backtop-btn, .upload-btn {
   font-size: 14px;
   border: none;
-  top: 7px;
-  height: 35px;
-  right: 5px;
-}
-
-.upload-btn:hover, .backtop-btn:hover, .upload-btn:focus, .backtop-btn:focus {
-  background-color: #0b24af;
+  margin: 15px;
 }
 
 #footer {
   display: flex;
   position: fixed;
+  bottom: 0;
   width: 100%;
-  height: 55px;
-  right: 0px;
-  bottom: 0px;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   background-color: rgb(255, 255, 255);
   z-index: 100;
-  box-shadow: -9px 0px 10px #aaaaaa;
+  box-shadow: 0px 0px 10px #aaaaaa;
 }
 
 #uploadOptions {
   display: flex;
-}
-
-#mPaginator {
-  position: fixed;
-  bottom: 10px;
-  right: 250px;
-  width: 100%;
-  height: 43px;
-  box-shadow: 0px 0px 10px #aaaaaa;
 }

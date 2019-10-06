@@ -5,8 +5,19 @@ table {
 
 .footer {
     display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 0em 1em;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
+    box-shadow: 0px 0px 10px #aaaaaa;
+}
+
+.focused-btn {
+    background-color: #0b24af;
+    color: white;
 }

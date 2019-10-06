@@ -94,17 +94,18 @@
 <!--End of Table--------------------------------------------------------------->
 
 <div id="footer">
-
   <!--Back to Top Button------------------>
-  <mat-paginator [pageSizeOptions]="[20, 50, 100]" showFirstLastButtons id="mPaginator"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[20, 50, 100]" showFirstLastButtons></mat-paginator>
 
-  <button mat-raised-button class="backtop-btn" (click)="toTop()">
-    <mat-icon>arrow_upward</mat-icon>
-    Back to Top
-  </button>
-  <!--Upload Button-->
-  <button mat-raised-button (click)="showUploadForm()" class="upload-btn">
-    <mat-icon>cloud_upload</mat-icon>
-    Upload
-  </button>
+  <div class="btn-container">
+    <button mat-raised-button class="backtop-btn" (click)="toTop()" color="primary">
+      <mat-icon>arrow_upward</mat-icon>
+      Back to Top
+    </button>
+    <!--Upload Button-->
+    <button mat-raised-button (click)="showUploadForm()" class="upload-btn" color="primary">
+      <mat-icon>cloud_upload</mat-icon>
+      Upload
+    </button>
+  </div>
 </div>
