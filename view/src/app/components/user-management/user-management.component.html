@@ -1,4 +1,22 @@
 <app-header></app-header>
-<p>
-  user-management works!
-</p>
+
+<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortDirection="desc"
+  class="mat-elevation-z8">
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
+    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="organization">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Organization </th>
+    <td mat-cell *matCellDef="let element"> {{element.organization}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete_permission">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete Permission </th>
+    <td mat-cell *matCellDef="let element"> {{element.delete_permission}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

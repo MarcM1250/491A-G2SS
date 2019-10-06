@@ -11,19 +11,26 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private _authenticationservice: AuthenticationService,
+    private authenticationService: AuthenticationService,
     private router: Router,
   ) { }
 
   ngOnInit() {
   }
 
+  isUserManaging() {
+    return this.router.url === '/user-management';
+  }
 
   goToUserPanel() {
     this.router.navigate(['/user-management']);
   }
 
+  goToMainPage() {
+    this.router.navigate(['/main']);
+  }
+
   logout(): void { // Logout button redirect
-    this._authenticationservice.logout();
+    this.authenticationService.logout();
   }
 }

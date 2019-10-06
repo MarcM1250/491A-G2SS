@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthenticationService } from '../../services/authentication.service';
+import { MatTableDataSource, MatSort } from '@angular/material';
+import { User } from '../../models/User';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-user-management',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService) { }
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  users: User[];
+
+  dataSource: MatTableDataSource<User>;
+  displayedColumns: string[] = ['username', 'organization', 'delete_permission'];
+  selection = new SelectionModel<User>(true, []);
 
   ngOnInit() {
+    this.authenticationService.getUsers().subscribe(next => {
+      this.users = next.accounts;
+      this.dataSource = new MatTableDataSource(this.users);
+      this.dataSource.sort = this.sort;
+      console.log(this.users);
+    }, error => {
+      console.log(error);
+    }, () => { });
   }
-
 }

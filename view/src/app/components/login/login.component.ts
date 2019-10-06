@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
         resp => {
           this.message = 'Success :)';
           this.loading = false;
-          console.log('Response onSubmit: ', resp);
           this.router.navigate(['/main']);
         },
         err => {

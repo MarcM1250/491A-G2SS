@@ -5,6 +5,10 @@
   text-align: center
 }
 
+.login-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
 form {
   display: table;
   margin: auto;
