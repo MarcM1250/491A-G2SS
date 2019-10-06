@@ -3,6 +3,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { User } from '../../models/User';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-management',
@@ -11,7 +12,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -26,9 +27,12 @@ export class UserManagementComponent implements OnInit {
       this.users = next.accounts;
       this.dataSource = new MatTableDataSource(this.users);
       this.dataSource.sort = this.sort;
-      console.log(this.users);
     }, error => {
       console.log(error);
     }, () => { });
+  }
+
+  showUploadForm() {
+    this.router.navigate(['/add-account']);
   }
 }
