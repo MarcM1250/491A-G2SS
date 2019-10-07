@@ -158,11 +158,9 @@ tr.mat-footer-row {
 
 .btn-container {
   display: flex;
-  position: absolute;
-  right: 0;
 }
 
-.backtop-btn, .upload-btn {
+.footer-btn {
   font-size: 14px;
   border: none;
   margin: 15px;
@@ -173,10 +171,11 @@ tr.mat-footer-row {
   position: fixed;
   bottom: 0;
   width: 100%;
+  min-width: 775px;
   left: 0;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: rgb(255, 255, 255);
   z-index: 100;
   box-shadow: 0px 0px 10px #aaaaaa;

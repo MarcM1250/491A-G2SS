@@ -1,30 +1,3 @@
-<!-- Marc's Submit File Form
-<div id="overlay" [ngStyle]="{'animation': newStyle}">
-  <form (ngSubmit)="submitUpload()">
-    <legend>
-      <h1>Upload Form</h1>
-    </legend>
-
-    <label for="fname">Title</label>
-    <input type="text" id="fname" name="title" [(ngModel)]="title">
-
-    <label for="fdescription">File Description</label>
-    <textarea id="fdescription" name="fdesciption" [(ngModel)]="description"></textarea>
-
-    Select a file to upload:
-    <input type="file" name="file" (change)="fileEvent($event)" id="fileToUpload" accept='.kml'>
-
-    <p id="errorMsg"> {{errorMsg}} </p>
-
-    <div id="uploadOptions">
-      <input type="submit" value="Submit">
-      <span class="example-fill-remaining-space"></span>
-      <input type="button" value="Cancel" (click)="hideUploadForm()">
-    </div>
-
-  </form>
-</div> -->
-
 <mat-card id="overlay" [ngStyle]="{'animation': newStyle}">
   <mat-card-title style=" text-align: left">Upload Form</mat-card-title>
   <mat-card-content>
@@ -34,7 +7,7 @@
     </mat-form-field>
     <mat-form-field appearance="outline" class="fill-width">
       <mat-label>File Description</mat-label>
-      <textarea matInput placeholder="Lorem ipsum sin dolor" [(ngModel)]="description"></textarea>
+      <textarea matInput placeholder="Lorem ipsum sin dolor" [(ngModel)]="description" id="nogrow"></textarea>
     </mat-form-field>
     <button type="button" mat-raised-button (click)="fileInput.click()" class="upload-btn">Choose File</button>
     <input hidden (change)="fileEvent($event)" #fileInput type="file" id="file" accept=".kml">
@@ -44,7 +17,7 @@
   </mat-card-content>
   <p id="errorMsg"> {{errorMsg}} </p>
   <mat-card-actions class="card-actions-container">
-    <button mat-raised-button class="card-actions" (click)=submitUpload()>Submit</button>
+    <button mat-raised-button class="card-actions" (click)="submitUpload()">Submit</button>
     <button mat-raised-button class="card-actions" (click)="hideUploadForm()">Cancel</button>
   </mat-card-actions>
 </mat-card>

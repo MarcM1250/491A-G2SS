@@ -3,15 +3,26 @@ table {
   padding-bottom: 65px
 }
 
+.btn-container {
+  display: flex;
+}
+
+.footer-btn {
+  font-size: 14px;
+  border: none;
+  margin: 15px;
+}
+
 .footer {
   display: flex;
   position: fixed;
   bottom: 0;
   width: 100%;
+  min-width: 775px;
   left: 0;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: rgb(255, 255, 255);
   z-index: 100;
   box-shadow: 0px 0px 10px #aaaaaa;

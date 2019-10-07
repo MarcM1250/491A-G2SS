@@ -1,5 +1,7 @@
 #overlay {
+
   box-shadow: 0px 0px 10px #646464b9;
+
   display: flex;
   position: fixed;
   min-width: 400px;
@@ -7,9 +9,9 @@
   align-items: stretch;
   max-height: 550px;
   right: 0px;
-  bottom: 83px;
+  bottom: 66px;
   background-color: rgba(255, 255, 255, 1);
-  z-index: 100;
+  z-index: 200;
   animation: slidein 0.5s;
 }
 
@@ -100,6 +102,10 @@ textarea {
 
 #errorMsg {
   color: rgb(170, 1, 1);
+}
+
+#nogrow {
+  resize: none;
 }
 
 .upload-btn {
