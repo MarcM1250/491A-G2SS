@@ -44,7 +44,7 @@
   </mat-card-content>
   <p id="errorMsg"> {{errorMsg}} </p>
   <mat-card-actions class="card-actions-container">
-    <button mat-raised-button class="card-actions">Submit</button>
+    <button mat-raised-button class="card-actions" (click)=submitUpload()>Submit</button>
     <button mat-raised-button class="card-actions" (click)="hideUploadForm()">Cancel</button>
   </mat-card-actions>
 </mat-card>
