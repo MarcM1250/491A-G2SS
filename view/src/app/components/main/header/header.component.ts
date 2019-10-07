@@ -26,6 +26,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/user-management']);
   }
 
+  goToContactPanel() {
+    this.router.navigate(['/contact']);
+  }
+
   goToMainPage() {
     this.router.navigate(['/main']);
   }
