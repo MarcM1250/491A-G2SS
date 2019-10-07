@@ -8,21 +8,11 @@ const Account = require('../models/accountModel');
  * RETURN ALL ACCOUNTS IN THE DATABASE 
  */
 exports.get_all = (req, res, next) => {
-    Account.find() // find accounts in the database using mongoose promise
-        .exec() 
-        .then(docs => { // doc contains the accounts found
-            res.status(200).json({
-                accounts: docs.map(doc => { 
-                    return {
-                        username: doc.username,
-                        password: doc.password,
-                        organization: doc.organization,
-                        first_name: doc.first_name,
-                        last_name: doc.last_name,
-                        delete_permission: doc.delete_permission
-                    }
-                })
-            });
+    Account.find({}, { '_id': 0, '__v': 0, 'role': 0 }) // find accounts in the database using mongoose promise
+        // .select("username password organization first_name last_name delete_permission")
+        .exec()
+        .then(docs => { // doc contains the accounts found, minus the _id field
+            res.status(200).send(docs);
         })
         .catch(err => {
             console.log(err);
@@ -37,7 +27,7 @@ exports.get_all = (req, res, next) => {
  */
 exports.get_account = (req, res, next) => {
     const username = req.params.username; // get username from request url
-    Account.findOne({username: username})
+    Account.findOne({ username: username })
         // limit the fields returned
         .select("username password organization first_name last_name delete_permission")
         .exec()

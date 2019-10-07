@@ -1,5 +1,5 @@
 export class User {
-    delete_permission: number;
+    delete_permission: boolean | number;
     first_name: string;
     last_name: string;
     organization: string;

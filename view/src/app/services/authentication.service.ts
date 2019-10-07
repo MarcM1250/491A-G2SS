@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { Observable, of, concat } from 'rxjs';
+import { Observable, of, concat, throwError } from 'rxjs';
+import { User } from '../models/User';
 
 export const API_URL = 'http://localhost:3000/api';
 
@@ -53,8 +54,15 @@ export class AuthenticationService {
     return localStorage.getItem('isAdmin') === '1';
   }
 
-  getUsers(): Observable<any> {
-    return this.http.get(`${API_URL}/accounts/`);
+  getUsers(): Observable<User[]> {
+    const isAdmin = localStorage.getItem('isAdmin');
+    if (isAdmin && isAdmin !== 'false' && isAdmin !== '0') {
+      return this.http.get<User[]>(`${API_URL}/accounts/`);
+    }
+    return throwError('Access denied.');
+    // return Observable.create(subscriber => {
+    //   subscriber.error(new Error('Access denied'));
+    // });
   }
 
   /**
