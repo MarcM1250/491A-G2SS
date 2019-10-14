@@ -123,31 +123,6 @@ exports.get_upload = (req, res, next) => {
             res.status(500).json({ error: err });
         });
 };
-/**
- * NEED MORE WORK!
- * 
- */
-exports.patch_upload = (req, res, next) => {
-    const id = req.params.uploadId;
-    // Upload should be patched even if some fields are missing
-    const updateOps = {};
-    for (const ops of req.body) {
-        updateOps[ops.propName] = ops.value;
-    }
-    Upload.update({ _id: id }, { $set: updateOps })
-        .exec()
-        .then(result => {
-            res.status(200).json({
-                message: 'Upload updated',
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
-        });
-};
 
 /**
  * DELETE AN UPLOAD FROM THE DATABASE

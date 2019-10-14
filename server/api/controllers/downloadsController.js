@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
  */
 exports.get_all = (req, res, next) => {
     Download.find()
-        .select("_id upload_id upload_date download_by") // data you want to fetch
+        .select("_id upload_id upload_date download_by download_via") // data you want to fetch
         .exec()
         .then(docs => {
             res.status(200).json({
@@ -43,7 +43,7 @@ exports.create_download = (req, res, next) => {
                         upload_id: result._id,
                         download_by: req.userData.username,
                         download_date: Date.now(),
-                        download_via: req.headers['user-agent']
+                        download_via: req.body.download_via || 'API'
                     });
                     // set response header filename or else it would return response.minetype
                     res.setHeader("Content-Disposition", "attachment; filename=" + result.filename);
@@ -90,7 +90,7 @@ exports.create_download = (req, res, next) => {
  */
 exports.get_download = (req, res, next) => {
     Download.find({ download_by: req.params.username })
-        .select("upload_id upload_date download_by") // data you want to fetch
+        .select("upload_id upload_date download_by download_via") // data you want to fetch
         .exec()
         .then(results => {
             if (results) {
