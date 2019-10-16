@@ -51,7 +51,7 @@ export class AuthenticationService {
    * returns if user is allowed to list the other users
    */
   isAdmin(): boolean {
-    return localStorage.getItem('isAdmin') === '1';
+    return localStorage.getItem('isAdmin') === 'true';
   }
 
   getUsers(): Observable<User[]> {
