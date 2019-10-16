@@ -39,6 +39,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { UploadformComponent } from './components/main/uploadform/uploadform.component';
 import { HeaderComponent } from './components/main/header/header.component';
 import { UploadDetailsComponent } from './components/main/upload-details/upload-details.component';
+import { CreateAccountComponent } from './components/user-management/create-account/create-account.component';
 
 /**
  * Manually added
@@ -64,6 +65,7 @@ const appRoutes: Routes = [
     UploadformComponent,
     HeaderComponent,
     UploadDetailsComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,
