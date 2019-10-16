@@ -28,8 +28,10 @@
 <div class="footer">
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
-  <button *ngIf="!userError" mat-raised-button (click)="showUploadForm()" color="primary">
-    <mat-icon>add_box</mat-icon>
-    Add Account
-  </button>
+  <div class="btn-container">
+    <button *ngIf="!userError" mat-raised-button class="footer-btn" (click)="showUploadForm()" color="primary">
+      <mat-icon>add_box</mat-icon>
+      Add Account
+    </button>
+  </div>
 </div>

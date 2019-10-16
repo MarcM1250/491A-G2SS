@@ -37,6 +37,6 @@ export class UploadsService {
       responseType: 'blob' as 'json'
       
     };
-    return this.http.post<Upload>(url, null,newHttpOptions);
+    return this.http.post<Upload>(url, {'download_via': 'Webapp'},newHttpOptions);
   }
 }

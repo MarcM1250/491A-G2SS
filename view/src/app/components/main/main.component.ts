@@ -173,7 +173,6 @@ export class MainComponent implements OnInit {
   }
 
   showUploadForm() {
-    alert(this.dataSource.filter);
     this.uploadForm = true;
   }
 

@@ -15,10 +15,11 @@ exports.get_all = (req, res, next) => {
             res.status(200).send(docs);
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
         });
 };
 
@@ -35,16 +36,22 @@ exports.get_account = (req, res, next) => {
             if (result) {
                 res.status(200).send(result);
             } else {
-                res.status(200).json({
-                    message: "No valid entry found for provided username"
-                });
+                const error = new Error('No valid entry found for provided username');
+                error.status = 409;
+                console.log(error.message);
+
+                return next(error);
+                // res.status(200).json({
+                //     message: "No valid entry found for provided username"
+                // });
             }
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
         });
 };
 
@@ -52,21 +59,31 @@ exports.get_account = (req, res, next) => {
  * CREATE AN ACCOUNT
  */
 exports.create_account = (req, res, next) => {
+    if(!req.body.username || !req.body.password || !req.body.first_name || !req.body.last_name || !req.body.delete_permission){
+        const error = new Error('Path `username`, `password`, `first_name`, `last_name`, `delete_permission` are required.');
+        error.status = 400;
+        return next(error);
+    }
     // Prevent duplicated account with same username
     Account.find({ username: req.body.username })
         .exec()
         .then(account => {
             if (account.length >= 1) { // return if username exists
-                return res.status(409).json({
-                    message: 'Account exists'
-                });
+                const error = new Error('Account exists');
+                error.status = 409;
+                return next(error);
+                // return res.status(409).json({
+                //     message: 'Account exists'
+                // });
             } else {
                 // hash the password using bcrypt: second argument is the salt
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
                     if (err) {
-                        return res.status(500).json({
-                            error: err
-                        });
+                        err.status = 500;
+                        next(err);
+                        // return res.status(500).json({
+                        //     error: err
+                        // });
                     } else {
                         // create an account object with data parsed from the request body
                         const account = new Account({
@@ -90,10 +107,11 @@ exports.create_account = (req, res, next) => {
                                 });
                             })
                             .catch(err => {
-                                console.log(err);
-                                res.status(500).json({
-                                    error: err
-                                });
+                                err.status = 500;
+                                next(err);
+                                // res.status(500).json({
+                                //     error: err
+                                // });
                             });
                     }
                 });
@@ -105,28 +123,40 @@ exports.create_account = (req, res, next) => {
  * GENERATE A JWT TOKEN FOR A USER IF USERNAME & PASSWORD MATCHED
  */
 exports.login = (req, res, next) => {
+    if(!req.body.username || !req.body.password){
+        const error = new Error('Path `username` and `password` are required.');
+        error.status = 400;
+        return next(error);
+    }
     // Check if the account exists based on the username passed
     Account.find({ username: req.body.username })
         .exec()
         .then(account => {
             // Return authentication failed if username does not exist in the DB
             if (account.length < 1) {
-                return res.status(401).json({
-                    message: 'Authentication failed 01'
-                });
+                const error = new Error('Username or password does not match');
+                error.status = 401;
+                return next(error);
+                // return res.status(401).json({
+                //     message: 'Authentication failed 01'
+                // });
             }
             // Use the compare method from bcrypt to verify the account passwords
             bcrypt.compare(req.body.password, account[0].password, (err, result) => {
                 if (err) {
-                    return res.status(401).json({
-                        message: 'Authentication failed 02'
-                    });
+                    err.status = 401;
+                    console.log(err.message);
+                    return next(err);
+                    // return res.status(401).json({
+                    //     message: 'Authentication failed 02'
+                    // });
                 }
                 // if password matched, create a JWT Token for the user
                 if (result) {
                     const token = jwt.sign({
                         username: account[0].username,
-                        userId: account[0]._id
+                        userId: account[0]._id,
+                        delete_permission: account[0].delete_permission
                     }, process.env.JWT_KEY, // sign the token with a password (will be used to decode the token)
                         {
                             expiresIn: "10h"
@@ -138,16 +168,20 @@ exports.login = (req, res, next) => {
                     });
 
                 }
-                res.status(401).json({
-                    message: 'Authentication failed 03'
-                });
+                const error = new Error('Username or password does not match');
+                error.status = 401;
+                next(error);
+                // res.status(401).json({
+                //     message: 'Authentication failed 03'
+                // });
             });
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
         });
 };
 
@@ -158,14 +192,20 @@ exports.delete_account = (req, res, next) => {
     Account.remove({ username: req.params.username })
         .exec()
         .then(result => {
+            if(result.deleteCount !== 0){
+                const error = new Error('Account not found');
+                error.status = 400;
+                return next(error);
+            }
             res.status(200).json({
                 message: 'Account deleted'
             });
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
         });
 };
