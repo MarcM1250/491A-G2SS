@@ -113,6 +113,9 @@ export class MainComponent implements OnInit {
 
   
   overwriteFilter() {
+    this.fMonth = '';
+    this.fDay = '';
+    this.fYear = '';
     this.dataSource.filter = ''; // Set filter to blank when switching
     this.dataSource.filterPredicate = (data, filter: string):boolean => {
       const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
