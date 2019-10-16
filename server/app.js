@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const uploadRoutes = require('./api/routes/uploadsRoutes');
 const accountRoutes = require('./api/routes/accountsRoutes');
 const downloadRoutes = require('./api/routes/downloadsRoutes');
+const logger = require('./api/utils/logger');
 
 // mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
 mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/G2SS_v1?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
@@ -18,7 +19,7 @@ mongoose.connection.once('open',function() {
 });
 
 // Morgan middleware used to log requests
-app.use(morgan('dev'));
+app.use(morgan(':status :remote-addr :remote-user [:date[web]] ":method :url HTTP/:http-version" :user-agent :res[content-length]', { skip: (req, res) => { return res.statusCode >= 400 }, stream: logger.stream }));
 
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -52,13 +53,13 @@ app.use((req, res, next) => {
 
 // error handling for others errors
 app.use((error, req, res, next) => {
+    logger.error(`${error.status || 500} ${req.ip} - [${new Date().toUTCString()}] - ${error.message} - "${req.method} ${req.originalUrl} HTTP/${req.httpVersion}" ${req.headers['user-agent']}`);
     res.status(error.status || 500);
     res.json({
         error: {
             message: error.message
         }
     });
-    console.log(error);
 });
 
 module.exports = app;
