@@ -80,7 +80,7 @@ exports.create_upload = (req, res, next) => {
                             // console.log('Upload successful');
                         });
                 res.status(201).json({
-                    message: '"Upload created successfully"',
+                    message: "Upload created successfully",
                     createdUpload: {
                         _id: result._id,
                         title: result.title,
@@ -150,7 +150,6 @@ exports.delete_upload = (req, res, next) => {
     }
     // find the upload by upload_id
     Upload.findById(req.params.uploadId)
-        .select("_id") // data you want to fetch
         .exec()
         .then(result => {
             if (result) {

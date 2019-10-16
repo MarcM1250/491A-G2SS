@@ -59,8 +59,14 @@ exports.get_account = (req, res, next) => {
  * CREATE AN ACCOUNT
  */
 exports.create_account = (req, res, next) => {
-    if(!req.body.username || !req.body.password || !req.body.first_name || !req.body.last_name || !req.body.delete_permission){
-        const error = new Error('Path `username`, `password`, `first_name`, `last_name`, `delete_permission` are required.');
+    console.log(req.body.username);
+    console.log(req.body.password);
+    console.log(req.body.last_name);
+    console.log(req.body.first_name);
+    console.log(req.body.delete_permission);
+
+    if(!req.body.username || !req.body.password || !req.body.first_name || !req.body.last_name || req.body.delete_permission === undefined){
+        const error = new Error('Path `username`, `password`, `first_name`, `last_name`, and `delete_permission` are required.');
         error.status = 400;
         return next(error);
     }
