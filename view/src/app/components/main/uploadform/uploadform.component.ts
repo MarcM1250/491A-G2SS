@@ -66,10 +66,6 @@ export class UploadformComponent implements OnInit {
       // Maximum File Size Limit
       if (this.file.size / 1024 > 10000) { // File Size Limit: 10MB
         this.errorMsg = 'File size of 10MB exceeded, please choose another file';
-        const audio = new Audio();
-        audio.src = '../../assets/alarm.wav';
-        audio.load();
-        audio.play();
       } else { // Everything valid, Submit File
         this.errorMsg = ''; // No error
         // this.fileValid = 0;//Reset file validation
