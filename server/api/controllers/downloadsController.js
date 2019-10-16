@@ -15,10 +15,11 @@ exports.get_all = (req, res, next) => {
             });
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
         });
 };
 
@@ -26,6 +27,11 @@ exports.get_all = (req, res, next) => {
  * DOWNLOAD A FILE AND CREATE AN DOWNLOAD
  */
 exports.create_download = (req, res, next) => {
+    if(!mongoose.Types.ObjectId.isValid(req.params.uploadId)){
+        const error = new Error('Parameter must be a valid ObjectId');
+        error.status = 400;
+        return next(error);
+    }
     // Find the file by upload_id
     Upload.findById(req.params.uploadId)
         .exec()
@@ -33,9 +39,12 @@ exports.create_download = (req, res, next) => {
             if (result) {
                 // Return if file has a delete_by field
                 if (result.delete_by !== undefined) {
-                    res.status(404).json({
-                        message: "File already deleted"
-                    });
+                    const error = new Error('File already deleted');
+                    error.status = 404;
+                    return next(error);
+                    // res.status(404).json({
+                    //     message: "File already deleted"
+                    // });
                 } else {
                     // Create a download object
                     const download = new Download({
@@ -56,32 +65,39 @@ exports.create_download = (req, res, next) => {
                         bucket.openDownloadStream(result.upload_id)
                             .pipe(res)
                             .on('error', function (error) {
-                                return res.status(500).json({
-                                    error: error
-                                });
+                                error.status = 500;
+                                return next(error);
+                                // return res.status(500).json({
+                                //     error: error
+                                // });
                             })
                             .on('finish', function () {
-                                console.log('Download successful');
+                                // console.log('Download successful');
                             });
                     })
                         .catch(err => {
-                            console.log(err);
-                            res.status(500).json({
-                                error: err
-                            });
+                            err.status = 500;
+                            next(err);
+                            // res.status(500).json({
+                            //     error: err
+                            // });
                         });
                 }
             } else {
-                res.status(404).json({
-                    message: "No valid entry found for provided ID"
-                });
+                const error = new Error('No valid entry found for provided ID');
+                error.status = 404;
+                next(error);
+                // res.status(404).json({
+                //     message: "No valid entry found for provided ID"
+                // });
             }
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
         });
 };
 
@@ -93,16 +109,20 @@ exports.get_download = (req, res, next) => {
         .select("upload_id upload_date download_by download_via") // data you want to fetch
         .exec()
         .then(results => {
-            if (results) {
+            if (results.length >= 1) {
                 res.status(200).json({
-                    downloads: results,
+                    downloads: results
                 });
             } else {
-                res.status(404).json({ message: "No valid entry found for provided account" });
+                const error = new Error("No valid entry found for provided account");
+                error.status = 404;
+                next(error);
+                // res.status(404).json({ message: "No valid entry found for provided account" });
             }
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({ error: err });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({ error: err });
         });
 };

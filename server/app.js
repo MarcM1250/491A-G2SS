@@ -19,7 +19,7 @@ mongoose.connection.once('open',function() {
 });
 
 // Morgan middleware used to log requests
-app.use(morgan(':status :remote-addr :remote-user [:date[web]] ":method :url HTTP/:http-version" :res[content-length]', { skip: (req, res) => { return res.statusCode >= 400 }, stream: logger.stream }));
+app.use(morgan(':status :remote-addr :remote-user [:date[web]] ":method :url HTTP/:http-version" :user-agent :res[content-length]', { skip: (req, res) => { return res.statusCode >= 400 }, stream: logger.stream }));
 
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,7 +53,7 @@ app.use((req, res, next) => {
 
 // error handling for others errors
 app.use((error, req, res, next) => {
-    logger.error(`${error.status || 500} ${req.ip} - [${new Date().toUTCString()}] - ${error.message} - "${req.method} ${req.originalUrl} HTTP/${req.httpVersion}"`);
+    logger.error(`${error.status || 500} ${req.ip} - [${new Date().toUTCString()}] - ${error.message} - "${req.method} ${req.originalUrl} HTTP/${req.httpVersion}" ${req.headers['user-agent']}`);
     res.status(error.status || 500);
     res.json({
         error: {

@@ -134,7 +134,7 @@ exports.login = (req, res, next) => {
         .then(account => {
             // Return authentication failed if username does not exist in the DB
             if (account.length < 1) {
-                const error = new Error('Authentication failed');
+                const error = new Error('Username or password does not match');
                 error.status = 401;
                 return next(error);
                 // return res.status(401).json({
@@ -168,7 +168,7 @@ exports.login = (req, res, next) => {
                     });
 
                 }
-                const error = new Error('Authentication failed');
+                const error = new Error('Username or password does not match');
                 error.status = 401;
                 next(error);
                 // res.status(401).json({

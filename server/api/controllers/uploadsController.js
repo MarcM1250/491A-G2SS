@@ -14,10 +14,11 @@ exports.get_all = (req, res, next) => {
             res.status(200).send(docs);
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
         });
 };
 
@@ -27,10 +28,10 @@ exports.get_all = (req, res, next) => {
 exports.create_upload = (req, res, next) => {
     // create an upload object using the data parsed from the request body
     // and parsed metadata using multer
-    if(!req.file){
+    if(!req.file || !req.body.title || req.body.description){
         return res.status(400).json({
-            message: 'Path `file` is required.'
-        })
+            message: 'Path `title`, `description`, and `file` are required.'
+        });
     }
 
     // validate xml file using fast-xml-parser and store validation result in a json object
@@ -38,7 +39,7 @@ exports.create_upload = (req, res, next) => {
 
     validator.validateXML( xmlString, function (err, validationResults) {
 
-        console.log("My RESULTS: ", validationResults)
+        console.log("My RESULTS: ", validationResults);
 
         // this id will be used for the upload_id and fs.files_id
         const files_id = new mongoose.Types.ObjectId();
@@ -69,12 +70,14 @@ exports.create_upload = (req, res, next) => {
                     readableStream.
                         pipe(bucket.openUploadStreamWithId(files_id, req.file.originalname)).
                         on('error', function (error) {
-                            return res.status(500).json({
-                                error: error
-                            });
+                            error.status = 500;
+                            return next(error);
+                            // return res.status(500).json({
+                            //     error: error
+                            // });
                         }).
                         on('finish', function (file) {
-                            console.log('Upload successful');
+                            // console.log('Upload successful');
                         });
                 res.status(201).json({
                     message: '"Upload created successfully"',
@@ -92,10 +95,11 @@ exports.create_upload = (req, res, next) => {
                 });
             })
             .catch(err => {
-                console.log(err);
-                res.status(500).json({
-                    error: err
-                })
+                err.status = 500;
+                next(err);
+                // res.status(500).json({
+                //     error: err
+                // });
             });
     });
 };
@@ -104,6 +108,11 @@ exports.create_upload = (req, res, next) => {
  * GET A SINGLE UPLOAD FROM THE DATABASE
 */
 exports.get_upload = (req, res, next) => {
+    if(!mongoose.Types.ObjectId.isValid(req.params.uploadId)){
+        const error = new Error('Parameter must be a valid ObjectId');
+        error.status = 400;
+        return next(error);
+    }
     Upload.findById(req.params.uploadId)
     .select("_id title description upload_date upload_by delete_date delete_by filename file_size parser_status") // data you want to fetch
     .exec()
@@ -113,14 +122,18 @@ exports.get_upload = (req, res, next) => {
                     upload: doc,
                 });
             } else {
-                res.status(404).json({
-                    message: "No valid entry found for provided upload ID"
-                });
+                const error = new Error('No valid entry found for provided ID');
+                error.status = 404;
+                next(error);
+                // res.status(404).json({
+                //     message: "No valid entry found for provided upload ID"
+                // });
             }
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).json({ error: err });
+            err.status = 500;
+            next(err);
+            // res.status(500).json({ error: err });
         });
 };
 
@@ -130,7 +143,11 @@ exports.get_upload = (req, res, next) => {
  * AND UPDATE THE "DELETE_BY" AND "DELETE_DATE" OF THE UPLOAD
  */
 exports.delete_upload = (req, res, next) => {
-
+    if(!mongoose.Types.ObjectId.isValid(req.params.uploadId)){
+        const error = new Error('Parameter must be a valid ObjectId');
+        error.status = 400;
+        return next(error);
+    }
     // find the upload by upload_id
     Upload.findById(req.params.uploadId)
         .select("_id") // data you want to fetch
@@ -139,10 +156,13 @@ exports.delete_upload = (req, res, next) => {
             if (result) {
                 // return if file has is already deleted
                 if (result.delete_by !== undefined){
-                    res.status(404).json({
-                        message: "File already deleted",
-                        upload: result
-                    });
+                    const error = new Error('File already deleted');
+                    error.status = 404;
+                    next(error);
+                    // res.status(404).json({
+                    //     message: "File already deleted",
+                    //     upload: result
+                    // });
                 }else{
                 // update the "delete_by" and "delete_date" fields 
                 result.updateOne({ $set: { delete_by: req.userData.username, delete_date: Date.now() } })
@@ -153,10 +173,11 @@ exports.delete_upload = (req, res, next) => {
                         });
                         bucket.delete(result._id, function (error) {
                             if (error) {
-                                console.log(error);
-                                return res.status(500).json({
-                                    error: error
-                                });
+                                error.status = 500;
+                                return next(error);
+                                // return res.status(500).json({
+                                //     error: error
+                                // });
                             }else{
                             res.status(200).json({
                                 message: 'Delete successful',
@@ -165,20 +186,26 @@ exports.delete_upload = (req, res, next) => {
                         });
                     })
                     .catch(err => {
-                        console.log(err);
-                        res.status(500).json({
-                            error: err
-                        });
+                        err.status = 500;
+                        next(err);
+                        // res.status(500).json({
+                        //     error: err
+                        // });
                     });
                 }
             } else {
-                res.status(404).json({
-                    message: "No valid entry found for provided upload ID"
-                });
+                const error = new Error('No valid entry found for provided ID');
+                error.status = 404;
+                next(error);
+                // res.status(404).json({
+                //     message: "No valid entry found for provided upload ID"
+                // });
             }
         }).catch(err => {
-            res.status(500).json({
-                message: err
-            })
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     message: err
+            // })
         })
 };
