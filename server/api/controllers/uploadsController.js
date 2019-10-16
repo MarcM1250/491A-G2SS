@@ -28,7 +28,7 @@ exports.get_all = (req, res, next) => {
 exports.create_upload = (req, res, next) => {
     // create an upload object using the data parsed from the request body
     // and parsed metadata using multer
-    if(!req.file || !req.body.title || req.body.description){
+    if(!req.file || !req.body.title || !req.body.description){
         return res.status(400).json({
             message: 'Path `title`, `description`, and `file` are required.'
         });
