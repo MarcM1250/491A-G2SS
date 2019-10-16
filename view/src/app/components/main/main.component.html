@@ -19,13 +19,13 @@
   </mat-form-field>
   <div id="filterBar1">
     <mat-form-field id="filterDate">
-      <input matInput (keyup)="applyDate()" [(ngModel)]="fMonth" placeholder="Filter MM">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fMonth" placeholder="Filter MM" maxlength="2">
     </mat-form-field>
     <mat-form-field id="filterDate">
-      <input matInput (keyup)="applyDate()" [(ngModel)]="fDay" placeholder="Filter DD ">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fDay" placeholder="Filter DD " maxlength="2">
     </mat-form-field>
     <mat-form-field id="filterDate">
-      <input matInput (keyup)="applyDate()" [(ngModel)]="fYear" placeholder="Filter YYYY">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fYear" placeholder="Filter YYYY" maxlength="4">
     </mat-form-field>
   </div>
 
