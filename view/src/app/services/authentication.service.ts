@@ -37,7 +37,7 @@ export class AuthenticationService {
   login(username: string, password: string) {
     return this.http.post(`${API_URL}/accounts/login`, { username, password }).pipe(map(response => {
       if (response) {
-        if (response['token'] && response['delete_permission']) {
+        if (response.hasOwnProperty('token') && response.hasOwnProperty('delete_permission')) {
           localStorage.setItem('token', response['token']);
           localStorage.setItem('isAdmin', response['delete_permission']);
         }
