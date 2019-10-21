@@ -14,11 +14,12 @@
         <input matInput placeholder="Retype Password" [(ngModel)]="rePassword" type="password" name="rePassword"
           required>
       </mat-form-field>
+      <mat-checkbox [(ngModel)]="adminPowers" name="adminPowers">Enable Admin Privileges</mat-checkbox>
     </form>
     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="onSubmit()" color="primary">Login</button>
+    <button mat-raised-button (click)="onSubmit()" color="primary">Register</button>
   </mat-card-actions>
   <div *ngIf="loading"> Authorizing ...</div>
   <div *ngIf="message"> {{ message }} </div>

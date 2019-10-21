@@ -51,8 +51,9 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'main', component: MainComponent, canActivate: [GuardService] },
   { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService] },
+  { path: 'create-account', component: CreateAccountComponent, canActivate: [GuardService] },
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
-  { path: '**', redirectTo: '/login' }
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({

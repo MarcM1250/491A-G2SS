@@ -9,7 +9,16 @@ export class CreateAccountComponent implements OnInit {
 
   constructor() { }
 
+  username = '';
+  password = '';
+  rePassword = '';
+  adminPowers = false;
+
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log(`Username: ${this.username}\nPassword: ${this.password}\nRePassword: ${this.rePassword}\nAdminPowers: ${this.adminPowers}`);
   }
 
 }

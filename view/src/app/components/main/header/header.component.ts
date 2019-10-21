@@ -22,6 +22,10 @@ export class HeaderComponent implements OnInit {
     return this.router.url === '/user-management';
   }
 
+  currentPage() {
+    return this.router.url;
+  }
+
   goToUserPanel() {
     this.router.navigate(['/user-management']);
   }

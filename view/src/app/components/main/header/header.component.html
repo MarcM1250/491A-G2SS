@@ -24,21 +24,20 @@
         <span>Log out</span>
       </button>
       <!--
-        TODO: Restict the visibility of this button using traits of logged-in user
-        <*ngIf this._authenticationService.isAdmin()
+        TODO: Allow admin to go to both File Management and User Management from Account Creation Page
         -->
-      <div *ngIf="this.isUserManaging(); else elseBlock">
+      <div *ngIf="this.currentPage() !== '/main'">
         <button mat-menu-item (click)="goToMainPage()">
           <mat-icon>assessment</mat-icon>
           <span>Manage files</span>
         </button>
       </div>
-      <ng-template #elseBlock>
-        <button mat-menu-item *ngIf="this.authenticationService.isAdmin()" (click)="goToUserPanel()">
+      <div *ngIf="this.authenticationService.isAdmin() && this.currentPage() !== '/user-management'">
+        <button mat-menu-item (click)="goToUserPanel()">
           <mat-icon>assessment</mat-icon>
           <span>Manage users</span>
         </button>
-      </ng-template>
+      </div>
       <!--End of TODO-->
 
 

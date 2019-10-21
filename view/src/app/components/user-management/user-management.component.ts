@@ -36,6 +36,6 @@ export class UserManagementComponent implements OnInit {
   }
 
   showUploadForm() {
-    // this.router.navigate(['/add-account']);
+    this.router.navigate(['/create-account']);
   }
 }
