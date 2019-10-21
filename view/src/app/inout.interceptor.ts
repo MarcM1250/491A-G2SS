@@ -2,11 +2,11 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationService } from './services/authentication.service';
 import {
-    HttpEvent,
-    HttpInterceptor,
-    HttpErrorResponse,
-    HttpRequest,
-    HttpHandler
+  HttpEvent,
+  HttpInterceptor,
+  HttpErrorResponse,
+  HttpRequest,
+  HttpHandler
 } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
@@ -22,23 +22,24 @@ export class InOutInterceptor implements HttpInterceptor {
     const tkn = this.authenticationService.getCurrentToken();
 
     if (tkn) {
-      if (request.url.match("localhost")) {
-        console.log("Request URL:", request.url);
+      if (request.url.match('localhost')) {
+        console.log('Request URL:', request.url);
         request = request.clone({
           setHeaders: {
             Authorization: `Bearer ${tkn}`
           }
         });
-      } 
+      }
     }
 
-    return next.handle(request).pipe( tap( () => {},
+    return next.handle(request).pipe(tap(() => { },
       (err: any) => {
         if (err instanceof HttpErrorResponse) {
-          if (err.status !== 401) 
+          if (err.status !== 401) {
             return;
-          
-          this.authenticationService.logout();
+          }
+
+          this.authenticationService.boot();
         }
       }
     ));

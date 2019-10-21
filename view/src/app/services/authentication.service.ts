@@ -35,16 +35,21 @@ export class AuthenticationService {
    * this returns the token for the user
    */
   login(username: string, password: string) {
-    const getToken = this.http.post(`${API_URL}/accounts/login`, { username, password })
-      .pipe(map(response => {
-        if (response && response['token']) {
-          localStorage.setItem('token', response['token']);
-        }
-      }));
-    const getIsAdmin = this.http.get(`${API_URL}/accounts/${username}`).pipe(map(res => {
-      localStorage.setItem('isAdmin', res['delete_permission']);
+    // const getToken = this.http.post(`${API_URL}/accounts/login`, { username, password })
+    //   .pipe(map(response => {
+    //     if (response && response['token']) {
+    //       localStorage.setItem('token', response['token']);
+    //     }
+    //   }));
+    // const getIsAdmin = this.http.get(`${API_URL}/accounts/${username}`).pipe(map(res => {
+    //   localStorage.setItem('isAdmin', res['delete_permission']);
+    // }));
+    // return concat(getToken, getIsAdmin);
+    return this.http.post(`${API_URL}/accounts/login`, { username, password }).pipe(map(response => {
+      if (response && response['token']) {
+        localStorage.setItem('token', response['token']);
+      }
     }));
-    return concat(getToken, getIsAdmin);
   }
 
   /**
@@ -75,7 +80,20 @@ export class AuthenticationService {
     this.router.navigate(['/login']);
   }
 
+  /**
+   * Removes the need for greedy logouts when not asked for.
+   * If a user is not allowed to access an admin route, it will boot them to main where they belong, else, log them out
+   */
+  boot(): void {
+    if (localStorage.length === 0) {
+      this.router.navigate(['/login']);
+    } else {
+      this.router.navigate(['main']);
+    }
+  }
+
   removeLocalToken(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin');
   }
 }
