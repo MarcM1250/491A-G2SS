@@ -35,19 +35,15 @@ export class AuthenticationService {
    * this returns the token for the user
    */
   login(username: string, password: string) {
-    // const getToken = this.http.post(`${API_URL}/accounts/login`, { username, password })
-    //   .pipe(map(response => {
-    //     if (response && response['token']) {
-    //       localStorage.setItem('token', response['token']);
-    //     }
-    //   }));
-    // const getIsAdmin = this.http.get(`${API_URL}/accounts/${username}`).pipe(map(res => {
-    //   localStorage.setItem('isAdmin', res['delete_permission']);
-    // }));
-    // return concat(getToken, getIsAdmin);
     return this.http.post(`${API_URL}/accounts/login`, { username, password }).pipe(map(response => {
       if (response && response['token']) {
         localStorage.setItem('token', response['token']);
+      }
+      if (response) {
+        if (response['token'] && response['delete_permission']) {
+          localStorage.setItem('token', response['token']);
+          localStorage.setItem('isAdmin', response['delete_permission']);
+        }
       }
     }));
   }
@@ -56,18 +52,11 @@ export class AuthenticationService {
    * returns if user is allowed to list the other users
    */
   isAdmin(): boolean {
-    return true;
-    // TODO: Replace with this line below later when the API is available
-    // return localStorage.getItem('isAdmin') === 'true';
+    return localStorage.getItem('isAdmin') === 'true';
   }
 
   getUsers(): Observable<User[]> {
-    // const isAdmin = localStorage.getItem('isAdmin');
-    // if (isAdmin && isAdmin !== 'false' && isAdmin !== '0') {
-    //   return this.http.get<User[]>(`${API_URL}/accounts/`);
-    // }
     return this.http.get<User[]>(`${API_URL}/accounts/`);
-    // return throwError('Access denied.');
   }
 
   /**
