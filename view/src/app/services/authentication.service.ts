@@ -36,9 +36,6 @@ export class AuthenticationService {
    */
   login(username: string, password: string) {
     return this.http.post(`${API_URL}/accounts/login`, { username, password }).pipe(map(response => {
-      if (response && response['token']) {
-        localStorage.setItem('token', response['token']);
-      }
       if (response) {
         if (response['token'] && response['delete_permission']) {
           localStorage.setItem('token', response['token']);
