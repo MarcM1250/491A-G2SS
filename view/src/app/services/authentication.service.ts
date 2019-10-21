@@ -56,18 +56,18 @@ export class AuthenticationService {
    * returns if user is allowed to list the other users
    */
   isAdmin(): boolean {
-    return localStorage.getItem('isAdmin') === 'true';
+    return true;
+    // TODO: Replace with this line below later when the API is available
+    // return localStorage.getItem('isAdmin') === 'true';
   }
 
   getUsers(): Observable<User[]> {
-    const isAdmin = localStorage.getItem('isAdmin');
-    if (isAdmin && isAdmin !== 'false' && isAdmin !== '0') {
-      return this.http.get<User[]>(`${API_URL}/accounts/`);
-    }
-    return throwError('Access denied.');
-    // return Observable.create(subscriber => {
-    //   subscriber.error(new Error('Access denied'));
-    // });
+    // const isAdmin = localStorage.getItem('isAdmin');
+    // if (isAdmin && isAdmin !== 'false' && isAdmin !== '0') {
+    //   return this.http.get<User[]>(`${API_URL}/accounts/`);
+    // }
+    return this.http.get<User[]>(`${API_URL}/accounts/`);
+    // return throwError('Access denied.');
   }
 
   /**
