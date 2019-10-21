@@ -95,7 +95,7 @@
 
 <div id="footer">
   <!--Back to Top Button------------------>
-  <mat-paginator [pageSizeOptions]="[20, 50, 100]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[20, 50, 100]" (page)="onPaginateChange($event)" showFirstLastButtons></mat-paginator>
 
   <div class="btn-container">
     <button mat-raised-button class="footer-btn" (click)="toTop()" color="primary">

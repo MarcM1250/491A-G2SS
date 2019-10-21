@@ -70,13 +70,9 @@ export class MainComponent implements OnInit {
   }
 
 
-  //defPredicate: (data: Upload, filter: string) => boolean;
   ngOnInit() {
     this.retrieveData();
   }
-
-  
-
 
 
 
@@ -86,20 +82,65 @@ export class MainComponent implements OnInit {
    * @param: none
    */
 
-  retrieveData() {
-    // get uploads from server
-    this._uploadsService.getUploads().subscribe(
-      response => {
-        this.uploads = response.filter(x => x.delete_date === undefined);
 
-        this.dataSource = new MatTableDataSource(this.uploads);
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-        this.sort.disableClear = true;
-      },
-      (err) => { console.log(err); },
-      () => { });
-    // subcribe similar to promises .then cb: asynchronous
+  pagUpdate = 0
+  
+  retrieveData() {
+    // Get Uploads from server
+
+    if (this.pagUpdate === 0){
+      this._uploadsService.getUploads().subscribe(
+        response => {
+          this.uploads = response.slice(0,2);
+          response.length;
+        }
+        /*
+        response => {
+          //const respFilter = response.filter(x => x.delete_date === undefined);
+          alert(response.length);
+          this.uploads = response.filter(x => x.delete_date === undefined);
+          this.dataSource = new MatTableDataSource(this.uploads);
+          //this.dataSource = new MatTableDataSource(this.uploads.slice(0, 20));
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
+          //alert(this.dataSource.paginator.pageSize);  // Size 20
+          this.sort.disableClear = true;
+        },
+        (err) => { console.log(err); },
+        () => { }
+        */
+        );
+      // Subcribe similar to promises .then cb: asynchronous
+      this.pagUpdate = 1;
+    }
+    else{
+      this._uploadsService.getUploads().subscribe(
+        response => {
+          alert(response.length);
+          //this.uploads = response.filter(x => x.delete_date === undefined);
+          this.dataSource = new MatTableDataSource(this.uploads.slice(0, this.dataSource.paginator.pageSize));
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
+          this.sort.disableClear = true;
+        },
+        (err) => { console.log(err); },
+        () => { });
+  
+      alert("mamamia, that's a spicy meatball");
+    }
+
+
+
+
+
+
+  }
+
+  // Checks when paginator changes
+  onPaginateChange(event){
+    alert(this.dataSource.paginator.pageSize);
+    this.retrieveData();
+    //alert("mamamia");
   }
 
   applyFilter(filterValue: string) {
@@ -148,9 +189,8 @@ export class MainComponent implements OnInit {
   deleteUpload(upload: Upload) {
     // If user confirms Delete Confirmation box, proceed to delete
     if (this.deleteCheck === 1) {
-      // delete from UI
 
-      // delete from server
+      // Delete from server
       this._uploadsService.deleteUpload(upload).subscribe(
         (response) => {
           console.log('Response from deleting: ', response);
@@ -164,11 +204,8 @@ export class MainComponent implements OnInit {
         () => {
           this.uploads.splice(this.uploads.indexOf(upload), 1);
           this.dataSource._updateChangeSubscription();
-          // this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
-          // this.dataSource.filter = upload._id;
         }
       );
-
       // Reset deleteCheck value
       this.deleteCheck = 0;
     }
@@ -194,8 +231,7 @@ export class MainComponent implements OnInit {
 
   showUploadForm() {
     this.uploadForm = true;
-    //alert(this.dataSource.filterPredicate);
-    //alert(this.dataSource.filter);
+    alert();
   }
 
 
