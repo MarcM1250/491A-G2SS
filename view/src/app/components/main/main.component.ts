@@ -46,10 +46,13 @@ export class MainComponent implements OnInit {
   pipe: DatePipe;
 
   // Used for filtering by date
-  fDay: string;
-  fMonth: string;
-  fYear: string;
-  cDate: string;
+  fDay: string = '';
+  fMonth: string = '';
+  fYear: string = '';
+  cDate: string = '';
+
+  filterUse: string;
+  
 
   displayedColumns: string[] = ['title', 'upload_date', 'upload_by'];
   expandedElement: Upload | null;
@@ -66,9 +69,15 @@ export class MainComponent implements OnInit {
     this.selection.toggle(x); // then selects current row
   }
 
+
+  //defPredicate: (data: Upload, filter: string) => boolean;
   ngOnInit() {
     this.retrieveData();
   }
+
+  
+
+
 
 
   /**
@@ -91,7 +100,6 @@ export class MainComponent implements OnInit {
       (err) => { console.log(err); },
       () => { });
     // subcribe similar to promises .then cb: asynchronous
-
   }
 
   applyFilter(filterValue: string) {
@@ -100,29 +108,41 @@ export class MainComponent implements OnInit {
 
   applyDate() {
     this.cDate = `${this.fMonth}/${this.fDay}/${this.fYear}`;
-    this.dataSource.filter = this.cDate.trim().toLowerCase();
+    this.dataSource.filter = this.cDate.trim();
   }
 
+  
   overwriteFilter() {
-    this.dataSource.filter = '';
+    this.fMonth = '';
+    this.fDay = '';
+    this.fYear = '';
+    this.dataSource.filter = ''; // Set filter to blank when switching
+    this.dataSource.filterPredicate = (data, filter: string):boolean => {
+      const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
+      return formatted.indexOf(filter) >= 0;
+    };
+    
     if (this.filterSelect === 'date') {
+      //alert(this.filterSelect);
       document.getElementById('filterBar').style.display = 'none';
       document.getElementById('filterBar1').style.display = 'flex';
 
       this.pipe = new DatePipe('en');
       const defaultPredicate = this.dataSource.filterPredicate;
-      this.dataSource.filterPredicate = (data, filter) => {
+      this.dataSource.filterPredicate = (data, filter: string):boolean => {
         const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
-        return formatted.indexOf(filter) >= 0 || defaultPredicate(data, filter);
+        return formatted.indexOf(filter) >= 0;
       };
 
-    } else {
+    } 
+    else {
       document.getElementById('filterBar').style.display = 'block';
       document.getElementById('filterBar1').style.display = 'none';
       this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data[this.filterSelect].toLowerCase().includes(filter);
       };
     }
+    return 0;
   }
 
   deleteUpload(upload: Upload) {
@@ -174,6 +194,8 @@ export class MainComponent implements OnInit {
 
   showUploadForm() {
     this.uploadForm = true;
+    //alert(this.dataSource.filterPredicate);
+    //alert(this.dataSource.filter);
   }
 
 

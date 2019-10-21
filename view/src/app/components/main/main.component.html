@@ -6,26 +6,26 @@
     <mat-form-field>
       <mat-label>Filter by...</mat-label>
       <mat-select [(value)]="filterSelect">
-        <mat-option value="title" (click)="overwriteFilter()">Title</mat-option>
-        <mat-option value="filename" (click)="overwriteFilter()">Filename</mat-option>
-        <mat-option value="upload_by" (click)="overwriteFilter()">Uploader</mat-option>
-        <mat-option value="date" (click)="overwriteFilter()"> Upload Date</mat-option>
+        <mat-option value="title" (click)="overwriteFilter()" (click)="fBar = ''">Title</mat-option>
+        <mat-option value="filename" (click)="overwriteFilter()" (click)="fBar = ''">Filename</mat-option>
+        <mat-option value="upload_by" (click)="overwriteFilter()" (click)="fBar = ''">Uploader</mat-option>
+        <mat-option value="date" (click)="overwriteFilter()" (click)="fBar = ''"> Upload Date</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
   <mat-form-field id="filterBar">
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter files">
+    <input matInput [(ngModel)]="fBar" (keyup)="applyFilter($event.target.value)" placeholder="Filter files">
   </mat-form-field>
   <div id="filterBar1">
     <mat-form-field id="filterDate">
-      <input matInput (keyup)="applyDate()" [(ngModel)]="fMonth" placeholder="Filter MM">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fMonth" placeholder="Filter MM" maxlength="2">
     </mat-form-field>
     <mat-form-field id="filterDate">
-      <input matInput (keyup)="applyDate()" [(ngModel)]="fDay" placeholder="Filter DD ">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fDay" placeholder="Filter DD " maxlength="2">
     </mat-form-field>
     <mat-form-field id="filterDate">
-      <input matInput (keyup)="applyDate()" [(ngModel)]="fYear" placeholder="Filter YYYY">
+      <input matInput (keyup)="applyDate()" [(ngModel)]="fYear" placeholder="Filter YYYY" maxlength="4">
     </mat-form-field>
   </div>
 

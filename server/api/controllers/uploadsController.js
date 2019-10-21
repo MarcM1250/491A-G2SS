@@ -28,7 +28,7 @@ exports.get_all = (req, res, next) => {
 exports.create_upload = (req, res, next) => {
     // create an upload object using the data parsed from the request body
     // and parsed metadata using multer
-    if(!req.file || !req.body.title || req.body.description){
+    if(!req.file || !req.body.title || !req.body.description){
         return res.status(400).json({
             message: 'Path `title`, `description`, and `file` are required.'
         });
@@ -80,7 +80,7 @@ exports.create_upload = (req, res, next) => {
                             // console.log('Upload successful');
                         });
                 res.status(201).json({
-                    message: '"Upload created successfully"',
+                    message: "Upload created successfully",
                     createdUpload: {
                         _id: result._id,
                         title: result.title,
@@ -150,7 +150,6 @@ exports.delete_upload = (req, res, next) => {
     }
     // find the upload by upload_id
     Upload.findById(req.params.uploadId)
-        .select("_id") // data you want to fetch
         .exec()
         .then(result => {
             if (result) {
