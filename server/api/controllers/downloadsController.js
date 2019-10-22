@@ -84,7 +84,7 @@ exports.create_download = (req, res, next) => {
                         });
                 }
             } else {
-                const error = new Error('No valid entry found for provided ID');
+                const error = new Error('File not found');
                 error.status = 404;
                 next(error);
                 // res.status(404).json({
@@ -114,7 +114,7 @@ exports.get_download = (req, res, next) => {
                     downloads: results
                 });
             } else {
-                const error = new Error("No valid entry found for provided account");
+                const error = new Error("No valid entry found for provided user");
                 error.status = 404;
                 next(error);
                 // res.status(404).json({ message: "No valid entry found for provided account" });
