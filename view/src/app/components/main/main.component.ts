@@ -88,16 +88,16 @@ export class MainComponent implements OnInit {
   retrieveData() {
     // Get Uploads from server
 
-    if (this.pagUpdate === 0){
+    //if (this.pagUpdate === 0){
+      /*
       this._uploadsService.getUploads().subscribe(
         response => {
           this.uploads = response.slice(0,2);
           response.length;
         }
-        /*
+        */
+       this._uploadsService.getUploads().subscribe(
         response => {
-          //const respFilter = response.filter(x => x.delete_date === undefined);
-          alert(response.length);
           this.uploads = response.filter(x => x.delete_date === undefined);
           this.dataSource = new MatTableDataSource(this.uploads);
           //this.dataSource = new MatTableDataSource(this.uploads.slice(0, 20));
@@ -108,11 +108,11 @@ export class MainComponent implements OnInit {
         },
         (err) => { console.log(err); },
         () => { }
-        */
         );
       // Subcribe similar to promises .then cb: asynchronous
       this.pagUpdate = 1;
-    }
+    
+    /*
     else{
       this._uploadsService.getUploads().subscribe(
         response => {
@@ -128,7 +128,7 @@ export class MainComponent implements OnInit {
   
       alert("mamamia, that's a spicy meatball");
     }
-
+    */
 
 
 
