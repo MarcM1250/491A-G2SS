@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 // Begin manually added code
-import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login.service';
+import { AuthenticationService } from '../../services/authentication.service';
+// import { LoginResponse } from '../../models/Login';
 // End manually added code
 
 @Component({
@@ -12,42 +12,40 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  private message: string;
+  private loading = false;
 
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor(private router: Router, private authenticationService: AuthenticationService) {
+    /*
+    if (this.authenticationService.isTokenAuthenticaded()) {
+      console.log('is tkn authenticated?');
+      this.router.navigate(['/main']);
+    }
+    */
+  }
 
   // For login
-  username: string;
-  password: string;
+  username: string; password: string;
 
-  ngOnInit() {
-    // this.loginService.getStuff();
-  }
+  ngOnInit() { }
 
-  // Function that tests the connection to the Express backend
-  testDB(success: boolean) {
-    let body = {};
-    if (success) {
-      body = {
-        test: "admin logged in"
-      }
-    } else {
-      body = {
-        test: "invalid credentials"
-      }
-    }
-    this.loginService.postStuff(body).subscribe((data: any) => {
-      console.log(data);
-    });
-  }
+  // Login function used when the Login button is clicked.
+  onSubmit(): void {
+    this.loading = true;
 
-  // Login function used in login.component.html for the login button when clicked.
-  login(): void {
-    if (this.username == 'admin' && this.password == 'admin') {
-      this.testDB(true);
-      this.router.navigate(["main"]);
-    } else {
-      this.testDB(false);
-      alert("Invalid credentials");
-    }
+    this.authenticationService.login(this.username, this.password)
+      .subscribe(
+        resp => {
+          this.message = 'Success :)';
+          this.loading = false;
+          this.router.navigate(['/main']);
+        },
+        err => {
+          this.authenticationService.logout();
+          this.loading = false;
+          this.message = 'Authentication Failed :(';
+          console.error('Authentication Failed :(\n', err.status);
+        }
+      );
   }
 }

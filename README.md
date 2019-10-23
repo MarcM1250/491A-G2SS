@@ -1,253 +1,31 @@
 # CECS 491 Spring-Fall 2019 Senior Project
 
-This is a web app running on node.js that facilitates the transfer of KML files between unclassified and classified sources.
+KML Guard is a web app and API that supports the retrieval, verification, transferral, and storage of .kml markup files amongst classified and non-classified systems.
 
-## Currently in Progress
-Application prototype and test specification.
+Here is an overview of the documentation we provide which can be accessed below or from our Wiki:
+* [User Manual](https://github.com/MarcM1250/491A-G2SS/wiki/User-Manual): For users of our system. 
 
-    To test login screen: Enter 'ng serve' command in 'view' directory.
+* [Developer Guidelines](https://github.com/MarcM1250/491A-G2SS/wiki/Developer-Guidelines): For software developers interested in contributing to our project. API documentation also included.
 
-    Login page test account credentials:
+## To test our prototype
 
-      test username: 'admin'
+    To test: 
+        'view' directory: 
+            Enter 'ng serve' command in terminal.
+        'server' directory: 
+            In separate terminal, enter 'npm start'.
+            'npm i' may need to be ran before 'npm start' to install needed packages.
+        Once view is fully compiled and server is running, navigate to localhost:4200 from your browser.
 
-      test password: 'admin'
+    Login page test account credentials from database:
 
-## Completed
-- [x] Requirement Specification Documentation
-  - [x] Executive Summary
-  - [x] Stakeholder Model
-  - [x] Goal Model
-  - [x] System Vision
-  - [x] Usage Model: Use Cases
-  - [x] Detailed Requirements
-- [x] Design Specification Documentation
-    - [x] Abstract
-    - [x] Architecture Overview
-    - [x] Entity-Relationship Diagram and Description
-    - [x] Activity Diagram and Description
-    - [x] Message Sequence Chart and Description
-    - [x] State Diagram and Description
-    - [x] Class Diagram(s) and Description
-    - [x] Mock-ups of horizontal and vertical prototype
+      test username: 'user'
+
+      test password: 'pass'
 
 ## Dependencies
 
-* [Angular](https://angular.io/)
-* [node.js](https://nodejs.org/en/)
 * [MongoDB](https://www.mongodb.com/)
-
-To Run
-------
-
-    npm start
-
-## Request & Response Examples
-
-### API Resources
-#### Account
-  - [GET /accounts]
-  - [GET /accounts/[username]]
-  - [POST /accounts/create]
-  - [POST /accounts/login]
-  - [Delete /accounts/[username]]
-#### Upload
-  - [GET /uploads]
-  - [GET /uploads/[uploadId]]
-  - [POST /accounts/login]
-  - [Delete /uploads/[uploadId]]
-#### Download
-  - [GET /downloads]
-  - [GET /downloads/[username]]
-  - [POST /downloads]
-
-### GET /accounts
-
-Example: http://localhost:3000/accounts
-
-Request Headers:
-
-    {
-        Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwidXNlcklkIjoiNWM5OTNjYjNiMTJmN2QwZmEwMzk2YjI3IiwiaWF0IjoxNTUzNTQ2NDI4LCJleHAiOjE1NTM1ODI0Mjh9.bRMUlazB21ZJTy5Z-JGwiBrzrm2yiRHMvJbxUq6vhK8 
-    }
-
-Response Body:
-
-    {
-    "accounts": [
-        {
-            "_id": "5c993d8a0f4c3a1728ff993c",
-            "username": "user1",
-            "password": "$2b$10$Pbc/Wxl5Hic6GQlHGvFj4.LFHcwcHEo27yhCVVyHjsciCih4Lb.mK",
-            "__v": 0
-        }
-    ]
-    }
-
-### POST /accounts/create
-
-Example: http://localhost:3000/accounts/create
-
-Request Body:
-
-    {
-	    "username":"user2",
-	    "password":"pass"
-    }
-
-Response Body:
-
-    {
-        "message": "User created"
-    }
-
-### POST /accounts/login
-
-Example: http://localhost:3000/accounts/login
-
-Request Body:
-
-    {
-	    "username":"user2",
-	    "password":"pass"
-    }
-
-Request Body:
-
-    {
-        "message": "Authentication successful",
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwidXNlcklkIjoiNWM5OTNkOGEwZjRjM2ExNzI4ZmY5OTNjIiwiaWF0IjoxNTUzNTQ2Njc4LCJleHAiOjE1NTM1ODI2Nzh9.2qI3aUUNxLzmIu1Z9hZkmRnXcfvMADUuyAbC-XYy4Lw"
-    }   
-
-### DELETE /accounts/[username]
-
-Example: http://localhost:3000/accounts/user3
-
-Response Body:
-
-    {
-        "message": "User deleted"
-    }
-
-### GET /uploads
-
-Example: http://localhost:3000/uploads
-
-Request Headers:
-
-    {
-        Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwidXNlcklkIjoiNWM5OTNjYjNiMTJmN2QwZmEwMzk2YjI3IiwiaWF0IjoxNTUzNTQ2NDI4LCJleHAiOjE1NTM1ODI0Mjh9.bRMUlazB21ZJTy5Z-JGwiBrzrm2yiRHMvJbxUq6vhK8 
-    }
-
-Response Body:
-
-    {
-        {
-        "uploads": [
-            {
-                "_id": "5c993cf1b12f7d0fa0396b2a",
-                "upload_by": "user3",
-                "subject": "Verion 1",
-                "description": "Example Version 1",
-                "files_id": "5c993cf1b12f7d0fa0396b28"
-            }
-        ]
-    }
-    }
-
-### POST /uploads
-
-Example: http://localhost:3000/uploads
-
-Request Headers:
-
-    {
-        Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwidXNlcklkIjoiNWM5OTNjYjNiMTJmN2QwZmEwMzk2YjI3IiwiaWF0IjoxNTUzNTQ2NDI4LCJleHAiOjE1NTM1ODI0Mjh9.bRMUlazB21ZJTy5Z-JGwiBrzrm2yiRHMvJbxUq6vhK8 
-    }
-
-Request Body:
-
-    {
-        subject: Version 1
-        desription: Example Version 1
-        file: Caption.PNG
-    }
-
-Response Body:
-
-    {
-        "message": "Created upload successfully",
-        "createdUpload": {
-            "subject": "Verion 1",
-            "upload_by": "user3",
-            "description": "Example Version 1",
-            "_id": "5c9941700f4c3a1728ff9940",
-            "files_id": "5c9941700f4c3a1728ff993e"
-        }
-    }
-
-### DELETE /uploads/[uploadId]
-
-Example: http://localhost:3000/uploads/5c9941700f4c3a1728ff9940
-
-Request Headers:
-
-    {
-        Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwidXNlcklkIjoiNWM5OTNjYjNiMTJmN2QwZmEwMzk2YjI3IiwiaWF0IjoxNTUzNTQ2NDI4LCJleHAiOjE1NTM1ODI0Mjh9.bRMUlazB21ZJTy5Z-JGwiBrzrm2yiRHMvJbxUq6vhK8 
-    }
-
-Response Body:
-
-    {
-        "message": "Delete successfully"
-    }
-
-
-### GET /downloads
-
-Example: http://localhost:3000/downloads
-
-Request Headers:
-
-    {
-        Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIzIiwidXNlcklkIjoiNWM5OTNjYjNiMTJmN2QwZmEwMzk2YjI3IiwiaWF0IjoxNTUzNTQ2NDI4LCJleHAiOjE1NTM1ODI0Mjh9.bRMUlazB21ZJTy5Z-JGwiBrzrm2yiRHMvJbxUq6vhK8 
-    }
-
-Response Body:
-
-    {
-        "download": [
-            {
-                "_id": "5c993cfab12f7d0fa0396b2b",
-                "upload_id": "5c993cf1b12f7d0fa0396b2a",
-                "download_by": "user3",
-                "download_date": "2019-03-25T20:41:30.951Z",
-                "__v": 0
-            }
-        ]
-    }
-
-### GET /downloads
-
-Example: http://localhost:3000/downloads/user3
-
-Response Body:
-
-    {
-        "download": [
-            {
-                "_id": "5c993cfab12f7d0fa0396b2b",
-                "upload_id": "5c993cf1b12f7d0fa0396b2a",
-                "download_by": "user3",
-                "download_date": "2019-03-25T20:41:30.951Z",
-                "__v": 0
-            },
-            {
-                "_id": "5c99435fe5cb7c1c38dc02e6",
-                "upload_id": "5c993cf1b12f7d0fa0396b2a",
-                "download_by": "user3",
-                "download_date": "2019-03-25T21:08:47.388Z",
-                "__v": 0
-            }
-        ]
-    }
+* [Express](https://expressjs.com/)
+* [Angular](https://angular.io/)
+* [Node.js](https://nodejs.org/en/)

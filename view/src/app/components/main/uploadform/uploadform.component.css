@@ -1,0 +1,130 @@
+#overlay {
+
+  box-shadow: 0px 0px 10px #646464b9;
+
+  display: flex;
+  position: fixed;
+  min-width: 400px;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 550px;
+  right: 0px;
+  bottom: 66px;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 200;
+  animation: slidein 0.5s;
+}
+
+@keyframes slidein {
+  0% {
+    transform: translate(500px, 0px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes slideout {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(500px, 0px);
+  }
+}
+
+
+
+/* Upload Form Style */
+
+/* input[type=text], select, textarea {
+  width: 100%;
+  display: inline-block;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  resize: vertical;
+}
+
+input[type=submit] {
+  width: 45%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=button] {
+  width: 45%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+} */
+
+/* 
+td[colspan="6"] div, td[colspan="5"] div {
+  display: none;
+  text-align: left;
+  margin-left: 20px;
+}
+
+td[colspan="6"], td[colspan="5"] {
+  padding: 0;
+  border: 0;
+} */
+
+.fill-width {
+  width: 100%;
+}
+
+textarea {
+  height: 200px;
+}
+
+#errorMsg {
+  color: rgb(170, 1, 1);
+}
+
+#nogrow {
+  resize: none;
+}
+
+.upload-btn {
+  margin-right: 10px;
+}
+
+.card-actions-container {
+  display: flex;
+  justify-content: space-evenly
+}
+
+.card-actions {
+  color: white;
+  background-color: #4CAF50;
+  width: 40%;
+}
+
+.card-actions:hover {
+  background-color: #45a049;
+}
+
+/* End of Upload Form style */

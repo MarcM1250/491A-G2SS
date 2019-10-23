@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<mat-card class="register-card">
+  <mat-card-title style="text-align: center;">Create Account</mat-card-title>
+  <mat-card-content>
+    <form class="login-form">
+      <mat-form-field class="login-full-width">
+        <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+      <mat-form-field class="login-full-width">
+        <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+      </mat-form-field>
+      <mat-form-field class="login-full-width">
+        <input matInput placeholder="Retype Password" [(ngModel)]="rePassword" type="password" name="rePassword"
+          required>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="adminPowers" name="adminPowers">Enable Admin Privileges</mat-checkbox>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="onSubmit()" color="primary">Register</button>
+  </mat-card-actions>
+  <div *ngIf="loading"> Authorizing ...</div>
+  <div *ngIf="message"> {{ message }} </div>
+
+</mat-card>

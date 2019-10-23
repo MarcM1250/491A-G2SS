@@ -5,15 +5,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
+import { DeleteConfirmationComponent } from './components/main/upload-details/delete-confirmation.component';
+import { UserManagementComponent } from './components/user-management/user-management.component';
 // End of Default Angular imports
 
 // Manually added this Angular import - for routing.
 import { RouterModule, Routes } from '@angular/router';
 
 // Manually added for making HTTP requests
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InOutInterceptor } from './inout.interceptor';
 
-// // Manually added this Angular import which is used in app.component.html
+import { GuardService } from './guard/guard.service';
+
+// Manually added this Angular import which is used in app.component.html
 // import { MatToolbarModule } from '@angular/material';
 // MOVED THIS CODE TO MATERIAL.MODULE.TS
 
@@ -21,10 +26,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomMaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 
-// Manually added HTTP provider
-import { LoginService } from './services/login.service';
+// Imports for Main Page
+import { MatSortModule } from '@angular/material/sort';
+import { MatToolbarModule, MatTableModule, } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
-/** 
+// Manually added HTTP provider
+import { AuthenticationService } from './services/authentication.service';
+import { UploadformComponent } from './components/main/uploadform/uploadform.component';
+import { HeaderComponent } from './components/main/header/header.component';
+import { UploadDetailsComponent } from './components/main/upload-details/upload-details.component';
+import { CreateAccountComponent } from './components/user-management/create-account/create-account.component';
+
+/**
  * Manually added
  * Added the routing configuration as an array of Routes.
  * Uses the factory method RouterModule.forRoot to hand over our routing config.
@@ -32,31 +49,47 @@ import { LoginService } from './services/login.service';
  */
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: MainComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' } // A redirect is configured from the default app route to the route displaying content from LoginComponent.
+  { path: 'main', component: MainComponent, canActivate: [GuardService] },
+  { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService] },
+  { path: 'create-account', component: CreateAccountComponent, canActivate: [GuardService] },
+  // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    DeleteConfirmationComponent,
+    UserManagementComponent,
+    UploadformComponent,
+    HeaderComponent,
+    UploadDetailsComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatSortModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatPaginatorModule,
 
-    /** 
+    /**
      * Manually added
      * To activate the routing configuration for the Angular app.
      */
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      // { enableTracing: true } // <-- debugging purposes only
     ),
 
     // Manually added - used in app.component.html
-    //MatToolbarModule,
+    // MatToolbarModule,
 
     // For login page
     CustomMaterialModule,
@@ -65,7 +98,16 @@ const appRoutes: Routes = [
     // For login service
     HttpClientModule,
   ],
-  providers: [LoginService],
+  // For Delete Confirmation on Main Page
+  entryComponents: [DeleteConfirmationComponent],
+
+  providers: [AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InOutInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 
 })

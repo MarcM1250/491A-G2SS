@@ -1,0 +1,23 @@
+<mat-card id="overlay" [ngStyle]="{'animation': newStyle}">
+  <mat-card-title style=" text-align: left">Upload Form</mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="outline" class="fill-width">
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="title">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="fill-width">
+      <mat-label>File Description</mat-label>
+      <textarea matInput placeholder="Lorem ipsum sin dolor" [(ngModel)]="description" id="nogrow"></textarea>
+    </mat-form-field>
+    <button type="button" mat-raised-button (click)="fileInput.click()" class="upload-btn">Choose File</button>
+    <input hidden (change)="fileEvent($event)" #fileInput type="file" id="file" accept=".kml">
+    <div *ngIf="file; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>{{file.name}}</ng-template>
+    <ng-template #elseBlock>No file chosen</ng-template>
+  </mat-card-content>
+  <p id="errorMsg"> {{errorMsg}} </p>
+  <mat-card-actions class="card-actions-container">
+    <button mat-raised-button class="card-actions" (click)="submitUpload()">Submit</button>
+    <button mat-raised-button class="card-actions" (click)="hideUploadForm()">Cancel</button>
+  </mat-card-actions>
+</mat-card>
