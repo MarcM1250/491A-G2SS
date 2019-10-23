@@ -36,7 +36,7 @@ export class MainComponent implements OnInit {
   }
 
   deleteCheck: number;
-  filterSelect = '';
+  filterSelect = "title";
   uploads: Upload[];
   uploadForm = false;
 
@@ -83,65 +83,58 @@ export class MainComponent implements OnInit {
    */
 
 
-  pagUpdate = 0
-  
+  //pagUpdate = 0
   retrieveData() {
     // Get Uploads from server
 
     //if (this.pagUpdate === 0){
-      /*
-      this._uploadsService.getUploads().subscribe(
-        response => {
-          this.uploads = response.slice(0,2);
-          response.length;
-        }
-        */
        this._uploadsService.getUploads().subscribe(
         response => {
           this.uploads = response.filter(x => x.delete_date === undefined);
           this.dataSource = new MatTableDataSource(this.uploads);
-          //this.dataSource = new MatTableDataSource(this.uploads.slice(0, 20));
           this.dataSource.sort = this.sort;
           this.dataSource.paginator = this.paginator;
-          //alert(this.dataSource.paginator.pageSize);  // Size 20
           this.sort.disableClear = true;
+
+          // Default Filter = Title
+          this.dataSource.filterPredicate = (data, filter: string): boolean => {
+            return data[this.filterSelect].toLowerCase().includes(filter);
+          };
         },
         (err) => { console.log(err); },
         () => { }
         );
       // Subcribe similar to promises .then cb: asynchronous
-      this.pagUpdate = 1;
+      //this.pagUpdate = 1;
+    //  }
     
-    /*
-    else{
-      this._uploadsService.getUploads().subscribe(
-        response => {
-          alert(response.length);
-          //this.uploads = response.filter(x => x.delete_date === undefined);
-          this.dataSource = new MatTableDataSource(this.uploads.slice(0, this.dataSource.paginator.pageSize));
-          this.dataSource.sort = this.sort;
-          this.dataSource.paginator = this.paginator;
-          this.sort.disableClear = true;
-        },
-        (err) => { console.log(err); },
-        () => { });
-  
-      alert("mamamia, that's a spicy meatball");
-    }
+      /*
+      else{
+        this._uploadsService.getUploads().subscribe(
+          response => {
+            this.uploads = response.filter(x => x.delete_date === undefined);
+            this.dataSource = new MatTableDataSource(this.uploads);
+            this.dataSource.sort = this.sort;
+            this.dataSource.paginator = this.paginator;
+            this.sort.disableClear = true;
+          },
+          (err) => { console.log(err); },
+          () => { });
+    
+        alert("mamamia, that's a spicy meatball");
+      }
     */
-
-
-
-
-
   }
 
+  /*
   // Checks when paginator changes
   onPaginateChange(event){
-    alert(this.dataSource.paginator.pageSize);
+    //alert(this.dataSource.paginator.length);
+    alert("Page Size: " +this.dataSource.paginator.pageSize +" Length: " +this.dataSource.paginator.length);
     this.retrieveData();
     //alert("mamamia");
   }
+  */
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -154,6 +147,8 @@ export class MainComponent implements OnInit {
 
   
   overwriteFilter() {
+    //alert("woaaah");
+    //alert(this.filterSelect);
     this.fMonth = '';
     this.fDay = '';
     this.fYear = '';
@@ -164,7 +159,6 @@ export class MainComponent implements OnInit {
     };
     
     if (this.filterSelect === 'date') {
-      //alert(this.filterSelect);
       document.getElementById('filterBar').style.display = 'none';
       document.getElementById('filterBar1').style.display = 'flex';
 
@@ -177,8 +171,10 @@ export class MainComponent implements OnInit {
 
     } 
     else {
+      
       document.getElementById('filterBar').style.display = 'block';
       document.getElementById('filterBar1').style.display = 'none';
+
       this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data[this.filterSelect].toLowerCase().includes(filter);
       };
@@ -230,8 +226,8 @@ export class MainComponent implements OnInit {
   }
 
   showUploadForm() {
+    //alert(this.filterSelect);
     this.uploadForm = true;
-    alert();
   }
 
 
