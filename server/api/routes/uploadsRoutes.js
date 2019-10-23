@@ -8,14 +8,18 @@ const multer = require('multer');
 const path = require('path');
 
 const storage = multer.memoryStorage();
+
   const fileFilter = (req, file, cb) => {
     // reject a file
     if (path.extname(file.originalname) === '.kml') {
       cb(null, true);
     } else {
-      cb(null, false);
+      const error = new Error('File upload only supports kml filetype');
+      error.status = 415;
+      cb(error);
     }
   };
+  
   
   const upload = multer({
     storage: storage,

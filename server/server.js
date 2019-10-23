@@ -1,7 +1,8 @@
-
 const https = require('http');
 const fs = require("fs");
 const app = require('./app');
+const logger = require('./api/utils/logger');
+
 const port = process.env.PORT || 3000;
 
 /*
@@ -15,5 +16,6 @@ const server = https.createServer({
 const server = https.createServer(app);
 
 server.listen(port, function() {
-    console.log('Server started on port ' + port);
+    logger.info(`[${new Date().toUTCString()}] - Server started on port ${port}`);
+    // console.log('Server started on port ' + port);
 });

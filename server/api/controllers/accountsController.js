@@ -36,10 +36,8 @@ exports.get_account = (req, res, next) => {
             if (result) {
                 res.status(200).send(result);
             } else {
-                const error = new Error('No valid entry found for provided username');
-                error.status = 409;
-                console.log(error.message);
-
+                const error = new Error('Account not found');
+                error.status = 404;
                 return next(error);
                 // res.status(200).json({
                 //     message: "No valid entry found for provided username"
@@ -100,7 +98,6 @@ exports.create_account = (req, res, next) => {
                         account
                             .save()
                             .then(result => {
-                                console.log(result);
                                 res.status(201).json({
                                     message: 'Account created',
                                     account: account
@@ -159,7 +156,7 @@ exports.login = (req, res, next) => {
                         delete_permission: account[0].delete_permission
                     }, process.env.JWT_KEY, // sign the token with a password (will be used to decode the token)
                         {
-                            expiresIn: "10h"
+                            expiresIn: "8h"
                         });
                     // return the JWT Token
                     return res.status(200).json({
@@ -193,9 +190,9 @@ exports.delete_account = (req, res, next) => {
     Account.remove({ username: req.params.username })
         .exec()
         .then(result => {
-            if(result.deleteCount !== 0){
+            if(result.deletedCount === 0){
                 const error = new Error('Account not found');
-                error.status = 400;
+                error.status = 404;
                 return next(error);
             }
             res.status(200).json({

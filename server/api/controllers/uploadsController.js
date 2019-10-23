@@ -151,7 +151,7 @@ exports.get_upload = (req, res, next) => {
                     upload: doc,
                 });
             } else {
-                const error = new Error('No valid entry found for provided ID');
+                const error = new Error('Upload not found');
                 error.status = 404;
                 next(error);
                 // res.status(404).json({
@@ -208,7 +208,7 @@ exports.delete_upload = (req, res, next) => {
                                 // });
                             }else{
                             res.status(200).json({
-                                message: 'Delete successful',
+                                message: 'File deleted',
                             });
                         }
                         });
@@ -222,7 +222,7 @@ exports.delete_upload = (req, res, next) => {
                     });
                 }
             } else {
-                const error = new Error('No valid entry found for provided ID');
+                const error = new Error('File not found');
                 error.status = 404;
                 next(error);
                 // res.status(404).json({

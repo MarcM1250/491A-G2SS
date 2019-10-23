@@ -9,13 +9,14 @@ const accountRoutes = require('./api/routes/accountsRoutes');
 const downloadRoutes = require('./api/routes/downloadsRoutes');
 const logger = require('./api/utils/logger');
 
-// mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
-mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/G2SS_v1?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
-
-mongoose.connection.once('open',function() {
-    console.log('Connection to DB has been made');
-}).on('error', function(error) {
-    console.log('DB Connection error',error);
+// mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/G2SS_v1?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, function(err) {
+    if (err) {
+        logger.error(`[${new Date().toUTCString()}] - DB Connection Error - ${err.message}`);
+        process.exit(1);
+    }else{
+        logger.info(`[${new Date().toUTCString()}] - Connection to DB has been made`);
+    }
 });
 
 // Morgan middleware used to log requests
@@ -53,6 +54,9 @@ app.use((req, res, next) => {
 
 // error handling for others errors
 app.use((error, req, res, next) => {
+    if(error.code === 'LIMIT_FILE_SIZE'){
+        error.status = 400;
+    }
     logger.error(`${error.status || 500} ${req.ip} - [${new Date().toUTCString()}] - ${error.message} - "${req.method} ${req.originalUrl} HTTP/${req.httpVersion}" ${req.headers['user-agent']}`);
     res.status(error.status || 500);
     res.json({
