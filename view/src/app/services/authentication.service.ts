@@ -4,32 +4,33 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable, of, concat, throwError } from 'rxjs';
 import { User } from '../models/User';
+import decode from 'jwt-decode';
 
 export const API_URL = 'http://localhost:3000/api';
 
 @Injectable()
 
 export class AuthenticationService {
+  
+  userInfo: any;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+    //this.decodeToken();
+  }
 
-  getCurrentToken(): string {
+  getCurrentToken() {
     return localStorage.getItem('token');
   }
 
-  readToken(): Observable<string> {
-    return of(this.getCurrentToken());
+  //! TODO: Validate tkn
+  isTokenValid(): boolean {
+    return this.isThereAToken();
   }
 
-  isTokenExpired(): boolean {
-    return false;
-  }
-
-  isTokenAuthenticaded(): boolean {
+  isThereAToken(): boolean {
     // return this.getCurrentToken() != null && !this.isTokenExpired();
     return this.getCurrentToken() != null;
   }
-
 
   /**
    * this returns the token for the user
@@ -37,9 +38,8 @@ export class AuthenticationService {
   login(username: string, password: string) {
     return this.http.post(`${API_URL}/accounts/login`, { username, password }).pipe(map(response => {
       if (response) {
-        if (response.hasOwnProperty('token') && response.hasOwnProperty('delete_permission')) {
+        if (response.hasOwnProperty('token')) {
           localStorage.setItem('token', response['token']);
-          localStorage.setItem('isAdmin', response['delete_permission']);
         }
       }
     }));
@@ -47,9 +47,11 @@ export class AuthenticationService {
 
   /**
    * returns if user is allowed to list the other users
-   */
+   *
+  */
+
   isAdmin(): boolean {
-    return localStorage.getItem('isAdmin') === 'true';
+    return this.userInfo.role === 'admin';
   }
 
   getUsers(): Observable<User[]> {
@@ -70,6 +72,8 @@ export class AuthenticationService {
    * Removes the need for greedy logouts when not asked for.
    * If a user is not allowed to access an admin route, it will boot them to main where they belong, else, log them out
    */
+
+   /*
   boot(): void {
     if (localStorage.length === 0) {
       this.router.navigate(['/login']);
@@ -77,9 +81,14 @@ export class AuthenticationService {
       this.router.navigate(['main']);
     }
   }
+  */
 
   removeLocalToken(): void {
     localStorage.removeItem('token');
-    localStorage.removeItem('isAdmin');
   }
+
+  decodeToken(): void {
+    this.userInfo = decode(this.getCurrentToken());
+  }
+
 }

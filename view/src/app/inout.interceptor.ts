@@ -39,7 +39,7 @@ export class InOutInterceptor implements HttpInterceptor {
             return;
           }
 
-          this.authenticationService.boot();
+          //this.authenticationService.boot();
         }
       }
     ));

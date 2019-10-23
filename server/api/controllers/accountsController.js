@@ -156,16 +156,15 @@ exports.login = (req, res, next) => {
                     const token = jwt.sign({
                         username: account[0].username,
                         userId: account[0]._id,
-                        delete_permission: account[0].delete_permission
+                        role: account[0].role
                     }, process.env.JWT_KEY, // sign the token with a password (will be used to decode the token)
                         {
-                            expiresIn: "10h"
+                            expiresIn: "2h"
                         });
                     // return the JWT Token
                     return res.status(200).json({
                         message: 'Authentication successful',
-                        token: token,
-                        delete_permission: account[0].delete_permission
+                        token: token                    
                     });
 
                 }

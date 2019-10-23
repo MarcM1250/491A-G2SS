@@ -49,9 +49,9 @@ import { CreateAccountComponent } from './components/user-management/create-acco
  */
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: MainComponent, canActivate: [GuardService] },
-  { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService] },
-  { path: 'create-account', component: CreateAccountComponent, canActivate: [GuardService] },
+  { path: 'main', component: MainComponent, canActivate: [GuardService], data: { role: ['user','admin']} },
+  { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService], data: {role: ['admin']} },
+  // { path: 'create-account', component: CreateAccountComponent, canActivate: [GuardService] },
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
   { path: '**', redirectTo: '/login' },
 ];
@@ -85,7 +85,7 @@ const appRoutes: Routes = [
      */
     RouterModule.forRoot(
       appRoutes,
-      // { enableTracing: true } // <-- debugging purposes only
+      //{ enableTracing: true } // <-- debugging purposes only
     ),
 
     // Manually added - used in app.component.html

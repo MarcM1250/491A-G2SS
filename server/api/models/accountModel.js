@@ -7,7 +7,8 @@ const accountSchema = mongoose.Schema({
     organization: { type: String },
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
-    delete_permission: { type: Boolean, required: true }
+    delete_permission: { type: Boolean, required: true },
+    role: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Account', accountSchema);

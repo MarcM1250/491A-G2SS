@@ -26,7 +26,7 @@ const storage = multer.memoryStorage();
   });
 
 // Get all uploads from the database
-router.get('/', Authentication.check_user, UploadsController.get_all);
+router.get('/', UploadsController.get_all);
 // Upload a file to the database and create an upload
 router.post('/', Authentication.check_user, upload.single('file'), UploadsController.create_upload);
 // Get a single upload from the database
