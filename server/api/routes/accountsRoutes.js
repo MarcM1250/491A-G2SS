@@ -6,8 +6,8 @@ const AccountsController = require('../controllers/accountsController');
 
 // Get all accounts from the database
 router.get('/', Authentication.check_admin, AccountsController.get_all);
-// Get a single account from the database
-//router.get('/:username', Authentication.check_admin, AccountsController.get_account);
+// Reset counter
+router.post('/unblock/:userid', Authentication.check_admin, AccountsController.unblockUser);
 // Create an account
 router.post('/create', Authentication.check_admin, AccountsController.create_account);
 // Get a authentication token

@@ -92,7 +92,7 @@ export class AuthenticationService {
 
   decodeToken(): void {
     this.userInfo = decode(this.getCurrentToken());
-    console.table(this.userInfo);
+    //console.table(this.userInfo);
   }
 
 }

@@ -3,13 +3,13 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const Account = require('../models/accountModel');
-
+const USERS_BLOCKED_TIME = 60000;
 /**
  * RETURN ALL ACCOUNTS IN THE DATABASE 
  */
 
 exports.get_all = (req, res, next) => {
-    Account.find({'role': 'user'}, { '_id': 0, '__v': 0 }) // find accounts in the database using mongoose promise
+    Account.find({'role': 'user'}, { '__v': 0 }) // find accounts in the database using mongoose promise
         // .select("username password organization first_name last_name delete_permission")
         .exec()
         .then(docs => { // doc contains the accounts found, minus the _id field
@@ -18,9 +18,6 @@ exports.get_all = (req, res, next) => {
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
         });
 };
 
@@ -92,6 +89,30 @@ exports.create_account = (req, res, next) => {
  * GENERATE A JWT TOKEN FOR A USER IF USERNAME & PASSWORD MATCHED
  */
 
+exports.unblockUser = (req, res, next) => {
+
+    Account.find({ _id: req.params.userid })
+        //.select()
+        .exec()
+        .then(account => {
+            // Return authentication failed if username does not exist in the DB
+            if (account.length < 1) {
+                const error = new Error('Invalid credentials: Username \'' + userId + '\' is not registered');
+                error.status = 401;
+                return next(error);
+            }
+
+            Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: 0 }, (err, raw) => {
+                if (raw.ok) console.log("Success updating last_login_attempt !")
+            } );   
+        })
+        .catch(err => {
+            err.status = 500;
+            next(err);
+
+        });
+};
+
 exports.login = (req, res, next) => {
     if(!req.body.username || !req.body.password){
         const error = new Error('Path `username` and `password` are required.');
@@ -105,20 +126,25 @@ exports.login = (req, res, next) => {
         .then(account => {
             // Return authentication failed if username does not exist in the DB
             if (account.length < 1) {
-                const error = new Error('Username does not match');
+                const error = new Error('Invalid credentials: Username \'' + req.body.username + '\' is not registered');
                 error.status = 401;
                 return next(error);
             }
 
-            let time_passed_since_last_attempt =  Date.now() - account[0].last_login_attempt;
+            let elapsed_time_since_last_attempt =  Date.now() - account[0].last_login_attempt;
 
-            if (account[0].failed_login_attempts >= 3 && time_passed_since_last_attempt <= 5000 ) {
-                const error = new Error('Your account has been blacklisted after 3 attempts :( Wait ')
+            if (elapsed_time_since_last_attempt > USERS_BLOCKED_TIME ) {
+                account[0].failed_login_attempts = 0;
+                Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: 0 }, (err, raw) => {
+                    raw.ok? console.log("Success resetting counter:"):''
+                } );
+            }
+
+            if (account[0].failed_login_attempts >= 3 && elapsed_time_since_last_attempt <= USERS_BLOCKED_TIME ) {
+                const error = new Error('Your account has been blacklisted after 3 attempts, wait ' +(USERS_BLOCKED_TIME - elapsed_time_since_last_attempt) / 1000 + ' secs')
                 error.status = 401;
                 return next(error);
             }   
-
-
 
             bcrypt.compare(req.body.password, account[0].password, (err, result) => {
 
@@ -137,6 +163,9 @@ exports.login = (req, res, next) => {
 
                 // if password matched, create a JWT Token for the user
                 if (result) {
+                    
+                    Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: 0 }, _ => {});
+            
                     const token = jwt.sign({
                         username: account[0].username,
                         userId: account[0]._id,
@@ -153,26 +182,14 @@ exports.login = (req, res, next) => {
 
                 } else { 
                     // pasword is wrong, update failed login attempts + 1
-                    if (time_passed_since_last_attempt < 5000) {
-                        Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: account[0].failed_login_attempts + 1 }, (err, raw) => {
-                            raw.ok? console.log("failed_login_attempts: ", account[0].failed_login_attempts + 1):''
-                        } ); 
-                    }
-
-                    if (time_passed_since_last_attempt > 5000 ) {
-                        Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: 0 }, (err, raw) => {
-                            raw.ok? console.log("Success resetting counter:"):''
-                        } );
-                    }
+                    Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: account[0].failed_login_attempts + 1 }, (err, raw) => {
+                        raw.ok? console.log("failed_login_attempts: ", account[0].failed_login_attempts + 1):''
+                    } ); 
                 }
-            
                 
-                const error = new Error('Password does not match');
+                const error = new Error('Invalid credentials: wrong password');
                 error.status = 401;
                 next(error);
-                // res.status(401).json({
-                //     message: 'Authentication failed 03'
-                // });
             });
             
             // Use the compare method from bcrypt to verify the account passwords
@@ -181,9 +198,7 @@ exports.login = (req, res, next) => {
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
+
         });
 };
 
@@ -191,7 +206,7 @@ exports.login = (req, res, next) => {
  * DELETE AN ACCOUNT FROM THE DATABASE
  */
 exports.delete_account = (req, res, next) => {
-    Account.remove({ username: req.params.username })
+    Account.remove({ _id: req.params.userid })
         .exec()
         .then(result => {
             if(result.deleteCount !== 0){
@@ -206,8 +221,5 @@ exports.delete_account = (req, res, next) => {
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
         });
 };
