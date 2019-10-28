@@ -9,9 +9,6 @@ import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/Upload';
 import { DatePipe } from '@angular/common';
 
-// import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
-//
-
 @Component({
   selector: 'app-main-component',
   styleUrls: ['main.component.css'],

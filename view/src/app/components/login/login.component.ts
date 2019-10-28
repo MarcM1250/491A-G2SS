@@ -43,8 +43,7 @@ export class LoginComponent implements OnInit {
         err => {
           this.authenticationService.logout();
           this.loading = false;
-          this.message = 'Authentication Failed :(';
-          console.error('Authentication Failed :(\n', err.status);
+          this.message = err.error.error.message;
         }
       );
   }

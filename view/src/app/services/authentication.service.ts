@@ -22,6 +22,9 @@ export class AuthenticationService {
     return localStorage.getItem('token');
   }
 
+  getFirstName():string {
+    return this.userInfo.username;
+  }
   //! TODO: Validate tkn
   isTokenValid(): boolean {
     return this.isThereAToken();
@@ -89,6 +92,7 @@ export class AuthenticationService {
 
   decodeToken(): void {
     this.userInfo = decode(this.getCurrentToken());
+    console.table(this.userInfo);
   }
 
 }
