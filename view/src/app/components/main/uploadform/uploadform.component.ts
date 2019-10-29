@@ -21,7 +21,6 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 
 })
 
-
 export class UploadformComponent implements OnInit {
 
   title: string;
