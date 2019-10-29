@@ -1,8 +1,7 @@
 <app-header></app-header>
 
 
-<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortDirection="desc"
-  class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortDirection="desc">
   <ng-container matColumnDef="username">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
     <td mat-cell *matCellDef="let element"> {{element.username}} </td>
@@ -18,19 +17,21 @@
     <td mat-cell *matCellDef="let element"> {{element.organization}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="editusers">
-    <th mat-header-cell *matHeaderCellDef> Edit Users </th>
-    <td mat-cell *matCellDef="let element"> <a href="#">unblock</a> / <a href="/">delete user</a></td>
-  </ng-container>
-
   <ng-container matColumnDef="lastlogin">
     <th mat-header-cell *matHeaderCellDef> Last Login Attempt</th>
-    <td mat-cell *matCellDef="let element">{{ element.last_login_attempt }}  </td>
+    <td mat-cell *matCellDef="let element">{{ element.last_login_attempt | date:'medium' }}  </td>
   </ng-container>
 
+  <ng-container matColumnDef="editusers">
+    <th mat-header-cell *matHeaderCellDef> Unblock Users</th>
+    <td mat-cell *matCellDef="let element"><button mat-stroked-button disabled>Unblock</button></td>
+  </ng-container>
+
+
+
   <ng-container matColumnDef="editpassword">
-    <th mat-header-cell *matHeaderCellDef> Edit Password</th>
-    <td mat-cell *matCellDef="let element"> <a href="#">Edit password</a>  </td>
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element"> <button mat-stroked-button>Edit</button>  &nbsp; <button mat-stroked-button color='warn'>Delete</button>  </td>
   </ng-container>
 
 

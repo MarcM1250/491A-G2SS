@@ -20,7 +20,7 @@ export class UserManagementComponent implements OnInit {
   userError = true;
 
   dataSource: MatTableDataSource<User>;
-  displayedColumns: string[] = ['username', 'fullname', 'organization', 'editusers', 'lastlogin', 'editpassword'];
+  displayedColumns: string[] = ['username', 'fullname', 'organization', 'lastlogin', 'editusers', 'editpassword'];
   selection = new SelectionModel<User>(true, []);
 
   ngOnInit() {

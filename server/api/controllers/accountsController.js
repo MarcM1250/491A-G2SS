@@ -180,12 +180,12 @@ exports.login = (req, res, next) => {
                         token: token                    
                     });
 
-                } else { 
-                    // pasword is wrong, update failed login attempts + 1
-                    Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: account[0].failed_login_attempts + 1 }, (err, raw) => {
-                        raw.ok? console.log("failed_login_attempts: ", account[0].failed_login_attempts + 1):''
-                    } ); 
-                }
+                } 
+
+                // pasword is wrong, update failed login attempts + 1
+                Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: account[0].failed_login_attempts + 1 }, (err, raw) => {
+                    raw.ok? console.log("failed_login_attempts: ", account[0].failed_login_attempts + 1):''
+                } ); 
                 
                 const error = new Error('Invalid credentials: wrong password');
                 error.status = 401;

@@ -1,15 +1,13 @@
+mat-form-field {
+  width:100%;
+}
+
+.my-form {
+padding: 15px;
+}
 .register-card {
-  width: 300px;
-  margin: 10% auto;
-  padding: 50px;
-  text-align: center
-}
-
-.register-fill-remaining-space {
-  flex: 1 1 auto;
-}
-
-form {
-  display: table;
-  margin: auto;
+  width: 500px;
+  text-align: center;
+  margin: 15% auto;
+  margin-top: 30px;
 }

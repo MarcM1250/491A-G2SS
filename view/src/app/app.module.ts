@@ -51,7 +51,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'main', component: MainComponent, canActivate: [GuardService], data: { role: ['user','admin']} },
   { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService], data: {role: ['admin']} },
-  // { path: 'create-account', component: CreateAccountComponent, canActivate: [GuardService] },
+  { path: 'create-account', component: CreateAccountComponent, canActivate: [GuardService], data: {role: ['admin']}  },
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
   { path: '**', redirectTo: '/login' },
 ];
