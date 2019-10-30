@@ -25,9 +25,9 @@
   <ng-container matColumnDef="editusers">
     <th mat-header-cell *matHeaderCellDef> Unblock Users</th>
     <td mat-cell *matCellDef="let element">
-      <button *ngIf="element.failed_login_attempts === 3; else noshow" (click)="unblockUser(element._id)" mat-stroked-button primary>Unblock</button>
+      <button *ngIf="element.failed_login_attempts === 3; else noshow" (click)="unblockUser(element._id)" mat-stroked-button color="primary">Unblock</button>
       <ng-template #noshow>
-        <button mat-stroked-button disabled primary>OK stat</button>
+        <button mat-stroked-button disabled>Unblock</button>
       </ng-template>
     </td>
   </ng-container>
