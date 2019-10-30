@@ -26,8 +26,7 @@ exports.get_all = (req, res, next) => {
  * CREATE AN ACCOUNT
  */
 exports.create_account = (req, res, next) => {
-    console.table(req.body)
-
+    
     if(!req.body.username || !req.body.password || !req.body.first_name || !req.body.last_name ){
         const error = new Error('Path `username`, `password`, `first_name`, `last_name`, and `delete_permission` are required.');
         error.status = 400;
@@ -105,7 +104,12 @@ exports.unblockUser = (req, res, next) => {
             }
 
             Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: 0 }, (err, raw) => {
-                if (raw.ok) console.log("Success updating last_login_attempt !")
+                if (raw.ok) {
+                    res.status(200).json({
+                        code: '200',
+                        message: 'User has been unblocked'
+                    });
+                }
             } );   
         })
         .catch(err => {

@@ -11,10 +11,21 @@ export class ManagementService {
 
   createUserUrl = API_URL + '/accounts/';
 
-  constructor( private http: HttpClient ) { 
-  }
+  constructor( private http: HttpClient ) { }
 
   postUserData(userData: FormData): Observable<any> {
-    return this.http.post(this.createUserUrl + 'create', userData);
+    var object = {};
+    userData.forEach( (value, key) => {
+        object[key] = value;
+    });    
+
+    return this.http.post(this.createUserUrl + 'create', JSON.stringify(object), { headers: 
+      { "Content-Type": "application/json" }
+    });
+    
   }
+
+  unblockuser(uid: string): Observable<any> {
+    return this.http.post(this.createUserUrl + 'unblock/'+ uid, null);
+  } 
 }

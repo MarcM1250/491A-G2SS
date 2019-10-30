@@ -18,7 +18,6 @@ export class UploadsService {
   }
 
   getUploads(): Observable<Upload[]> {
-    // httpOptions.headers = httpOptions.headers.set( 'Authorization', 'Bearer ' + this.authenticationService.getCurrentToken());
     return this.http.get<Upload[]>(this.uploadUrl);
   }
 

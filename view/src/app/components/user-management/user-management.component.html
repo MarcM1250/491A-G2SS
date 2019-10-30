@@ -24,7 +24,12 @@
 
   <ng-container matColumnDef="editusers">
     <th mat-header-cell *matHeaderCellDef> Unblock Users</th>
-    <td mat-cell *matCellDef="let element"><button mat-stroked-button disabled>Unblock</button></td>
+    <td mat-cell *matCellDef="let element">
+      <button *ngIf="element.failed_login_attempts === 3; else noshow" (click)="unblockUser(element._id)" mat-stroked-button primary>Unblock</button>
+      <ng-template #noshow>
+        <button mat-stroked-button disabled primary>OK stat</button>
+      </ng-template>
+    </td>
   </ng-container>
 
 
@@ -37,7 +42,6 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="greep">
     <button mat-raised-button (click)="goToCreationForm()" class="upload-btn">
-      Here!
     </button>
   </tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -46,7 +50,7 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
   <div class="btn-container">
-    <button *ngIf="!userError" mat-raised-button class="footer-btn" (click)="showUploadForm()" color="primary">
+    <button *ngIf="!userError" mat-raised-button class="footer-btn" (click)="showRegistrationForm()" color="primary">
       <mat-icon>add_box</mat-icon>
       Add Account
     </button>

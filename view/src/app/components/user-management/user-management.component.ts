@@ -4,6 +4,7 @@ import { MatTableDataSource, MatSort } from '@angular/material';
 import { User } from '../../models/User';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Router } from '@angular/router';
+import { ManagementService } from 'src/app/services/management.service';
 
 @Component({
   selector: 'app-user-management',
@@ -12,7 +13,9 @@ import { Router } from '@angular/router';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService, private router: Router) { }
+  constructor(private authenticationService: AuthenticationService, 
+              private router: Router,
+              private managementService: ManagementService ) { }
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -35,7 +38,16 @@ export class UserManagementComponent implements OnInit {
     }, () => { });
   }
 
-  showUploadForm() {
+  showRegistrationForm() {
     this.router.navigate(['/create-account']);
+  }
+
+  unblockUser (uid: string) {
+    this.managementService.unblockuser(uid)
+    .subscribe(resp => {
+      resp.code == '200'?console.log("Success"):''
+    }, err => {
+      console.error(err);
+    }, () => { });
   }
 }

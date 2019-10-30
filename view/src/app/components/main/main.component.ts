@@ -135,7 +135,7 @@ export class MainComponent implements OnInit {
 
   // Checks when paginator changes
   onPaginateChange(event){
-    alert(this.dataSource.paginator.pageSize);
+   // alert(this.dataSource.paginator.pageSize);
     this.retrieveData();
     //alert("mamamia");
   }
@@ -228,7 +228,6 @@ export class MainComponent implements OnInit {
 
   showUploadForm() {
     this.uploadForm = true;
-    alert();
   }
 
 

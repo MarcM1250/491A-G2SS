@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ManagementService } from 'src/app/services/management.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-create-account',
@@ -10,7 +12,8 @@ export class CreateAccountComponent implements OnInit {
   //@Input() dataSource: MatTableDataSource<Upload>;
 
   constructor(
-    private _managementService: ManagementService
+    private _managementService: ManagementService,
+    private router: Router
   ) { }
     first_name = 'New';
     last_name = 'User';
@@ -49,7 +52,7 @@ export class CreateAccountComponent implements OnInit {
         registerNewUser.append('organization', this.organization);
         registerNewUser.append('username', this.username);
         registerNewUser.append('password', this.password);
-
+                
         this._managementService.postUserData(registerNewUser)
           .subscribe(
             response => {
@@ -61,7 +64,7 @@ export class CreateAccountComponent implements OnInit {
             },
             () => {
               //this.dataSource._updateChangeSubscription();
-
+              this.goBack();
             }
           );
            
@@ -72,6 +75,10 @@ export class CreateAccountComponent implements OnInit {
 
   checkPassword (pass1: string, pass2: string ){
     return true 
+  }
+
+  goBack() {
+    this.router.navigate(['/user-management']);
   }
 
 }
