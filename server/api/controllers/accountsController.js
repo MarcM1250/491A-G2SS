@@ -67,10 +67,9 @@ exports.create_account = (req, res, next) => {
                         account
                             .save()
                             .then(result => {
-                                console.log(result);
                                 res.status(201).json({
+                                    code: '201',
                                     message: 'Account created',
-                                    account: account
                                 });
                             })
                             .catch(err => {
@@ -212,15 +211,17 @@ exports.login = (req, res, next) => {
  * DELETE AN ACCOUNT FROM THE DATABASE
  */
 exports.delete_account = (req, res, next) => {
-    Account.remove({ _id: req.params.userid })
+    Account.deleteOne({ _id: req.params.userid })
         .exec()
         .then(result => {
-            if(result.deleteCount !== 0){
+            if(!result.ok){
                 const error = new Error('Account not found');
                 error.status = 400;
                 return next(error);
             }
+            
             res.status(200).json({
+                code: '200',
                 message: 'Account deleted'
             });
         })

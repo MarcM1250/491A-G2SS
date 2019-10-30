@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 
 export class ManagementService {
 
-  createUserUrl = API_URL + '/accounts/';
+  userManagementUrl = API_URL + '/accounts/';
 
   constructor( private http: HttpClient ) { }
 
@@ -19,13 +19,17 @@ export class ManagementService {
         object[key] = value;
     });    
 
-    return this.http.post(this.createUserUrl + 'create', JSON.stringify(object), { headers: 
+    return this.http.post(this.userManagementUrl + 'create', JSON.stringify(object), { headers: 
       { "Content-Type": "application/json" }
     });
     
   }
 
   unblockuser(uid: string): Observable<any> {
-    return this.http.post(this.createUserUrl + 'unblock/'+ uid, null);
+    return this.http.post(this.userManagementUrl + 'unblock/'+ uid, null);
+  } 
+
+  deleteUser(uid: string): Observable<any> {
+    return this.http.delete(this.userManagementUrl + 'delete/'+ uid);
   } 
 }

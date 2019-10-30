@@ -13,6 +13,6 @@ router.post('/create', Authentication.check_admin, AccountsController.create_acc
 // Get a authentication token
 router.post('/login', AccountsController.login);
 // Delete an account from the database
-router.delete('/:username', Authentication.check_admin, AccountsController.delete_account);
+router.delete('/delete/:userid', Authentication.check_admin, AccountsController.delete_account);
 
 module.exports = router;

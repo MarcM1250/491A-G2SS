@@ -31,7 +31,6 @@ export class UploadDetailsComponent implements OnInit {
   deleteUpload(upload: Upload) {
     // If user confirms Delete Confirmation box, proceed to delete
     if (this.deleteCheck === 1) {
-      // delete from UI
 
       // delete from server
       this._uploadsService.deleteUpload(upload).subscribe(
@@ -45,10 +44,9 @@ export class UploadDetailsComponent implements OnInit {
           }
         },
         () => {
+          // delete from UI
           this.uploads.splice(this.uploads.indexOf(upload), 1);
           this.dataSource._updateChangeSubscription();
-          // this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
-          // this.dataSource.filter = upload._id;
         }
       );
 

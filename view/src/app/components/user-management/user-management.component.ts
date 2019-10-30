@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { MatTableDataSource, MatSort } from '@angular/material';
-import { User } from '../../models/User';
-import { SelectionModel } from '@angular/cdk/collections';
 import { Router } from '@angular/router';
 import { ManagementService } from 'src/app/services/management.service';
 
@@ -19,17 +17,16 @@ export class UserManagementComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  users: User[];
+  users: any[];
   userError = true;
 
-  dataSource: MatTableDataSource<User>;
+  dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['username', 'fullname', 'organization', 'lastlogin', 'editusers', 'editpassword'];
-  selection = new SelectionModel<User>(true, []);
 
   ngOnInit() {
-    this.authenticationService.getUsers().subscribe(next => {
-      this.users = next;
-      this.dataSource = new MatTableDataSource(this.users);
+    this.authenticationService.getUsers().subscribe( retrievedUsers => {
+      this.users = retrievedUsers;
+      this.dataSource = new MatTableDataSource(retrievedUsers);
       this.dataSource.sort = this.sort;
       this.userError = false;
     }, err => {
@@ -48,6 +45,21 @@ export class UserManagementComponent implements OnInit {
       resp.code == '200'?console.log("Success"):''
     }, err => {
       console.error(err);
-    }, () => { });
+    }, () => { 
+        
+    });
+  }
+
+  deleteUser (uid: string) {
+    this.managementService.deleteUser(uid)
+    .subscribe(resp => {
+      resp.code == '200'?console.log("Success"):''
+    }, err => {
+      console.error(err);
+    }, () => { 
+      let index = this.users.map ( x => { return x._id});
+      this.users.splice(this.users.indexOf(index), 1);
+      this.dataSource._updateChangeSubscription();
+    });
   }
 }
