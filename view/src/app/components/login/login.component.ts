@@ -25,7 +25,9 @@ export class LoginComponent implements OnInit {
   }
 
   // For login
-  username: string; password: string;
+  username: string = 'anton';
+  password: string = '123';
+  timer: number = null;
 
   ngOnInit() { }
 
@@ -46,16 +48,23 @@ export class LoginComponent implements OnInit {
           this.authenticationService.logout();
           this.loading = false;
           this.message = err.error.message;
-          console.log(err)
+
+
+          if(err.error.timeleft) {
+
+          this.timer = err.error.timeleft;
           var x = setInterval( () => {
-            let timer = err.error.timeleft - 1;
-            this.message = this.message + timer;
-            if (timer < 0) {
+          
+
+          this.timer = this.timer  - 0.5;
+          console.log(this.timer)
+            //this.message = this.message + timer;
+            if (this.timer < 0) {
               clearInterval(x);
-              timer = 0;
+              //this.timer = 0;
             }
 
-          }, 1000);
+          }, 500); }
         }
       );
   }
