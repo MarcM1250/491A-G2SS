@@ -146,8 +146,11 @@ exports.login = (req, res, next) => {
             }
 
             if (account[0].failed_login_attempts >= 3 && elapsed_time_since_last_attempt <= USERS_BLOCKED_TIME ) {
-                const error = new Error('Your account has been blacklisted after 3 attempts, wait ' +(USERS_BLOCKED_TIME - elapsed_time_since_last_attempt) / 1000 + ' secs')
-                error.status = 401;
+                
+                const error = new Error('Your account has been blacklisted after 3 attempts');
+                error.status = 403;
+                error.timeleft = (USERS_BLOCKED_TIME - elapsed_time_since_last_attempt) / 1000;
+                
                 return next(error);
             }   
 

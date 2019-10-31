@@ -39,11 +39,23 @@ export class LoginComponent implements OnInit {
           this.message = 'Success :)';
           this.loading = false;
           this.router.navigate(['/main']);
+          
         },
         err => {
+
           this.authenticationService.logout();
           this.loading = false;
-          this.message = err.error.error.message;
+          this.message = err.error.message;
+          console.log(err)
+          var x = setInterval( () => {
+            let timer = err.error.timeleft - 1;
+            this.message = this.message + timer;
+            if (timer < 0) {
+              clearInterval(x);
+              timer = 0;
+            }
+
+          }, 1000);
         }
       );
   }
