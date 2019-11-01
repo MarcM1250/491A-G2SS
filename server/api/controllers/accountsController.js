@@ -40,9 +40,7 @@ exports.create_account = (req, res, next) => {
                 const error = new Error('Account exists');
                 error.status = 409;
                 return next(error);
-                // return res.status(409).json({
-                //     message: 'Account exists'
-                // });
+
             } else {
                 // hash the password using bcrypt: second argument is the salt
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
@@ -59,8 +57,6 @@ exports.create_account = (req, res, next) => {
                             organization: req.body.organization,
                             first_name: req.body.first_name,
                             last_name: req.body.last_name,
-                            
-                            //delete_permission: req.body.delete_permission
                         });
 
                         // Save the new account to the database
@@ -75,14 +71,37 @@ exports.create_account = (req, res, next) => {
                             .catch(err => {
                                 err.status = 500;
                                 next(err);
-                                // res.status(500).json({
-                                //     error: err
-                                // });
+
                             });
                     }
                 });
             }
         })
+};
+
+exports.edit_account = (req, res, next) => {
+    if(!req.params.userid || !req.body.password) {
+        bcrypt.hash(req.body.password, 10, (err, hash) => {
+            if (err) {
+                err.status = 500;
+                next(err);
+
+            } else {
+                Account.updateOne( { _id: req.params.userid}, { first_name: req.body.password, last_name: req.body.last_name, password: hash }, (err, raw) => {
+                    if (raw.ok) {
+                        res.status(200).json({
+                            code: '200',
+                            message: 'User has been updated'
+                        });
+                    }
+                });   
+            }
+        })
+    } 
+    const error = new Error('Nice try');
+    error.status = 403;
+    next(error);
+    
 };
 
 /**

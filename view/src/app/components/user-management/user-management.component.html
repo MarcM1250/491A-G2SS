@@ -4,39 +4,39 @@
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortDirection="desc">
   <ng-container matColumnDef="username">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
-    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    <td mat-cell *matCellDef="let userElement"> {{userElement.username}} </td>
   </ng-container>
 
   <ng-container matColumnDef="fullname">
     <th mat-header-cell *matHeaderCellDef> Full Name</th>
-    <td mat-cell *matCellDef="let element">{{ element.first_name + ' ' + element.last_name}}  </td>
+    <td mat-cell *matCellDef="let userElement">{{ userElement.first_name + ' ' + userElement.last_name}}  </td>
   </ng-container>
 
   <ng-container matColumnDef="organization">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Organization </th>
-    <td mat-cell *matCellDef="let element"> {{element.organization}} </td>
+    <td mat-cell *matCellDef="let userElement"> {{userElement.organization}} </td>
   </ng-container>
 
   <ng-container matColumnDef="lastlogin">
     <th mat-header-cell *matHeaderCellDef> Last Login Attempt</th>
-    <td mat-cell *matCellDef="let element">{{ element.last_login_attempt | date:'medium' }}  </td>
+    <td mat-cell *matCellDef="let userElement">{{ userElement.last_login_attempt | date:'medium' }}  </td>
   </ng-container>
 
   <ng-container matColumnDef="editusers">
     <th mat-header-cell *matHeaderCellDef> Unblock Users</th>
-    <td mat-cell *matCellDef="let element">
-      <button *ngIf="element.failed_login_attempts === 3; else noshow" (click)="unblockUser(element._id)" mat-stroked-button color="primary">Unblock</button>
+    <td mat-cell *matCellDef="let userElement">
+      <button *ngIf="userElement.failed_login_attempts === 3; else noshow" (click)="unblockUser(userElement._id)" mat-stroked-button color="primary">Unblock</button>
       <ng-template #noshow>
         <button mat-stroked-button disabled>Unblock</button>
       </ng-template>
     </td>
   </ng-container>
 
-
-
   <ng-container matColumnDef="editpassword">
     <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let element"> <button mat-stroked-button>Edit</button>  &nbsp; <button (click)="deleteUser(element._id)" mat-stroked-button color='warn' >Delete</button>  </td>
+    <td mat-cell *matCellDef="let userElement"> 
+      <button (click)="goToEditUserPage(userElement)" mat-stroked-button>Edit</button>  &nbsp; 
+      <button (click)="deleteUser(userElement._id)" mat-stroked-button color='warn' >Delete</button>  </td>
   </ng-container>
 
 

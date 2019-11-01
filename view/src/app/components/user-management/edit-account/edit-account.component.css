@@ -1,0 +1,13 @@
+mat-form-field {
+    width:100%;
+  }
+  
+  .my-form {
+  padding: 15px;
+  }
+  .register-card {
+    width: 500px;
+    text-align: center;
+    margin: 15% auto;
+    margin-top: 30px;
+  }

@@ -39,7 +39,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Routes which should handle requests
+// Routes which should handle 
 app.use('/api/uploads', uploadRoutes);
 app.use('/api/accounts', accountRoutes);
 app.use('/api/downloads', downloadRoutes);

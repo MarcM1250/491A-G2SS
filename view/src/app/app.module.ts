@@ -40,6 +40,7 @@ import { UploadformComponent } from './components/main/uploadform/uploadform.com
 import { HeaderComponent } from './components/main/header/header.component';
 import { UploadDetailsComponent } from './components/main/upload-details/upload-details.component';
 import { CreateAccountComponent } from './components/user-management/create-account/create-account.component';
+import { EditAccountComponent } from './components/user-management/edit-account/edit-account.component';
 
 /**
  * Manually added
@@ -53,6 +54,8 @@ const appRoutes: Routes = [
   { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService], data: {role: ['admin']} },
   { path: 'create-account', component: CreateAccountComponent, canActivate: [GuardService], data: {role: ['admin']}  },
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
+  { path: 'edit-account', component: EditAccountComponent, canActivate: [GuardService], data: {role: ['admin']}  },
+
   { path: '**', redirectTo: '/login' },
 ];
 
@@ -67,6 +70,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     UploadDetailsComponent,
     CreateAccountComponent,
+    EditAccountComponent,
   ],
   imports: [
     BrowserModule,

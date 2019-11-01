@@ -49,22 +49,21 @@ export class LoginComponent implements OnInit {
           this.loading = false;
           this.message = err.error.message;
 
-
           if(err.error.timeleft) {
+            console.log(err.error.timeleft)
+            this.timer = err.error.timeleft;
 
-          this.timer = err.error.timeleft;
-          var x = setInterval( () => {
-          
+            
+            let x = setInterval( () => {
+              this.timer= this.timer - 1;
+              //this.message = this.message + this.timer;
+              if (this.timer < 0) {
+                clearInterval(x);
+                this.timer = 0;
+              }
 
-          this.timer = this.timer  - 0.5;
-          console.log(this.timer)
-            //this.message = this.message + timer;
-            if (this.timer < 0) {
-              clearInterval(x);
-              //this.timer = 0;
-            }
-
-          }, 500); }
+            }, 1000); 
+          }
         }
       );
   }

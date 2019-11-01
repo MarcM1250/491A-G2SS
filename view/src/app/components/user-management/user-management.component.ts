@@ -62,4 +62,8 @@ export class UserManagementComponent implements OnInit {
       this.dataSource._updateChangeSubscription();
     });
   }
+
+  goToEditUserPage() {
+    this.router.navigate(['/edit-account']);
+  }
 }
