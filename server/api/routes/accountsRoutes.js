@@ -13,7 +13,10 @@ router.post('/unblock/:userid', Authentication.check_admin, AccountsController.u
 router.post('/create', Authentication.check_admin, AccountsController.create_account);
 
 // Edit an account
-router.post('/edit/:userid', Authentication.check_admin, AccountsController.edit_account);
+router.post('/update', Authentication.check_admin, AccountsController.edit_account);
+
+// Get one user's info
+router.get('/info/:userid', AccountsController.info_account);
 
 // Get a authentication token
 router.post('/login', AccountsController.login);

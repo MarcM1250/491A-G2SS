@@ -80,14 +80,16 @@ exports.create_account = (req, res, next) => {
 };
 
 exports.edit_account = (req, res, next) => {
-    if(!req.params.userid || !req.body.password) {
+    console.table(req.body)
+    if(req.body.userid || req.body.password) {
+
         bcrypt.hash(req.body.password, 10, (err, hash) => {
             if (err) {
                 err.status = 500;
                 next(err);
 
             } else {
-                Account.updateOne( { _id: req.params.userid}, { first_name: req.body.password, last_name: req.body.last_name, password: hash }, (err, raw) => {
+                Account.updateOne( { _id: req.body.userid}, { first_name: req.body.first_name, last_name: req.body.last_name, organization: req.body.organization, password: hash }, (err, raw) => {
                     if (raw.ok) {
                         res.status(200).json({
                             code: '200',
@@ -97,11 +99,26 @@ exports.edit_account = (req, res, next) => {
                 });   
             }
         })
-    } 
+    } else {
     const error = new Error('Nice try');
     error.status = 403;
     next(error);
-    
+    }
+};
+
+exports.info_account = (req, res, next) => {
+    if(req.params.userid) {
+        Account.findOne( { _id: req.params.userid}, 'id first_name last_name organization username', (err, userInfo) => {
+            if (!err) {
+                res.status(200).send(userInfo);
+            }
+        });   
+
+    } else {
+    const error = new Error('Nice try');
+    error.status = 403;
+    next(error);
+    }
 };
 
 /**

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ManagementService } from 'src/app/services/management.service';
+import { ActivatedRoute } from "@angular/router";
+import { tick } from '@angular/core/src/render3';
+
 
 
 @Component({
@@ -10,17 +13,27 @@ import { ManagementService } from 'src/app/services/management.service';
 })
 export class EditAccountComponent implements OnInit {
 
-  constructor(
-    private router: Router,
-    private _managementService: ManagementService ) { }
+  uid; first_name; last_name; organization; username;
+  password = '123';
+  rePassword = '123';
+  errorMsg = '';
 
-    first_name = 'New';
-    last_name = 'User';
-    organization = 'CSULB';
-    username = 'newuser';
-    password = '123';
-    rePassword = '123';
-    errorMsg = '';
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _managementService: ManagementService ) { 
+      this._route.params.subscribe( param => {
+        this.uid = param.uid 
+        this._managementService.getAccount(param.uid)
+          .subscribe( res => {
+            this.uid = param.uid;
+            this.username = res.username;
+            this.first_name = res.first_name;
+            this.last_name = res.last_name;
+            this.organization = res.organization;
+          })
+      })
+    }
 
   ngOnInit() {
   }
@@ -45,21 +58,19 @@ export class EditAccountComponent implements OnInit {
         
         this.errorMsg = ''; // No error
         const registerNewUser  = new FormData();
-
+        registerNewUser.append('userid', this.uid);
         registerNewUser.append('first_name', this.first_name);
         registerNewUser.append('last_name', this.last_name);
         registerNewUser.append('organization', this.organization);
-        registerNewUser.append('username', this.username);
         registerNewUser.append('password', this.password);
                 
-        this._managementService.postUserData(registerNewUser)
+        this._managementService.updateUserData(registerNewUser)
           .subscribe(
             response => {
               console.log('Server response => ', response as any);
-              //this.uploads.push(response.createdUpload);
             },
             err => {
-              console.log('Registration failed: ', err.message);
+              console.log('Update failed: ', err.message);
             },
             () => {
               //this.dataSource._updateChangeSubscription();
@@ -77,7 +88,7 @@ export class EditAccountComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/user-management']);
+    this._router.navigate(['/user-management']);
   }
 
 }

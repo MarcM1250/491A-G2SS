@@ -63,7 +63,7 @@ export class UserManagementComponent implements OnInit {
     });
   }
 
-  goToEditUserPage() {
-    this.router.navigate(['/edit-account']);
+  goToEditUserPage(uid) {
+    this.router.navigate(['/edit-account/' + uid]);
   }
 }

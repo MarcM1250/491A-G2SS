@@ -35,7 +35,7 @@
   <ng-container matColumnDef="editpassword">
     <th mat-header-cell *matHeaderCellDef> </th>
     <td mat-cell *matCellDef="let userElement"> 
-      <button (click)="goToEditUserPage(userElement)" mat-stroked-button>Edit</button>  &nbsp; 
+      <button (click)="goToEditUserPage(userElement._id)" mat-stroked-button>Edit</button>  &nbsp; 
       <button (click)="deleteUser(userElement._id)" mat-stroked-button color='warn' >Delete</button>  </td>
   </ng-container>
 
