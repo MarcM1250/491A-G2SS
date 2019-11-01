@@ -16,7 +16,7 @@ router.post('/create', Authentication.check_admin, AccountsController.create_acc
 router.post('/update', Authentication.check_admin, AccountsController.edit_account);
 
 // Get one user's info
-router.get('/info/:userid', AccountsController.info_account);
+router.get('/info/:userid', Authentication.check_admin, AccountsController.info_account);
 
 // Get a authentication token
 router.post('/login', AccountsController.login);

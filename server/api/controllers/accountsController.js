@@ -111,7 +111,11 @@ exports.info_account = (req, res, next) => {
         Account.findOne( { _id: req.params.userid}, 'id first_name last_name organization username', (err, userInfo) => {
             if (!err) {
                 res.status(200).send(userInfo);
-            }
+                return;
+            } 
+            const error = new Error('No user found');
+            error.status = 403;
+            next(error);
         });   
 
     } else {
