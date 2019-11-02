@@ -41,7 +41,6 @@
   color: green;
   border: 1px;
   border-style: outset;
-  border-color: #F8F8FF;
 }
 
 .deleteButton {
@@ -52,5 +51,4 @@
   height: 35px;
   border: 1px;
   border-style: outset;
-  border-color: #F8F8FF;
 }

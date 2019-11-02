@@ -14,8 +14,8 @@ import { tick } from '@angular/core/src/render3';
 export class EditAccountComponent implements OnInit {
 
   uid; first_name; last_name; organization; username;
-  password = '123';
-  rePassword = '123';
+  password = '********';
+  rePassword = '*********';
   errorMsg = '';
 
   constructor(

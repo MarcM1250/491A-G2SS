@@ -24,8 +24,8 @@
       </mat-form-field>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="onSubmit()" color="primary">Register</button>
-    <button mat-raised-button color="warn" (click)="goBack()">Cancel</button>
+    <button mat-flat-button (click)="onSubmit()" color="primary">Register</button> &nbsp;
+    <button mat-flat-button color="warn" (click)="goBack()">Cancel</button>
   </mat-card-actions>
   <div *ngIf="errorMsg"> {{ errorMsg }} </div>
 </mat-card>

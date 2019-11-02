@@ -51,7 +51,7 @@ export class MainComponent implements OnInit {
   filterUse: string;
   
 
-  displayedColumns: string[] = ['title', 'upload_date', 'upload_by'];
+  displayedColumns: string[] = ['title', 'upload_date', 'upload_by', 'validation', 'size'];
   expandedElement: Upload | null;
 
   /** Selecting a row from the table----------------------- */
@@ -66,12 +66,9 @@ export class MainComponent implements OnInit {
     this.selection.toggle(x); // then selects current row
   }
 
-
   ngOnInit() {
     this.retrieveData();
   }
-
-
 
   /**
    * @description: Retrieves data using a subscription
@@ -100,7 +97,6 @@ export class MainComponent implements OnInit {
           //this.dataSource = new MatTableDataSource(this.uploads.slice(0, 20));
           this.dataSource.sort = this.sort;
           this.dataSource.paginator = this.paginator;
-          //alert(this.dataSource.paginator.pageSize);  // Size 20
           this.sort.disableClear = true;
         },
         (err) => { console.log(err); },

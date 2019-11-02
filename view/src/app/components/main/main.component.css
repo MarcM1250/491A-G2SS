@@ -1,6 +1,6 @@
 table {
   width: 100%;
-  padding-bottom: 65px
+  padding-bottom: 65px;
 }
 
 .mat-form-field {
@@ -184,4 +184,12 @@ tr.mat-footer-row {
 
 #uploadOptions {
   display: flex;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red
 }

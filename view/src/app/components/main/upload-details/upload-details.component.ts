@@ -23,9 +23,6 @@ export class UploadDetailsComponent implements OnInit {
     public dialog: MatDialog) { }
 
   ngOnInit() {
-    if (this.element.file_size) {
-      this.element.file_size = this.element.file_size / 1024.0
-    }
   }
 
   deleteUpload(upload: Upload) {
