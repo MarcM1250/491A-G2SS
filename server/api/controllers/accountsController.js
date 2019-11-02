@@ -215,7 +215,7 @@ exports.login = (req, res, next) => {
                     Account.updateOne( { _id: account[0]._id}, { failed_login_attempts: 0 }, _ => {});
             
                     const token = jwt.sign({
-                        username: account[0].username,
+                        first_name: account[0].first_name,
                         userId: account[0]._id,
                         role: account[0].role
                     }, process.env.JWT_KEY, // sign the token with a password (will be used to decode the token)

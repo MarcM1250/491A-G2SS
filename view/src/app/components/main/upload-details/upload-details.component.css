@@ -2,7 +2,8 @@
 .element-description {
   font-size: 14px;
   padding: 8px;
-  background-color:white;
+  
+  background: #efefef;
   display: table;
 }
 

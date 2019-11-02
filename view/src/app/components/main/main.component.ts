@@ -217,7 +217,6 @@ export class MainComponent implements OnInit {
     });
   }
 
-
   toTop(): void { // Scrolls to the top of the page
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }

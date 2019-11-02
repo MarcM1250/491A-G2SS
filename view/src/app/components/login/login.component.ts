@@ -48,22 +48,7 @@ export class LoginComponent implements OnInit {
           this.authenticationService.logout();
           this.loading = false;
           this.message = err.error.message;
-
-          if(err.error.timeleft) {
-            console.log(err.error.timeleft)
-            this.timer = err.error.timeleft;
-
-            
-            let x = setInterval( () => {
-              this.timer= this.timer - 1;
-              //this.message = this.message + this.timer;
-              if (this.timer < 0) {
-                clearInterval(x);
-                this.timer = 0;
-              }
-
-            }, 1000); 
-          }
+          this.timer = err.error.timeleft;
         }
       );
   }

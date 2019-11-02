@@ -41,6 +41,7 @@ import { HeaderComponent } from './components/main/header/header.component';
 import { UploadDetailsComponent } from './components/main/upload-details/upload-details.component';
 import { CreateAccountComponent } from './components/user-management/create-account/create-account.component';
 import { EditAccountComponent } from './components/user-management/edit-account/edit-account.component';
+import { CountdownComponent } from './components/login/countdown.component';
 
 /**
  * Manually added
@@ -71,6 +72,7 @@ const appRoutes: Routes = [
     UploadDetailsComponent,
     CreateAccountComponent,
     EditAccountComponent,
+    CountdownComponent,
   ],
   imports: [
     BrowserModule,

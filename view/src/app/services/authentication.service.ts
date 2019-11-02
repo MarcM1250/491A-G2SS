@@ -23,7 +23,7 @@ export class AuthenticationService {
   }
 
   getFirstName():string {
-    return this.userInfo.username;
+    return this.userInfo.first_name;
   }
   //! TODO: Validate tkn
   isTokenValid(): boolean {

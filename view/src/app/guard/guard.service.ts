@@ -29,7 +29,7 @@ export class GuardService implements CanActivate {
       }
     }
 
-    this._router.navigate(['/login']);
+    this._router.navigate(['/']);
     return false;
   }
 }

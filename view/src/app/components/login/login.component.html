@@ -41,8 +41,9 @@
     <button mat-raised-button (click)="onSubmit()" color="primary">Login</button>
     <!--login() in login.component.ts-->
   </mat-card-actions>
-  <div *ngIf="loading"> Authorizing ...</div>
-  <div *ngIf="message"> {{ message }} {{ timer }}</div>
+  <div *ngIf="loading" class="res-message"> Authorizing ...</div>
+  <div *ngIf="message" class="res-message"> {{ message }} <countdown-app *ngIf="timer" [timeleft]="timer"></countdown-app></div>
+  
 
 </mat-card>
 <!--END OF LOGIN FORM CODE-->

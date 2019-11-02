@@ -13,6 +13,7 @@ td {
 }
 
 tr.example-detail-row {
+  background: #efefef;
   height: 0;
 }
 
