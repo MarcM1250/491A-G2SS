@@ -44,6 +44,13 @@
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortActive="upload_date"
   matSortDirection="desc" class="mat-elevation-z8">
 
+ <!--Filename Column-->
+ <ng-container matColumnDef="kml-icon">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let element" width="40px"> <img src="assets/kml-icon.png" style="margin: 0px"></td>
+
+  </ng-container>
+
   <!--Filename Column-->
   <ng-container matColumnDef="title">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
@@ -69,11 +76,13 @@
       <th mat-header-cell *matHeaderCellDef> KML Validation </th>
       <td mat-cell *matCellDef="let element">
         
-          <div *ngIf=element.parser_status><span [ngClass]="{
-                    'invalid' : element.parser_status.valid == false,
-                    'valid' : element.parser_status.valid == true
-                    }">{{ element.parser_status.valid }}</span>
-            </div>
+          <div class="valid"*ngIf=element.parser_status.valid> <mat-icon >check</mat-icon> 
+            Valid
+          </div>
+          <div class="invalid" *ngIf=!element.parser_status.valid> <mat-icon>close</mat-icon>
+            Invalid
+          </div>
+
       </td>
     </ng-container>
 
@@ -84,6 +93,15 @@
       {{ element.file_size | number:'1.1-2' }} KB
     </td>
   </ng-container>
+
+
+    <!--Maps Column-->
+    <ng-container matColumnDef="maps">
+        <th mat-header-cell *matHeaderCellDef> Open </th>
+        <td mat-cell *matCellDef="let element">
+         <a href="#">Open in GM</a>
+        </td>
+      </ng-container>
 
   <!-- End of Columns ----------------------------------------------------->
 
