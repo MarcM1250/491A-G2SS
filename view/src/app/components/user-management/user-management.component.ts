@@ -3,6 +3,10 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ManagementService } from 'src/app/services/management.service';
+import { MatDialog } from '@angular/material';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { EditAccountComponent } from './edit-account/edit-account.component';
+
 
 @Component({
   selector: 'app-user-management',
@@ -13,7 +17,9 @@ export class UserManagementComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService, 
               private router: Router,
-              private managementService: ManagementService ) { }
+              private managementService: ManagementService,
+              public dialog: MatDialog,
+              public dialog2: MatDialog) { }
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -65,5 +71,33 @@ export class UserManagementComponent implements OnInit {
 
   goToEditUserPage(uid) {
     this.router.navigate(['/edit-account/' + uid]);
+  }
+  
+  openNewUserDialog(): void {
+    // Stores file value for use in other functions
+    const dialogRef = this.dialog.open(CreateAccountComponent, {
+      width: '500px',
+    });
+
+    // On closing Delete Dialog Box
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // Set deleteCheck to result value
+      
+    });
+  }
+
+  openEditUserDialog(userid: string): void {
+    const dialogRef = this.dialog.open(EditAccountComponent, {
+      data: { uid : userid },
+      width: '500px'
+    });
+
+    // On closing Delete Dialog Box
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // Set deleteCheck to result value
+      
+    });
   }
 }

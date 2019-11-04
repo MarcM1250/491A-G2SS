@@ -1,7 +1,5 @@
-<app-header></app-header>
-
 <mat-card class="register-card">
-  <mat-card-title><p>Edit Account for '{{ username }}'</p></mat-card-title>
+  <mat-card-title>Edit Account for '{{ username }}'</mat-card-title>
   <mat-card-content>
       <mat-form-field>
         <input matInput placeholder="First Name" [(ngModel)]="first_name" name="first_name" required>
@@ -23,7 +21,7 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-flat-button (click)="onSubmit()" color="primary">Save</button> &nbsp;
-    <button mat-flat-button color="warn" (click)="goBack()">Cancel</button>
+    <button mat-flat-button color="warn" (click)="closeDialog()">Cancel</button>
   </mat-card-actions>
   <div *ngIf="errorMsg"> {{ errorMsg }} </div>
 </mat-card>

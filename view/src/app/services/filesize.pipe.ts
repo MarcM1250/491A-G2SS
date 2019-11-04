@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 /*
  * Usage:
- *   value | toKB:kb
+ *   value | toKBMB:decimaldigits
  * Example:
- *   {{ 1024 | toKB:kb }}
- *   formats to: 1KB
+ *   {{ 1024 | toKB:2 }}
+ *   formats to: 1.00 KB
 */
 
 @Pipe({name: 'toKBMB'})

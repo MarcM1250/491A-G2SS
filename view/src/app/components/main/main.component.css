@@ -13,7 +13,7 @@ td {
 }
 
 tr.example-detail-row {
-  background: #efefef;
+  background: #ffffff;
   height: 0;
 }
 
@@ -22,7 +22,7 @@ tr.example-element-row:not(.example-expanded-row):hover {
 }
 
 tr.example-element-row:not(.example-expanded-row):active {
-  background: #efefef;
+  background: #ffffff;
 }
 
 .example-element-row td {

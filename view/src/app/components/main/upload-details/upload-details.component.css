@@ -3,7 +3,6 @@
   font-size: 14px;
   padding: 8px;
   
-  background: #efefef;
   display: table;
 }
 
@@ -39,7 +38,7 @@
   flex-grow: 0.1;
   margin-right: 10px;
   height: 35px;
-  color: green;
+  color: #1042c9;
   border: 1px;
   border-style: outset;
 }
@@ -49,6 +48,20 @@
   min-width: 115px;
   flex-grow: 0.1;
   color: #dc143c;
+  height: 35px;
+  margin-right: 10px;
+
+  border: 1px;
+  border-style: outset;
+}
+
+.gmButton {
+  max-width: 200px;
+  min-width: 115px;
+  flex-grow: 0.1;
+  color: green;
+  margin-right: 10px;
+
   height: 35px;
   border: 1px;
   border-style: outset;

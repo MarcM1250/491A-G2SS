@@ -1,17 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ManagementService } from 'src/app/services/management.service';
-import {Router} from '@angular/router';
-
+import { Router } from '@angular/router';
+import { MatDialogRef, MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.css']
 })
+
 export class CreateAccountComponent implements OnInit {
-  //@Input() dataSource: MatTableDataSource<Upload>;
+  @Input() dataSource: MatTableDataSource<any>;
 
   constructor(
+    public dialogRef: MatDialogRef<CreateAccountComponent>,
     private _managementService: ManagementService,
     private router: Router
   ) { }
@@ -57,14 +59,16 @@ export class CreateAccountComponent implements OnInit {
           .subscribe(
             response => {
               console.log('Server response => ', response as any);
+              //this.closeDialog();
               //this.uploads.push(response.createdUpload);
             },
             err => {
               console.log('Registration failed: ', err.message);
             },
             () => {
-              //this.dataSource._updateChangeSubscription();
-              this.goBack();
+              this.dataSource._updateChangeSubscription();
+              //this.router.navigate(['/user-management']);
+              location.reload();
             }
           );
            
@@ -77,8 +81,8 @@ export class CreateAccountComponent implements OnInit {
     return true 
   }
 
-  goBack() {
-    this.router.navigate(['/user-management']);
+  closeDialog() {
+    this.dialogRef.close();
   }
 
 }

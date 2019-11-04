@@ -1,4 +1,3 @@
-<app-header></app-header>
 
 <mat-card class="register-card">
   <mat-card-title>Create Account</mat-card-title>
@@ -25,7 +24,7 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-flat-button (click)="onSubmit()" color="primary">Register</button> &nbsp;
-    <button mat-flat-button color="warn" (click)="goBack()">Cancel</button>
+    <button mat-flat-button color="warn" (click)="closeDialog()">Cancel</button>
   </mat-card-actions>
   <div *ngIf="errorMsg"> {{ errorMsg }} </div>
 </mat-card>

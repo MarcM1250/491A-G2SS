@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ManagementService } from 'src/app/services/management.service';
 import { ActivatedRoute } from "@angular/router";
-import { tick } from '@angular/core/src/render3';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 
 
@@ -19,20 +19,21 @@ export class EditAccountComponent implements OnInit {
   errorMsg = '';
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef<EditAccountComponent>,
     private _route: ActivatedRoute,
     private _router: Router,
     private _managementService: ManagementService ) { 
-      this._route.params.subscribe( param => {
-        this.uid = param.uid 
-        this._managementService.getAccount(param.uid)
+
+        this._managementService.getAccount(data.uid)
           .subscribe( res => {
-            this.uid = param.uid;
+            this.uid = data.uid;
             this.username = res.username;
             this.first_name = res.first_name;
             this.last_name = res.last_name;
             this.organization = res.organization;
           })
-      })
+      
     }
 
   ngOnInit() {
@@ -74,7 +75,7 @@ export class EditAccountComponent implements OnInit {
             },
             () => {
               //this.dataSource._updateChangeSubscription();
-              this.goBack();
+              this.closeDialog();
             }
           );
           
@@ -87,8 +88,8 @@ export class EditAccountComponent implements OnInit {
     return true 
   }
 
-  goBack() {
-    this._router.navigate(['/user-management']);
+  closeDialog() {
+    this.dialogRef.close();
   }
 
 }
