@@ -33,6 +33,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FileSizePipe } from "src/app/services/filesize.pipe";
 
 // Manually added HTTP provider
 import { AuthenticationService } from './services/authentication.service';
@@ -73,6 +74,7 @@ const appRoutes: Routes = [
     CreateAccountComponent,
     EditAccountComponent,
     CountdownComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,
