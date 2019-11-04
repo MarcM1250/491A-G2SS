@@ -63,9 +63,10 @@ export class UserManagementComponent implements OnInit {
     }, err => {
       console.error(err);
     }, () => { 
-      let index = this.users.map ( x => { return x.uid});
-      console.log("index:", index)
-      this.users.splice(this.users.indexOf(index), 1);
+      //let user = this.users.map ( x => { return x._id==uid?x:'' });
+      //this.users.splice(this.users.indexOf(user), 1);
+
+      this.users.splice(this.users.findIndex(x => x._id == uid), 1);
       this.dataSource._updateChangeSubscription();
     });
   }
@@ -82,7 +83,7 @@ export class UserManagementComponent implements OnInit {
 
     // On closing Delete Dialog Box
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log(result);
       // Set deleteCheck to result value
       
     });
@@ -96,9 +97,7 @@ export class UserManagementComponent implements OnInit {
 
     // On closing Delete Dialog Box
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // Set deleteCheck to result value
-      
+      console.log(result);      
     });
   }
 }

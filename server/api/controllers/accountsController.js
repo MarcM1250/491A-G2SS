@@ -9,8 +9,8 @@ const USERS_BLOCKED_TIME = 60000;
  */
 
 exports.get_all = (req, res, next) => {
-    Account.find({'role': 'user'}, { '__v': 0 }) // find accounts in the database using mongoose promise
-        // .select("username password organization first_name last_name delete_permission")
+    Account.find({'role': 'user'}) // find accounts in the database using mongoose promise
+        .select("_id username organization first_name last_name last_login_attempt")
         .exec()
         .then(docs => { // doc contains the accounts found, minus the _id field
             res.status(200).send(docs);
