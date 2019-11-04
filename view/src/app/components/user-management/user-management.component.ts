@@ -63,7 +63,8 @@ export class UserManagementComponent implements OnInit {
     }, err => {
       console.error(err);
     }, () => { 
-      let index = this.users.map ( x => { return x._id});
+      let index = this.users.map ( x => { return x.uid});
+      console.log("index:", index)
       this.users.splice(this.users.indexOf(index), 1);
       this.dataSource._updateChangeSubscription();
     });

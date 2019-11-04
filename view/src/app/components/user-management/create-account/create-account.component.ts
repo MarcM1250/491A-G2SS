@@ -10,7 +10,7 @@ import { MatDialogRef, MatTableDataSource } from '@angular/material';
 })
 
 export class CreateAccountComponent implements OnInit {
-  @Input() dataSource: MatTableDataSource<any>;
+  //@Input() dataSource: MatTableDataSource<any>;
 
   constructor(
     public dialogRef: MatDialogRef<CreateAccountComponent>,
@@ -66,7 +66,7 @@ export class CreateAccountComponent implements OnInit {
               console.log('Registration failed: ', err.message);
             },
             () => {
-              this.dataSource._updateChangeSubscription();
+              //this.dataSource._updateChangeSubscription();
               //this.router.navigate(['/user-management']);
               location.reload();
             }
