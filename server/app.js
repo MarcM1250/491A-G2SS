@@ -9,15 +9,15 @@ const accountRoutes = require('./api/routes/accountsRoutes');
 const downloadRoutes = require('./api/routes/downloadsRoutes');
 const logger = require('./api/utils/logger');
 
-// mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
-mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/G2SS_v1?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, function(err) {
-    if (err) {
-        logger.error(`[${new Date().toUTCString()}] - DB Connection Error - ${err.message}`);
-        process.exit(1);
-    }else{
-        logger.info(`[${new Date().toUTCString()}] - Connection to DB has been made`);
-    }
-});
+mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb+srv://Minh:' + process.env.MONGO_ATLAS_PW + '@g2ss-nomph.mongodb.net/G2SS_v1?retryWrites=true',{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, function(err) {
+//     if (err) {
+//         logger.error(`[${new Date().toUTCString()}] - DB Connection Error - ${err.message}`);
+//         process.exit(1);
+//     }else{
+//         logger.info(`[${new Date().toUTCString()}] - Connection to DB has been made`);
+//     }
+// });
 
 // Morgan middleware used to log requests
 app.use(morgan(':status :remote-addr :remote-user [:date[web]] ":method :url HTTP/:http-version" :user-agent :res[content-length]', { skip: (req, res) => { return res.statusCode >= 400 }, stream: logger.stream }));

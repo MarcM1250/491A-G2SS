@@ -2,16 +2,20 @@ const Upload = require('../models/uploadModel');
 const mongoose = require('mongoose');
 const validator = require('./validator');
 const { Readable } = require('stream');
+const fs = require('fs');
+var appRoot = require('app-root-path');
 
 /**
  * RETURN ALL UPLOADS IN THE DATABASE
  */
 exports.get_all = (req, res, next) => {
     Upload.find()
-        .select("_id title description upload_date upload_by delete_date last_modified delete_by filename file_size parser_status") // data you want to fetch
+        .sort({'upload_date': 1})
+        .limit(parseInt(req.headers['limit']))
+        .select("_id title description upload_date upload_by last_modified delete_by delete_date filename checksum file_size parser_status") // data you want to fetch
         .exec()
         .then(docs => {
-            res.status(200).send(docs);
+            res.status(200).send(docs.filter(word => word.delete_date === undefined));
         })
         .catch(err => {
             err.status = 500;
@@ -33,13 +37,11 @@ exports.create_upload = (req, res, next) => {
             message: 'Path `title`, `description`, and `file` are required.'
         });
     }
-
-    // validate xml file using fast-xml-parser and store validation result in a json object
-    const xmlString = req.file.buffer.toString('utf8');
-
-    validator.validateXML( xmlString, function (err, validationResults) {
-
-        console.log("My RESULTS: ", validationResults);
+    // const xmlString = fs.createReadStream('./uploads/'+req.file.filename,'utf8');
+    // console.log(xmlString);
+    // const xmlString = req.file.buffer.toString('utf8');
+    // validator.validateXML( xmlString, function (err, validationResults) {
+        // console.log("My RESULTS: ", validationResults);
 
         // this id will be used for the upload_id and fs.files_id
         const files_id = new mongoose.Types.ObjectId();
@@ -53,7 +55,7 @@ exports.create_upload = (req, res, next) => {
             upload_by: req.userData.username,
             filename: req.file.originalname,
             file_size: req.file.size,
-            parser_status: validationResults
+            parser_status: 'validationResults'
         });
         // save the upload to the database
         upload
@@ -78,6 +80,7 @@ exports.create_upload = (req, res, next) => {
                         }).
                         on('finish', function (file) {
                             // console.log('Upload successful');
+                            req.file.md5 = file.md5;
                         });
                 res.status(201).json({
                     message: "Upload created successfully",
@@ -89,9 +92,17 @@ exports.create_upload = (req, res, next) => {
                         upload_by: result.upload_by,
                         last_modified: result.last_modified,
                         filename: result.filename,
-                        file_size: result.file_size,
-                        parser_status: result.parser_status
+                        file_size: result.file_size
                     }
+                });
+                // // validate xml file using fast-xml-parser and store validation result in a json object
+                const xmlString = req.file.buffer.toString('utf8');
+                validator.validateXML( xmlString, function (err, validationResults) {
+                    upload.updateOne({ $set: { parser_status: validationResults, checksum: req.file.md5 } })
+                    .exec()
+                    .catch(err => {
+                       console.log('Failed to update parser status and checksum ' + err.message);
+                    });
                 });
             })
             .catch(err => {
@@ -101,7 +112,7 @@ exports.create_upload = (req, res, next) => {
                 //     error: err
                 // });
             });
-    });
+    // });
 };
 
 /**
@@ -114,7 +125,7 @@ exports.get_upload = (req, res, next) => {
         return next(error);
     }
     Upload.findById(req.params.uploadId)
-    .select("_id title description upload_date upload_by delete_date delete_by filename file_size parser_status") // data you want to fetch
+    .select("_id title description upload_date upload_by last_modified delete_by delete_date filename checksum file_size parser_status") // data you want to fetch
     .exec()
         .then(doc => {
             if (doc) {
