@@ -43,6 +43,7 @@ import { UploadDetailsComponent } from './components/main/upload-details/upload-
 import { CreateAccountComponent } from './components/user-management/create-account/create-account.component';
 import { EditAccountComponent } from './components/user-management/edit-account/edit-account.component';
 import { CountdownComponent } from './components/login/countdown.component';
+import { DeleteUserConfirmationComponent } from './components/user-management/edit-account/delete-user-confirmation.component';
 
 /**
  * Manually added
@@ -67,6 +68,7 @@ const appRoutes: Routes = [
     LoginComponent,
     MainComponent,
     DeleteConfirmationComponent,
+    DeleteUserConfirmationComponent,
     UserManagementComponent,
     UploadformComponent,
     HeaderComponent,
@@ -107,7 +109,7 @@ const appRoutes: Routes = [
     HttpClientModule,
   ],
   // For Delete Confirmation on Main Page
-  entryComponents: [DeleteConfirmationComponent, CreateAccountComponent, EditAccountComponent],
+  entryComponents: [DeleteConfirmationComponent, DeleteUserConfirmationComponent, CreateAccountComponent, EditAccountComponent, UploadformComponent],
 
   providers: [AuthenticationService,
     {

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable, of, concat, throwError } from 'rxjs';
-import { User } from '../models/User';
+import { User } from '../models/user.model';
 import decode from 'jwt-decode';
 
 export const API_URL = 'http://localhost:3000/api';

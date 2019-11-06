@@ -69,13 +69,10 @@ export class EditAccountComponent implements OnInit {
           .subscribe(
             response => {
               console.log('Server response => ', response as any);
+              this.closeDialog();
             },
             err => {
               console.log('Update failed: ', err.message);
-            },
-            () => {
-              //this.dataSource._updateChangeSubscription();
-              this.closeDialog();
             }
           );
           

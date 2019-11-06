@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
-import { Upload } from '../../../models/Upload';
+import { Upload } from '../../../models/upload.model';
 import { UploadsService } from '../../../services/uploads.service';
 import { DeleteConfirmationComponent } from './delete-confirmation.component';
 import { MatDialog } from '@angular/material';
@@ -31,7 +31,10 @@ export class UploadDetailsComponent implements OnInit {
 
       // delete from server
       this._uploadsService.deleteUpload(upload).subscribe(
-        (response) => {
+        (response) => {         
+          // delete from UI
+          this.uploads.splice(this.uploads.indexOf(upload), 1);
+          this.dataSource._updateChangeSubscription();
           console.log('Response from deleting: ', response);
         },
         err => {
@@ -39,11 +42,6 @@ export class UploadDetailsComponent implements OnInit {
           if (err.status === 400) {
             console.log("Bad Request")
           }
-        },
-        () => {
-          // delete from UI
-          this.uploads.splice(this.uploads.indexOf(upload), 1);
-          this.dataSource._updateChangeSubscription();
         }
       );
 
@@ -70,7 +68,7 @@ export class UploadDetailsComponent implements OnInit {
     // Stores file value for use in other functions
     this.upload = upload;
     const dialogRef = this.dialog.open(DeleteConfirmationComponent, {
-      width: '400px',
+      width: '260px',
     });
 
     // On closing Delete Dialog Box

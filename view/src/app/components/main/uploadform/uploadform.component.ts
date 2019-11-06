@@ -1,24 +1,14 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UploadsService } from '../../../services/uploads.service';
 import { HttpClient } from '@angular/common/http';
-import { MatSort, MatTableDataSource } from '@angular/material';
-import { Upload } from '../../../models/Upload';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { MatSort, MatTableDataSource, MatDialogRef } from '@angular/material';
+import { Upload } from '../../../models/upload.model';
 
 
 @Component({
   selector: 'app-uploadform',
   templateUrl: './uploadform.component.html',
-  styleUrls: ['./uploadform.component.css'],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({})),
-      state('expanded', style({ height: '*' })),
-      transition('expanded => collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
-
-
+  styleUrls: ['./uploadform.component.css']
 })
 
 export class UploadformComponent implements OnInit {
@@ -28,7 +18,6 @@ export class UploadformComponent implements OnInit {
   file: File;
   fileValid = 0;
   errorMsg: string;
-  newStyle: string;
 
   @Input() dataSource: MatTableDataSource<Upload>;
   @Input() uploads: Upload[];
@@ -36,8 +25,9 @@ export class UploadformComponent implements OnInit {
   @Output() showFormChange = new EventEmitter();
 
   constructor(
-    private uploadsService: UploadsService,
-    private httpVar: HttpClient
+    public dialogRef: MatDialogRef<UploadformComponent>,
+    private _uploadsService: UploadsService,
+    private _httpVar: HttpClient
   ) {
     this.title = '';
     this.description = '';
@@ -51,7 +41,6 @@ export class UploadformComponent implements OnInit {
     this.file = $event.target.files[0];
     this.fileValid = 1;
   }
-
 
   submitUpload(): void { // Submit file for upload
     // If Title is empty
@@ -74,19 +63,16 @@ export class UploadformComponent implements OnInit {
         upload.append('description', this.description);
         upload.append('file', this.file);
 
-        this.uploadsService.postUpload(upload)
+        this._uploadsService.postUpload(upload)
           .subscribe(
             response => {
               console.log('Server response => ', response as any);
-              this.uploads.push(response.createdUpload);
+              this.hideUploadForm();
+
+              //this.uploads.push(response.createdUpload);
             },
             err => {
               console.log('Upload failed: ', err.message);
-            },
-            () => {
-              this.dataSource._updateChangeSubscription();
-              this.hideUploadForm();
-
             }
           );
       }
@@ -100,17 +86,13 @@ export class UploadformComponent implements OnInit {
   }
 
   hideUploadForm() {
-    this.newStyle = 'slideout 0.5s';
-    setTimeout(() => {
-      this.showForm = false;
-      this.showFormChange.emit(this.showForm);
-    }, 450);
+    this.dialogRef.close();
   }
 
   // Auto inputs test data for Title and Description
   loadFakeData() {
     this.title = `[KML] ${Math.floor(Math.random() * 100)}-Upload Test ${Math.random().toString(36).replace('0.', '')}`;
-    this.httpVar.get('https://baconipsum.com/api/?type=meat-and-filler&paras=1').subscribe(
+    this._httpVar.get('https://baconipsum.com/api/?type=meat-and-filler&paras=1').subscribe(
       resp => {
         this.description = resp as any;
       }

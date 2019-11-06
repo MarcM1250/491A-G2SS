@@ -17,8 +17,8 @@ export class CreateAccountComponent implements OnInit {
     private _managementService: ManagementService,
     private router: Router
   ) { }
-    first_name = 'New';
-    last_name = 'User';
+    first_name = 'Firstname';
+    last_name = 'Lastname';
     organization = 'CSULB';
     username = 'newuser';
     password = '123';
@@ -60,21 +60,13 @@ export class CreateAccountComponent implements OnInit {
             response => {
               console.log('Server response => ', response as any);
               this.closeDialog();
-              //this.uploads.push(response.createdUpload);
             },
             err => {
               console.log('Registration failed: ', err.message);
-            },
-            () => {
-              //this.dataSource._updateChangeSubscription();
-              //this.router.navigate(['/user-management']);
-              //location.reload();
             }
           );
            
     }
-
-
   }
 
   checkPassword (pass1: string, pass2: string ){

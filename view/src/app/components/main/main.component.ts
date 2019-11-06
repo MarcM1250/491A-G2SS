@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { animate, state, style, transition, trigger, keyframes } from '@angular/animations';
-import { MatSort, MatTableDataSource } from '@angular/material';
+import { MatSort, MatTableDataSource, MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material';
 
 import { UploadsService } from '../../services/uploads.service';
-import { Upload } from '../../models/Upload';
+import { Upload } from '../../models/upload.model';
 import { DatePipe } from '@angular/common';
+import { UploadformComponent } from "./uploadform/uploadform.component";
+
 
 @Component({
   selector: 'app-main-component',
@@ -28,7 +30,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _uploadsService: UploadsService) {
+    private _uploadsService: UploadsService,
+    public dialog: MatDialog) {
 
   }
 
@@ -81,59 +84,22 @@ export class MainComponent implements OnInit {
   
   retrieveData() {
     // Get Uploads from server
-
-    //if (this.pagUpdate === 0){
-      /*
-      this._uploadsService.getUploads().subscribe(
-        response => {
-          this.uploads = response.slice(0,2);
-          response.length;
-        }
-        */
        this._uploadsService.getUploads().subscribe(
         response => {
           this.uploads = response.filter(x => x.delete_date === undefined);
           this.dataSource = new MatTableDataSource(this.uploads);
-          //this.dataSource = new MatTableDataSource(this.uploads.slice(0, 20));
           this.dataSource.sort = this.sort;
           this.dataSource.paginator = this.paginator;
           this.sort.disableClear = true;
         },
-        (err) => { console.log(err); },
-        () => { }
-        );
+        (err) => { console.log(err); });
       // Subcribe similar to promises .then cb: asynchronous
       this.pagUpdate = 1;
-    
-    /*
-    else{
-      this._uploadsService.getUploads().subscribe(
-        response => {
-          alert(response.length);
-          //this.uploads = response.filter(x => x.delete_date === undefined);
-          this.dataSource = new MatTableDataSource(this.uploads.slice(0, this.dataSource.paginator.pageSize));
-          this.dataSource.sort = this.sort;
-          this.dataSource.paginator = this.paginator;
-          this.sort.disableClear = true;
-        },
-        (err) => { console.log(err); },
-        () => { });
-  
-      alert("mamamia, that's a spicy meatball");
-    }
-    */
-
-
-
-
-
   }
 
   // Checks when paginator changes
   onPaginateChange(event){
-   // alert(this.dataSource.paginator.pageSize);
     this.retrieveData();
-    //alert("mamamia");
   }
 
   applyFilter(filterValue: string) {
@@ -145,7 +111,6 @@ export class MainComponent implements OnInit {
     this.dataSource.filter = this.cDate.trim();
   }
 
-  
   overwriteFilter() {
     this.fMonth = '';
     this.fDay = '';
@@ -168,7 +133,8 @@ export class MainComponent implements OnInit {
         return formatted.indexOf(filter) >= 0;
       };
 
-    } 
+    }
+
     else {
       document.getElementById('filterBar').style.display = 'block';
       document.getElementById('filterBar1').style.display = 'none';
@@ -176,6 +142,7 @@ export class MainComponent implements OnInit {
         return data[this.filterSelect].toLowerCase().includes(filter);
       };
     }
+    
     return 0;
   }
 
@@ -222,7 +189,15 @@ export class MainComponent implements OnInit {
   }
 
   showUploadForm() {
-    this.uploadForm = true;
+    //this.uploadForm = true;
+    const dialogRef = this.dialog.open(UploadformComponent, {
+      width: '600px'
+    });
+
+    // On closing Delete Dialog Box
+    dialogRef.afterClosed().subscribe( _ => {
+      this.retrieveData ()
+    });
   }
 
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Upload } from '../models/Upload';
+import { Upload } from '../models/upload.model';
 import { API_URL } from './authentication.service';
 
 @Injectable({

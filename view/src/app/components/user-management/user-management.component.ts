@@ -6,6 +6,7 @@ import { ManagementService } from 'src/app/services/management.service';
 import { MatDialog } from '@angular/material';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { EditAccountComponent } from './edit-account/edit-account.component';
+import { DeleteUserConfirmationComponent } from './edit-account/delete-user-confirmation.component';
 
 
 @Component({
@@ -18,18 +19,21 @@ export class UserManagementComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService, 
               private router: Router,
               private managementService: ManagementService,
-              public dialog: MatDialog,
-              public dialog2: MatDialog) { }
+              public dialog: MatDialog) { }
 
   @ViewChild(MatSort) sort: MatSort;
 
   users: any[];
   userError = true;
+  deleteCheck: boolean;
 
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['username', 'fullname', 'organization', 'lastlogin', 'editusers', 'editpassword'];
 
   ngOnInit() {
+    this.getArrayUsers();
+  }
+  getArrayUsers () {
     this.authenticationService.getUsers().subscribe( retrievedUsers => {
       this.users = retrievedUsers;
       this.dataSource = new MatTableDataSource(retrievedUsers);
@@ -56,19 +60,35 @@ export class UserManagementComponent implements OnInit {
     });
   }
 
-  deleteUser (uid: string) {
-    this.managementService.deleteUser(uid)
-    .subscribe(resp => {
-      resp.code == '200'?console.log("Success"):''
-    }, err => {
-      console.error(err);
-    }, () => { 
-      //let user = this.users.map ( x => { return x._id==uid?x:'' });
-      //this.users.splice(this.users.indexOf(user), 1);
-
-      this.users.splice(this.users.findIndex(x => x._id == uid), 1);
-      this.dataSource._updateChangeSubscription();
+  openDeleteUserConfirmation(userId: string): void {
+    const dialogRef = this.dialog.open(DeleteUserConfirmationComponent, {
+      width: '260px',
     });
+
+    // On closing Delete Dialog Box
+    dialogRef.afterClosed().subscribe(result => {
+      this.deleteCheck = result;
+      this.deleteUser(userId);
+    });
+  }
+
+  deleteUser (uid: string) {
+
+    if (this.deleteCheck === true) {
+
+      this.managementService.deleteUser(uid)
+      .subscribe(resp => {
+        resp.code == '200'?console.log("Success"):''
+      }, err => {
+        console.error(err);
+      }, () => { 
+        //let user = this.users.map ( x => { return x._id==uid?x:'' });
+        //this.users.splice(this.users.indexOf(user), 1);
+        this.users.splice(this.users.findIndex(x => x._id == uid), 1);
+        this.dataSource._updateChangeSubscription();
+      });
+    }
+    this.deleteCheck = false;
   }
 
   goToEditUserPage(uid) {
@@ -82,10 +102,8 @@ export class UserManagementComponent implements OnInit {
     });
 
     // On closing Delete Dialog Box
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-      // Set deleteCheck to result value
-      
+    dialogRef.afterClosed().subscribe( _ => {
+      this.getArrayUsers ()
     });
   }
 
@@ -96,8 +114,8 @@ export class UserManagementComponent implements OnInit {
     });
 
     // On closing Delete Dialog Box
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);      
+    dialogRef.afterClosed().subscribe( _ => {
+      this.getArrayUsers ()
     });
   }
 }
