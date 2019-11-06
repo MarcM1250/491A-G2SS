@@ -17,11 +17,24 @@ export class UploadsService {
   constructor(private http: HttpClient) {
   }
 
+  // Get All Uploads
   getUploads(): Observable<Upload[]> {
     // httpOptions.headers = httpOptions.headers.set( 'Authorization', 'Bearer ' + this.authenticationService.getCurrentToken());
     return this.http.get<Upload[]>(this.uploadUrl);
+    //return this.http.get<Upload[]>(this.uploadUrl);
   }
 
+  // Get Some Uploads
+  /*
+  getUploadsLimited(limitNum: Number): Observable<Upload[]> {
+    // httpOptions.headers = httpOptions.headers.set( 'Authorization', 'Bearer ' + this.authenticationService.getCurrentToken());
+    const url = `${this.uploadUrl}/${limitNum}`;
+    return this.http.get<Upload[]>(url);
+    //return this.http.get<Upload[]>(this.uploadUrl);
+  }
+  */
+ 
+  // Delete Upload
   deleteUpload(upload: Upload): Observable<any> {
     const url = `${this.uploadUrl}/${upload._id}`;
     return this.http.delete(url);

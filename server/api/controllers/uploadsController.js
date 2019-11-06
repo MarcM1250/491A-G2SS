@@ -8,11 +8,13 @@ var appRoot = require('app-root-path');
 /**
  * RETURN ALL UPLOADS IN THE DATABASE
  */
+
 exports.get_all = (req, res, next) => {
     Upload.find()
         .sort({'upload_date': -1})
         .select("_id title description upload_date upload_by last_modified delete_by delete_date filename checksum file_size parser_status") // data you want to fetch
         .exec()
+        
         .then(docs => {
             res.status(200).send(docs);
         })
@@ -24,6 +26,33 @@ exports.get_all = (req, res, next) => {
             // });
         });
 };
+
+/*
+exports.get_some = (req, res, next) => {
+    Upload.find()
+        
+        .select("_id title description upload_date upload_by delete_date last_modified delete_by filename file_size parser_status") // data you want to fetch
+        .exec()
+        
+        
+
+        .then(docs => {
+                res.status(200).send(docs);
+        })
+        
+        .catch(err => {
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
+        })
+        
+        ;
+        
+};
+*/
+
 
 /**
  * CREATE AN UPLOAD AND STORE THE UPLOADED FILE DATA TO THE DATABASE
