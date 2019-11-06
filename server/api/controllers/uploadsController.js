@@ -10,12 +10,11 @@ var appRoot = require('app-root-path');
  */
 exports.get_all = (req, res, next) => {
     Upload.find()
-        .sort({'upload_date': 1})
-        .limit(parseInt(req.headers['limit']))
+        .sort({'upload_date': -1})
         .select("_id title description upload_date upload_by last_modified delete_by delete_date filename checksum file_size parser_status") // data you want to fetch
         .exec()
         .then(docs => {
-            res.status(200).send(docs.filter(word => word.delete_date === undefined));
+            res.status(200).send(docs);
         })
         .catch(err => {
             err.status = 500;

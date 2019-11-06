@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
  */
 exports.get_all = (req, res, next) => {
     Download.find()
-        .select("_id upload_id upload_date download_by download_via") // data you want to fetch
+        .select("_id upload_id download_date download_by download_via") // data you want to fetch
+        .sort({'download_date': -1})
         .exec()
         .then(docs => {
             res.status(200).json({
@@ -106,7 +107,8 @@ exports.create_download = (req, res, next) => {
  */
 exports.get_download = (req, res, next) => {
     Download.find({ download_by: req.params.username })
-        .select("upload_id upload_date download_by download_via") // data you want to fetch
+        .select("upload_id download_date download_by download_via") // data you want to fetch
+        .sort({'download_date': -1})
         .exec()
         .then(results => {
             if (results.length >= 1) {
