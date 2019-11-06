@@ -1,5 +1,6 @@
-table {
-  width: 100%;
+.mat-table {
+  width: 90%;
+  margin: auto;
   padding-bottom: 65px
 }
 

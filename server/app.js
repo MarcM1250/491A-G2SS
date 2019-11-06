@@ -39,7 +39,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Routes which should handle requests
+// Routes which should handle 
 app.use('/api/uploads', uploadRoutes);
 app.use('/api/accounts', accountRoutes);
 app.use('/api/downloads', downloadRoutes);
@@ -56,9 +56,9 @@ app.use((error, req, res, next) => {
     logger.error(`${error.status || 500} ${req.ip} - [${new Date().toUTCString()}] - ${error.message} - "${req.method} ${req.originalUrl} HTTP/${req.httpVersion}" ${req.headers['user-agent']}`);
     res.status(error.status || 500);
     res.json({
-        error: {
-            message: error.message
-        }
+            message: error.message,
+            timeleft: error.timeleft
+        
     });
 });
 

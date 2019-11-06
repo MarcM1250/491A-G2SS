@@ -16,14 +16,11 @@ exports.check_user = (req, res, next) => {
         // Decode the token to get the user's data if the token if valid
         const decoded = jwt.verify(token, process.env.JWT_KEY);
         req.userData = decoded; // saved userData to be used later
-        // console.log("User : \"", req.userData, "\""); 
         next();
     } catch (err) {
         err.status = 401;
         next(err);
-        // return res.status(401).json({
-        //     message: 'Authentication failed 04'
-        // });
+
     }
 };
 
@@ -37,19 +34,15 @@ exports.check_admin = (req, res, next) => {
         const token = req.headers.authorization.split(" ")[1]; // remove bearer
         // Decode the token to get the user's data if the token if valid
         const decoded = jwt.verify(token, process.env.JWT_KEY);
-        if(!decoded.delete_permission){
+        if(!decoded.role=== 'admin'){
             const error = new Error('Admin permission required to access this route');
-            error.status = 401;
+            error.status = 403;
             return next(error);
         }
         req.userData = decoded; // saved userData to be used later
-        // console.log("User : \"", req.userData, "\""); 
         next();
     } catch (err) {
          err.status = 401;
          next(err);
-         // return res.status(401).json({
-         //     message: 'Authentication failed 04'
-         // });
     }
 };

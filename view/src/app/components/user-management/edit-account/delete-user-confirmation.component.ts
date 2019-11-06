@@ -4,12 +4,12 @@ import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-delete-confirmation',
-  templateUrl: 'delete-confirmation.html',
+  templateUrl: 'delete-user-confirmation.html',
 })
 
-export class DeleteConfirmationComponent {
+export class DeleteUserConfirmationComponent {
   constructor(
-    public dialogRef: MatDialogRef<DeleteConfirmationComponent>) {
+    public dialogRef: MatDialogRef<DeleteUserConfirmationComponent>) {
   }
 
   onNoClick(): void {

@@ -10,19 +10,26 @@ import { AuthenticationService } from '../services/authentication.service';
 @Injectable({
   providedIn: 'root'
 })
-export class GuardService implements CanActivate {
 
+export class GuardService implements CanActivate {
+  
   constructor(
-    private authenticationService: AuthenticationService,
-    private router: Router
+    private _authenticationService: AuthenticationService,
+    private _router: Router
   ) { }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this.authenticationService.isTokenAuthenticaded()) {
-      return true;
+    if (this._authenticationService.isTokenValid()) {
+
+      this._authenticationService.decodeToken();
+
+      for (let x of next.data.role) {
+        if (this._authenticationService.userInfo.role === x) 
+          return true;
+      }
     }
 
-    this.router.navigate(['/login']);
+    this._router.navigate(['/']);
     return false;
   }
 }

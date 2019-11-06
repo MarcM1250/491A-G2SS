@@ -3,19 +3,35 @@
   <mat-toolbar-row>
     <span>KML Guard</span>
     <span class="fill-remaining-space"></span>
-    <span class="align-center"></span>
-    <span class="example-spacer"></span>
     <!--Buttons-->
     <!--About directs user to our GitHub wiki page.-->
     <button mat-button onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';"> About </button>
     <button mat-button onclick="location.href = 'https://g2ss.com/contact-us/';">Contact</button>
+    <button mat-button (click)="logout()"> <span>[ {{ this.authenticationService.getFirstName() }} ] Log out</span> </button>
+    
+    <div *ngIf="this.currentPage() !== '/main'">
+      <button mat-button (click)="goToMainPage()">
+        <mat-icon>assessment</mat-icon>
+        <span>Manage files</span>
+      </button>
+    </div>
+    
+    <div *ngIf="this.authenticationService.isAdmin() && this.currentPage() !== '/user-management'">
+      <button mat-button (click)="goToUserPanel()">
+        <mat-icon>assessment</mat-icon>
+        <span>Manage users</span>
+      </button>
+    </div>
+
+
+
+    <!--
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
-    <!--End of Buttons-->
-    <!--Start of Misc Options-->
+
     <mat-menu #menu="matMenu">
-      <button mat-menu-item onclick="location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';">
+      <button mat-menu-item onclick="location.href = '#'">
         <mat-icon>settings</mat-icon>
         <span>Settings</span>
       </button>
@@ -23,25 +39,8 @@
         <mat-icon>trending_flat</mat-icon>
         <span>Log out</span>
       </button>
-      <!--
-        TODO: Allow admin to go to both File Management and User Management from Account Creation Page
-        -->
-      <div *ngIf="this.currentPage() !== '/main'">
-        <button mat-menu-item (click)="goToMainPage()">
-          <mat-icon>assessment</mat-icon>
-          <span>Manage files</span>
-        </button>
-      </div>
-      <div *ngIf="this.authenticationService.isAdmin() && this.currentPage() !== '/user-management'">
-        <button mat-menu-item (click)="goToUserPanel()">
-          <mat-icon>assessment</mat-icon>
-          <span>Manage users</span>
-        </button>
-      </div>
-      <!--End of TODO-->
-
-
     </mat-menu>
+    -->
     <!--End of Misc Options-->
   </mat-toolbar-row>
 </mat-toolbar>

@@ -1,15 +1,15 @@
 .login-card {
-  width: 300px;
+  width: 350px;
   margin: 10% auto;
   padding: 50px;
-  text-align: center
-}
-
-.login-fill-remaining-space {
-  flex: 1 1 auto;
+  text-align: center;  
 }
 
 form {
   display: table;
   margin: auto;
+}
+.res-message {
+  font-size: 10pt;
+  color: #666666;
 }

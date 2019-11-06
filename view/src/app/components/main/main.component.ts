@@ -1,16 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { animate, state, style, transition, trigger, keyframes } from '@angular/animations';
-import { MatSort, MatTableDataSource } from '@angular/material';
+import { MatSort, MatTableDataSource, MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material';
 
 import { UploadsService } from '../../services/uploads.service';
-import { Upload } from '../../models/Upload';
+import { Upload } from '../../models/upload.model';
 import { DatePipe } from '@angular/common';
+import { UploadformComponent } from "./uploadform/uploadform.component";
 
-// import 'http://js.api.here.com/v3/3.0/mapsjs-data.js ';
-//
 
 @Component({
   selector: 'app-main-component',
@@ -31,7 +30,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _uploadsService: UploadsService) {
+    private _uploadsService: UploadsService,
+    public dialog: MatDialog) {
 
   }
 
@@ -54,7 +54,7 @@ export class MainComponent implements OnInit {
   filterUse: string;
   
 
-  displayedColumns: string[] = ['title', 'upload_date', 'upload_by'];
+  displayedColumns: string[] = ['kml-icon', 'title', 'upload_date', 'upload_by', 'validation', 'size'];
   expandedElement: Upload | null;
 
   /** Selecting a row from the table----------------------- */
@@ -69,16 +69,9 @@ export class MainComponent implements OnInit {
     this.selection.toggle(x); // then selects current row
   }
 
-
-  //defPredicate: (data: Upload, filter: string) => boolean;
   ngOnInit() {
     this.retrieveData();
   }
-
-  
-
-
-
 
   /**
    * @description: Retrieves data using a subscription
@@ -86,20 +79,27 @@ export class MainComponent implements OnInit {
    * @param: none
    */
 
-  retrieveData() {
-    // get uploads from server
-    this._uploadsService.getUploads().subscribe(
-      response => {
-        this.uploads = response.filter(x => x.delete_date === undefined);
 
-        this.dataSource = new MatTableDataSource(this.uploads);
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-        this.sort.disableClear = true;
-      },
-      (err) => { console.log(err); },
-      () => { });
-    // subcribe similar to promises .then cb: asynchronous
+  pagUpdate = 0
+  
+  retrieveData() {
+    // Get Uploads from server
+       this._uploadsService.getUploads().subscribe(
+        response => {
+          this.uploads = response.filter(x => x.delete_date === undefined);
+          this.dataSource = new MatTableDataSource(this.uploads);
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
+          this.sort.disableClear = true;
+        },
+        (err) => { console.log(err); });
+      // Subcribe similar to promises .then cb: asynchronous
+      this.pagUpdate = 1;
+  }
+
+  // Checks when paginator changes
+  onPaginateChange(event){
+    this.retrieveData();
   }
 
   applyFilter(filterValue: string) {
@@ -111,7 +111,6 @@ export class MainComponent implements OnInit {
     this.dataSource.filter = this.cDate.trim();
   }
 
-  
   overwriteFilter() {
     this.fMonth = '';
     this.fDay = '';
@@ -134,7 +133,8 @@ export class MainComponent implements OnInit {
         return formatted.indexOf(filter) >= 0;
       };
 
-    } 
+    }
+
     else {
       document.getElementById('filterBar').style.display = 'block';
       document.getElementById('filterBar1').style.display = 'none';
@@ -142,15 +142,15 @@ export class MainComponent implements OnInit {
         return data[this.filterSelect].toLowerCase().includes(filter);
       };
     }
+    
     return 0;
   }
 
   deleteUpload(upload: Upload) {
     // If user confirms Delete Confirmation box, proceed to delete
     if (this.deleteCheck === 1) {
-      // delete from UI
 
-      // delete from server
+      // Delete from server
       this._uploadsService.deleteUpload(upload).subscribe(
         (response) => {
           console.log('Response from deleting: ', response);
@@ -164,11 +164,8 @@ export class MainComponent implements OnInit {
         () => {
           this.uploads.splice(this.uploads.indexOf(upload), 1);
           this.dataSource._updateChangeSubscription();
-          // this.dataSource.filterPredicate = (data: Upload, filterValue: string) => data._id !== filterValue;
-          // this.dataSource.filter = upload._id;
         }
       );
-
       // Reset deleteCheck value
       this.deleteCheck = 0;
     }
@@ -187,15 +184,20 @@ export class MainComponent implements OnInit {
     });
   }
 
-
   toTop(): void { // Scrolls to the top of the page
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
   showUploadForm() {
-    this.uploadForm = true;
-    //alert(this.dataSource.filterPredicate);
-    //alert(this.dataSource.filter);
+    //this.uploadForm = true;
+    const dialogRef = this.dialog.open(UploadformComponent, {
+      width: '600px'
+    });
+
+    // On closing Delete Dialog Box
+    dialogRef.afterClosed().subscribe( _ => {
+      this.retrieveData ()
+    });
   }
 
 

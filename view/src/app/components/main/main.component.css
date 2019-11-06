@@ -1,6 +1,6 @@
 table {
   width: 100%;
-  padding-bottom: 65px
+  padding-bottom: 65px;
 }
 
 .mat-form-field {
@@ -13,6 +13,7 @@ td {
 }
 
 tr.example-detail-row {
+  background: #ffffff;
   height: 0;
 }
 
@@ -21,7 +22,7 @@ tr.example-element-row:not(.example-expanded-row):hover {
 }
 
 tr.example-element-row:not(.example-expanded-row):active {
-  background: #efefef;
+  background: #ffffff;
 }
 
 .example-element-row td {
@@ -184,4 +185,12 @@ tr.mat-footer-row {
 
 #uploadOptions {
   display: flex;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red
 }

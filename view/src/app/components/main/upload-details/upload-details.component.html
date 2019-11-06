@@ -12,26 +12,12 @@
     <div class="description-details">{{ element.description}}</div>
   </div>
 
-  <!--File Size-->
-  <div class="element-description-attribution">
-    <div class="description-title"> File Size: </div>
-    <div class="description-details">{{ element.file_size | number:'1.1-2' }} KB</div>
-  </div>
-
   <!--Last Access Date-->
   <div class="element-description-attribution">
     <div class="description-title"> Last Access Date: </div>
     <div class="description-details">{{ element.last_modified | date: 'short' }}</div>
   </div>
 
-  <!--KML Validation-->
-  <div *ngIf=element.parser_status class="element-description-attribution">
-    <div class="description-title"> KML Validation: </div>
-    <div class="description-details"> <span [ngClass]="{
-          'invalid' : element.parser_status.valid == false,
-          'valid' : element.parser_status.valid == true
-          }"><b>{{ element.parser_status.valid }}</b></span></div>
-  </div>
   <!-- KML Errors -->
 
   <div *ngIf="element.parser_status.valid == false" class="element-description-attribution">
@@ -48,19 +34,25 @@
     <div class="description-title">Actions</div>
     <div class="description-details">
       <!--Download Button-->
-      <button mat-raised-button class="downloadButton" (click)="downloadFile(element)">
-        <mat-icon>add_box</mat-icon>
+      <button mat-stroked-button class="downloadButton" (click)="downloadFile(element)">
+        <mat-icon>archive</mat-icon>
         Download
       </button>
-  
+
       <!--Delete Button-->
-      <button mat-raised-button class="deleteButton" (click)="openDialog(element)">
+      <button mat-stroked-button class="deleteButton" (click)="openDialog(element)">
         <mat-icon>delete</mat-icon>
         Delete
       </button>
-  
+
+      <!--Maps Button-->
+      <button mat-stroked-button class="gmButton">
+        <mat-icon>unarchive</mat-icon>
+        Open in GM
+      </button>
+
+
     </div>
   </div>
 
 </div>
-

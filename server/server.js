@@ -1,6 +1,5 @@
 
 const https = require('http');
-const fs = require("fs");
 const app = require('./app');
 const port = process.env.PORT || 3000;
 

@@ -25,7 +25,9 @@ export class LoginComponent implements OnInit {
   }
 
   // For login
-  username: string; password: string;
+  username: string = 'anton';
+  password: string = '123';
+  timer: number = null;
 
   ngOnInit() { }
 
@@ -39,12 +41,14 @@ export class LoginComponent implements OnInit {
           this.message = 'Success :)';
           this.loading = false;
           this.router.navigate(['/main']);
+          
         },
         err => {
+
           this.authenticationService.logout();
           this.loading = false;
-          this.message = 'Authentication Failed :(';
-          console.error('Authentication Failed :(\n', err.status);
+          this.message = err.error.message;
+          this.timer = err.error.timeleft;
         }
       );
   }
