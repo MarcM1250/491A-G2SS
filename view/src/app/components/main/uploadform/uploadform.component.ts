@@ -68,11 +68,10 @@ export class UploadformComponent implements OnInit {
             response => {
               console.log('Server response => ', response as any);
               this.hideUploadForm();
-
               //this.uploads.push(response.createdUpload);
             },
             err => {
-              console.log('Upload failed: ', err.message);
+              this.errorMsg = err.error.message;
             }
           );
       }
