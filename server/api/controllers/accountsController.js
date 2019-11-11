@@ -3,14 +3,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const Account = require('../models/accountModel');
-const USERS_BLOCKED_TIME = 60000;
+const USERS_BLOCKED_TIME = 500000;
 /**
  * RETURN ALL ACCOUNTS IN THE DATABASE 
  */
 
 exports.get_all = (req, res, next) => {
     Account.find({'role': 'user'}) // find accounts in the database using mongoose promise
-        .select("_id username organization first_name last_name last_login_attempt")
+        .select("_id username organization first_name last_name last_login_attempt failed_login_attempts")
         .exec()
         .then(docs => { // doc contains the accounts found, minus the _id field
             res.status(200).send(docs);
@@ -20,7 +20,6 @@ exports.get_all = (req, res, next) => {
             next(err);
         });
 };
-
 
 /**
  * CREATE AN ACCOUNT

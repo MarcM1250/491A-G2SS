@@ -1,11 +1,11 @@
-<mat-card id="overlay" [ngStyle]="{'animation': newStyle}">
+<mat-card id="overlay">
   <mat-card-title style=" text-align: left">KML File Upload Form</mat-card-title>
   <mat-card-content>
-    <mat-form-field appearance="outline" class="fill-width">
+    <mat-form-field class="fill-width">
       <mat-label>Title</mat-label>
-      <input matInput [(ngModel)]="title">
+      <input matInput placeholder="New Title" [(ngModel)]="title">
     </mat-form-field>
-    <mat-form-field appearance="outline" class="fill-width">
+    <mat-form-field class="fill-width">
       <mat-label>File Description</mat-label>
       <textarea matInput placeholder="Lorem ipsum sin dolor" [(ngModel)]="description" id="nogrow"></textarea>
     </mat-form-field>

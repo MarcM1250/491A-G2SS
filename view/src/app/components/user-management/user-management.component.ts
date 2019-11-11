@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { MatTableDataSource, MatSort } from '@angular/material';
-import { Router } from '@angular/router';
 import { ManagementService } from 'src/app/services/management.service';
 import { MatDialog } from '@angular/material';
 import { CreateAccountComponent } from './create-account/create-account.component';
@@ -17,7 +16,6 @@ import { DeleteUserConfirmationComponent } from './edit-account/delete-user-conf
 export class UserManagementComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService, 
-              private router: Router,
               private managementService: ManagementService,
               public dialog: MatDialog) { }
 
@@ -42,21 +40,16 @@ export class UserManagementComponent implements OnInit {
     }, err => {
       console.error(err);
       this.userError = true;
-    }, () => { });
-  }
-
-  showRegistrationForm() {
-    this.router.navigate(['/create-account']);
+    });
   }
 
   unblockUser (uid: string) {
     this.managementService.unblockuser(uid)
     .subscribe(resp => {
       resp.code == '200'?console.log("Success"):''
+      this.getArrayUsers();
     }, err => {
       console.error(err);
-    }, () => { 
-        
     });
   }
 
@@ -73,7 +66,6 @@ export class UserManagementComponent implements OnInit {
   }
 
   deleteUser (uid: string) {
-
     if (this.deleteCheck === true) {
 
       this.managementService.deleteUser(uid)
@@ -90,13 +82,9 @@ export class UserManagementComponent implements OnInit {
     }
     this.deleteCheck = false;
   }
-
-  goToEditUserPage(uid) {
-    this.router.navigate(['/edit-account/' + uid]);
-  }
   
   openNewUserDialog(): void {
-    // Stores file value for use in other functions
+
     const dialogRef = this.dialog.open(CreateAccountComponent, {
       width: '500px',
     });
