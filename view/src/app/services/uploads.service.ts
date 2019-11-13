@@ -10,7 +10,7 @@ import { API_URL } from './authentication.service';
 
 export class UploadsService {
 
-  //httpOptions = { headers: this.createHeaders() };
+  // httpOptions = { headers: this.createHeaders() };
   uploadUrl = API_URL + '/uploads';
 
   // inject httpClient & authentication service into constructor
@@ -34,8 +34,8 @@ export class UploadsService {
     const url = `${API_URL}/downloads/${upload._id}`;
     const newHttpOptions = {
       responseType: 'blob' as 'json'
-      
+
     };
-    return this.http.post<Upload>(url, {'download_via': 'Webapp'},newHttpOptions);
+    return this.http.post<Upload>(url, { download_via: 'Webapp' }, newHttpOptions);
   }
 }

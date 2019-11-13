@@ -33,7 +33,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { FileSizePipe } from "src/app/services/filesize.pipe";
+import { FileSizePipe } from 'src/app/services/filesize.pipe';
 
 // Manually added HTTP provider
 import { AuthenticationService } from './services/authentication.service';
@@ -53,11 +53,10 @@ import { DeleteUserConfirmationComponent } from './components/user-management/ed
  */
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: MainComponent, canActivate: [GuardService], data: { role: ['user','admin']} },
-  { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService], data: {role: ['admin']} },
-  //{ path: 'create-account', component: CreateAccountComponent, canActivate: [GuardService], data: {role: ['admin']}  },
+  { path: 'main', component: MainComponent, canActivate: [GuardService], data: { role: ['user', 'admin'] } },
+  { path: 'user-management', component: UserManagementComponent, canActivate: [GuardService], data: { role: ['admin'] } },
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Display Login first when navigating to root
-   { path: 'edit-account/:uid', component: EditAccountComponent, canActivate: [GuardService], data: {role: ['admin']}  },
+  { path: 'edit-account/:uid', component: EditAccountComponent, canActivate: [GuardService], data: { role: ['admin'] } },
 
   { path: '**', redirectTo: '/login' },
 ];
@@ -95,7 +94,7 @@ const appRoutes: Routes = [
      */
     RouterModule.forRoot(
       appRoutes,
-      //{ enableTracing: true } // <-- debugging purposes only
+      // { enableTracing: true } // <-- debugging purposes only
     ),
 
     // Manually added - used in app.component.html
@@ -109,9 +108,16 @@ const appRoutes: Routes = [
     HttpClientModule,
   ],
   // For Delete Confirmation on Main Page
-  entryComponents: [DeleteConfirmationComponent, DeleteUserConfirmationComponent, CreateAccountComponent, EditAccountComponent, UploadformComponent],
+  entryComponents: [
+    DeleteConfirmationComponent,
+    DeleteUserConfirmationComponent,
+    CreateAccountComponent,
+    EditAccountComponent,
+    UploadformComponent
+  ],
 
-  providers: [AuthenticationService,
+  providers: [
+    AuthenticationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InOutInterceptor,

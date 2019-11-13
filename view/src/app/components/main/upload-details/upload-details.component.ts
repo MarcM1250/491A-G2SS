@@ -12,15 +12,17 @@ import { MatDialog } from '@angular/material';
 })
 export class UploadDetailsComponent implements OnInit {
   @Input() uploads: Upload[];
-  @Input() element;
+  @Input() element: any;
   @Input() dataSource: MatTableDataSource<Upload>;
   upload: Upload; // Holds selected file
 
   deleteCheck: number;
 
+  // tslint:disable: variable-name
   constructor(
     private _uploadsService: UploadsService,
     public dialog: MatDialog) { }
+  // tslint:disable: variable-name
 
   ngOnInit() {
   }
@@ -31,7 +33,7 @@ export class UploadDetailsComponent implements OnInit {
 
       // delete from server
       this._uploadsService.deleteUpload(upload).subscribe(
-        (response) => {         
+        (response) => {
           // delete from UI
           this.uploads.splice(this.uploads.indexOf(upload), 1);
           this.dataSource._updateChangeSubscription();
@@ -40,7 +42,7 @@ export class UploadDetailsComponent implements OnInit {
         err => {
           console.log(err);
           if (err.status === 400) {
-            console.log("Bad Request")
+            console.log('Bad Request');
           }
         }
       );

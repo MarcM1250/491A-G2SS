@@ -7,16 +7,17 @@ import { Pipe, PipeTransform } from '@angular/core';
  *   formats to: 1.00 KB
 */
 
-@Pipe({name: 'toKBMB'})
+@Pipe({ name: 'toKBMB' })
 export class FileSizePipe implements PipeTransform {
   transform(value: number, decimals?: number): string {
 
-    let result = value / Math.pow(2,20);
-    let d = isNaN(decimals) ? 1: decimals;
+    const result = value / Math.pow(2, 20);
+    const d = isNaN(decimals) ? 1 : decimals;
 
-    if (result >= 1.0) 
-        return result.toFixed(d) + ' MB'
-    
+    if (result >= 1.0) {
+      return result.toFixed(d) + ' MB';
+    }
+
     return (result * 1024).toFixed(d) + ' KB';
   }
 }

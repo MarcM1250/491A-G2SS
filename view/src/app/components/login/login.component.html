@@ -42,8 +42,10 @@
     <!--login() in login.component.ts-->
   </mat-card-actions>
   <div *ngIf="loading" class="res-message"> Authorizing ...</div>
-  <div *ngIf="message" class="res-message"> {{ message }} <countdown-app *ngIf="timer" [timeleft]="timer"></countdown-app></div>
-  
+  <div *ngIf="message" class="res-message"> {{ message }} <app-countdown *ngIf="timer" [timeleft]="timer">
+    </app-countdown>
+  </div>
+
 
 </mat-card>
 <!--END OF LOGIN FORM CODE-->

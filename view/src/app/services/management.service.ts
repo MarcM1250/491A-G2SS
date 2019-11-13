@@ -11,41 +11,41 @@ export class ManagementService {
 
   userManagementAPIUrl = API_URL + '/accounts/';
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
   postUserData(userData: FormData): Observable<any> {
-    var object = {};
-    userData.forEach( (value, key) => {
-        object[key] = value;
-    });    
-
-    return this.http.post(this.userManagementAPIUrl + 'create', JSON.stringify(object), { headers: 
-      { "Content-Type": "application/json" }
+    const object = {};
+    userData.forEach((value, key) => {
+      object[key] = value;
     });
-    
+
+    return this.http.post(this.userManagementAPIUrl + 'create', JSON.stringify(object), {
+      headers:
+        { 'Content-Type': 'application/json' }
+    });
   }
 
   updateUserData(userData: FormData): Observable<any> {
-    var object = {};
-    userData.forEach( (value, key) => {
-        object[key] = value;
-    });    
-    
-    return this.http.post(this.userManagementAPIUrl + 'update', JSON.stringify(object), { headers: 
-      { "Content-Type": "application/json" }
+    const object = {};
+    userData.forEach((value, key) => {
+      object[key] = value;
     });
-    
+
+    return this.http.post(this.userManagementAPIUrl + 'update', JSON.stringify(object), {
+      headers:
+        { 'Content-Type': 'application/json' }
+    });
   }
 
   unblockuser(uid: string): Observable<any> {
-    return this.http.post(this.userManagementAPIUrl + 'unblock/'+ uid, null);
-  } 
+    return this.http.post(this.userManagementAPIUrl + 'unblock/' + uid, null);
+  }
 
   getAccount(uid: string): Observable<any> {
-    return this.http.get(this.userManagementAPIUrl + 'info/'+ uid);
-  } 
+    return this.http.get(this.userManagementAPIUrl + 'info/' + uid);
+  }
 
   deleteUser(uid: string): Observable<any> {
-    return this.http.delete(this.userManagementAPIUrl + 'delete/'+ uid);
-  } 
+    return this.http.delete(this.userManagementAPIUrl + 'delete/' + uid);
+  }
 }

@@ -11,21 +11,21 @@ export const API_URL = 'http://localhost:3000/api';
 @Injectable()
 
 export class AuthenticationService {
-  
+
   userInfo: any;
 
-  constructor(private http: HttpClient, private router: Router) { 
-    //this.decodeToken();
+  constructor(private http: HttpClient, private router: Router) {
+    // this.decodeToken();
   }
 
   getCurrentToken() {
     return localStorage.getItem('token');
   }
 
-  getFirstName():string {
+  getFirstName(): string {
     return this.userInfo.first_name;
   }
-  //! TODO: Validate tkn
+  // ! TODO: Validate tkn
   isTokenValid(): boolean {
     return this.isThereAToken();
   }
@@ -50,8 +50,7 @@ export class AuthenticationService {
 
   /**
    * returns if user is allowed to list the other users
-   *
-  */
+   */
 
   isAdmin(): boolean {
     return this.userInfo.role === 'admin';
@@ -75,16 +74,13 @@ export class AuthenticationService {
    * Removes the need for greedy logouts when not asked for.
    * If a user is not allowed to access an admin route, it will boot them to main where they belong, else, log them out
    */
-
-   /*
-  boot(): void {
-    if (localStorage.length === 0) {
-      this.router.navigate(['/login']);
-    } else {
-      this.router.navigate(['main']);
-    }
-  }
-  */
+  // boot(): void {
+  //   if (localStorage.length === 0) {
+  //     this.router.navigate(['/login']);
+  //   } else {
+  //     this.router.navigate(['main']);
+  //   }
+  // }
 
   removeLocalToken(): void {
     localStorage.removeItem('token');
@@ -92,7 +88,6 @@ export class AuthenticationService {
 
   decodeToken(): void {
     this.userInfo = decode(this.getCurrentToken());
-    //console.table(this.userInfo);
+    // console.table(this.userInfo);
   }
-
 }

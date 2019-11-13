@@ -8,7 +8,7 @@ import { MatPaginator } from '@angular/material';
 import { UploadsService } from '../../services/uploads.service';
 import { Upload } from '../../models/upload.model';
 import { DatePipe } from '@angular/common';
-import { UploadformComponent } from "./uploadform/uploadform.component";
+import { UploadformComponent } from './uploadform/uploadform.component';
 
 
 @Component({
@@ -28,12 +28,13 @@ import { UploadformComponent } from "./uploadform/uploadform.component";
 
 export class MainComponent implements OnInit {
 
+  // tslint:disable: variable-name
   constructor(
     private _router: Router,
     private _uploadsService: UploadsService,
     public dialog: MatDialog) {
-
   }
+  // tslint:enable: variable-name
 
   deleteCheck: number;
   filterSelect = '';
@@ -46,20 +47,21 @@ export class MainComponent implements OnInit {
   pipe: DatePipe;
 
   // Used for filtering by date
-  fDay: string = '';
-  fMonth: string = '';
-  fYear: string = '';
-  cDate: string = '';
+  fDay = '';
+  fMonth = '';
+  fYear = '';
+  cDate = '';
 
   filterUse: string;
-  
+
+  pagUpdate = 0;
 
   displayedColumns: string[] = ['kml-icon', 'title', 'upload_date', 'upload_by', 'validation', 'size'];
   expandedElement: Upload | null;
 
   /** Selecting a row from the table----------------------- */
   selection = new SelectionModel<Upload>(true, []);
-  /** End of Selection Methods --------------------------- */
+  /** End of Selection Methods ---------------------------- */
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -78,27 +80,23 @@ export class MainComponent implements OnInit {
    * to the _uploadsService.getUploads function :)
    * @param: none
    */
-
-
-  pagUpdate = 0
-  
   retrieveData() {
     // Get Uploads from server
-       this._uploadsService.getUploads().subscribe(
-        response => {
-          this.uploads = response.filter(x => x.delete_date === undefined);
-          this.dataSource = new MatTableDataSource(this.uploads);
-          this.dataSource.sort = this.sort;
-          this.dataSource.paginator = this.paginator;
-          this.sort.disableClear = true;
-        },
-        (err) => { console.log(err); });
-      // Subcribe similar to promises .then cb: asynchronous
-      this.pagUpdate = 1;
+    this._uploadsService.getUploads().subscribe(
+      response => {
+        this.uploads = response.filter(x => x.delete_date === undefined);
+        this.dataSource = new MatTableDataSource(this.uploads);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        this.sort.disableClear = true;
+      },
+      (err) => { console.log(err); });
+    // Subcribe similar to promises .then cb: asynchronous
+    this.pagUpdate = 1;
   }
 
   // Checks when paginator changes
-  onPaginateChange(event){
+  onPaginateChange(event) {
     this.retrieveData();
   }
 
@@ -116,40 +114,36 @@ export class MainComponent implements OnInit {
     this.fDay = '';
     this.fYear = '';
     this.dataSource.filter = ''; // Set filter to blank when switching
-    this.dataSource.filterPredicate = (data, filter: string):boolean => {
+    this.dataSource.filterPredicate = (data, filter: string): boolean => {
       const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
       return formatted.indexOf(filter) >= 0;
     };
-    
+
     if (this.filterSelect === 'date') {
-      //alert(this.filterSelect);
+      // alert(this.filterSelect);
       document.getElementById('filterBar').style.display = 'none';
       document.getElementById('filterBar1').style.display = 'flex';
 
       this.pipe = new DatePipe('en');
       const defaultPredicate = this.dataSource.filterPredicate;
-      this.dataSource.filterPredicate = (data, filter: string):boolean => {
+      this.dataSource.filterPredicate = (data, filter: string): boolean => {
         const formatted = this.pipe.transform(data.upload_date, 'MM/dd/yyyy');
         return formatted.indexOf(filter) >= 0;
       };
-
-    }
-
-    else {
+    } else {
       document.getElementById('filterBar').style.display = 'block';
       document.getElementById('filterBar1').style.display = 'none';
       this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data[this.filterSelect].toLowerCase().includes(filter);
       };
     }
-    
+
     return 0;
   }
 
   deleteUpload(upload: Upload) {
     // If user confirms Delete Confirmation box, proceed to delete
     if (this.deleteCheck === 1) {
-
       // Delete from server
       this._uploadsService.deleteUpload(upload).subscribe(
         (response) => {
@@ -189,17 +183,16 @@ export class MainComponent implements OnInit {
   }
 
   showUploadForm() {
-    //this.uploadForm = true;
+    // this.uploadForm = true;
     const dialogRef = this.dialog.open(UploadformComponent, {
       width: '600px'
     });
 
     // On closing Delete Dialog Box
-    dialogRef.afterClosed().subscribe( _ => {
-      this.retrieveData ()
+    dialogRef.afterClosed().subscribe(_ => {
+      this.retrieveData();
     });
   }
-
 
   // Close the dropdown if the user clicks outside of it
   onclick = event => {
@@ -213,5 +206,4 @@ export class MainComponent implements OnInit {
       }
     }
   }
-
 }

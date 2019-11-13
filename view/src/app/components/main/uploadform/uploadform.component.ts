@@ -24,6 +24,7 @@ export class UploadformComponent implements OnInit {
   @Input() showForm: boolean;
   @Output() showFormChange = new EventEmitter();
 
+  // tslint:disable: variable-name
   constructor(
     public dialogRef: MatDialogRef<UploadformComponent>,
     private _uploadsService: UploadsService,
@@ -32,6 +33,7 @@ export class UploadformComponent implements OnInit {
     this.title = '';
     this.description = '';
   }
+  // tslintLenable: variable-name
 
   ngOnInit() {
     this.loadFakeData();
@@ -69,7 +71,7 @@ export class UploadformComponent implements OnInit {
               console.log('Server response => ', response as any);
               this.hideUploadForm();
 
-              //this.uploads.push(response.createdUpload);
+              // this.uploads.push(response.createdUpload);
             },
             err => {
               console.log('Upload failed: ', err.message);

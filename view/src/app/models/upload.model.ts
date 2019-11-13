@@ -1,3 +1,4 @@
+// tslint:disable: variable-name
 export class Upload {
   _id: string;
   subject: string;

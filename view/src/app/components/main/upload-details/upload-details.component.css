@@ -1,14 +1,11 @@
-
 .element-description {
   font-size: 14px;
   padding: 8px;
-  
   display: table;
 }
 
 .element-description-attribution {
   display: table-row;
-  
 }
 
 .description-title {
@@ -50,7 +47,6 @@
   color: #dc143c;
   height: 35px;
   margin-right: 10px;
-
   border: 1px;
   border-style: outset;
 }
@@ -61,7 +57,6 @@
   flex-grow: 0.1;
   color: green;
   margin-right: 10px;
-
   height: 35px;
   border: 1px;
   border-style: outset;
