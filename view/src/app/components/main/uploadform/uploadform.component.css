@@ -1,5 +1,5 @@
 #overlay {
-  min-width: 450px;
+  min-width: 400px;
   flex-direction: column;
   align-items: stretch;
   max-height: 550px;
@@ -15,6 +15,7 @@ textarea {
 }
 
 #errorMsg {
+  font-size: 11px;
   color: rgb(170, 1, 1);
 }
 

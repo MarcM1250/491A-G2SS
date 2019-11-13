@@ -28,6 +28,7 @@ exports.get_all = (req, res, next) => {
 exports.create_upload = (req, res, next) => {
     // create an upload object using the data parsed from the request body
     // and parsed metadata using multer
+
     if(!req.file || !req.body.title || !req.body.description){
         return res.status(400).json({
             message: 'Path `title`, `description`, and `file` are required.'
@@ -35,10 +36,14 @@ exports.create_upload = (req, res, next) => {
     }
     
     const xmlString = req.file.buffer.toString('utf8');
+        
+    if( !getMimetype( req.file.buffer.slice(0,17).toString('hex') ) ) {
+        return res.status(400).json({
+            message: "Wrong file format. Only KML files are accepted (XML case sensitive)"
+        });
+    }    
 
     validator.validateXML( xmlString, function (err, validationResults) {
-
-        console.log("My RESULTS: ", validationResults);
 
         // this id will be used for the upload_id and fs.files_id
         const files_id = new mongoose.Types.ObjectId();
@@ -96,11 +101,10 @@ exports.create_upload = (req, res, next) => {
             .catch(err => {
                 err.status = 500;
                 next(err);
-                // res.status(500).json({
-                //     error: err
-                // });
+
             });
     });
+    
 };
 
 /**
@@ -157,10 +161,6 @@ exports.delete_upload = (req, res, next) => {
                     const error = new Error('File already deleted');
                     error.status = 404;
                     next(error);
-                    // res.status(404).json({
-                    //     message: "File already deleted",
-                    //     upload: result
-                    // });
                 }else{
                 // update the "delete_by" and "delete_date" fields 
                 result.updateOne({ $set: { delete_by: req.userData.username, delete_date: Date.now() } })
@@ -207,3 +207,19 @@ exports.delete_upload = (req, res, next) => {
             // })
         })
 };
+
+/*
+function ascii_to_hexa(stringToConvert) {
+    asciiKeys = [];
+    for (let i = 0; i < stringToConvert.length; i++)
+        asciiKeys.push(stringToConvert[i].charCodeAt(0).toString(16));
+    
+    return asciiKeys.join('');
+}
+*/
+
+function getMimetype (fileSignature)  {
+    // <?xml version="1.
+    let xmlSignature = "3c3f786d6c2076657273696f6e3d22312e";
+    return xmlSignature === fileSignature;
+}

@@ -74,7 +74,7 @@ export class UploadformComponent implements OnInit {
               // this.uploads.push(response.createdUpload);
             },
             err => {
-              console.log('Upload failed: ', err.message);
+              this.errorMsg = err.error.message;
             }
           );
       }
