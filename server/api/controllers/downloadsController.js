@@ -6,9 +6,10 @@ const mongoose = require('mongoose');
  * RETURN ALL DOWNLOADS IN THE DATABASE
  */
 exports.get_all = (req, res, next) => {
+    // find all download in the database
     Download.find()
         .select("_id upload_id download_date download_by download_via") // data you want to fetch
-        .sort({'download_date': -1})
+        .sort({ 'download_date': -1 }) // sort by lastest download date
         .exec()
         .then(docs => {
             res.status(200).json({
@@ -18,9 +19,6 @@ exports.get_all = (req, res, next) => {
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
         });
 };
 
@@ -28,26 +26,24 @@ exports.get_all = (req, res, next) => {
  * DOWNLOAD A FILE AND CREATE AN DOWNLOAD
  */
 exports.create_download = (req, res, next) => {
-    if(!mongoose.Types.ObjectId.isValid(req.params.uploadId)){
+    // validate parameter
+    if (!mongoose.Types.ObjectId.isValid(req.params.uploadId)) {
         const error = new Error('Parameter must be a valid ObjectId');
         error.status = 400;
         return next(error);
     }
-    // Find the file by upload_id
+    // find the file by upload_id
     Upload.findById(req.params.uploadId)
         .exec()
         .then(result => {
-            if (result) {
-                // Return if file has a delete_by field
+            if (result) { // there is an upload with that upload_id
+                // return if file has a delete_by field
                 if (result.delete_by !== undefined) {
                     const error = new Error('File already deleted');
                     error.status = 404;
                     return next(error);
-                    // res.status(404).json({
-                    //     message: "File already deleted"
-                    // });
                 } else {
-                    // Create a download object
+                    // create a download object
                     const download = new Download({
                         _id: new mongoose.Types.ObjectId(),
                         upload_id: result._id,
@@ -57,48 +53,37 @@ exports.create_download = (req, res, next) => {
                     });
                     // set response header filename or else it would return response.minetype
                     res.setHeader("Content-Disposition", "attachment; filename=" + result.filename);
-                    // Save the download to the database
+                    // save the download to the database
                     download.save()
-                    .then(result => {
-                        const bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
-                            bucketName: 'uploads'
-                        });
-                        bucket.openDownloadStream(result.upload_id)
-                            .pipe(res)
-                            .on('error', function (error) {
-                                error.status = 500;
-                                return next(error);
-                                // return res.status(500).json({
-                                //     error: error
-                                // });
-                            })
-                            .on('finish', function () {
-                                // console.log('Download successful');
+                        .then(result => {
+                            const bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
+                                bucketName: 'uploads'
                             });
-                    })
+                            bucket.openDownloadStream(result.upload_id)
+                                .pipe(res)
+                                .on('error', function (error) {
+                                    // download failed
+                                    error.status = 500;
+                                    return next(error);
+                                })
+                                .on('finish', function () {
+                                    // download successful
+                                });
+                        })
                         .catch(err => {
                             err.status = 500;
                             next(err);
-                            // res.status(500).json({
-                            //     error: err
-                            // });
                         });
                 }
-            } else {
+            } else { // the upload with that upload_id does not exist
                 const error = new Error('File not found');
                 error.status = 404;
                 next(error);
-                // res.status(404).json({
-                //     message: "No valid entry found for provided ID"
-                // });
             }
         })
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
         });
 };
 
@@ -106,25 +91,24 @@ exports.create_download = (req, res, next) => {
  * GET ALL DOWNLOADS MADE BY A SINGLE USER
  */
 exports.get_download = (req, res, next) => {
+    // find download with the specify username in the database
     Download.find({ download_by: req.params.username })
         .select("upload_id download_date download_by download_via") // data you want to fetch
-        .sort({'download_date': -1})
+        .sort({ 'download_date': -1 }) // sort by lastest download date
         .exec()
         .then(results => {
-            if (results.length >= 1) {
+            if (results.length >= 1) { // there is at least one download record
                 res.status(200).json({
                     downloads: results
                 });
-            } else {
+            } else { // no download record found
                 const error = new Error("No valid entry found for provided user");
                 error.status = 404;
                 next(error);
-                // res.status(404).json({ message: "No valid entry found for provided account" });
             }
         })
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({ error: err });
         });
 };

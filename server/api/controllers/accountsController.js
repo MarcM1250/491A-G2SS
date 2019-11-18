@@ -8,6 +8,7 @@ const Account = require('../models/accountModel');
  * RETURN ALL ACCOUNTS IN THE DATABASE 
  */
 exports.get_all = (req, res, next) => {
+    // find all account in the database
     Account.find({}, { '_id': 0, '__v': 0, 'role': 0 }) // find accounts in the database using mongoose promise
         // .select("username password organization first_name last_name delete_permission")
         .exec()
@@ -28,28 +29,23 @@ exports.get_all = (req, res, next) => {
  */
 exports.get_account = (req, res, next) => {
     const username = req.params.username; // get username from request url
+    // find one account with a specific username in the database
     Account.findOne({ username: username })
         // limit the fields returned
         .select("username password organization first_name last_name delete_permission")
         .exec()
         .then(result => {
-            if (result) {
+            if (result) { // found one account
                 res.status(200).send(result);
-            } else {
+            } else { // found no account
                 const error = new Error('Account not found');
                 error.status = 404;
                 return next(error);
-                // res.status(200).json({
-                //     message: "No valid entry found for provided username"
-                // });
             }
         })
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
         });
 };
 
@@ -57,12 +53,13 @@ exports.get_account = (req, res, next) => {
  * CREATE AN ACCOUNT
  */
 exports.create_account = (req, res, next) => {
-    if(!req.body.username || !req.body.password || !req.body.first_name || !req.body.last_name || req.body.delete_permission === undefined){
+    // validate request body for required fields: username, password, first_name, last_name, delete_permission
+    if (!req.body.username || !req.body.password || !req.body.first_name || !req.body.last_name || req.body.delete_permission === undefined) {
         const error = new Error('Path `username`, `password`, `first_name`, `last_name`, and `delete_permission` are required.');
         error.status = 400;
         return next(error);
     }
-    // Prevent duplicated account with same username
+    // prevent duplicated account with same username by searching the database for account with that username
     Account.find({ username: req.body.username })
         .exec()
         .then(account => {
@@ -70,18 +67,12 @@ exports.create_account = (req, res, next) => {
                 const error = new Error('Account exists');
                 error.status = 409;
                 return next(error);
-                // return res.status(409).json({
-                //     message: 'Account exists'
-                // });
             } else {
                 // hash the password using bcrypt: second argument is the salt
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
                     if (err) {
                         err.status = 500;
                         next(err);
-                        // return res.status(500).json({
-                        //     error: err
-                        // });
                     } else {
                         // create an account object with data parsed from the request body
                         const account = new Account({
@@ -94,7 +85,7 @@ exports.create_account = (req, res, next) => {
                             delete_permission: req.body.delete_permission
                         });
 
-                        // Save the new account to the database
+                        // save the new account to the database
                         account
                             .save()
                             .then(result => {
@@ -106,9 +97,6 @@ exports.create_account = (req, res, next) => {
                             .catch(err => {
                                 err.status = 500;
                                 next(err);
-                                // res.status(500).json({
-                                //     error: err
-                                // });
                             });
                     }
                 });
@@ -120,33 +108,28 @@ exports.create_account = (req, res, next) => {
  * GENERATE A JWT TOKEN FOR A USER IF USERNAME & PASSWORD MATCHED
  */
 exports.login = (req, res, next) => {
-    if(!req.body.username || !req.body.password){
+    // validate request body for required fields: username, password
+    if (!req.body.username || !req.body.password) {
         const error = new Error('Path `username` and `password` are required.');
         error.status = 400;
         return next(error);
     }
-    // Check if the account exists based on the username passed
+    // check if the account exists based on the username passed
     Account.find({ username: req.body.username })
         .exec()
         .then(account => {
-            // Return authentication failed if username does not exist in the DB
+            // return authentication failed if username does not exist in the DB
             if (account.length < 1) {
                 const error = new Error('Username or password does not match');
                 error.status = 401;
                 return next(error);
-                // return res.status(401).json({
-                //     message: 'Authentication failed 01'
-                // });
             }
-            // Use the compare method from bcrypt to verify the account passwords
+            // use the compare method from bcrypt to verify the account passwords
             bcrypt.compare(req.body.password, account[0].password, (err, result) => {
                 if (err) {
                     err.status = 401;
                     console.log(err.message);
                     return next(err);
-                    // return res.status(401).json({
-                    //     message: 'Authentication failed 02'
-                    // });
                 }
                 // if password matched, create a JWT Token for the user
                 if (result) {
@@ -169,17 +152,11 @@ exports.login = (req, res, next) => {
                 const error = new Error('Username or password does not match');
                 error.status = 401;
                 next(error);
-                // res.status(401).json({
-                //     message: 'Authentication failed 03'
-                // });
             });
         })
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
         });
 };
 
@@ -187,10 +164,11 @@ exports.login = (req, res, next) => {
  * DELETE AN ACCOUNT FROM THE DATABASE
  */
 exports.delete_account = (req, res, next) => {
+    // remove an account with the specified username from the database
     Account.remove({ username: req.params.username })
         .exec()
         .then(result => {
-            if(result.deletedCount === 0){
+            if (result.deletedCount === 0) { // deleted nothing
                 const error = new Error('Account not found');
                 error.status = 404;
                 return next(error);
@@ -202,8 +180,5 @@ exports.delete_account = (req, res, next) => {
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
         });
 };
