@@ -4,9 +4,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>KML Guard</span>
-    <span class="login-fill-remaining-space"></span>
-    <span class="align-center"></span>
-    <span class="login-spacer"></span>
+
   </mat-toolbar-row>
 </mat-toolbar>
 <!--END OF TOOLBAR CODE-->
@@ -34,13 +32,13 @@
           </td>
         </tr>
       </table>
+      <mat-card-actions>
+        <button mat-raised-button (click)="onSubmit()" color="primary">Login</button>
+        <!--login() in login.component.ts-->
+      </mat-card-actions>
     </form>
-    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="onSubmit()" color="primary">Login</button>
-    <!--login() in login.component.ts-->
-  </mat-card-actions>
+
   <div *ngIf="loading" class="res-message"> Authorizing ...</div>
   <div *ngIf="message" class="res-message"> {{ message }} <countdown-app *ngIf="timer" [timeleft]="timer"></countdown-app></div>
   

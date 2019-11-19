@@ -1,6 +1,6 @@
 /** */
 import { Injectable } from '@angular/core';
-import { AuthenticationService } from './services/authentication.service';
+import { API_URL, AuthenticationService } from './services/authentication.service';
 import {
   HttpEvent,
   HttpInterceptor,
@@ -22,7 +22,7 @@ export class InOutInterceptor implements HttpInterceptor {
     const tkn = this.authenticationService.getCurrentToken();
 
     if (tkn) {
-      if (request.url.match('localhost')) {
+      if (request.url.match(API_URL)) {
         console.log('Request URL:', request.url);
         request = request.clone({
           setHeaders: {

@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/main']);
     }
     */
+
   }
 
   // For login
@@ -29,7 +30,8 @@ export class LoginComponent implements OnInit {
   password: string = '123';
   timer: number = null;
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   // Login function used when the Login button is clicked.
   onSubmit(): void {
@@ -44,7 +46,6 @@ export class LoginComponent implements OnInit {
           
         },
         err => {
-
           this.authenticationService.logout();
           this.loading = false;
           this.message = err.error.message;
@@ -52,4 +53,5 @@ export class LoginComponent implements OnInit {
         }
       );
   }
+  
 }

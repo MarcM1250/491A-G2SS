@@ -2,25 +2,27 @@
 <mat-toolbar color="primary" class="siteHeader">
   <mat-toolbar-row>
     <span>KML Guard</span>
-    <span class="fill-remaining-space"></span>
     <!--Buttons-->
-    <!--About directs user to our GitHub wiki page.-->
-    <button mat-button onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';"> About </button>
-    <button mat-button onclick="location.href = 'https://g2ss.com/contact-us/';">Contact</button>
-    <button mat-button (click)="logout()"> <span>[ {{ this.authenticationService.getFirstName() }} ] Log out</span> </button>
-    
-    <div *ngIf="this.currentPage() !== '/main'">
-      <button mat-button (click)="goToMainPage()">
-        <mat-icon>assessment</mat-icon>
-        <span>Manage files</span>
+    <div class="menu">
+      <!--About directs user to our GitHub wiki page.-->
+      <button mat-button onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';"> About </button>
+      <button mat-button onclick="location.href = 'https://g2ss.com/contact-us/';">Contact</button>
+      <button mat-button (click)="logout()"> <span>[ {{ this.authenticationService.getFirstName() }} ] Log out</span>
       </button>
-    </div>
     
-    <div *ngIf="this.authenticationService.isAdmin() && this.currentPage() !== '/user-management'">
-      <button mat-button (click)="goToUserPanel()">
-        <mat-icon>assessment</mat-icon>
-        <span>Manage users</span>
-      </button>
+      <div *ngIf="this.currentPage() !== '/main'">
+        <button mat-button (click)="goToMainPage()">
+          <mat-icon>assessment</mat-icon>
+          <span>Manage files</span>
+        </button>
+      </div>
+    
+      <div *ngIf="this.authenticationService.isAdmin() && this.currentPage() !== '/user-management'">
+        <button mat-button (click)="goToUserPanel()">
+          <mat-icon>assessment</mat-icon>
+          <span>Manage users</span>
+        </button>
+      </div>
     </div>
 
 
