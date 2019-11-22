@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Upload } from '../../../models/upload.model';
-import { UploadsService } from '../../../services/uploads.service';
+import { ApiService } from '../../../services/api.service';
 import { DeleteConfirmationComponent } from './delete-confirmation.component';
 import { MatDialog } from '@angular/material';
 
@@ -12,14 +12,14 @@ import { MatDialog } from '@angular/material';
 })
 export class UploadDetailsComponent implements OnInit {
   @Input() uploads: Upload[];
-  @Input() element;
+  @Input() element: any;
   @Input() dataSource: MatTableDataSource<Upload>;
   upload: Upload; // Holds selected file
 
   deleteCheck: number;
 
   constructor(
-    private _uploadsService: UploadsService,
+    private _apiService: ApiService,
     public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class UploadDetailsComponent implements OnInit {
     if (this.deleteCheck === 1) {
 
       // delete from server
-      this._uploadsService.deleteUpload(upload).subscribe(
+      this._apiService.deleteUpload(upload).subscribe(
         (response) => {         
           // delete from UI
           this.uploads.splice(this.uploads.indexOf(upload), 1);
@@ -51,7 +51,7 @@ export class UploadDetailsComponent implements OnInit {
   }
 
   downloadFile(upload: Upload) {
-    this._uploadsService.postDownload(upload).subscribe(data => {
+    this._apiService.postDownload(upload).subscribe(data => {
       const downloadURL = URL.createObjectURL(data);
       const link = document.createElement('a');
       link.href = downloadURL;

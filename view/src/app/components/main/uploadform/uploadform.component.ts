@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { UploadsService } from '../../../services/uploads.service';
+import { ApiService } from '../../../services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { MatSort, MatTableDataSource, MatDialogRef } from '@angular/material';
 import { Upload } from '../../../models/upload.model';
@@ -26,7 +26,7 @@ export class UploadformComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<UploadformComponent>,
-    private _uploadsService: UploadsService,
+    private _uploadsService: ApiService,
     private _httpVar: HttpClient
   ) {
     this.title = '';

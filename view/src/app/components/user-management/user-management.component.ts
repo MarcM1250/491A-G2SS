@@ -31,6 +31,7 @@ export class UserManagementComponent implements OnInit {
   ngOnInit() {
     this.getArrayUsers();
   }
+  
   getArrayUsers () {
     this.authenticationService.getUsers().subscribe( retrievedUsers => {
       this.users = retrievedUsers;

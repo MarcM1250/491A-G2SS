@@ -1,17 +1,18 @@
 import { TestBed } from '@angular/core/testing';
+
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { ManagementService } from './management.service';
+import { ApiService } from './api.service';
 import { AuthenticationService } from './authentication.service';
 
-describe('ManagementService', () => {
+describe('apiService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule],
     providers: [ { provide: AuthenticationService, useValue: ''} ]
   }));
   
   it('should be created', () => {
-    const service: ManagementService = TestBed.get(ManagementService);
+    const service: ApiService = TestBed.get(ApiService);
     expect(service).toBeTruthy();
   });
 });

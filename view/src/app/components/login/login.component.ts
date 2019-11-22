@@ -12,8 +12,8 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private message: string;
-  private loading = false;
+  message: string;
+  loading = false;
 
   constructor(private router: Router, private authenticationService: AuthenticationService) {
     /*
@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
   }
 
   // For login
-  username: string = 'anton';
-  password: string = '123';
+  username: string = '';
+  password: string = '';
   timer: number = null;
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+import { environment } from "../../environments/environment";
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -6,13 +7,13 @@ import { Observable, of, concat, throwError } from 'rxjs';
 import { User } from '../models/user.model';
 import decode from 'jwt-decode';
 
-export const API_URL = 'http://192.168.0.106:3000/api';
+export const API_URL = 'http://localhost:3000/api';
 
 @Injectable()
 
 export class AuthenticationService {
   
-  userInfo: any;
+  userInfo: { first_name : string, role : string };
 
   constructor(private http: HttpClient, private router: Router) { 
     //this.decodeToken();
@@ -48,11 +49,6 @@ export class AuthenticationService {
     }));
   }
 
-  /**
-   * returns if user is allowed to list the other users
-   *
-  */
-
   isAdmin(): boolean {
     return this.userInfo.role === 'admin';
   }
@@ -70,21 +66,6 @@ export class AuthenticationService {
     this.removeLocalToken();
     this.router.navigate(['/login']);
   }
-
-  /**
-   * Removes the need for greedy logouts when not asked for.
-   * If a user is not allowed to access an admin route, it will boot them to main where they belong, else, log them out
-   */
-
-   /*
-  boot(): void {
-    if (localStorage.length === 0) {
-      this.router.navigate(['/login']);
-    } else {
-      this.router.navigate(['main']);
-    }
-  }
-  */
 
   removeLocalToken(): void {
     localStorage.removeItem('token');

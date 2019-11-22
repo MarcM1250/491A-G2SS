@@ -1,0 +1,9 @@
+{
+    "name": "KML Guard",
+    "short_name": "KML Guard",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#3F51B5",
+    "background_color": "#EEE"
+}

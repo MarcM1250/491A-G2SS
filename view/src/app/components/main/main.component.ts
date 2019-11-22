@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material';
 
-import { UploadsService } from '../../services/uploads.service';
+import { ApiService } from '../../services/api.service';
 import { Upload } from '../../models/upload.model';
 import { DatePipe } from '@angular/common';
 import { UploadformComponent } from "./uploadform/uploadform.component";
@@ -30,7 +30,7 @@ export class MainComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _uploadsService: UploadsService,
+    private _apiService: ApiService,
     public dialog: MatDialog) {
 
   }
@@ -46,6 +46,7 @@ export class MainComponent implements OnInit {
   pipe: DatePipe;
 
   // Used for filtering by date
+  fBar: string = '';
   fDay: string = '';
   fMonth: string = '';
   fYear: string = '';
@@ -84,7 +85,7 @@ export class MainComponent implements OnInit {
   
   retrieveData() {
     // Get Uploads from server
-       this._uploadsService.getUploads().subscribe(
+       this._apiService.getUploads().subscribe(
         response => {
           this.uploads = response.filter(x => x.delete_date === undefined);
           this.dataSource = new MatTableDataSource(this.uploads);
@@ -151,7 +152,7 @@ export class MainComponent implements OnInit {
     if (this.deleteCheck === 1) {
 
       // Delete from server
-      this._uploadsService.deleteUpload(upload).subscribe(
+      this._apiService.deleteUpload(upload).subscribe(
         (response) => {
           console.log('Response from deleting: ', response);
         },
@@ -172,7 +173,7 @@ export class MainComponent implements OnInit {
   }
 
   downloadFile(upload: Upload) {
-    this._uploadsService.postDownload(upload).subscribe(data => {
+    this._apiService.postDownload(upload).subscribe(data => {
       const downloadURL = URL.createObjectURL(data);
       const link = document.createElement('a');
       link.href = downloadURL;

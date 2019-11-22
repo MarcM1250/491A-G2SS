@@ -8,7 +8,7 @@ import { API_URL } from './authentication.service';
   providedIn: 'root'
 })
 
-export class UploadsService {
+export class ApiService {
 
   //httpOptions = { headers: this.createHeaders() };
   uploadUrl = API_URL + '/uploads';
