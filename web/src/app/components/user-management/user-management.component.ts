@@ -15,9 +15,10 @@ import { DeleteUserConfirmationComponent } from './edit-account/delete-user-conf
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService, 
-              private managementService: ManagementService,
-              public dialog: MatDialog) { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private managementService: ManagementService,
+    public dialog: MatDialog) { }
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -31,9 +32,9 @@ export class UserManagementComponent implements OnInit {
   ngOnInit() {
     this.getArrayUsers();
   }
-  
-  getArrayUsers () {
-    this.authenticationService.getUsers().subscribe( retrievedUsers => {
+
+  getArrayUsers() {
+    this.authenticationService.getUsers().subscribe(retrievedUsers => {
       this.users = retrievedUsers;
       this.dataSource = new MatTableDataSource(retrievedUsers);
       this.dataSource.sort = this.sort;
@@ -44,14 +45,16 @@ export class UserManagementComponent implements OnInit {
     });
   }
 
-  unblockUser (uid: string) {
+  unblockUser(uid: string) {
     this.managementService.unblockuser(uid)
-    .subscribe(resp => {
-      resp.code == '200'?console.log("Success"):''
-      this.getArrayUsers();
-    }, err => {
-      console.error(err);
-    });
+      .subscribe(resp => {
+        if (resp.code === '200') {
+          console.log('Success');
+        }
+        this.getArrayUsers();
+      }, err => {
+        console.error(err);
+      });
   }
 
   openDeleteUserConfirmation(userId: string): void {
@@ -66,24 +69,26 @@ export class UserManagementComponent implements OnInit {
     });
   }
 
-  deleteUser (uid: string) {
+  deleteUser(uid: string) {
     if (this.deleteCheck === true) {
 
       this.managementService.deleteUser(uid)
-      .subscribe(resp => {
-        resp.code == '200'?console.log("Success"):''
-      }, err => {
-        console.error(err);
-      }, () => { 
-        //let user = this.users.map ( x => { return x._id==uid?x:'' });
-        //this.users.splice(this.users.indexOf(user), 1);
-        this.users.splice(this.users.findIndex(x => x._id == uid), 1);
-        this.dataSource._updateChangeSubscription();
-      });
+        .subscribe(resp => {
+          if (resp.code === '200') {
+            console.log('Success');
+          }
+        }, err => {
+          console.error(err);
+        }, () => {
+          // let user = this.users.map ( x => { return x._id==uid?x:'' });
+          // this.users.splice(this.users.indexOf(user), 1);
+          this.users.splice(this.users.findIndex(x => x._id === uid), 1);
+          this.dataSource._updateChangeSubscription();
+        });
     }
     this.deleteCheck = false;
   }
-  
+
   openNewUserDialog(): void {
 
     const dialogRef = this.dialog.open(CreateAccountComponent, {
@@ -91,20 +96,20 @@ export class UserManagementComponent implements OnInit {
     });
 
     // On closing Delete Dialog Box
-    dialogRef.afterClosed().subscribe( _ => {
-      this.getArrayUsers ()
+    dialogRef.afterClosed().subscribe(_ => {
+      this.getArrayUsers();
     });
   }
 
   openEditUserDialog(userid: string): void {
     const dialogRef = this.dialog.open(EditAccountComponent, {
-      data: { uid : userid },
+      data: { uid: userid },
       width: '500px'
     });
 
     // On closing Delete Dialog Box
-    dialogRef.afterClosed().subscribe( _ => {
-      this.getArrayUsers ()
+    dialogRef.afterClosed().subscribe(_ => {
+      this.getArrayUsers();
     });
   }
 }

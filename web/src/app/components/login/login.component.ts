@@ -15,19 +15,11 @@ export class LoginComponent implements OnInit {
   message: string;
   loading = false;
 
-  constructor(private router: Router, private authenticationService: AuthenticationService) {
-    /*
-    if (this.authenticationService.isTokenAuthenticaded()) {
-      console.log('is tkn authenticated?');
-      this.router.navigate(['/main']);
-    }
-    */
-
-  }
+  constructor(private router: Router, private authenticationService: AuthenticationService) { }
 
   // For login
-  username: string = '';
-  password: string = '';
+  username = '';
+  password = '';
   timer: number = null;
 
   ngOnInit() {
@@ -43,7 +35,7 @@ export class LoginComponent implements OnInit {
           this.message = 'Success :)';
           this.loading = false;
           this.router.navigate(['/main']);
-          
+
         },
         err => {
           this.authenticationService.logout();
@@ -53,5 +45,5 @@ export class LoginComponent implements OnInit {
         }
       );
   }
-  
+
 }
