@@ -10,19 +10,24 @@ Here is an overview of the documentation we provide which can be accessed below 
 ## To test our prototype
 
     To test: 
-        'view' directory: 
-            Enter 'ng serve' command in terminal.
+        'web' directory: 
+            Enter 'npm start' command in terminal.
+            
         'server' directory: 
             In separate terminal, enter 'npm start'.
             'npm i' may need to be ran before 'npm start' to install needed packages.
-        Once view is fully compiled and server is running, navigate to localhost:4200 from your browser.
+            
+        Once view is fully compiled and server is running, navigate to localhost:8080 from your browser.
+        
+    Admin credentials:
+      test username: 'admin'
+      test password: 'admin'
 
     Login page test account credentials from database:
 
       test username: 'user'
-
       test password: 'pass'
-
+      
 ## Dependencies
 
 * [MongoDB](https://www.mongodb.com/)

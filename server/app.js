@@ -4,6 +4,8 @@ const morgan = require('morgan'); // logs requests
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+require('dotenv').config()
+
 const uploadRoutes = require('./api/routes/uploadsRoutes');
 const accountRoutes = require('./api/routes/accountsRoutes');
 const downloadRoutes = require('./api/routes/downloadsRoutes');
