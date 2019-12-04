@@ -37,6 +37,7 @@ import { CountdownComponent } from './components/login/countdown.component';
 import { DeleteUserConfirmationComponent } from './components/user-management/edit-account/delete-user-confirmation.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MapViewerComponent } from './components/main/upload-details/map-viewer.component';
 
 /**
  * Manually added
@@ -69,7 +70,8 @@ const appRoutes: Routes = [
     CreateAccountComponent,
     EditAccountComponent,
     CountdownComponent,
-    FileSizePipe
+    FileSizePipe,
+    MapViewerComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +98,7 @@ const appRoutes: Routes = [
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   // For Delete Confirmation on Main Page
-  entryComponents: [DeleteConfirmationComponent, DeleteUserConfirmationComponent, CreateAccountComponent, EditAccountComponent, UploadformComponent],
+  entryComponents: [DeleteConfirmationComponent, DeleteUserConfirmationComponent, MapViewerComponent, CreateAccountComponent, EditAccountComponent, UploadformComponent],
 
   providers: [AuthenticationService,
     {

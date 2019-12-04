@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Upload } from '../../../models/upload.model';
 import { ApiService } from '../../../services/api.service';
+import { MapViewerComponent } from './map-viewer.component';
 import { DeleteConfirmationComponent } from './delete-confirmation.component';
+
 import { MatDialog } from '@angular/material';
 
 @Component({
@@ -77,6 +79,22 @@ export class UploadDetailsComponent implements OnInit {
       // Set deleteCheck to result value
       this.deleteCheck = result;
       this.deleteUpload(this.upload);
+    });
+  }
+
+  openViewer(upload: Upload): void {
+    // Stores file value for use in other functions
+    this.upload = upload;
+    const dialogRef = this.dialog.open(MapViewerComponent, {
+      data: { uploadId : upload._id },
+      width: '50%', height: '600px'
+    });
+
+    // On closing Delete Dialog Box
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // Set deleteCheck to result value
+      // this.deleteCheck = result;
     });
   }
 }

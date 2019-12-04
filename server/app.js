@@ -9,6 +9,8 @@ require('dotenv').config()
 const uploadRoutes = require('./api/routes/uploadsRoutes');
 const accountRoutes = require('./api/routes/accountsRoutes');
 const downloadRoutes = require('./api/routes/downloadsRoutes');
+const viewRoutes = require('./api/routes/viewRoutes');
+
 const logger = require('./api/utils/logger');
 
 // mongoose.connect('mongodb://localhost:27017/myapp',{ useNewUrlParser: true, useCreateIndex: true });
@@ -45,10 +47,11 @@ app.use((req, res, next) => {
 app.use('/api/uploads', uploadRoutes);
 app.use('/api/accounts', accountRoutes);
 app.use('/api/downloads', downloadRoutes);
+app.use('/api/kmlview', viewRoutes);
 
 // error handling for requests to unsupported routes
 app.use((req, res, next) => {
-    const error = new Error('Not found');
+    const error = new Error('URL not to be found');
     error.status = 404;
     next(error);
 });

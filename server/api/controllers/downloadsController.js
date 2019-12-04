@@ -126,3 +126,61 @@ exports.get_download = (req, res, next) => {
             // res.status(500).json({ error: err });
         });
 };
+
+
+
+
+
+
+
+exports.view_kml = (req, res, next) => {
+    if(!mongoose.Types.ObjectId.isValid(req.params.uploadId)){
+        const error = new Error('Parameter must be a valid ObjectId');
+        error.status = 400;
+        return next(error);
+    }
+    // Find the file by upload_id
+    Upload.findById(req.params.uploadId)
+        .exec()
+        .then(result => {
+            if (result) {
+                // Return if file has a delete_by field
+                if (result.delete_by !== undefined) {
+                    const error = new Error('File already deleted');
+                    error.status = 404;
+                    return next(error);
+
+                } else {                    
+                    // set response header filename or else it would return response.minetype
+                    res.setHeader("Content-Disposition", "attachment; filename=" + result.filename);
+                    // Save the download to the database
+                        const bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
+                            bucketName: 'uploads'
+                        });
+                        bucket.openDownloadStream(result._id)
+                            .pipe(res)
+                            .on('error', function (error) {
+                                error.status = 500;
+                                return next(error);
+  
+                            })
+                            .on('finish', function () {
+                                // console.log('Download successful');
+                            });
+                    
+                }
+            } else {
+                const error = new Error('No valid entry found for provided ID');
+                error.status = 404;
+                next(error);
+
+            }
+        })
+        .catch(err => {
+            err.status = 500;
+            next(err);
+            // res.status(500).json({
+            //     error: err
+            // });
+        });
+};
