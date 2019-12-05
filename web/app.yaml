@@ -1,0 +1,10 @@
+# [START runtime]
+runtime: nodejs10
+service: web
+handlers:
+- url: /
+  static_files: dist/web/index.html
+  upload: dist/web/index.html
+- url: /
+  static_dir: dist/web
+# [END runtime]

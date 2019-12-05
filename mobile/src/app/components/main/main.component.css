@@ -1,0 +1,178 @@
+table {
+  width: 100%;
+  padding-bottom: 65px;
+}
+
+.mat-form-field {
+  font-size: 13px;
+  width: 100%;
+}
+
+td {
+  text-align: left;
+}
+
+tr.example-detail-row {
+  background: #ffffff;
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #f5f5f5;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #ffffff;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.mat-table-sticky {
+  border-top: 1px solid #e0e0e0;
+}
+
+
+/* Filter Style*/
+
+.filterContainer {
+  display: flex;
+  align-items: center;
+  margin: 0.8rem;
+}
+
+#filterBar {
+  min-width: 18rem;
+  float: left;
+  flex-grow: 1;
+  overflow: hidden;
+  display: none;
+}
+
+#filterBar1 {
+  min-width: 18rem;
+  float: left;
+  flex-grow: 1;
+  overflow: hidden;
+  display: none;
+}
+
+#filterDate {
+  width: 50%;
+}
+
+.filterMenu {
+  width: 120px;
+}
+
+/* End Filter Style */
+
+.dropdown {
+  float: right;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: static;
+  left: 30px;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+/* End of Upload Button style */
+
+.rTable {
+  display: table;
+}
+
+.rTableRow {
+  display: table-row;
+}
+
+.rTableHeading {
+  display: table-header-group;
+}
+
+.rTableBody {
+  display: table-row-group;
+}
+
+.rTableFoot {
+  display: table-footer-group;
+}
+
+.rTableCell, .rTableHead {
+  display: table-cell;
+}
+
+/* Footer style */
+
+.btn-container {
+
+  position: fixed;
+  bottom: 62px;
+  right: 2%;
+  z-index: 5;
+}
+
+.footer-btn {
+  font-size: 14px;
+  border: none;
+}
+
+#footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-width: 400px;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  z-index: 100;
+  box-shadow: 0px 0px 10px #aaaaaa;
+}
+
+#uploadOptions {
+  display: flex;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red
+}

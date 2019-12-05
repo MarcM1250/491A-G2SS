@@ -1,0 +1,68 @@
+
+.element-description {
+  width: 100%;
+  font-size: 13px;
+  padding: 2%;
+  display: table;
+  background: rgb(250, 251, 250);
+}
+
+.element-description-attribution {
+  display: table-row;
+}
+
+.description-title {
+  padding-left: 1%;
+  float: left;
+  font-weight: 550;
+  width: 25%;
+  display: table-cell;
+}
+
+.description-details {
+  display: table-cell;
+  padding: 2%;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red
+}
+
+.downloadButton {
+  max-width: 200px;
+  min-width: 10px;
+  flex-grow: 0.1;
+  margin-right: 10px;
+  height: 35px;
+  color: #1042c9;
+  border: 1px;
+  border-style: outset;
+}
+
+.deleteButton {
+  max-width: 200px;
+  min-width: 10px;
+  flex-grow: 0.1;
+  color: #dc143c;
+  height: 35px;
+  margin-right: 10px;
+
+  border: 1px;
+  border-style: outset;
+}
+
+.gmButton {
+  max-width: 200px;
+  min-width: 10px;
+  flex-grow: 0.1;
+  color: green;
+  margin-right: 10px;
+
+  height: 35px;
+  border: 1px;
+  border-style: outset;
+}

@@ -1,0 +1,45 @@
+#overlay {
+  min-width: 400px;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 550px;
+  z-index: 200;
+}
+
+.fill-width {
+  width: 100%;
+}
+
+textarea {
+  height: 200px;
+}
+
+#errorMsg {
+  font-size: 11px;
+  color: rgb(170, 1, 1);
+}
+
+#nogrow {
+  resize: none;
+}
+
+.upload-btn {
+  margin-right: 10px;
+}
+
+.card-actions-container {
+  display: flex;
+  justify-content: space-evenly
+}
+
+.card-actions {
+  color: white;
+  background-color: #4CAF50;
+  width: 40%;
+}
+
+.card-actions:hover {
+  background-color: #45a049;
+}
+
+/* End of Upload Form style */

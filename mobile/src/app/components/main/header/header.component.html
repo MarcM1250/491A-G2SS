@@ -27,18 +27,22 @@
         <span>Manage users</span>
       </button>
 
-      <button mat-menu-item onclick="location.href = '#'">
-        <mat-icon>settings</mat-icon>
-        <span>Settings</span>
-      </button>
 
       <button mat-menu-item (click)="logout()">
         <mat-icon>trending_flat</mat-icon>
         <span>Log out</span>
       </button>
 
-      <button mat-menu-item onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';"> About </button>
-      <button mat-menu-item onclick="location.href = 'https://g2ss.com/contact-us/';">Contact</button>
+      <button mat-menu-item onclick="location.href = 'https://github.com/MarcM1250/491A-G2SS/wiki';"> 
+        <mat-icon>info</mat-icon> 
+        <span>About</span>
+      </button>
+
+
+      <button mat-menu-item onclick="location.href = 'https://g2ss.com/contact-us/';">
+        <mat-icon>email</mat-icon> 
+        <span>Contact</span>
+      </button>
 
     </mat-menu>
 

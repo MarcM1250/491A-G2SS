@@ -1,0 +1,62 @@
+<div class="element-description">
+
+  <!--FileName-->
+  <div class="element-description-attribution">
+    <div class="description-title"> Filename: </div>
+    <div class="description-details">{{ element.filename}}</div>
+  </div>
+
+  <!--Description-->
+  <div class="element-description-attribution">
+    <div class="description-title"> Description: </div>
+    <div class="description-details">{{ element.description}}</div>
+  </div>
+
+  <!--Upload Date-->
+  <div class="element-description-attribution">
+    <div class="description-title"> Uploaded: </div>
+    <div class="description-details">{{ element.upload_date | date: 'short' }}</div>
+  </div>
+
+
+  <!--Uploader-->
+  <div class="element-description-attribution">
+    <div class="description-title"> Uploader: </div>
+    <div class="description-details">{{ element.upload_by }}</div>
+  </div>
+
+  <!-- KML Errors -->
+
+  <div *ngIf="element.parser_status.valid == false" class="element-description-attribution">
+    <div class="description-title">Errors]</div>
+    <div class="description-details">
+      <div *ngFor="let msg of element.parser_status.messages">
+        <li>{{ msg }}</li>
+      </div>
+    </div>
+  </div>
+
+  <!--Buttons-->
+  <div class="element-description-attribution">
+    <div class="description-title">Actions</div>
+    <div class="description-details">
+      <!--Download Button-->
+      <button mat-stroked-button class="downloadButton" (click)="downloadFile(element)">
+        <mat-icon>archive</mat-icon>
+      </button>
+
+      <!--Delete Button-->
+      <button mat-stroked-button class="deleteButton" (click)="openDialog(element)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <!--Maps Button-->
+      <button mat-stroked-button class="gmButton" (click)="openViewer(element)">
+        <mat-icon>unarchive</mat-icon>
+      </button>
+
+
+    </div>
+  </div>
+
+</div>

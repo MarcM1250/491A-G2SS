@@ -1,0 +1,9 @@
+<div mat-dialog-actions>
+  <div style="text-align: center; width: 250px; margin-bottom: 15px">
+    <p style="font-weight: 550;"> Delete this user?</p>
+    <button mat-flat-button color='primary' (click)="onNoClick()">No</button> &nbsp;
+    <button mat-flat-button color='warn' [mat-dialog-close]=true>
+      <mat-icon>delete_forever</mat-icon>Yes
+    </button>
+  </div>
+</div>

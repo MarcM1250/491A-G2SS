@@ -8,7 +8,7 @@ import {} from 'googlemaps';
 
 @Component({
   selector: 'app-map-viewer',
-  template: '<div style="background-color:lightblue;width:300px;height:100%">koko</div>',
+  template: '<div #map style="width:100%;height:100%"></div>',
   styles: ['div { background-color=lightblue; }']
 })
 export class MapViewerComponent implements OnInit, AfterViewInit{
@@ -32,7 +32,7 @@ export class MapViewerComponent implements OnInit, AfterViewInit{
          //mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-   // this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
+   this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
  }
 
  ngAfterViewInit() {
@@ -42,7 +42,7 @@ export class MapViewerComponent implements OnInit, AfterViewInit{
     map: this.map
   }
   
-  //this.kmlLayer = new google.maps.KmlLayer(layerProperties )
+  this.kmlLayer = new google.maps.KmlLayer(layerProperties )
  }
 
 }

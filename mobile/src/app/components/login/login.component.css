@@ -1,0 +1,14 @@
+.login-card {
+  width: 250px;
+  margin: 10% auto;
+  text-align: center;  
+}
+
+form {
+  display: table;
+  margin: auto;
+}
+.res-message {
+  font-size: 10pt;
+  color: #666666;
+}

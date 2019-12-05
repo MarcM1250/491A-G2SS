@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+
+<table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortDirection="desc">
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
+    <td mat-cell *matCellDef="let userElement"> {{userElement.username}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="fullname">
+    <th mat-header-cell *matHeaderCellDef> Full Name</th>
+    <td mat-cell *matCellDef="let userElement">{{ userElement.first_name + ' ' + userElement.last_name}}  </td>
+  </ng-container>
+
+  <ng-container matColumnDef="organization">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Organization </th>
+    <td mat-cell *matCellDef="let userElement"> {{userElement.organization}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastlogin">
+    <th mat-header-cell *matHeaderCellDef> Last Login Attempt</th>
+    <td mat-cell *matCellDef="let userElement">{{ userElement.last_login_attempt | date:'medium' }}  </td>
+  </ng-container>
+
+  <ng-container matColumnDef="editusers">
+    <th mat-header-cell *matHeaderCellDef> Unblock Users</th>
+    <td mat-cell *matCellDef="let userElement">
+      <button *ngIf="userElement.failed_login_attempts === 3; else noshow" (click)="unblockUser(userElement._id)" mat-stroked-button color="primary">Unblock</button>
+      <ng-template #noshow>
+        <button mat-stroked-button disabled>Unblock</button>
+      </ng-template>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="editpassword">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let userElement"> 
+      <button (click)="openEditUserDialog(userElement._id)" mat-stroked-button>Edit</button>  &nbsp; 
+      <button (click)="openDeleteUserConfirmation(userElement._id)" mat-stroked-button color='warn' >Delete</button>  </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="greep">
+    <button mat-raised-button (click)="goToCreationForm()" class="upload-btn">
+    </button>
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div class="footer">
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  <div class="btn-container">
+    <button *ngIf="!userError" mat-flat-button class="footer-btn" (click)="openNewUserDialog()" color="primary">
+      <mat-icon>add_box</mat-icon>
+      Add Account
+    </button>
+  </div>
+</div>
