@@ -9,7 +9,9 @@ exports.get_all = (req, res, next) => {
     // find all download in the database
     Download.find()
         .select("_id upload_id download_date download_by download_via") // data you want to fetch
-        .sort({ 'download_date': -1 }) // sort by lastest download date
+        .limit(parseInt(req.query.count))
+        .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
+        .sort(req.query.sort || {'download_date': -1 })
         .exec()
         .then(docs => {
             res.status(200).json({
@@ -94,7 +96,9 @@ exports.get_download = (req, res, next) => {
     // find download with the specify username in the database
     Download.find({ download_by: req.params.username })
         .select("upload_id download_date download_by download_via") // data you want to fetch
-        .sort({ 'download_date': -1 }) // sort by lastest download date
+        .limit(parseInt(req.query.count))
+        .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
+        .sort(req.query.sort || {'download_date': -1 })
         .exec()
         .then(results => {
             if (results.length >= 1) { // there is at least one download record

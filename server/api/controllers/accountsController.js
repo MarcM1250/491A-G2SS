@@ -8,9 +8,13 @@ const Account = require('../models/accountModel');
  * RETURN ALL ACCOUNTS IN THE DATABASE 
  */
 exports.get_all = (req, res, next) => {
+    console.log(req.query.sort);
     // find all account in the database
     Account.find({}, { '_id': 0, '__v': 0, 'role': 0 }) // find accounts in the database using mongoose promise
         // .select("username password organization first_name last_name delete_permission")
+        .limit(parseInt(req.query.count))
+        .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
+        .sort(req.query.sort)
         .exec()
         .then(docs => { // doc contains the accounts found, minus the _id field
             res.status(200).send(docs);
@@ -18,9 +22,6 @@ exports.get_all = (req, res, next) => {
         .catch(err => {
             err.status = 500;
             next(err);
-            // res.status(500).json({
-            //     error: err
-            // });
         });
 };
 
@@ -145,7 +146,7 @@ exports.login = (req, res, next) => {
                     return res.status(200).json({
                         message: 'Authentication successful',
                         token: token,
-                        delete_permission: account[0].delete_permission
+                        role: account[0].role
                     });
 
                 }

@@ -11,8 +11,10 @@ const { Readable } = require('stream');
 exports.get_all = (req, res, next) => {
     // find all upload in the database
     Upload.find()
-        .sort({ 'upload_date': -1 }) // sort by lastest upload_date
         .select("_id title description upload_date upload_by last_modified delete_by delete_date filename checksum file_size parser_status") // data you want to fetch
+        .limit(parseInt(req.query.count))
+        .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
+        .sort(req.query.sort || { 'upload_date': -1 })
         .exec()
         .then(docs => {
             res.status(200).send(docs);
