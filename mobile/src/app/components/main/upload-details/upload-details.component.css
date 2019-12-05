@@ -4,7 +4,6 @@
   font-size: 13px;
   padding: 2%;
   display: table;
-  background: rgb(250, 251, 250);
 }
 
 .element-description-attribution {
@@ -22,6 +21,12 @@
 .description-details {
   display: table-cell;
   padding: 2%;
+}
+
+.error-list {
+  color: #aa0000;
+  font-style: oblique;;
+  
 }
 
 .valid {

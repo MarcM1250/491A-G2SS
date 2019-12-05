@@ -1,17 +1,18 @@
 .mat-table {
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding-bottom: 65px
 }
 
-.btn-container {
-  display: flex;
+.adduser-btn-container {
+  position: fixed;
+  bottom: 65px;
+  right: 2%;
+  z-index: 5;
 }
 
-.footer-btn {
+.adduser-btn {
   font-size: 14px;
-  border: none;
-  margin: 15px;
 }
 
 .footer {
@@ -19,7 +20,6 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  min-width: 775px;
   left: 0;
   flex-direction: row;
   align-items: center;

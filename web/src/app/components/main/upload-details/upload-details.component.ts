@@ -87,7 +87,7 @@ export class UploadDetailsComponent implements OnInit {
     this.upload = upload;
     const dialogRef = this.dialog.open(MapViewerComponent, {
       data: { uploadId : upload._id },
-      width: '100%', height: '100%'
+      width: '99%', height: '75%'
     });
 
     // On closing Delete Dialog Box

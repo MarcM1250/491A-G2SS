@@ -1,5 +1,5 @@
 <mat-card class="register-card">
-  <mat-card-title>Edit Account for '{{ username }}'</mat-card-title>
+  <mat-card-title>Edit '{{ username }}' account</mat-card-title>
   <mat-card-content>
       <mat-form-field>
         <input matInput placeholder="First Name" [(ngModel)]="first_name" name="first_name" required>
@@ -10,7 +10,6 @@
       <mat-form-field >
         <input matInput placeholder="Organization" [(ngModel)]="organization" name="organization" required>
       </mat-form-field>
-
       <mat-form-field >
         <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
       </mat-form-field>

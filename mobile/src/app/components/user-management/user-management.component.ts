@@ -26,7 +26,7 @@ export class UserManagementComponent implements OnInit {
   deleteCheck: boolean;
 
   dataSource: MatTableDataSource<any>;
-  displayedColumns: string[] = ['username', 'fullname', 'organization', 'lastlogin', 'editusers', 'editpassword'];
+  displayedColumns: string[] = [ 'editusers', 'username', 'fullname', 'editpassword'];
 
   ngOnInit() {
     this.getArrayUsers();
@@ -87,7 +87,7 @@ export class UserManagementComponent implements OnInit {
   openNewUserDialog(): void {
 
     const dialogRef = this.dialog.open(CreateAccountComponent, {
-      width: '500px',
+      width: '95%',
     });
 
     // On closing Delete Dialog Box
@@ -99,7 +99,7 @@ export class UserManagementComponent implements OnInit {
   openEditUserDialog(userid: string): void {
     const dialogRef = this.dialog.open(EditAccountComponent, {
       data: { uid : userid },
-      width: '500px'
+      width: '95%'
     });
 
     // On closing Delete Dialog Box

@@ -2,11 +2,6 @@ mat-form-field {
   width:100%;
 }
 
-.my-form {
-padding: 15px;
-}
 .register-card {
-  width: 420px;
   text-align: center;
-  margin: 10% auto;
 }

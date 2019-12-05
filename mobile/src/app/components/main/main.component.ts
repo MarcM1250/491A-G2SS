@@ -55,7 +55,7 @@ export class MainComponent implements OnInit {
   filterUse: string;
   
 
-  displayedColumns: string[] = ['title', 'upload_date', 'validation', 'size'];
+  displayedColumns: string[] = ['kml_icon', 'title', 'upload_date', 'validation'];
   expandedElement: Upload | null;
 
   /** Selecting a row from the table----------------------- */

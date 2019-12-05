@@ -9,7 +9,6 @@ import {} from 'googlemaps';
 @Component({
   selector: 'app-map-viewer',
   template: '<div #map style="width:100%;height:100%"></div>',
-  styles: ['div { background-color=lightblue; }']
 })
 export class MapViewerComponent implements OnInit, AfterViewInit{
   title = 'maps';

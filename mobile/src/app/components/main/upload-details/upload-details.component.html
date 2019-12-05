@@ -25,13 +25,21 @@
     <div class="description-details">{{ element.upload_by }}</div>
   </div>
 
+
+  <!--File Size-->
+  <div class="element-description-attribution">
+      <div class="description-title"> Size: </div>
+      <div class="description-details">{{ element.file_size | toKBMB:2 }}</div>
+    </div>
+
+
   <!-- KML Errors -->
 
   <div *ngIf="element.parser_status.valid == false" class="element-description-attribution">
-    <div class="description-title">Errors]</div>
+    <div class="description-title">Errors</div>
     <div class="description-details">
       <div *ngFor="let msg of element.parser_status.messages">
-        <li>{{ msg }}</li>
+        <li class="error-list">{{ msg }}</li>
       </div>
     </div>
   </div>
@@ -52,7 +60,7 @@
 
       <!--Maps Button-->
       <button mat-stroked-button class="gmButton" (click)="openViewer(element)">
-        <mat-icon>unarchive</mat-icon>
+        <mat-icon>place</mat-icon>
       </button>
 
 
