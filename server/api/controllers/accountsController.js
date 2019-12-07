@@ -8,9 +8,14 @@ const Account = require('../models/accountModel');
  * RETURN ALL ACCOUNTS IN THE DATABASE 
  */
 exports.get_all = (req, res, next) => {
-    console.log(req.query.sort);
+    const regex = new RegExp(req.query.search, 'i');
     // find all account in the database
-    Account.find({}, { '_id': 0, '__v': 0, 'role': 0 }) // find accounts in the database using mongoose promise
+    Account.find({$or: [
+        { username: regex },
+        { first_name: regex },
+        { last_name: regex },
+        { organization: regex }
+    ]}, { '_id': 0, '__v': 0, 'role': 0 }) // find accounts in the database using mongoose promise
         // .select("username password organization first_name last_name delete_permission")
         .limit(parseInt(req.query.count))
         .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
@@ -182,4 +187,8 @@ exports.delete_account = (req, res, next) => {
             err.status = 500;
             next(err);
         });
+};
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };

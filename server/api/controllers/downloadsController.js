@@ -8,10 +8,10 @@ const mongoose = require('mongoose');
 exports.get_all = (req, res, next) => {
     // find all download in the database
     Download.find()
-        .select("_id upload_id download_date download_by download_via") // data you want to fetch
         .limit(parseInt(req.query.count))
         .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
         .sort(req.query.sort || {'download_date': -1 })
+        .select("_id upload_id download_date download_by download_via") // data you want to fetch
         .exec()
         .then(docs => {
             res.status(200).json({
@@ -95,10 +95,10 @@ exports.create_download = (req, res, next) => {
 exports.get_download = (req, res, next) => {
     // find download with the specify username in the database
     Download.find({ download_by: req.params.username })
-        .select("upload_id download_date download_by download_via") // data you want to fetch
         .limit(parseInt(req.query.count))
         .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
         .sort(req.query.sort || {'download_date': -1 })
+        .select("upload_id download_date download_by download_via") // data you want to fetch
         .exec()
         .then(results => {
             if (results.length >= 1) { // there is at least one download record

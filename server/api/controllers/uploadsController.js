@@ -9,12 +9,18 @@ const { Readable } = require('stream');
  */
 
 exports.get_all = (req, res, next) => {
+    const regex = new RegExp(req.query.search, 'i');
     // find all upload in the database
-    Upload.find()
-        .select("_id title description upload_date upload_by last_modified delete_by delete_date filename checksum file_size parser_status") // data you want to fetch
+    Upload.find({$or: [
+        { title: regex },
+        { description: regex },
+        { upload_by: regex },
+        { filename: regex }
+    ]})
         .limit(parseInt(req.query.count))
         .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
         .sort(req.query.sort || { 'upload_date': -1 })
+        .select("_id title description upload_date upload_by last_modified delete_by delete_date filename checksum file_size parser_status") // data you want to fetch
         .exec()
         .then(docs => {
             res.status(200).send(docs);
