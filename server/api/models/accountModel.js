@@ -8,7 +8,7 @@ const accountSchema = mongoose.Schema({
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     //delete_permission: { type: Boolean, required: true } // used to determine if an account is an admin or not
-    role: { type: String, enum: ['admin', 'user'], default: 'user', required: true }
+    role: { type: String, enum: ['admin', 'user'], required: true }
 });
 
 module.exports = mongoose.model('Account', accountSchema);

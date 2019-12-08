@@ -17,7 +17,7 @@ exports.get_all = (req, res, next) => {
         { organization: regex }
     ]}, { '_id': 0, '__v': 0, 'role': 0 }) // find accounts in the database using mongoose promise
         // .select("username password organization first_name last_name delete_permission")
-        .limit(parseInt(req.query.count))
+        .limit(parseInt(req.query.count) || 20)
         .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
         .sort(req.query.sort)
         .exec()
@@ -38,7 +38,7 @@ exports.get_account = (req, res, next) => {
     // find one account with a specific username in the database
     Account.findOne({ username: username })
         // limit the fields returned
-        .select("username password organization first_name last_name delete_permission")
+        .select("username password organization first_name last_name role")
         .exec()
         .then(result => {
             if (result) { // found one account
@@ -58,13 +58,7 @@ exports.get_account = (req, res, next) => {
 /**
  * CREATE AN ACCOUNT
  */
-exports.create_account = (req, res, next) => {
-    // validate request body for required fields: username, password, first_name, last_name, delete_permission
-    if (!req.body.username || !req.body.password || !req.body.first_name || !req.body.last_name || req.body.delete_permission === undefined) {
-        const error = new Error('Path `username`, `password`, `first_name`, `last_name`, and `delete_permission` are required.');
-        error.status = 400;
-        return next(error);
-    }
+exports.create_account = (req, res, next) => {    
     // prevent duplicated account with same username by searching the database for account with that username
     Account.find({ username: req.body.username })
         .exec()
@@ -88,7 +82,7 @@ exports.create_account = (req, res, next) => {
                             organization: req.body.organization,
                             first_name: req.body.first_name,
                             last_name: req.body.last_name,
-                            delete_permission: req.body.delete_permission
+                            role: req.body.role
                         });
 
                         // save the new account to the database
@@ -114,12 +108,6 @@ exports.create_account = (req, res, next) => {
  * GENERATE A JWT TOKEN FOR A USER IF USERNAME & PASSWORD MATCHED
  */
 exports.login = (req, res, next) => {
-    // validate request body for required fields: username, password
-    if (!req.body.username || !req.body.password) {
-        const error = new Error('Path `username` and `password` are required.');
-        error.status = 400;
-        return next(error);
-    }
     // check if the account exists based on the username passed
     Account.find({ username: req.body.username })
         .exec()
@@ -187,8 +175,4 @@ exports.delete_account = (req, res, next) => {
             err.status = 500;
             next(err);
         });
-};
-
-function escapeRegex(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };

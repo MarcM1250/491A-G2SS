@@ -6,9 +6,13 @@ const mongoose = require('mongoose');
  * RETURN ALL DOWNLOADS IN THE DATABASE
  */
 exports.get_all = (req, res, next) => {
+    const regex = new RegExp(req.query.search, 'i');
     // find all download in the database
-    Download.find()
-        .limit(parseInt(req.query.count))
+    Download.find({$or: [
+        { download_by: regex },
+        { download_via: regex }
+    ]})
+        .limit(parseInt(req.query.count) || 20)
         .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
         .sort(req.query.sort || {'download_date': -1 })
         .select("_id upload_id download_date download_by download_via") // data you want to fetch
@@ -90,12 +94,21 @@ exports.create_download = (req, res, next) => {
 };
 
 /**
- * GET ALL DOWNLOADS MADE BY A SINGLE USER
+ * GET ALL DOWNLOADS OF AN UPLOAD
  */
 exports.get_download = (req, res, next) => {
-    // find download with the specify username in the database
-    Download.find({ download_by: req.params.username })
-        .limit(parseInt(req.query.count))
+    const regex = new RegExp(req.query.search, 'i');
+    // validate parameter from request
+    if (!mongoose.Types.ObjectId.isValid(req.params.uploadId)) {
+        const error = new Error('Parameter must be a valid ObjectId');
+        error.status = 400;
+        return next(error);
+    }
+    // find all downloads with the specify upload_id in the database
+    Download.find({ upload_id: req.params.uploadId, $or: [
+        { download_by: regex },
+        { download_via: regex }]})
+        .limit(parseInt(req.query.count) || 20)
         .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
         .sort(req.query.sort || {'download_date': -1 })
         .select("upload_id download_date download_by download_via") // data you want to fetch
@@ -106,7 +119,7 @@ exports.get_download = (req, res, next) => {
                     downloads: results
                 });
             } else { // no download record found
-                const error = new Error("No valid entry found for provided user");
+                const error = new Error("No valid entry found for provided upload_id");
                 error.status = 404;
                 next(error);
             }

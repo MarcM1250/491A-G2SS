@@ -9,6 +9,6 @@ router.get('/', Authentication.check_admin, DownloadsController.get_all);
 // download a file and create an download record
 router.post('/:uploadId', Authentication.check_user, DownloadsController.create_download);
 // get all downloads made by a single user
-router.get('/:username', Authentication.check_admin, DownloadsController.get_download);
+router.get('/:uploadId', Authentication.check_admin, DownloadsController.get_download);
 
 module.exports = router;

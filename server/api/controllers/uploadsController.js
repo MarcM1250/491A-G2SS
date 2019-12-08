@@ -17,7 +17,7 @@ exports.get_all = (req, res, next) => {
         { upload_by: regex },
         { filename: regex }
     ]})
-        .limit(parseInt(req.query.count))
+        .limit(parseInt(req.query.count) || 20)
         .skip(parseInt(req.query.page-1)*parseInt(req.query.count))
         .sort(req.query.sort || { 'upload_date': -1 })
         .select("_id title description upload_date upload_by last_modified delete_by delete_date filename checksum file_size parser_status") // data you want to fetch
@@ -37,10 +37,10 @@ exports.get_all = (req, res, next) => {
 exports.create_upload = (req, res, next) => {
     // create an upload object using the data parsed from the request body
     // and parsed metadata using multer
-    if (!req.file || !req.body.title || !req.body.description) {
-        return res.status(400).json({
-            message: 'Path `title`, `description`, and `file` are required.'
-        });
+    if (!req.file) {
+        const error = new Error('Path `file` is required.');
+        error.status = 400;
+        return next(error);
     }
 
     // this id will be used for the upload_id and fs.files_id
@@ -66,7 +66,7 @@ exports.create_upload = (req, res, next) => {
             const readableStream = new Readable();
             readableStream.push(req.file.buffer);
             readableStream.push(null);
-
+            
             const bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
                 bucketName: 'uploads'
             });
