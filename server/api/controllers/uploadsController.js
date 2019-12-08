@@ -54,8 +54,7 @@ exports.create_upload = (req, res, next) => {
         last_modified: Date.now(),
         upload_by: req.userData.username,
         filename: req.file.originalname,
-        file_size: req.file.size,
-        parser_status: 'validationResults'
+        file_size: req.file.size
     });
     // save the upload to the database
     upload
