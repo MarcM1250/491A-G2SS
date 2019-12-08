@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Skating Rinks in Switzerland www.skating.ch</name>
+    <description><![CDATA[www.skating.ch]]></description>
+    <Folder>
+      <name>Untitled layer</name>
+      <Style id="orange_dot">
+        <IconStyle>
+          <scale>1.0</scale>
+          <Icon>
+            <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href>
+          </Icon>
+          <hotSpot x="10" y="10" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+      </Style>
+      <Style id="yellow_dot">
+        <IconStyle>
+          <scale>1.2</scale>
+          <Icon>
+            <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+          </Icon>
+          <hotSpot x="10" y="10" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+      </Style>
+      <StyleMap id="dot">
+        <Pair>
+          <key>normal</key>
+          <styleUrl>#orange_dot</styleUrl>
+        </Pair>
+        <Pair>
+          <key>highlight</key>
+          <styleUrl>#yellow_dot</styleUrl>
+        </Pair>
+      </StyleMap>
+      <Placemark>
+        <name>Aarau</name>
+        <description><![CDATA[Aarau <br><br>Place: Aarau<br>Phone/Fax: 062 / 822 72 29 Fax: 062 / 822 73 23<br>Restaurant: 062 / 822 05 38<br>Internet: Kunsteisbahn KEBA Aarau]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.059456,47.38358300000001,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Adelboden</name>
+        <description><![CDATA[Adelboden <br><br>Place: Adelboden<br>Phone/Fax: 033 / 673 18 73]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.560473000000001,46.492779,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aigle</name>
+        <description><![CDATA[Place: Aigle<br>Phone/Fax: 024 / 466 16 20<br>Restaurant: 024 / 466 16 15]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.96762,46.320777,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Arosa</name>
+        <description><![CDATA[Place: Arosa<br>Phone/Fax: 081 / 377 29 30]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.680834,46.79246800000001,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ascona TI</name>
+        <description><![CDATA[Place: Ascona TI<br>Phone/Fax: 091 / 791 89 27]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.774141,46.157756,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bäretswil ZH</name>
+        <description><![CDATA[Place: Bäretswil ZH<br>Phone/Fax: 01 / 939 29 31]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.846985,47.332861,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Basel</name>
+        <description><![CDATA[Place: Basel<br>Phone/Fax: 061 375 12 22<br>Internet: St. Jakob-Arena]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.61017,47.548423,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Basel</name>
+        <description><![CDATA[Place: Basel<br>Phone/Fax: 061 / 361 95 95<br>Restaurant: 061 / 361 95 55]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.59757,47.540616,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Basel</name>
+        <description><![CDATA[Place: Basel<br>Phone/Fax: 061 / 681 53 00<br>Restaurant: 061 / 681 05 60<br>Internet: www.kunschti-eglisee.ch]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.611776,47.565608,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bellinzona TI</name>
+        <description><![CDATA[Place: Bellinzona TI<br>Phone/Fax: 091 / 826 16 65]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.022566000000001,46.191208,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bern</name>
+        <description><![CDATA[Place: Bern<br>Phone/Fax: 031 / 351 01 75<br>Restaurant: 031 / 351 07 38]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.44894,46.940368,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bern</name>
+        <description><![CDATA[Place: Bern<br>Phone/Fax: 031 / 352 88 00]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.471052000000001,46.946244,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bern</name>
+        <description><![CDATA[Place: Bern<br>Phone/Fax: 031 / 332 49 33<br>Restaurant: 031 / 332 56 44]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.468608,46.958524,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bern</name>
+        <description><![CDATA[Place: Bern<br>Phone/Fax: 031 / 381 10 76<br>Restaurant: 031 / 381 12 23]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.378626,46.952259,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Biasca</name>
+        <description><![CDATA[Place: Biasca<br>Phone/Fax: Telé. no. 091 862 49 50<br>Restaurant: 091 / 862 47 44]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.962071,46.358411,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Brione</name>
+        <description><![CDATA[Place: Brione<br>Phone/Fax: 091 / 746 15 93]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.790472,46.2964,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bülach</name>
+        <description><![CDATA[Place: Bülach<br>Phone/Fax: 01 / 863 17 11<br>Internet: Kunsteisbahn Bülach]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.538119,47.519907,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bulle</name>
+        <description><![CDATA[Place: Bulle<br>Phone/Fax: 026 / 919 86 52]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.052583,46.615557,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Burgdorf</name>
+        <description><![CDATA[Place: Burgdorf<br>Phone/Fax: 034 / 422 30 92<br>Internet: Kunsteisbahn Burgdorf]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.613146,47.067183,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Champéry</name>
+        <description><![CDATA[Place: Champéry<br>Phone/Fax: 024 / 479 05 05<br>Internet: www.palladiumdechampery.ch]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.871823,46.177019,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Caux</name>
+        <description><![CDATA[Place: Caux<br>Phone/Fax: 021 / 963 63 80]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.937529,46.433562,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Charmey</name>
+        <description><![CDATA[Place: Charmey<br>Phone/Fax: 026 / 927 19 42]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.158478,46.62138000000001,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Château-d'Oex</name>
+        <description><![CDATA[Place: Château-d'Oex<br>Phone/Fax: 026 / 924 67 00]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.130351,46.474707,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Chiasso</name>
+        <description><![CDATA[Place: Chiasso<br>Phone/Fax: 091 / 683 78 80]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.025164,45.835756,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Chur</name>
+        <description><![CDATA[Place: Chur<br>Phone/Fax: 081 / 284 17 74<br>Restaurant: 081 / 284 74 52<br>Internet: Sportzentrum Obere Au Chur]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.504476,46.858101,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Crans-sur-Sierre</name>
+        <description><![CDATA[Place: Crans-sur-Sierre<br>Phone/Fax: 027 / 485 97 95]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.535487999999999,46.291292,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Davos Platz</name>
+        <description><![CDATA[Place: Davos Platz<br>Phone/Fax: 081 / 415 36 00<br>Restaurant: 081 / 415 36 36]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.827287,46.797588,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Delémont</name>
+        <description><![CDATA[Place: Delémont<br>Phone/Fax: 032 / 422 93 83]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.34518,47.361556,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Dielsdorf</name>
+        <description><![CDATA[Place: Dielsdorf<br>Phone/Fax: 01 / 853 35 20<br>Internet: Sportpark Erlen Dielsdorf]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.452196,47.483304,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Disentis</name>
+        <description><![CDATA[Place: Disentis<br>Phone/Fax: 081 / 947 44 34<br>Internet: Sportzentrum Disentis]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.841045,46.700216,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Dübendorf</name>
+        <description><![CDATA[Place: Dübendorf<br>Phone/Fax: 01 / 820 00 44<br>Internet: Sportanlage im Chreis Dübendorf]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.616137,47.395532,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Düdingen</name>
+        <description><![CDATA[Place: Düdingen<br>Phone/Fax: 026 / 493 43 12<br>Restaurant: 026 / 493 43 01]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.20016,46.84435,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Effretikon</name>
+        <description><![CDATA[Place: Effretikon<br>Phone/Fax: 052 / 355 10 80]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.701502,47.420594,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Engelberg</name>
+        <description><![CDATA[Place: Engelberg<br>Phone/Fax: 041 / 637 34 94<br>Internet: Sportingpark Engelberg]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.405356,46.817896,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fleurier</name>
+        <description><![CDATA[Place: Fleurier<br>Phone/Fax: 032 / 861 12 66<br>Restaurant: 032 / 861 15 63]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.583341,46.900004,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Flims</name>
+        <description><![CDATA[Place: Flims<br>Phone/Fax: 081 / 920 91 91<br>Internet: Sportzentrum Prau la Selva Flims]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.279636,46.823857,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Frauenfeld</name>
+        <description><![CDATA[Place: Frauenfeld<br>Phone/Fax: 052 / 720 80 05<br>Internet: Kunsteisbahn Frauenfeld]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.89941,47.557308,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fribourg</name>
+        <description><![CDATA[Place: Fribourg<br>Phone/Fax: 026 / 322 81 12<br>Restaurant: 026 / 322 84 04]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.155742,46.81554,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Genève</name>
+        <description><![CDATA[Place: Genève<br>Phone/Fax: 022 / 418 40 00<br>Restaurant: 022 / 343 20 71]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.133987,46.195041,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Glarus</name>
+        <description><![CDATA[Place: Glarus<br>Phone/Fax: 055 / 640 47 80<br>Restaurant: 055 / 640 47 40]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.063332,47.049966,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grindelwald</name>
+        <description><![CDATA[Place: Grindelwald<br>Phone/Fax: 033 / 854 12 30<br>Restaurant: 033 / 853 32 77]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.030966,46.624895,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grüsch</name>
+        <description><![CDATA[Place: Grüsch<br>Phone/Fax: 081 / 325 24 23]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.645782,46.980498000000004,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gstaad</name>
+        <description><![CDATA[Place: Gstaad<br>Phone/Fax: 033 / 744 25 71]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.285549999999999,46.471997,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Haute-Nendaz</name>
+        <description><![CDATA[Place: Haute-Nendaz<br>Phone/Fax: 027 / 288 16 87]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.300004,46.18334,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Herisau</name>
+        <description><![CDATA[Place: Herisau<br>Phone/Fax: 071 / 351 51 76<br>Internet: Sportzentrum Herisau]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.289814,47.390119,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Huttwil</name>
+        <description><![CDATA[Place: Huttwil<br>Phone/Fax: 062 / 962 58 50<br>Internet: Nationales Sportzentrum Huttwil]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.823752,47.102284000000004,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Interlaken</name>
+        <description><![CDATA[Place: Interlaken<br>Phone/Fax: 033 / 822 61 63<br>Restaurant: 033 / 823 65 41<br>Internet: Eissportzentrum Bödeli Interlaken]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.85206,46.683715,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Isérables</name>
+        <description><![CDATA[Place: Isérables<br>Phone/Fax: 027 / 306 85 88]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.2448820000000005,46.161702,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kandersteg</name>
+        <description><![CDATA[Place: Kandersteg<br>Phone/Fax: 079/ 352 28 64<br>Internet: E-Mail kebk@bluewin.ch]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.673274999999999,46.493805,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Klosters</name>
+        <description><![CDATA[Place: Klosters<br>Phone/Fax: 081 / 410 21 31]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.958847,46.839022,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kloten</name>
+        <description><![CDATA[Place: Kloten<br>Phone/Fax: 01 / 813 75 46<br>Internet: Zentrum Schluefweg]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.583369,47.444123,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kreuzlingen</name>
+        <description><![CDATA[Place: Kreuzlingen<br>Phone/Fax: Tel. +41 71 677 1530<br>Internet: Bodensee-Arena]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.160366,47.640069,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Küsnacht ZH</name>
+        <description><![CDATA[Place: Küsnacht ZH<br>Phone/Fax: 01 / 910 57 77<br>Restaurant: 01 / 910 57 78]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.580353,47.319662,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>La Chaux-de-Fonds</name>
+        <description><![CDATA[Place: La Chaux-de-Fonds<br>Phone/Fax: 032 / 913 49 31<br>Restaurant: 032 / 913 20 94]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.829947,47.095933,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Langenthal</name>
+        <description><![CDATA[Place: Langenthal<br>Phone/Fax: 062 / 922 45 44<br>Restaurant: 062 / 922 54 30]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.774666000000001,47.206489,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Langnau i.Emmental</name>
+        <description><![CDATA[Langnau i.Emmental <br><br>Place: Langnau i.Emmental<br>Phone/Fax: 034 / 402 20 27]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.787566000000001,46.936854,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Laufen</name>
+        <description><![CDATA[Place: Laufen<br>Phone/Fax: 061 / 761 34 18]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.5023740000000005,47.4191,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lausanne VD</name>
+        <description><![CDATA[Place: Lausanne VD<br>Phone/Fax: 021  620 65 00]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.600224,46.528776,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lausanne VD</name>
+        <description><![CDATA[Place: Lausanne VD<br>Phone/Fax: 021 / 646 81 63<br>Restaurant: 021 / 646 81 64]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.624133,46.535665,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lausanne VD</name>
+        <description><![CDATA[Place: Lausanne VD<br>Phone/Fax: 021 / 616 10 62<br>Restaurant: 021 / 616 10 64]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.633862,46.510892,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Le Locle</name>
+        <description><![CDATA[Place: Le Locle<br>Phone/Fax: 032 / 931 33 88]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.751792,47.057032,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lenk im Simmental</name>
+        <description><![CDATA[Place: Lenk im Simmental<br>Phone/Fax: 033 / 733 22 04]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.458516,46.439985,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lenzerheide</name>
+        <description><![CDATA[Place: Lenzerheide<br>Phone/Fax: 081 / 385 21 85<br>Restaurant: 081 / 384 38 90<br>Internet: Sportzentrum Dieschen Lenzerheide]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.578033,46.65699200000001,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Les Paccots</name>
+        <description><![CDATA[Place: Les Paccots<br>Phone/Fax: 021 / 948 04 05]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.947922,46.521721,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Les Ponts-de-Martel</name>
+        <description><![CDATA[Place: Les Ponts-de-Martel<br>Phone/Fax: 032 / 937 18 21]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.732412,46.997488,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Leukerbad</name>
+        <description><![CDATA[Place: Leukerbad<br>Phone/Fax: 027 / 470 10 37 und<br>Restaurant: 027 / 470 37 48<br>Internet: Sportarena Leukerbad]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.625035,46.381232,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Leysin</name>
+        <description><![CDATA[Place: Leysin<br>Phone/Fax: 024 / 494 24 42 ou 024 / 494 29 21]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.012980000000001,46.345383,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lugano</name>
+        <description><![CDATA[Place: Lugano<br>Phone/Fax: 091 / 942 11 66]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.966478,46.035751,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Luzern</name>
+        <description><![CDATA[Place: Luzern<br>Phone/Fax: 041 362 11 11<br>Internet: Swisslife Arena]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.314087,47.041959,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lyss</name>
+        <description><![CDATA[Place: Lyss<br>Phone/Fax: 032 / 384 41 96]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.312163,47.068697,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Marly</name>
+        <description><![CDATA[Place: Marly<br>Phone/Fax: 026 / 436 10 70 aussi Fax]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.166092,46.769755,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Martigny</name>
+        <description><![CDATA[Place: Martigny<br>Phone/Fax: 027 / 723 14 98]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.072383,46.100973,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Meyrin</name>
+        <description><![CDATA[Place: Meyrin<br>Phone/Fax: 022 / 782 13 00]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.072289,46.233829,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mittelhäusern</name>
+        <description><![CDATA[Mittelhäusern <br><br>Place: Mittelhäusern<br>Phone/Fax: 031 / 731 47 74 / Fax: 031 / 731 47 75]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.362709,46.861981,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Montana-Vermala</name>
+        <description><![CDATA[Place: Montana-Vermala<br>Phone/Fax: 027 / 481 55 26]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.481158,46.31171,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Monthey</name>
+        <description><![CDATA[Place: Monthey<br>Phone/Fax: 024 / 471 74 71<br>Restaurant: 024 / 471 74 72]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.948044,46.252422,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Morges</name>
+        <description><![CDATA[Place: Morges<br>Phone/Fax: 021 / 801 32 14]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.488185,46.511473,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Moutier</name>
+        <description><![CDATA[Place: Moutier<br>Phone/Fax: 032 / 493 12 60<br>Restaurant: 032 / 493 53 59<br>Internet: Patinoire de Moutier]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.370856,47.276725,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Neuchâtel</name>
+        <description><![CDATA[Place: Neuchâtel<br>Phone/Fax: 032 / 727 63 63]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.944328,46.994193,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Niederuzwil</name>
+        <description><![CDATA[Place: Niederuzwil<br>Phone/Fax: 071 / 955 44 88]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.142328,47.441076,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Olten</name>
+        <description><![CDATA[Place: Olten<br>Phone/Fax: 062 212 79 10<br>Restaurant: 062 212 54 77<br>Internet: Sportpark Olten]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.900784000000001,47.348714,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pontresina</name>
+        <description><![CDATA[Place: Pontresina<br>Phone/Fax: 081 / 842 73 41]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.905203,46.488405,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Porrentruy</name>
+        <description><![CDATA[Place: Porrentruy<br>Phone/Fax: 032 / 466 54 12<br>Restaurant: 032 / 466 54 14]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.085064,47.416099,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Porza</name>
+        <description><![CDATA[Place: Porza<br>Phone/Fax: 091 / 942 11 66]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.952016,46.024602,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Porza</name>
+        <description><![CDATA[Place: Porza<br>Phone/Fax: 091 / 941 28 80]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.952018,46.024606,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Prato-Sornico</name>
+        <description><![CDATA[Place: Prato-Sornico<br>Phone/Fax: 091 / 755 12 53]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.654725,46.395606,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Prilly</name>
+        <description><![CDATA[Place: Prilly<br>Phone/Fax: 021 / 620 65 00<br>Restaurant: 021 / 625 58 34]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.600228,46.528778,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rapperswil SG</name>
+        <description><![CDATA[Place: Rapperswil SG<br>Phone/Fax: 055 / 210 80 78<br>Internet: Eisstadion Lido Rapperswil]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.822324,47.224527,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Raron</name>
+        <description><![CDATA[Place: Raron<br>Phone/Fax: 027 / 934 10 24]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.801143,46.309565,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Reinach AG</name>
+        <description><![CDATA[Place: Reinach AG<br>Phone/Fax: 062 / 771 78 74<br>Internet: Kunsteisbahn Oberwynental]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.184407,47.250218,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rheinfelden</name>
+        <description><![CDATA[Place: Rheinfelden<br>Phone/Fax: 061 833 02 36<br>Restaurant: 061 831 03 09<br>Internet: KuBa Freizeitcenter AG]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.812723,47.552055,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Romanshorn</name>
+        <description><![CDATA[Place: Romanshorn<br>Phone/Fax: 071 / 466 75 00<br>Internet: Eissportzentrum Oberthurgau]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.375146,47.55792100000001,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Romont FR</name>
+        <description><![CDATA[Place: Romont FR<br>Phone/Fax: 026 / 652 36 44 aussi Fax<br>Restaurant: 026 / 652 37 52]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.938764,46.703256,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Saas Grund</name>
+        <description><![CDATA[Place: Saas Grund<br>Phone/Fax: 027 / 957 10 47]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.936903,46.122645,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Saignelégier</name>
+        <description><![CDATA[Place: Saignelégier<br>Phone/Fax: 032 / 951 24 74]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.994394000000001,47.255004,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Schaffhausen</name>
+        <description><![CDATA[Place: Schaffhausen<br>Phone/Fax: 052 / 633 02 24<br>Internet: Kunsteisbahn Schaffhausen]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.648053,47.708812,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Schiers</name>
+        <description><![CDATA[Place: Schiers<br>Phone/Fax: 081 / 328 25 28]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.688422,46.97256,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Scuol</name>
+        <description><![CDATA[Place: Scuol<br>Phone/Fax: 081 / 860 02 72<br>Restaurant: 081 / 860 02 82<br>Internet: www.scuol.ch]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>10.299014,46.797294,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Seewen SZ</name>
+        <description><![CDATA[Place: Seewen SZ<br>Phone/Fax: 041 / 811 37 07]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.624552,47.029339,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sierre</name>
+        <description><![CDATA[Place: Sierre<br>Phone/Fax: 027 / 455 04 01]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.536916999999999,46.290884,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sion</name>
+        <description><![CDATA[Place: Sion<br>Phone/Fax: 027 / 324 12 65<br>Restaurant: 027 / 322 22 80]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.3607260000000005,46.233804000000006,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sissach</name>
+        <description><![CDATA[Place: Sissach<br>Phone/Fax: 061 / 971 45 85]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.811867000000001,47.46138,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Solothurn</name>
+        <description><![CDATA[Place: Solothurn<br>Phone/Fax: 032 / 686 55 55<br>Restaurant: 032 / 686 55 31<br>Internet: Sportzentrum Zuchwil]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.556944,47.203705,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sonogno</name>
+        <description><![CDATA[Place: Sonogno<br>Phone/Fax: 091 / 746 17 27]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.783338,46.350004,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>St. Gallen</name>
+        <description><![CDATA[Place: St. Gallen<br>Phone/Fax: 071 / 277 16 36 auch Fax<br>Restaurant: 071 / 277 96 06]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.340922000000003,47.415478,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>St. Moritz</name>
+        <description><![CDATA[Place: St. Moritz<br>Phone/Fax: 081 / 833 50 30]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.837272,46.489446,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Steinmaur</name>
+        <description><![CDATA[Place: Steinmaur<br>Phone/Fax: 01 / 853 34 00]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.451566,47.493528,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>St-Imier</name>
+        <description><![CDATA[Place: St-Imier<br>Phone/Fax: 032 / 941 22 91]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.002123,47.153425,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sursee</name>
+        <description><![CDATA[Place: Sursee<br>Phone/Fax: 041 / 920 22 80]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.112032,47.171617,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Thônex</name>
+        <description><![CDATA[Place: Thônex<br>Phone/Fax: 022 / 305 00 00<br>Internet: www.cssm.ch]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.197775,46.188502,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tramelan</name>
+        <description><![CDATA[Place: Tramelan<br>Phone/Fax: 032 / 487 41 09]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.102853,47.223807,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Triesenberg</name>
+        <description><![CDATA[Place: Triesenberg<br>Phone/Fax: 075 / 263 51 02]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.609738,47.101395,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Urdorf</name>
+        <description><![CDATA[Place: Urdorf<br>Phone/Fax: 01 / 734 18 68]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.425422,47.38691,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Uzwil</name>
+        <description><![CDATA[Place: Uzwil<br>Phone/Fax: 071 / 951 87 81<br>Internet: Kunsteisbahn "Uzehalle" Uzwil]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.14233,47.441076,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Villars-sur-Glâne</name>
+        <description><![CDATA[Place: Villars-sur-Glâne<br>Phone/Fax: 026 / 402 74 13]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.13517,46.798872,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Villars-sur-Ollon</name>
+        <description><![CDATA[Place: Villars-sur-Ollon<br>Phone/Fax: 024 / 495 12 21<br>Restaurant: 024 / 495 12 23]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.051908,46.298256,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Visp</name>
+        <description><![CDATA[Place: Visp<br>Phone/Fax: 027 / 946 26 70]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.888766,46.293213,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vissoie</name>
+        <description><![CDATA[Place: Vissoie<br>Phone/Fax: 027 / 475 30 60]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.586224,46.216379,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wallisellen</name>
+        <description><![CDATA[Place: Wallisellen<br>Phone/Fax: 01 / 830 36 11<br>Internet: Sportanlagen Wallisellen]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.608856,47.413691,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Weinfelden</name>
+        <description><![CDATA[Place: Weinfelden<br>Phone/Fax: 071 / 626 70 40]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.110188000000003,47.565873,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wengen</name>
+        <description><![CDATA[Place: Wengen<br>Phone/Fax: 033 / 855 25 65]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.9209130000000005,46.605924,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wettingen AG</name>
+        <description><![CDATA[Place: Wettingen AG<br>Phone/Fax: 056 / 426 73 46<br>Restaurant: 056 / 426 21 70]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.32647,47.464222,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wetzikon</name>
+        <description><![CDATA[Place: Wetzikon<br>Phone/Fax: 01 / 932 13 87<br>Restaurant: 01 / 932 21 08]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.801026,47.322262,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Widnau</name>
+        <description><![CDATA[Place: Widnau<br>Phone/Fax: 071 / 727 00 45<br>Internet: Sportzentrum/Kunsteisbahn Widnau]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.635819,47.406364,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wil</name>
+        <description><![CDATA[Place: Wil<br>Phone/Fax: 071 / 923 29 16]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.037769,47.457776,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wildhaus</name>
+        <description><![CDATA[Place: Wildhaus<br>Phone/Fax: 071 / 999 16 11<br>Restaurant: 071 / 999 12 11]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>9.348225,47.20023400000001,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Winterthur</name>
+        <description><![CDATA["Place: Winterthur<br>Phone/Fax: 052 234 37 00]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.722036,47.503544,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wohlen AG</name>
+        <description><![CDATA[Place: Wohlen AG<br>Phone/Fax: 056 / 622 44 40<br>Restaurant: 056 / 622 42 72<br>Internet: Kunsteisbahn Wohlen]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.264224,47.360435,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Worb</name>
+        <description><![CDATA[Place: Worb<br>Phone/Fax: 031 / 839 33 38<br>Restaurant: 031 / 839 46 70]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.562326,46.929916,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yverdon-les-Bains</name>
+        <description><![CDATA[Place: Yverdon-les-Bains<br>Phone/Fax: 024 / 425 31 49 / Fax: 024 / 425 45 64<br>Restaurant: 024 / 425 31 18]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>6.644259,46.781657,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zermatt</name>
+        <description><![CDATA[Place: Zermatt<br>Phone/Fax: 027 / 967 36 73<br>Internet: Sportarena Obere Matten Zermatt]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.747941000000001,46.02107800000001,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zuchwil</name>
+        <description><![CDATA[Place: Zuchwil<br>Phone/Fax: 032 / 686 55 55<br>Restaurant: 032 / 686 55 31<br>Internet: Sportzentrum Zuchwil]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>7.556944,47.203704,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zug</name>
+        <description><![CDATA[Place: Zug<br>Phone/Fax: 041 / 725 31 31<br>Restaurant: 041 / 725 31 32]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.531493,47.155834,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zürich-Dolder</name>
+        <description><![CDATA[Place: Zürich-Dolder<br>Phone/Fax: 01 / 267 70 80<br>Restaurant: 01 / 267 70 87<br>Internet: Dolder Kunsteisbahn Zürich]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.576746,47.375615,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zürich-Heuried</name>
+        <description><![CDATA[Place: Zürich-Heuried<br>Phone/Fax: 01 / 455 51 61<br>Restaurant: 01 / 462 15 30<br>Internet: Kunsteisbahn Heuried]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.50606,47.36796,0.0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zürich-Oerlikon</name>
+        <description><![CDATA[Place: Zürich-Oerlikon<br>Phone/Fax: 01 / 315 40 50<br>Internet: Kunsteisbahn Oerlikon]]></description>
+        <styleUrl>orange_dot</styleUrl>
+        <ExtendedData>
+				</ExtendedData>
+        <Point>
+          <coordinates>8.555852,47.412262,0.0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

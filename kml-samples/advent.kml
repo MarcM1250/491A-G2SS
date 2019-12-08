@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Adventsfenster Schliern 2014</name>
+    <Style id="ico1">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_1.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico2">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_2.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico3">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_3.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico4">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_4.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico5">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_5.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico6">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_6.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico7">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_7.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico8">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_8.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico9">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_9.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico10">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_10.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico11">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_11.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico12">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_12.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico13">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_13.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico14">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_14.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico15">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_15.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico16">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_16.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico17">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_17.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico18">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_18.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico19">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_19.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico20">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_20.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico21">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_21.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico22">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_22.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico23">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_23.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="ico24">
+      <IconStyle>
+        <Icon>
+          <href>https://sites.google.com/site/pichostdaevu/_/rsrc/1416772784853/home/number_24.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Placemark>
+      <name>1</name>
+      <description>1: Murrihuus</description>
+      <styleUrl>#ico1</styleUrl>
+      <Point>
+        <coordinates>7.41618,46.90978,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>2</name>
+      <description>2: Gaselstrasse 11</description>
+      <styleUrl>#ico2</styleUrl>
+      <Point>
+        <coordinates>7.41485, 46.90861,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>3</name>
+      <description>3: Fit und Wohl Schaufelweg 117
+</description>
+      <styleUrl>#ico3</styleUrl>
+      <Point>
+        <coordinates>7.41515, 46.90944,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>4</name>
+      <description>4: Schwanden-hubelstr. 19B
+</description>
+      <styleUrl>#ico4</styleUrl>
+      <Point>
+        <coordinates>7.41264, 46.90883,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>5</name>
+      <description>5: Gaselstr. 10
+</description>
+      <styleUrl>#ico5</styleUrl>
+      <Point>
+        <coordinates>7.41471, 46.90906,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>6</name>
+      <description>6: Froschweg 13
+</description>
+      <styleUrl>#ico6</styleUrl>
+      <Point>
+        <coordinates>7.41560, 46.90788,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>7</name>
+      <description>7: Schwanden-hubelstr. 23
+Umtrunk 17.30 bis 19 Uhr </description>
+      <styleUrl>#ico7</styleUrl>
+      <Point>
+        <coordinates>7.41231, 46.90850,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>8</name>
+      <description>8: Schwanden-
+hubelstr. 19D</description>
+      <styleUrl>#ico8</styleUrl>
+      <Point>
+        <coordinates>7.41286, 46.90872,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>9</name>
+      <description>9: Sichelweg 31</description>
+      <styleUrl>#ico9</styleUrl>
+      <Point>
+        <coordinates>7.41595, 46.91372,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>10</name>
+      <description>10: Gaselstrasse 48 </description>
+      <styleUrl>#ico10</styleUrl>
+      <Point>
+        <coordinates>7.41274, 46.90688,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>11</name>
+      <description>11: Schaufelweg 71
+Umtrunk: 18 -19.30 Uhr </description>
+      <styleUrl>#ico11</styleUrl>
+      <Point>
+        <coordinates>7.41184, 46.91092,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>12</name>
+      <description>12: Schwanden-hubelstr. 19K </description>
+      <styleUrl>#ico12</styleUrl>
+      <Point>
+        <coordinates>7.41340, 46.90858,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>13</name>
+      <description>13: Schwanden-hubelstr. 19E
+Umtrunk: 17.30 bis 19 Uhr </description>
+      <styleUrl>#ico13</styleUrl>
+      <Point>
+        <coordinates>7.41293, 46.90867,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>14</name>
+      <description>14: Schwanden-hubelstr. 19C
+Umtrunk 17.30 bis 19 Uhr </description>
+      <styleUrl>#ico14</styleUrl>
+      <Point>
+        <coordinates>7.41279, 46.90882,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>15</name>
+      <description>15: Schwanden-hubelstr. 48 </description>
+      <styleUrl>#ico15</styleUrl>
+      <Point>
+        <coordinates>7.41150, 46.90985,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>16</name>
+      <description>16: Schaufelweg 82 </description>
+      <styleUrl>#ico16</styleUrl>
+      <Point>
+        <coordinates>7.41182, 46.91024,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>17</name>
+      <description>17: Schwanden-
+hubelstr. 12 Umtrunk: 17.30 bis 19 Uhr</description>
+      <styleUrl>#ico17</styleUrl>
+      <Point>
+        <coordinates>7.41362, 46.90913,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>18</name>
+      <description>18: Schaufelweg 22
+Umtrunk: 17.30 bis 19 Uhr </description>
+      <styleUrl>#ico18</styleUrl>
+      <Point>
+        <coordinates>7.41374, 46.91147,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>19</name>
+      <description>19: Schaufelweg 109
+Umtrunk: 17.30 bis 19 Uhr </description>
+      <styleUrl>#ico19</styleUrl>
+      <Point>
+        <coordinates>7.41441, 46.90953,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>20</name>
+      <description>20: Schwanden-hubelstr. 20
+Umtrunk: 17.30 bis 19 Uhr </description>
+      <styleUrl>#ico20</styleUrl>
+      <Point>
+        <coordinates>7.41273, 46.90941,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>21</name>
+      <description>21: Schaufelweg 104</description>
+      <styleUrl>#ico21</styleUrl>
+      <Point>
+        <coordinates>7.41337, 46.90946,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>22</name>
+      <description>22: Schwanden-hubelstr. 19F</description>
+      <styleUrl>#ico22</styleUrl>
+      <Point>
+        <coordinates>7.41306, 46.90871,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>23</name>
+      <description>23: Schaufelweg
+111</description>
+      <styleUrl>#ico23</styleUrl>
+      <Point>
+        <coordinates>7.41468, 46.90974,0.000000</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>24</name>
+      <description>24: Muurihuus
+111</description>
+      <styleUrl>#ico24</styleUrl>
+      <Point>
+        <coordinates>7.41597, 46.90965,0.000000</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

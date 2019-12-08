@@ -1,0 +1,2928 @@
+<?xml version="1.0"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/kml/2.2 https://developers.google.com/kml/schema/kml22gx.xsd">
+  <Document>
+    <name>RTSR-Patinoire</name>
+    <Placemark id="marker_1448962181427">
+      <description>&lt;h4&gt;Patinoire de Court&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 497 98 44
+&lt;br&gt;
+&lt;a href="http://www.jurabernois.ch/download/jura_bernois/Liste_PDF_patinoires_naturelles_JB.pdf" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.33314176594925,47.2364983087227,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448963741287">
+      <description>&lt;h4&gt;Patinoire de Saicourt/Saules&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;a href="https://www.facebook.com/Patinoire-de-Saicourt-357672477709768/timeline" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.21815449626945,47.245133551807236,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448961407149">
+      <description>&lt;h4&gt;Patinoire de Moutier&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 4.50
+&lt;br&gt;R&#xE9;duit: Fr. 3.50
+&lt;br&gt;Enfants : Fr. 2.50
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 4.50
+&lt;br&gt;Enfants : Fr. 2.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 493 12 60
+&lt;br&gt;
+&lt;a href="http://www.moutier.ch/culture-loisirs/sports-et-loisirs/patinoire/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.37877363095081,47.27360032897547,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448961668381">
+      <description>&lt;h4&gt;Patinoire de Cr&#xE9;mines&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 499 99 94
+&lt;br&gt;
+&lt;a href="http://www.jurabernois.ch/download/jura_bernois/Liste_PDF_patinoires_naturelles_JB.pdf" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.443206260215766,47.27935032822223,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448904582112">
+      <description>&lt;h4&gt;Patinoire de Del&#xE9;mont&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.-
+&lt;br&gt;R&#xE9;duit: Fr. 4.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;R&#xE9;duit : Fr. 3.-
+&lt;br&gt;Enfants : Fr. 2.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 422 93 83
+&lt;br&gt;
+&lt;a href="http://www.pati-regio-delemont.ch/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.343014857143148,47.3598886053823,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448960866135">
+      <description>&lt;h4&gt;Patinoire de Bienne&lt;/h4&gt;
+&lt;h5&gt;Deux patinoires couvertes&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 7.50
+&lt;br&gt;R&#xE9;duit: Fr. 6.-
+&lt;br&gt;Enfants : Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 7.50
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 329 19 19
+&lt;br&gt;
+&lt;a href="http://www.tissotarena.ch/fr/sport/patinage.3036.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.281881327967262,47.15600645290667,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448965717534">
+      <description>&lt;h4&gt;Patinoire de Tavannes&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;a href="http://www.jurabernois.ch/download/jura_bernois/Liste_PDF_patinoires_naturelles_JB.pdf" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.198545214292648,47.22419508108293,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448963246448">
+      <description>&lt;h4&gt;Patinoire de Reconvilier&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;a href="http://www.jurabernois.ch/download/jura_bernois/Liste_PDF_patinoires_naturelles_JB.pdf" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.225337981837442,47.22998442652767,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448962608677">
+      <description>&lt;h4&gt;Patinoire de P&#xE9;ry&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;a href="http://www.jurabernois.ch/download/jura_bernois/Liste_PDF_patinoires_naturelles_JB.pdf" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.240928719280929,47.18848609922253,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1449089797830">
+      <description>&lt;h4&gt;Lac Noir&lt;/h4&gt;
+&lt;h5&gt;Lac gel&#xE9; &lt;/h5&gt;
+&lt;a href="http://www.schwarzsee.ch/fr/le-lac-noir-en-hiver" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_lake.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.281835183753494,46.66645034804975,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448962019571">
+      <description>&lt;h4&gt;Patinoire de B&#xE9;vilard&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 491 66 60
+&lt;br&gt;
+&lt;a href="http://www.jurabernois.ch/download/jura_bernois/Liste_PDF_patinoires_naturelles_JB.pdf" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.285277180692368,47.23358155549758,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448903371792">
+      <description>&lt;h4&gt;Patinoire de la Chaux-de-Fonds&lt;/h4&gt;
+&lt;h5&gt;Une patinoire couverte et une patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.-
+&lt;br&gt;R&#xE9;duit : Fr. 3.-
+&lt;br&gt;Enfants : Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 5.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 967 62 98
+&lt;br&gt;
+&lt;a href="http://www.chaux-de-fonds.ch/sports/infrastructures-sportives/patinoire-des-melezes" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.828944497732413,47.096170372657134,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448904809665">
+      <description>&lt;h4&gt;Patinoire de Porrentruy&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.50
+&lt;br&gt;R&#xE9;duit: Fr. 4.50
+&lt;br&gt;Enfants : Fr. 3.50
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;R&#xE9;duit : Fr. 4.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 466 93 32
+&lt;br&gt;
+&lt;a href="http://porrentruy.ch/culture-loisirs/patinoire/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.089957161335113,47.417336139889585,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448904302922">
+      <description>&lt;h4&gt;Patinoire de Saignel&#xE9;gier&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.-
+&lt;br&gt;R&#xE9;duit: Fr. 5.-
+&lt;br&gt;Enfants : Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 951 24 74
+&lt;br&gt;
+&lt;a href="http://www.centredeloisirs.ch/Patinoire.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.0004793569833526,47.25086839820723,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448961192117">
+      <description>&lt;h4&gt;Patinoire de Tramelan&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;R&#xE9;duit: Fr. 4.- / 3.50
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;Enfants : Fr. 2.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 487 41 09
+&lt;br&gt;
+&lt;a href="http://www.tramelan.ch/index.php/fr/vie-locale/infrastructures-sportives-et-culturelles/patinoire-artecad-arena.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.105220561335211,47.22048531709019,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448960595568">
+      <description>&lt;h4&gt;Patinoire de Saint-Imier&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 4.50
+&lt;br&gt;R&#xE9;duit: Fr. 3.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;R&#xE9;duit: 5.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 941 22 91
+&lt;br&gt;
+&lt;a href="http://www.patinoire-saint-imier.ch/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.995388381357297,47.14828522007964,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448965077339">
+      <description>&lt;h4&gt;Patinoire de Sonceboz&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;a href="http://www.jurabernois.ch/download/jura_bernois/Liste_PDF_patinoires_naturelles_JB.pdf" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.179694755812121,47.194217369032486,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448899129121">
+      <description>&lt;h4&gt;Patinoire de Marly&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.-
+&lt;br&gt;R&#xE9;duit: Fr. 5.-
+&lt;br&gt;Enfants : Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;R&#xE9;duit: 5.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 436 10 70
+&lt;br&gt;
+&lt;a href="http://www.patinoiremarly.ch/fr/news.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.1658152123318954,46.769305732989906,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448900488581">
+      <description>&lt;h4&gt;Patinoire de Fribourg, du Bletz&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 5.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 350 11 11
+&lt;br&gt;
+&lt;a href="http://www.fribourgtourisme.ch/fr/patinoire-fribourg.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.1613460280798895,46.80636629117304,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448899726798">
+      <description>&lt;h4&gt;Patinoire de Morat&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;Enfants : Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 5.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 670 51 12
+&lt;br&gt;
+&lt;a href="http://www.murtentourismus.ch/fr/murten-on-ice.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.119417921328883,46.92894872894416,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448902553330">
+      <description>&lt;h4&gt;Patinoire de Neuch&#xE2;tel&lt;/h4&gt;
+&lt;h5&gt;Deux patinoires couvertes&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.50
+&lt;br&gt;R&#xE9;duit : Fr. 4.50
+&lt;br&gt;Enfants : Fr. 4.50
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 6.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 717 85 53
+&lt;br&gt;
+&lt;a href="http://www.lessports.ch/patinoires" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.944914959939708,46.99453654524337,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448901327746">
+      <description>&lt;h4&gt;Patinoire d&#x2019;Estavayer-le-Lac&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 664 80 00
+&lt;br&gt;
+&lt;a href="http://www.estavayer-le-lac.ch/net/net_estavayer.asp?NoOFS=2015&amp;NumStr=180.40.20.30" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.846337198586228,46.85077749480521,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448898880817">
+      <description>&lt;h4&gt;Patinoire de Fribourg, Saint-L&#xE9;onard&lt;/h4&gt;
+&lt;h5&gt;Deux patinoires couvertes&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;R&#xE9;duit: Fr. 4.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 4.-
+&lt;br&gt;R&#xE9;duit: 3.-
+&lt;br&gt;Enfants : Fr. 2.50
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 351 75 48
+&lt;br&gt;
+&lt;a href="http://www.ville-fribourg.ch/fr/pub/officielle/sports/installations/patinoires.cfm#horaires" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.156056386745763,46.817589686942995,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448898083123">
+      <description>&lt;h4&gt;Patinoire de Bulle&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.50
+&lt;br&gt;R&#xE9;duit: Fr. 4.50
+&lt;br&gt;Enfants : Fr. 3.50
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.50
+&lt;br&gt;R&#xE9;duit: 4.50
+&lt;br&gt;Enfants : Fr. 3.50
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 919 86 50
+&lt;br&gt;
+&lt;a href="http://www.espace-gruyere.ch/patinoire/informations-generales.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.048739721832774,46.61516705589528,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448752707354">
+      <description>&lt;h4&gt;Patinoire de Moudon&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 905 88 88 
+&lt;br&gt;
+&lt;a href="http://www.moudon.ch/fr/page.asp?id=1861" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.803915660268783,46.666949095359485,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1449057960897">
+      <description>&lt;h4&gt;Patinoire de Charmey&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 927 55 80
+&lt;br&gt;
+&lt;a href="http://www.la-gruyere.ch/mobile/fr/page.cfm/PatinageLaGruyere/patinoire-charmey" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.167466945122707,46.618548940607766,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448898491774">
+      <description>&lt;h4&gt;Patinoire de Romont&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.-
+&lt;br&gt;R&#xE9;duit: Fr. 5.-
+&lt;br&gt;Enfants : Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 652 36 44
+&lt;br&gt;
+&lt;a href="http://www.cpglane.ch/services/patinoire-de-romont" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.9386902515579525,46.7037369830743,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448897759430">
+      <description>&lt;h4&gt;Patinoire des Paccots&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 7.-
+&lt;br&gt;Enfants : Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 4.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 948 04 05
+&lt;br&gt;
+&lt;a href="http://www.les-paccots.ch/fr/patinage.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.951066727420283,46.521116876465335,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448900780164">
+      <description>&lt;h4&gt;Patinoire de Grandvillard&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 928 11 50
+&lt;br&gt;
+&lt;a href="http://www.la-gruyere.ch/fr/eisbahn-grandvillard.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.082145353306762,46.54034865945855,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1449476527402">
+      <description>&lt;h4&gt;Patinoire d&#x2019;Oron-la-Ville&lt;/h4&gt;
+&lt;h5&gt;Patinoire mobile&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 079 442 64 78
+&lt;br&gt;
+&lt;a href="http://www.patinoire-oron.ch/page/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_lake.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+      </Style>
+      <Point>
+        <coordinates>6.81813328916906,46.57158628349108</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448656777400">
+      <description>&lt;h4&gt;Patinoire d'Yverdon-les-Bains&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.50
+&lt;br&gt;R&#xE9;duit: Fr. 4.-
+&lt;br&gt;Enfants. Fr. 2.50
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 4.50
+&lt;br&gt;Enfants: Fr. 2.50
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 024 423 60 90
+&lt;br&gt;
+&lt;a href="http://www.yverdon-les-bains.ch/prestations-deladministration/sports/installations-sportives/patinoire/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <scale>0.5625</scale>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.64521112818752,46.78411858995256,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448661717173">
+      <description>&lt;h4&gt;Patinoire de la Combe&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 079 219 10 81
+&lt;br&gt;
+&lt;a href="http://www.sainte-croix-les-rasses-tourisme.ch/fr/Hiver/Patinoire/patinoire_naturelle_a_la_combe" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.4636128871666445,46.81660065941244,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448902792178">
+      <description>&lt;h4&gt;Patinoire de Fleurier&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.50
+&lt;br&gt;R&#xE9;duit : Fr. 4.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 4.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 861 12 66
+&lt;br&gt;
+&lt;a href="http://www.patinoirefleurier.ch/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.577893758500694,46.905458942870496,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448903950949">
+      <description>&lt;h4&gt;Lac de Taill&#xE8;res&lt;/h4&gt;
+&lt;h5&gt;Lac gel&#xE9; &lt;/h5&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_lake.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.573595895704898,46.96771075390771,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448903665057">
+      <description>&lt;h4&gt;Patinoire Les Ponts-de-Martel&lt;/h4&gt;
+&lt;h5&gt;Une patinoire couverte &lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 6.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 937 18 21
+&lt;br&gt;
+&lt;a href="http://www.usplesponts.ch/index.php?option=com_content&amp;view=article&amp;id=16&amp;Itemid=3&amp;3cc911e8144d4d48dfb35d0fef92b4a9=0fd93fdf25955757767160435499d74f" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.729764004477257,46.99635851969406,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448903009795">
+      <description>&lt;h4&gt;Patinoire du Locle&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.-
+&lt;br&gt;R&#xE9;duit : Fr. 3.-
+&lt;br&gt;Enfants : Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 5.-
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 032 931 33 88
+&lt;br&gt;
+&lt;a href="http://www.lelocle.ch/qualitedevie/loisirs-et-sport/infrastructures-sportives/patinoire-du-communal/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.758381003646691,47.050634972267055,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448661992433">
+      <description>&lt;h4&gt;Patinoire du Centre sportif du Sentier&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;Enfants: Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 845 17 76
+&lt;br&gt;
+&lt;a href="http://www.centresportif.ch/activites-indoor/patinoire/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.228750754755027,46.60406904222199,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448659463442">
+      <description>&lt;h4&gt;Patinoire de Penthalaz&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 4.-
+&lt;br&gt;Enfants: Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 079 525 18 15
+&lt;br&gt;
+&lt;a href="http://piscine-penthalaz.ch/patinoire/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.52356845389262,46.609076444651194,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448663180560">
+      <description>&lt;h4&gt;Lac de Joux&lt;/h4&gt;
+&lt;h5&gt;Lac gel&#xE9;&lt;/h5&gt;
+&lt;a href="http://www.myvalleedejoux.ch/fr/Hiver/lacdejouxhiver" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.262079188053581,46.62637504932267,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448663272289">
+      <description>&lt;h4&gt;Lac de Joux&lt;/h4&gt;
+&lt;h5&gt;Lac gel&#xE9;&lt;/h5&gt;
+&lt;a href="http://www.myvalleedejoux.ch/fr/Hiver/lacdejouxhiver" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_lake.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.323392662618372,46.67359450511607,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448662961573">
+      <description>&lt;h4&gt;Patinoire mobile&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;br&gt;T&#xE9;l: 024 423 60 90
+&lt;br&gt;
+&lt;a href="http://www.yverdon-les-bains.ch/prestations-deladministration/sports/installations-sportives/patinoire/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <scale>0.5625</scale>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.640917996537248,46.778659623907814,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448656519452">
+      <description>&lt;h4&gt;Les 3 Vallons&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;Enfants. Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 843 00 70
+&lt;br&gt;
+&lt;a href="http://www.patinoirevallorbe.ch/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.373590851630312,46.70898335869487,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448656908462">
+      <description>&lt;h4&gt;Patinoire des Eaux Min&#xE9;rales&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;R&#xE9;duit: Fr. 4.-
+&lt;br&gt;Enfants. Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants: Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 801 32 14
+&lt;br&gt;
+&lt;a href="http://www.morges.ch/vivre-a-morges/sports/patinoire/patinoire-des-eaux-minerales-1911" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.487920298490772,46.5120584575992,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448662467895">
+      <description>&lt;h4&gt;Patinoire de Lutry&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;a href="http://www.sdlutry.ch/patinoire.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.682746163656105,46.502094602252626,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448613860384">
+      <description>&lt;h4&gt;Patinoire de Montchoisi&lt;/h4&gt;
+&lt;h5&gt;Deux patinoires artificielles en plein air&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 7.-
+&lt;br&gt;R&#xE9;duit: Fr. 5.-
+&lt;br&gt;Enfants : Fr. 3.5
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.5
+&lt;br&gt;R&#xE9;duit: 4.5
+&lt;br&gt;Enfants : Fr. 3.5
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 315 49 62
+&lt;br&gt;
+&lt;a href="http://www.lausanne.ch/thematiques/sport-et-olympisme/installations-sportives/patinoires/patinoire-montchoisi.html#" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <scale>0.5625</scale>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.633996941701044,46.51082290429356,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448658027207">
+      <description>&lt;h4&gt;Patinoire du Flon&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 811 05 55
+&lt;br&gt;
+&lt;a href="http://flon.ch/fr/locataires/agenda/pour-les-enfants-3/patinoire-du-flon-7/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <scale>0.5625</scale>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.627000292574055,46.52160865265113,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448640309230">
+      <description>&lt;h4&gt;Centre Intercommunal de Glace de Malley&lt;/h4&gt;
+&lt;h5&gt;Une patinoire artificielle couverte et deux patinoires artificielles couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 7.-
+&lt;br&gt;R&#xE9;duit: Fr. 5.-
+&lt;br&gt;Enfants : Fr. 3.5
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.5
+&lt;br&gt;R&#xE9;duit: 4.5
+&lt;br&gt;Enfants : Fr. 3.5
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 620 65 00
+&lt;br&gt;
+&lt;a href="http://www.lausanne.ch/thematiques/sport-et-olympisme/installations-sportives/patinoires/centre-intercommunal-glace-malley.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <scale>0.5625</scale>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.6002039917142685,46.528833331319994,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448614154547">
+      <description>&lt;h4&gt;Patinoire de la Pontaise&lt;/h4&gt;
+&lt;h5&gt;Patinoire artificielle en plein air&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes : Fr. 5.5-
+&lt;br&gt;R&#xE9;duit: Fr. 4.-
+&lt;br&gt;Enfants : Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Pas de location de patins&lt;/strong&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 315 49 35
+&lt;br&gt;
+&lt;a href="http://www.lausanne.ch/thematiques/sport-et-olympisme/installations-sportives/patinoires/patinoire-pontaise.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <scale>0.5625</scale>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.622789117626853,46.53467732854243,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448748065114">
+      <description>&lt;h4&gt;Patinoire naturelle de Vercorin&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 565 43 54
+&lt;br&gt;
+&lt;a href="http://www.valdanniviers.ch/tourisme/patinoires.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.530709600935899,46.25427269094919,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448975597605">
+      <description>&lt;h4&gt;Patinoire de Grimisuat&lt;/h4&gt;
+
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027/399.28.52
+&lt;br&gt;
+&lt;a href="http://www.grimisuat.ch/commune/patinoire-naturelle-128.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.387380771305292,46.2631377968657,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448750075190">
+      <description>&lt;h4&gt;Patinoire de Bellevue&lt;/h4&gt;
+
+&lt;h5&gt;Patinoire ouverte mobile&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 452 02 33
+&lt;br&gt;
+&lt;a href="http://www.sierre.ch/fr/culture-sport/sport/horaires-piscines-patinoires/patinoire-bellevue-81-136" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.535178384639246,46.29193365536046,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448749950662">
+      <description>&lt;h4&gt;Patinoire de Graben&lt;/h4&gt;
+
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sport
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 452 02 33
+&lt;br&gt;
+&lt;a href="http://www.sierre.ch/fr/culture-sport/sport/horaires-piscines-patinoires/patinoire-de-graben-81-137" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.538245202589855,46.29429687044515,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448749170307">
+      <description>&lt;h4&gt;Lac de l'Etang Long &lt;/h4&gt;
+&lt;h5&gt;Lac gel&#xE9;, en fonction de la m&#xE9;t&#xE9;o&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027/485.97.95
+&lt;br&gt;
+
+&lt;a href="http://www.crans-montana.ch/hiver/fr/activites/activites_hiver/patinage?" target=_blank&gt;Site internet&lt;/a&gt;&lt;/h5&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.468191481317842,46.303044051714,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448750365155">
+      <description>&lt;h4&gt;Patinoire d'Anz&#xE8;re&lt;/h4&gt;
+
+&lt;h5&gt;Patinoire ouverte mobile&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 076 338 71 71
+&lt;br&gt;
+&lt;a href="http://www.anzere.ch/fr/activites/hiver/patinoire-0-1325" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.399294228750794,46.29740699370729,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448747520814">
+      <description>&lt;h4&gt;Patinoire naturelle d'Ayer&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 476 17 05
+&lt;br&gt;
+&lt;a href="http://www.valdanniviers.ch/tourisme/patinoires.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.604393548484907,46.17642668770592,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448747702202">
+      <description>&lt;h4&gt;Patinoire naturelle de Grimentz&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 476 17 00
+&lt;br&gt;
+&lt;a href="http://www.valdanniviers.ch/tourisme/patinoires.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.575724526776214,46.17801440778207,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448747896771">
+      <description>&lt;h4&gt;Patinoire naturelle de Saint-Luc&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 476 17 10
+&lt;br&gt;
+&lt;a href="http://www.valdanniviers.ch/tourisme/patinoires.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.611934370123893,46.217685010987154,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448748370624">
+      <description>&lt;h4&gt;Patinoire artificielle de Vissoie&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 476 15 00
+&lt;br&gt;
+&lt;a href="http://www.valdanniviers.ch/tourisme/patinoires.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.583877587874538,46.21757816672263,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448748229890">
+      <description>&lt;h4&gt;Patinoire naturelle de Zinal&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 476 17 05
+&lt;br&gt;
+&lt;a href="http://www.valdanniviers.ch/tourisme/patinoires.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.625157274483653,46.13543304715731,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448752457169">
+      <description>&lt;h4&gt;Patinoire de plein air de Tourbillon&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 3.-
+&lt;br&gt;Enfants: Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants: Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 203 00 70 
+&lt;br&gt;
+&lt;a href="http://www.sion.ch/particuliers/vieprivee/sports-loisirs/patinoire-jardin-des-eniges-tourbillon.xhtml" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.377234182529915,46.23279724599955,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448656397335">
+      <description>&lt;h4&gt;Centre des Sports de Villars&lt;/h4&gt;
+&lt;h5&gt;Patinoire semi-ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 9.-
+&lt;br&gt;R&#xE9;duit: Fr. 6.-
+&lt;br&gt;Enfants. Fr. 6.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 024 495 12 21
+&lt;br&gt;
+&lt;a href="http://www.cds-villars.ch/fr/sports/patinoire" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.051998507512848,46.29831763878735,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448657597980">
+      <description>&lt;h4&gt;Patinoire de Leysin&lt;/h4&gt;
+&lt;h5&gt;Patinoire semi-couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 7.50
+&lt;br&gt;R&#xE9;duit: Fr. 5.-
+&lt;br&gt;Enfants. Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants: Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 024 493 22 70
+&lt;br&gt;
+&lt;a href="http://www.leysin.ch/fr/SportLoisirs/activites_leysin/hiver/patinoire_leysin" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.018875228209814,46.341342915298526,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448657184984">
+      <description>&lt;h4&gt;Patinoire naturelle de Caux&lt;/h4&gt;
+&lt;h5&gt;Patinoire naturelle&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 4.-
+&lt;br&gt;Enfants. Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 3.-
+&lt;br&gt;Enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 021 963 63 80 
+&lt;br&gt;
+&lt;a href="http://www.commune-de-montreux.ch/partager/sortir/sport/installations-sportives/sports-dhiver/patinage.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.93790261859717,46.4327432943164,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448662165616">
+      <description>&lt;h4&gt;Patinoire du Centre sportif des Diablerets&lt;/h4&gt;
+&lt;h5&gt;Une patinoire couverte et une patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;Enfants: Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;Enfants: Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 024 492 39 88
+&lt;br&gt;
+&lt;a href="http://www.diablerets.ch/fr/inspiration/families/patinoire-curling" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.156815901680777,46.347533259804244,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448662738547">
+      <description>&lt;h4&gt;Patinoire de Vevey&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 3.50
+&lt;br&gt;Enfants: Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;br&gt;T&#xE9;l: 021 925 53 55
+&lt;br&gt;&lt;a href="http://www.vevey-sur-glace.ch/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.840028036455298,46.4601462641337,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448657901436">
+      <description>&lt;h4&gt;Patinoire de Ch&#xE2;teau d'Oex&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;R&#xE9;duit: Fr. 5.-
+&lt;br&gt;Enfants. Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants: Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 026 924 24 50
+&lt;br&gt;
+&lt;a href="http://www.chateau-doex.ch/fr/hiver-sports/patin" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.126189003091071,46.47399730673587,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448752245103">
+      <description>&lt;h4&gt;Patinoire de Champ&#xE9;ry&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;Enfants: Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;R&#xE9;duits: Fr. 3.-
+&lt;br&gt;Enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 024 479 05 05
+&lt;br&gt;
+&lt;a href="http://www.palladiumdechampery.ch/no/patinoire-du-palladium.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.87233217202421,46.17685763194455,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448751463314">
+      <description>&lt;h4&gt;Patinoire du Centre Sportif de Nendaz&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes. Fr. 6.-
+&lt;br&gt;Enfants: Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 288 16 87
+&lt;br&gt;
+&lt;a href="http://www.nendaz.ch/tourisme/patinoire-3776.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.291271743743199,46.18176825308362,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448751816162">
+      <description>&lt;h4&gt;Patinoire naturelle de Morgins&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 024 477 19 92
+&lt;br&gt;
+&lt;a href="http://www.morgins.ch/activite-patinoire-naturelle.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.851038845916164,46.23653946690742,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1449161271608">
+      <description>&lt;h4&gt;Patinoire mcentral&lt;/h4&gt;
+&lt;h5&gt;Patinoire gratuite&lt;/h5&gt;
+&lt;a href="http://mcentral.ch/offres-evenements" target="_blank"&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://map.geo.admin.ch/1449063189/img/maki/pitch-24@2x.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.952441588790509,46.25400167875345,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448748929934">
+      <description>&lt;h4&gt;Patinoire de Monthey &lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;R&#xE9;duits: Fr. 4.-
+&lt;br&gt;Enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 024 471 74 71
+&lt;br&gt;
+&lt;a href="http://www.monthey.ch/xml_1/internet/fr/application/d508/d511/f643.cfm" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.962078254159456,46.260488330714836,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448659669667">
+      <description>&lt;h4&gt;Patinoire de Gryon&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 4.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 024 498 00 00
+&lt;br&gt;
+&lt;a href="http://www.gryon.ch/xml_1/internet/fr/application/d401/d403/f545.cfm" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.071270233583773,46.28271374469592,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448750840755">
+      <description>&lt;h4&gt;Patinoire de la Tzoumaz&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte mobile&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 305 16 00
+&lt;br&gt;
+&lt;a href="http://www.latzoumaz.ch/#!patinoire-extrieure/cq5c" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.234305716728318,46.14474535473941,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448751317674">
+      <description>&lt;h4&gt;Patinoire du Centre Sportif de Verbier&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes. Fr. 7.-
+&lt;br&gt;Enfants: Fr. 5.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 7.-
+&lt;br&gt;Enfants: Fr. 6.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 771 66 01 
+&lt;br&gt;
+&lt;a href="http://www.centre-sportif-verbier.ch/home/patinoire" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.2183606677160235,46.09950344657993,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448751995121">
+      <description>&lt;h4&gt;Lac de Champex&lt;/h4&gt;
+&lt;h5&gt;Lac gel&#xE9;&lt;/h5&gt;
+En fonction de la m&#xE9;t&#xE9;o
+&lt;br&gt;
+&lt;a href="http://www.champex.ch/bouger-champex/loisirs-d-hiver/patinoire" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.1185988878614905,46.02782963542517,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448751975794">
+      <description>&lt;h4&gt;Patinoire naturelle de Champex-Lac&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 775 23 83
+&lt;br&gt;
+&lt;a href="http://www.champex.ch/bouger-champex/loisirs-d-hiver/patinoire" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.122161226530298,46.02594617853473,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448751061397">
+      <description>&lt;h4&gt;Patinoire du Forum d'Octodure&lt;/h4&gt;
+&lt;h5&gt;Patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e libre
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 4.-
+&lt;br&gt;Enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 723 22 00
+&lt;br&gt;
+&lt;a href="http://www.martigny.ch/ville-administration/infrastructures-sportives.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.073002761581752,46.09748266253092,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448748692051">
+      <description>&lt;h4&gt;Patinoire des Comballes&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Dans les magasins de sports
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 027 306 85 88
+&lt;br&gt;
+&lt;a href="http://www.iserables.ch/index.cfm?Page=BuildPageObjet&amp;MainMenuId=123&amp;SousMenuId=248&amp;SousSousMenuId=0&amp;LocationId=0&amp;ObjetId=95&amp;PageId=898" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>7.249514896311581,46.15235528610456,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448747031489">
+      <description>&lt;h4&gt;Patinoire d&#x2019;Ani&#xE8;res &lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+T&#xE9;l: 079 476 65 00
+&lt;br&gt;
+&lt;a href="http://www.lapati.ch/fr/ou-patiner/geneve/index2_24.htm" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.226001598584851,46.27416696832737,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448744648040">
+      <description>&lt;h4&gt;Versoix on Ice&lt;/h4&gt;
+&lt;h5&gt;Une patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 4.-
+&lt;br&gt;Enfants: Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 022 775 66 08
+&lt;br&gt;
+&lt;a href="http://www.versoix.ch/?page=1334" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.168601893746001,46.27704768754095,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448658583176">
+      <description>&lt;h4&gt;Patinoire de Terre Sainte - Coppet&lt;/h4&gt;
+&lt;h5&gt;Patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 079 256 48 16
+&lt;br&gt;
+&lt;a href="http://www.coppet.ch/fr/loisirs/installationssportives/welcome.php?action=showobject&amp;object_id=8247" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.1910671861811135,46.31758734802498,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448659194910">
+      <description>&lt;h4&gt;Chavannes de Bogis -  Best Western Hotel&lt;/h4&gt;
+&lt;h5&gt;Petite patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite si consommation
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Location gratuite si consommation
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 022 960 81 81
+&lt;br&gt;
+&lt;a href="http://www.hotel-chavannes.ch/fr/index.php" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.1609923572055205,46.33479079997333,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448655920813">
+      <description>&lt;h4&gt;Patinoire couverte de Nyon-Rive&lt;/h4&gt;
+&lt;h5&gt;Patinoire artificielle couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+Gratuit
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants. Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 079 911 67 79
+&lt;br&gt;
+&lt;a href="http://www.patinoire.ch/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.244556743856271,46.38340211465543,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448658834789">
+      <description>&lt;h4&gt;Patinoire de Gland&lt;/h4&gt;
+&lt;h5&gt;Patinoire semi-couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;Enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 079 454 51 74
+&lt;br&gt;
+&lt;a href="http://www.gland.ch/vivre-a-gland/sports-et-loisirs/sport/equipements-sportifs/patinoire-mobile.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.258297505079104,46.42193270624767,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448745312827">
+      <description>&lt;h4&gt;Patinoire synth&#xE9;tique de Vernier&lt;/h4&gt;
+&lt;h5&gt;Patinoire synth&#xE9;tique couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 022 306 06 06
+&lt;br&gt;
+&lt;a href="http://www.cqvernier.ch/aire-le-lignon/patinoire-synthetique-couverte/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_nature.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.100947090121543,46.204295510398666,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448746408638">
+      <description>&lt;h4&gt;Patinoire des Charmilles&lt;/h4&gt;
+&lt;h5&gt;Patinoire synth&#xE9;tique ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;br&gt;T&#xE9;l: 022 344 51 03
+&lt;br&gt;
+&lt;a href="http://www.ville-geneve.ch/plan-ville/sports/patinoire-charmilles/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ffffffff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>ffffffff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.124870205394287,46.208058393202016,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448664668151">
+      <description>&lt;h4&gt;Patinoire saisonni&#xE8;re de Grand-Saconnex&lt;/h4&gt;
+&lt;h5&gt;Une patinoire mobile ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 079 958 84 48
+&lt;br&gt;
+&lt;a href="http://www.grand-saconnex.ch/fr/sports-et-loisirs/infrastructures-sportives/patinoire-saisonniere-0-201" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.1257538256343915,46.23050464131999,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448663963697">
+      <description>&lt;h4&gt;Patinoire des Vergers / Centre sportif de Bois-Carr&#xE9;&lt;/h4&gt;
+&lt;h5&gt;Une patinoire couverte et une patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;Enfants: Fr. 2.50
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 022 782 13 00 
+&lt;br&gt;
+&lt;a href="http://www.meyrin.ch/jahia/Jahia/administration/sports/pid/680" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.073703889758491,46.23447571561883,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448744337648">
+      <description>&lt;h4&gt;Patinoire de V&#xE9;senaz&lt;/h4&gt;
+&lt;h5&gt;Une patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 022 722 11 63
+&lt;br&gt;
+&lt;a href="http://www.collonge-bellerive.ch/fr/decouvrir/actualites/actualitescommunales/welcome.php?action=showinfo&amp;info_id=298006&amp;ls=0&amp;sq=&amp;kategorie_id=&amp;date_from=&amp;date_to=" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.198861953670161,46.23768522608591,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448745002685">
+      <description>&lt;h4&gt;Patinoire de la Vigne-Blanche&lt;/h4&gt;
+&lt;h5&gt;Une patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 4.-
+&lt;br&gt;Enfants: Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;a href="http://www.genthod.ch/dl.php/fr/5649e3976412a/Feuille_de_vigne_2015-2.pdf" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.140651640650701,46.25661034656338,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448743493242">
+      <description>&lt;h4&gt;Patinoire de Plan-les-Ouates&lt;/h4&gt;
+&lt;h5&gt;Une patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Location gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 022 884 64 30
+&lt;br&gt;
+&lt;a href="http://www.plan-les-ouates.ch/sport/emplacements-sportifs/patinoire-de-plan-les-ouates" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.1207637185923325,46.167223221263356,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448743939799">
+      <description>&lt;h4&gt;Patinoire temporaire du signal de Bernex&lt;/h4&gt;
+&lt;h5&gt;Une patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 022 850 92 57 
+&lt;br&gt;
+&lt;a href="http://www.bernex.ch/patinoire" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.071313387194198,46.17230019822725,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448743692947">
+      <description>&lt;h4&gt;Patinoire de Carouge&lt;/h4&gt;
+&lt;h5&gt;Une patinoire ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 079 469 07 54 
+&lt;br&gt;
+&lt;a href="http://www.carouge.ch/patinoire" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.138693738637181,46.18393605231241,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448663596984">
+      <description>&lt;h4&gt;Patinoire des Vernets&lt;/h4&gt;
+&lt;h5&gt;Une patinoire couverte et une ouverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 6.-
+&lt;br&gt;R&#xE9;duit et enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;br&gt;T&#xE9;l: 022 418 40 00
+&lt;br&gt;
+&lt;a href="http://www.ville-geneve.ch/plan-ville/sports/patinoire-vernets/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.133975909633732,46.19459457203801,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448663736810">
+      <description>&lt;h4&gt;Patinoire des Bastions&lt;/h4&gt;
+&lt;h5&gt;Une patinoire ouverte mobile&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Entr&#xE9;e gratuite
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Fr. 2.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;
+&lt;br&gt;T&#xE9;l: 076 615 51 58
+&lt;br&gt;
+&lt;a href="http://www.ville-geneve.ch/plan-ville/sports/patinoire-bastions/" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_open.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.143838395481302,46.20030198533869,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark id="marker_1448664246628">
+      <description>&lt;h4&gt;Patinoire de Sous-Moulin&lt;/h4&gt;
+&lt;h5&gt;Une patinoire couverte&lt;/h5&gt;
+&lt;br&gt;&lt;strong&gt;Prix d'entr&#xE9;e&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;R&#xE9;duits et enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Location de patins&lt;/strong&gt;
+&lt;br&gt;Adultes: Fr. 5.-
+&lt;br&gt;R&#xE9;duits et enfants: Fr. 3.-
+&lt;br&gt;&lt;br&gt;&lt;strong&gt;Contact&lt;/strong&gt;
+&lt;br&gt;T&#xE9;l: 022 305 00 60 
+&lt;br&gt;
+&lt;a href="http://www.cssm.ch/fr/horaires.html" target=_blank&gt;Site internet&lt;/a&gt;</description>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <href>https://e3f47c0ea57ca2dedbda7ef1b7210f1ea5b22e2d-www.googledrive.com/host/0B1q30s3mf7gPZUE2UExQNmNJVDg/icehockey_closed.png</href>
+          </Icon>
+          <hotSpot x="24" y="24" xunits="pixels" yunits="pixels"/>
+        </IconStyle>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>1</width>
+        </LineStyle>
+        <PolyStyle>
+          <color>660000ff</color>
+        </PolyStyle>
+      </Style>
+      <Point>
+        <coordinates>6.192523986470821,46.18937717491315,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
