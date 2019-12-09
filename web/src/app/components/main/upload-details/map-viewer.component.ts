@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { API_URL } from '../../../services/authentication.service';
+//import { API_URL } from '../../../services/authentication.service';
 
 
 import {} from 'googlemaps';
@@ -12,7 +12,7 @@ import {} from 'googlemaps';
 })
 export class MapViewerComponent implements OnInit, AfterViewInit{
   title = 'maps';
-  src = API_URL + '/kmlview/';
+  src = 'https://api-dot-protean-sensor-259821.appspot.com/api' + '/kmlview/';
 
   @ViewChild('map') mapElement: any;
 
